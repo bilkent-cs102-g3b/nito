@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>906</x>
+      <y>36</y>
+      <w>168</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Client/
+--
+-tcp: TcpClient
+-udp: UdpClient
+--
++Client(String serverAddress): ctor
++messageReceived(String msg): void
++sendMessage(String msg): void
++sendImage(Screenshot screenshot): void
++close(): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>252</y>
+      <w>204</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Screenshot
+--
+-img: BufferedImage
+-ip: InetAddress
+-port: int
++MAX_SIZE = 64000: int
+-scale: double
+--
++Screenshot(DatagramPacket packet): ctor
++Screenshot(BufferedImage img, double scale): ctor
++toByteArray(): byte[]
++clone(): Screenshot
+-updateScale(): void
++prepareForSending(): void
++scale(double scale): void
++scale(int newWidth, int newHeight): void
++getIP(): InetAddress
++getPort(): int
++getImage(): BufferedImage
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>36</y>
+      <w>210</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>/Server/
+--
++TERMINATION = "###": String
++TCP_PORT = 4455: int
++UDP_PORT = 4456: int
+-tcp: TcpServer
+-udp: UdpServer
+--
++Server(): ctor
++connectionLost(Socket socket): void
++messageReceived(String msg, Socket socket): void
++screenshotReceived(Screenshot img): void
++sendMessageToAll(String msg): void
++sendMessage(String msg, InetAddress address): void
++sendMessage(String msg, String address): void
++close(): void
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>198</y>
+      <w>210</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/TcpClient/
+--
+-socket: Socket
+-msgListenerThread: Thread
+--
++TcpClient(String serverAddress, int serverPort): ctor
++received(String msg): void
++sendMessage(String msg): void
+-listenForMessages(): void
++close(): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>36</y>
+      <w>216</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>/TcpServer/
+--
+-server: ServerSocket
+-sockets: ArrayList&lt;Socket&gt;
+-msgListenerThreads: ArrayList&lt;Thread&gt;
+-isBlocked: boolean
+-connectionListenerThread: Thread
+--
++TcpServer(int port): ctor
++connectionLost(Socket socket): void
++received(String message, Socket socket): void
+-listenForConnections(): void
+-listenForMessages(Socket socket): void
++sendMessageToAll(String msg): void
++sendMessage(String msg, InetAddress address): void
++sendMessage(String msg, String address): void
++close(): void
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>906</x>
+      <y>144</y>
+      <w>210</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>UdpClient
+--
+-serverAddress: InetAddress
+-serverPort: int
+-socket: DatagramSocket
+--
++UdpClient(String serverAddress, int serverPort): ctor
++sendImage(Screenshot screenshot): void
++close(): void
++sendImageByParts(BufferedImage img): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>186</y>
+      <w>174</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/UdpServer/
+--
+-socket: DatagramSocket
+-listenerThread: Thread
+--
++UdpServer(int port): ctor
++screenshotReceived(Screenshot img): void
+-readImage(): void
++close(): void
++readImageByParts(): BufferedImage
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>462</x>
+      <y>18</y>
+      <w>660</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>network
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>48</y>
+      <w>96</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Exam
+--
+-title: String
+-questions: ArrayList
+--
++Exam(String title): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>12</x>
+      <y>48</y>
+      <w>192</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Question
+--
+-title: String
+-statements: ArrayList&lt;Statement&gt;
+-templates: ArrayList&lt;Template&gt;
+--
++changeOrder(int prevIndex, int nextIndex): void
++addTemplate(Template template): void
++addStatement(Statement statement): void
++Question(String title): void
+
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>108</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Statement
+--
+-pdf: File
+-available: boolean
+--
+
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>108</y>
+      <w>72</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Template
+--
+-type: int
+-template: String
+--
+
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>240</y>
+      <w>210</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Question
+--
+-solutions: ArrayList&lt;Solution&gt;
+-statement: String
+--
++submitAll(): void
++saveAll(): void
++getSolution(int index): Solution
++Question(String statement, ArrayList templates): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>192</y>
+      <w>228</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Solution
+--
++QUESTION_UNKNOWN = 0: int
++QUESTION_CODE = 1: int
++FILENAMES[] = {".SAVE_1.nito", ".SAVE_2.nito"} : String[]
+-type: int
+-title: String
+-currentSave: int
+-answer: String
+-folder: File
+-question: Question
+-done: boolean
+--
++Solution(int type, String answerTemplate): ctor
++updateAnswer(String answer): void
++toggleDone(): void
++save(): void
++submit(Client c): void
+
+
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>174</y>
+      <w>456</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>examinee
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>6</x>
+      <y>30</y>
+      <w>366</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>exam_preparation
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>12</y>
+      <w>378</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>admin
+bg=black
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
