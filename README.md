@@ -129,3 +129,12 @@ Moreover, there are optional minor services that can be enabled in order to impr
 Instructor | David Davenport
 ---------- | ----------------
 Assistant  | Mehmet Başaran
+
+|     Programmers     |
+|---------------------|
+| Ziya Mukhtarov      |
+| Mannan Abdul        |
+| Mokhlaroyim Raupova |
+| Alper Sari          |
+| Javid Baghirov      |
+| Adeem Adil Khatri   |
