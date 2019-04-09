@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ToolBar?>
+<?import org.controlsfx.control.BreadCrumbBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import ui.NumberedEditor?>
+
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller" stylesheets="/application/application.css">
+
+	<!-- MENU -->
+	<MenuBar useSystemMenuBar="true">
+		<Menu text="File">
+			<Menu text="New">
+				<MenuItem text="Exam" />
+				<MenuItem text="Exam Instructions" />
+				<MenuItem text="..." />
+			</Menu>
+		</Menu>
+		<Menu text="Edit">
+			<MenuItem text="..." />
+		</Menu>
+		<Menu text="Window">
+			<MenuItem text="..." />
+		</Menu>
+		<Menu text="Help">
+			<MenuItem text="..." />
+		</Menu>
+	</MenuBar>
+	
+	<!-- TOOLBAR -->
+	<ToolBar>
+		<Button text="Tool"/>
+		
+		<Separator />
+		<Pane HBox.hgrow="ALWAYS" />
+		
+		<BreadCrumbBar fx:id="breadCrumb"/>
+		
+		<Pane HBox.hgrow="ALWAYS" />
+		<Separator />
+		
+		<Button text="Nav"/>
+	</ToolBar>
+	
+	<!-- MAIN -->
+	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
+	
+		<!-- EXAMS TREE -->
+		<TreeView minWidth="100">
+			<TreeItem value="Exams" expanded="true" fx:id="examTree">
+			</TreeItem>
+		</TreeView>
+		
+		<!-- EDITOR -->
+		<TabPane minWidth="300">
+			<Tab text="item1">
+				<NumberedEditor />
+			</Tab>
+		</TabPane>
+		
+	</SplitPane>
+</VBox>
+

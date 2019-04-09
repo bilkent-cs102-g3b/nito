@@ -13,5 +13,21 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse/External/Simplified-JNA-master"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="external_jars/miglayout-core-5.3-20190328.230024-128.jar" sourcepath="external_jars/miglayout-core-5.3-20190328.230024-128-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/CS102_Project/external_jars/miglayout-core-5.3-20190328.230024-128-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="external_jars/miglayout-ideutil-5.3-20190328.230156-117.jar" sourcepath="external_jars/miglayout-ideutil-5.3-20190328.230156-117-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/CS102_Project/external_jars/miglayout-ideutil-5.3-20190328.230156-117-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="external_jars/miglayout-javafx-5.3-20190328.230134-117.jar" sourcepath="external_jars/miglayout-javafx-5.3-20190328.230134-117-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/CS102_Project/external_jars/miglayout-javafx-5.3-20190328.230134-117-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
