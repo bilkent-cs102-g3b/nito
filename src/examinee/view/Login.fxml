@@ -9,15 +9,11 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<MigPane cols="[grow 25][grow 50, align 50%][grow 25]" rows="[]push[]push[]push[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<MigPane cols="[grow 25][grow 50, align 50%][grow 25]" rows="[]push[]push[]push[]push[]" fx:controller="examinee.view.LoginController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="right">
-            <Image url="@../../../CS102_Project/Resources/logo.png" />
-        </ImageView>
+        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="right" fx:id="logoNito" />
         <Label text="Nito" style="-fx-font-size: 25"/>
-        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="wrap, growx, left">
-            <Image url="@../../../CS102_Project/Resources/BilLogo.png" />
-        </ImageView>
+        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="wrap, growx, left" fx:id="logoBilkent"/>
         
         <Label text="ID Number"/>
         <TextField MigPane.cc="span, wrap, growx"/>

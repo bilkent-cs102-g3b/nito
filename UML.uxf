@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
   <help_text/>
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>906</x>
-      <y>36</y>
-      <w>168</w>
-      <h>102</h>
+      <x>1880</x>
+      <y>32</y>
+      <w>224</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>/Client/
 --
@@ -29,10 +29,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>252</y>
-      <w>204</w>
-      <h>192</h>
+      <x>1824</x>
+      <y>320</y>
+      <w>272</w>
+      <h>256</h>
     </coordinates>
     <panel_attributes>Screenshot
 --
@@ -62,10 +62,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>468</x>
-      <y>36</y>
-      <w>210</w>
-      <h>144</h>
+      <x>1296</x>
+      <y>32</y>
+      <w>280</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>/Server/
 --
@@ -91,10 +91,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>198</y>
-      <w>210</w>
-      <h>102</h>
+      <x>1536</x>
+      <y>248</y>
+      <w>280</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>/TcpClient/
 --
@@ -115,10 +115,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>36</y>
-      <w>216</w>
-      <h>156</h>
+      <x>1584</x>
+      <y>32</y>
+      <w>288</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>/TcpServer/
 --
@@ -144,10 +144,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>906</x>
-      <y>144</y>
-      <w>210</w>
-      <h>102</h>
+      <x>1880</x>
+      <y>176</y>
+      <w>280</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>UdpClient
 --
@@ -168,10 +168,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>468</x>
-      <y>186</y>
-      <w>174</w>
-      <h>102</h>
+      <x>1296</x>
+      <y>232</y>
+      <w>232</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>/UdpServer/
 --
@@ -192,10 +192,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>462</x>
-      <y>18</y>
-      <w>660</w>
-      <h>432</h>
+      <x>1288</x>
+      <y>8</y>
+      <w>880</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>network
 bg=black
@@ -205,10 +205,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>992</x>
       <y>48</y>
-      <w>96</w>
-      <h>54</h>
+      <w>128</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Exam
 --
@@ -225,10 +225,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>12</x>
+      <x>688</x>
       <y>48</y>
-      <w>192</w>
-      <h>90</h>
+      <w>256</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Question
 --
@@ -250,10 +250,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>108</y>
-      <w>78</w>
-      <h>48</h>
+      <x>1056</x>
+      <y>128</y>
+      <w>104</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Statement
 --
@@ -270,10 +270,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>108</y>
-      <w>72</w>
-      <h>48</h>
+      <x>952</x>
+      <y>128</y>
+      <w>96</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Template
 --
@@ -290,78 +290,73 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>992</x>
       <y>240</y>
-      <w>210</w>
-      <h>78</h>
+      <w>280</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>Question
 --
+
 -solutions: ArrayList&lt;Solution&gt;
 -statement: String
+
 --
+
++Question(String statement, ArrayList templates)
+
 +submitAll(): void
 +saveAll(): void
-+getSolution(int index): Solution
-+Question(String statement, ArrayList templates): void
-
-
-bg=black
-fg=white</panel_attributes>
++getSolution(int index): Solution</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6</x>
-      <y>192</y>
-      <w>228</w>
-      <h>168</h>
+      <x>680</x>
+      <y>240</y>
+      <w>304</w>
+      <h>272</h>
     </coordinates>
-    <panel_attributes>Solution
+    <panel_attributes>Part
 --
-+QUESTION_UNKNOWN = 0: int
-+QUESTION_CODE = 1: int
-+FILENAMES[] = {".SAVE_1.nito", ".SAVE_2.nito"} : String[]
+
++TYPE_UNKNOWN = 0: int
++TYPE_CODE = 1: int
 -type: int
 -title: String
--currentSave: int
--answer: String
+-solution: String
 -folder: File
 -question: Question
 -done: boolean
+
 --
+
 +Solution(int type, String answerTemplate): ctor
 +updateAnswer(String answer): void
 +toggleDone(): void
 +save(): void
-+submit(Client c): void
-
-
-bg=black
-fg=white</panel_attributes>
++submit(Client c): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
-      <y>174</y>
-      <w>456</w>
-      <h>192</h>
+      <y>336</y>
+      <w>608</w>
+      <h>256</h>
     </coordinates>
-    <panel_attributes>examinee
-bg=black
-fg=white</panel_attributes>
+    <panel_attributes>examinee</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>6</x>
-      <y>30</y>
-      <w>366</w>
-      <h>132</h>
+      <x>680</x>
+      <y>24</y>
+      <w>488</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>exam_preparation
 bg=black
@@ -371,14 +366,62 @@ fg=white</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>0</x>
-      <y>12</y>
-      <w>378</w>
-      <h>156</h>
+      <x>672</x>
+      <y>0</y>
+      <w>504</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>admin
 bg=black
 fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>432</y>
+      <w>280</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+
+-username: String
+-password: String
+-adminIP: String
+-client: Client
+
+-timeRemain: int
+-timeTotal: int
+-font: Font
+
+--
+
++addQuestion(Question) : void
+
++submit() : void
++changeFont(Font) : void
++toggleDone(Part) : void
++setSolution(Part, String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>520</y>
+      <w>304</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>Background
+--
+
+
+
+--
+sendScreen()</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

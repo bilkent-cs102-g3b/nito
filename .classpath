@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="Resources"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse/External/jna-5.2.0.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://java-native-access.github.io/jna/5.2.0/javadoc/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse/External/jna-platform-5.2.0.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://java-native-access.github.io/jna/5.2.0/javadoc/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse/External/Simplified-JNA-master"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="external_jars/miglayout-core-5.3-20190328.230024-128.jar" sourcepath="external_jars/miglayout-core-5.3-20190328.230024-128-sources.jar">
 		<attributes>
@@ -27,6 +17,11 @@
 	<classpathentry kind="lib" path="external_jars/miglayout-javafx-5.3-20190328.230134-117.jar" sourcepath="external_jars/miglayout-javafx-5.3-20190328.230134-117-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/CS102_Project/external_jars/miglayout-javafx-5.3-20190328.230134-117-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse_Workspace/external/controlsfx-8.40.14/controlsfx-8.40.14.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://controlsfx.bitbucket.io/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>

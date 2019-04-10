@@ -1,13 +1,12 @@
-package view.admin;
-import java.util.ArrayList;
+package admin.view;
 
 import org.controlsfx.control.BreadCrumbBar;
 
+import default_package.NumberedEditor;
 import javafx.fxml.FXML;
 import javafx.scene.control.TreeItem;
-import view.NumberedEditor;
 
-public class Controller
+public class MainController
 {
 	@FXML
 	private BreadCrumbBar<String> breadCrumb;
@@ -16,7 +15,7 @@ public class Controller
 	@FXML
 	private TreeItem<String> examTree;
 	
-	private ArrayList<String> exams;
+//	private ArrayList<String> exams;
 	
 	public void initialize()
 	{
@@ -40,6 +39,5 @@ public class Controller
 	 */
 	public void addExam( String name)
 	{
-		// TODO
 	}
 }

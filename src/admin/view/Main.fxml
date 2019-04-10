@@ -11,9 +11,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
-<?import ui.NumberedEditor?>
 
-<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller" stylesheets="/application/application.css">
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.MainController">
 
 	<!-- MENU -->
 	<MenuBar useSystemMenuBar="true">

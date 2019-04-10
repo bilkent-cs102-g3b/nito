@@ -1,9 +1,12 @@
 package main;
 
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -15,7 +18,12 @@ public class Main extends Application
 	{
 		try
 		{
-			Pane root = (Pane) FXMLLoader.load(getClass().getResource("/view/admin/Main.fxml"));
+			Pane root;
+			String path;
+
+			path = "src/admin/view/Main.fxml";
+//			path = "src/examinee/view/Login.fxml";
+			root = (Pane) FXMLLoader.load(new File(path).toURI().toURL());
 			Scene scene = new Scene(root, 1200, 675);
 			stage.setScene( scene);
 			
@@ -28,8 +36,12 @@ public class Main extends Application
 				}
 			});
 			
+			System.out.println( new File("Resources/logo.png").toURI().toURL().toString());
+			stage.getIcons().add( new Image( new File("Resources/logo.png").toURI().toURL().toString()));
+			stage.setTitle("Sample frame");
 			stage.show();
-		} catch( Exception e)
+		}
+		catch( Exception e)
 		{
 			e.printStackTrace();
 		}
