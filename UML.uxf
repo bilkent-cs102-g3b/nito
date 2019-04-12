@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
   <help_text/>
-  <zoom_level>8</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1880</x>
-      <y>32</y>
-      <w>224</w>
-      <h>136</h>
+      <x>2350</x>
+      <y>40</y>
+      <w>280</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>/Client/
 --
@@ -29,10 +29,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1824</x>
-      <y>320</y>
-      <w>272</w>
-      <h>256</h>
+      <x>2280</x>
+      <y>400</y>
+      <w>340</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>Screenshot
 --
@@ -62,10 +62,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1296</x>
-      <y>32</y>
-      <w>280</w>
-      <h>192</h>
+      <x>1620</x>
+      <y>40</y>
+      <w>350</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>/Server/
 --
@@ -91,10 +91,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1536</x>
-      <y>248</y>
-      <w>280</w>
-      <h>136</h>
+      <x>1920</x>
+      <y>310</y>
+      <w>350</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>/TcpClient/
 --
@@ -115,10 +115,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1584</x>
-      <y>32</y>
-      <w>288</w>
-      <h>208</h>
+      <x>1980</x>
+      <y>40</y>
+      <w>360</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>/TcpServer/
 --
@@ -144,10 +144,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1880</x>
-      <y>176</y>
-      <w>280</w>
-      <h>136</h>
+      <x>2350</x>
+      <y>220</y>
+      <w>350</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>UdpClient
 --
@@ -168,10 +168,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1296</x>
-      <y>232</y>
-      <w>232</w>
-      <h>136</h>
+      <x>1620</x>
+      <y>290</y>
+      <w>290</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>/UdpServer/
 --
@@ -192,10 +192,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1288</x>
-      <y>8</y>
-      <w>880</w>
-      <h>576</h>
+      <x>1610</x>
+      <y>10</y>
+      <w>1100</w>
+      <h>720</h>
     </coordinates>
     <panel_attributes>network
 bg=black
@@ -205,10 +205,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>992</x>
-      <y>48</y>
-      <w>128</w>
-      <h>72</h>
+      <x>1240</x>
+      <y>60</y>
+      <w>160</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Exam
 --
@@ -225,10 +225,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>688</x>
-      <y>48</y>
-      <w>256</w>
-      <h>120</h>
+      <x>860</x>
+      <y>60</y>
+      <w>320</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Question
 --
@@ -250,10 +250,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1056</x>
-      <y>128</y>
-      <w>104</w>
-      <h>64</h>
+      <x>1320</x>
+      <y>160</y>
+      <w>130</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Statement
 --
@@ -270,10 +270,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>128</y>
-      <w>96</w>
-      <h>64</h>
+      <x>1190</x>
+      <y>160</y>
+      <w>120</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Template
 --
@@ -290,21 +290,17 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>992</x>
-      <y>240</y>
-      <w>280</w>
-      <h>184</h>
+      <x>1240</x>
+      <y>300</y>
+      <w>350</w>
+      <h>230</h>
     </coordinates>
     <panel_attributes>Question
 --
-
 -solutions: ArrayList&lt;Solution&gt;
 -statement: String
-
 --
-
 +Question(String statement, ArrayList templates)
-
 +submitAll(): void
 +saveAll(): void
 +getSolution(int index): Solution</panel_attributes>
@@ -313,25 +309,22 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>240</y>
-      <w>304</w>
-      <h>272</h>
+      <x>770</x>
+      <y>290</y>
+      <w>380</w>
+      <h>340</h>
     </coordinates>
     <panel_attributes>Part
 --
-
 +TYPE_UNKNOWN = 0: int
-+TYPE_CODE = 1: int
++TYPE_CODING = 1: int
 -type: int
 -title: String
 -solution: String
 -folder: File
 -question: Question
 -done: boolean
-
 --
-
 +Solution(int type, String answerTemplate): ctor
 +updateAnswer(String answer): void
 +toggleDone(): void
@@ -343,9 +336,9 @@ fg=white</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
-      <y>336</y>
-      <w>608</w>
-      <h>256</h>
+      <y>420</y>
+      <w>760</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>examinee</panel_attributes>
     <additional_attributes/>
@@ -353,10 +346,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>680</x>
-      <y>24</y>
-      <w>488</w>
-      <h>176</h>
+      <x>850</x>
+      <y>30</y>
+      <w>610</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>exam_preparation
 bg=black
@@ -366,10 +359,10 @@ fg=white</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>672</x>
+      <x>840</x>
       <y>0</y>
-      <w>504</w>
-      <h>208</h>
+      <w>630</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>admin
 bg=black
@@ -379,49 +372,109 @@ fg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>992</x>
-      <y>432</y>
-      <w>280</w>
-      <h>264</h>
+      <x>1320</x>
+      <y>540</y>
+      <w>290</w>
+      <h>370</h>
     </coordinates>
     <panel_attributes>Model
 --
-
++STATUS_CONNECTED = 1: int
++STATUS_DISCONNECTED = 2: int
++STATUS_LOGIN = 3: int
++STATUS_SUSPENDED = 4: int
++STATUS_BANNED = 5: int
++STATUS_FINISHED = 6: int
 -username: String
 -password: String
 -adminIP: String
--client: Client
-
 -timeRemain: int
 -timeTotal: int
--font: Font
-
+-client: Client
+-status: int
+-examData: ExamEntry
 --
-
-+addQuestion(Question) : void
-
-+submit() : void
-+changeFont(Font) : void
-+toggleDone(Part) : void
-+setSolution(Part, String) : void
-</panel_attributes>
++Model( username, password, adminIP): ctor
++getExamData(): void
++submitAll(): void
++setDone(ExamEntry): void
++setSolution(ExamEntry, String): void
++sendScreen()
++sendMessage()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>520</y>
-      <w>304</w>
-      <h>264</h>
+      <x>1070</x>
+      <y>640</y>
+      <w>190</w>
+      <h>180</h>
     </coordinates>
-    <panel_attributes>Background
+    <panel_attributes>ExamEntry
 --
-
-
-
++TYPE_??? = ?: int
+-id: String
+-markable: boolean
+-solvable: boolean
+-type: int
+-done: boolean
 --
-sendScreen()</panel_attributes>
++send(Client)
++setDone()
++isDone()</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>690</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>ExamContainer
+--
+-children: ArrayList
+--
++add(ExamEntry): void
++getAll(): ArrayList
+??? +remove(ExamEntry) ???</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>730</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>780</y>
+      <w>340</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+m1=0..*</panel_attributes>
+    <additional_attributes>300.0;40.0;300.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1250</x>
+      <y>740</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
