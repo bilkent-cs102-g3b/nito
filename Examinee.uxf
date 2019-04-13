@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>fontsize=16
+fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>91</y>
+      <w>154</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>ExamContainer
+--
+-children: ArrayList
+--
++add(ExamEntry): void
++getAll(): ArrayList
+??? +remove(ExamEntry) ???</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>315</x>
+      <y>70</y>
+      <w>133</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ExamEntry
+--
+-id: String
+-markable: boolean
+-editable: boolean
+-done: boolean
+-title: String
+-content: String
+--
++send(Client)
++setDone()
++isDone()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>259</x>
+      <y>126</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>126</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>7</y>
+      <w>189</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0;250.0;10.0;250.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>266</x>
+      <y>350</y>
+      <w>175</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>QuestionPart
+--
+-solution: String
+--
++Solution(): ctor
++Solution(answerTemplate): ctor
++updateSolution(String): void
++save(): void
++submit(Client c): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>350</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Question
+--
++Question(...): ctor
++save(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>0</y>
+      <w>231</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>Model
+--
++STATUS_CONNECTED = 1: int
++STATUS_DISCONNECTED = 2: int
++STATUS_LOGIN = 3: int
++STATUS_SUSPENDED = 4: int
++STATUS_BANNED = 5: int
++STATUS_FINISHED = 6: int
+-username: String
+-password: String
+-adminIP: String
+-timeRemain: int
+-timeTotal: int
+-client: Client
+-status: int
+-examData: ExamEntry
+--
++Model( username, password, adminIP): ctor
++getExamData(): void
++submitAll(): void
++setDone(ExamEntry): void
++setSolution(ExamEntry, String): void
++sendScreen()
++sendMessage(String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>84</x>
+      <y>203</y>
+      <w>308</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;150.0;10.0;150.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>147</x>
+      <y>350</y>
+      <w>112</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Instruction
+--
++Instruction(...): ctor
++save(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>301</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>371</x>
+      <y>301</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>378</y>
+      <w>84</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Sendable
+--
++send(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>434</x>
+      <y>399</y>
+      <w>84</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
