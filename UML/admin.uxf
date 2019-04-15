@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>fontsize=16
+fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>42</y>
+      <w>182</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Model
+--
++TYPE_EXAM = 1: int
++TYPE_QUESTION = 2: int
++TYPE_PART = 3: int
++TYPE_... = ...: int
+
+--
++createEntry(type, id, title, ...): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>259</x>
+      <y>77</y>
+      <w>182</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Entry
+--
++VISIBLE_ALWAYS = 1: int
++VISIBLE_DURING_EXAM = 2: int
++VISIBLE_NEVER = 3: int
+-visible: int
+-title: String
+-id: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>469</x>
+      <y>91</y>
+      <w>112</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Container
+--
+-children: ArrayList
+--
++add(Entry): void
++getAll(): ArrayList
++remove(Entry): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>231</y>
+      <w>140</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Exam
+--
+-startTime: LocalDateTime
+-length: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>266</x>
+      <y>231</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Question
+--
+-maxPoints: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>364</x>
+      <y>231</y>
+      <w>84</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Part
+--
+-maxPoints: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>182</x>
+      <y>231</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Instruction</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>231</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Criteria</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>231</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Template</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>112</x>
+      <y>168</y>
+      <w>238</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>434</x>
+      <y>133</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>91</y>
+      <w>77</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Workspace
+--
+-folder: File</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>168</y>
+      <w>133</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;170.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>301</x>
+      <y>168</y>
+      <w>49</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;50.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>168</y>
+      <w>84</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;100.0;50.0;100.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>168</y>
+      <w>175</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;230.0;50.0;230.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>168</y>
+      <w>238</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;320.0;50.0;320.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>133</y>
+      <w>126</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>Examinee
+--
++STATUS_... = ...: int
+-status: int
+-address: InetAddress
+-folder: File
+-id: String
+-name: String
+-group: Group
+-exam: Exam
+--
++Examinee(): ctor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>133</y>
+      <w>126</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Group
+--
+-id: String
+-title: String
+-examinees: ArrayList
+--
++Group(id, name): ctor
++add
++remove</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
