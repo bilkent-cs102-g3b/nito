@@ -2,113 +2,119 @@
 <diagram program="umlet" version="14.3.0">
   <help_text>fontsize=16
 fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
-  <zoom_level>7</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>777</x>
-      <y>77</y>
-      <w>217</w>
-      <h>119</h>
+      <x>155</x>
+      <y>155</y>
+      <w>20</w>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>/Client/
---
--tcp: TcpClient
--udp: UdpClient
---
-+Client(String serverAddress): ctor
-+messageReceived(String msg): void
-+sendMessage(String msg): void
-+sendImage(Screenshot screenshot): void
-+close(): void</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>155</y>
+      <w>20</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>155</y>
+      <w>20</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>155</y>
+      <w>20</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>200</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>200</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>483</x>
-      <y>0</y>
-      <w>266</w>
-      <h>224</h>
+      <x>325</x>
+      <y>5</y>
+      <w>200</w>
+      <h>200</h>
     </coordinates>
-    <panel_attributes>Screenshot
+    <panel_attributes>network::Screenshot
 --
--img: BufferedImage
--ip: InetAddress
--port: int
+-serialVersionUID = -1789450675592222566L: long
 +MAX_SIZE = 64000: int
+-img: BufferedImage
+-sourceIP: InetAddress
+-sourcePort: int
 -scale: double
 --
-+Screenshot(DatagramPacket packet): ctor
 +Screenshot(BufferedImage img, double scale): ctor
-+toByteArray(): byte[]
-+clone(): Screenshot
+-writeObject(ObjectOutputStream out): void
+-readObject(ObjectInputStream in): void
++serialize(): byte[]
++deserialize(byte[] data): Screenshot
++getSize(): int
++clone(): Object
 -updateScale(): void
 +prepareForSending(): void
 +scale(double scale): void
 +scale(int newWidth, int newHeight): void
-+getIP(): InetAddress
-+getPort(): int
-+getImage(): BufferedImage
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>168</x>
-      <y>7</y>
-      <w>280</w>
-      <h>189</h>
-    </coordinates>
-    <panel_attributes>/Server/
---
-+TERMINATION = "###": String
-+TCP_PORT = 4455: int
-+UDP_PORT = 4456: int
--tcp: TcpServer
--udp: UdpServer
---
-+Server(): ctor
-+connectionLost(Socket socket): void
-+messageReceived(String msg, Socket socket): void
-+screenshotReceived(Screenshot img): void
-+sendMessageToAll(String msg): void
-+sendMessage(String msg, InetAddress address): void
-+sendMessage(String msg, String address): void
-+close(): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>889</x>
-      <y>266</y>
-      <w>273</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>/TcpClient/
---
--socket: Socket
--msgListenerThread: Thread
---
-+TcpClient(String serverAddress, int serverPort): ctor
-+received(String msg): void
-+sendMessage(String msg): void
--listenForMessages(): void
-+close(): void
-</panel_attributes>
++getSourceIP(): InetAddress
++getSourcePort(): int
++getImage(): BufferedImage</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>266</y>
-      <w>280</w>
-      <h>203</h>
+      <y>235</y>
+      <w>200</w>
+      <h>145</h>
     </coordinates>
-    <panel_attributes>/TcpServer/
+    <panel_attributes>/network::TcpServer/
 --
 -server: ServerSocket
 -sockets: ArrayList&lt;Socket&gt;
@@ -130,112 +136,105 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>266</y>
-      <w>280</w>
-      <h>119</h>
+      <x>110</x>
+      <y>25</y>
+      <w>200</w>
+      <h>135</h>
     </coordinates>
-    <panel_attributes>UdpClient
+    <panel_attributes>/network::Server/
+--
++TERMINATION = "###": String
++TCP_PORT = 4455: int
++UDP_PORT = 4456: int
+-tcp: TcpServer
+-udp: UdpServer
+--
++Server(): ctor
++connectionLost(Socket socket): void
++messageReceived(String msg, Socket socket): void
++screenshotReceived(Screenshot img): void
++sendMessageToAll(String msg): void
++sendMessage(String msg, InetAddress address): void
++sendMessage(String msg, String address): void
++close(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>575</x>
+      <y>80</y>
+      <w>165</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>/network::Client/
+--
+-tcp: TcpClient
+-udp: UdpClient
+--
++Client(String serverAddress): ctor
++messageReceived(String msg): void
++sendMessage(String msg): void
++sendImage(Screenshot screenshot): void
++close(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>235</y>
+      <w>195</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>/network::TcpClient/
+--
+-socket: Socket
+-msgListenerThread: Thread
+--
++TcpClient(String serverAddress, int serverPort): ctor
++received(String msg): void
++sendMessage(String msg): void
+-listenForMessages(): void
++close(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>235</y>
+      <w>195</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>network::UdpClient
 --
 -serverAddress: InetAddress
 -serverPort: int
 -socket: DatagramSocket
 --
 +UdpClient(String serverAddress, int serverPort): ctor
-+sendImage(Screenshot screenshot): void
-+close(): void
-+sendImageByParts(BufferedImage img): void
-</panel_attributes>
++sendScreenshot(Screenshot screenshot): void
++close(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>266</y>
-      <w>231</w>
-      <h>112</h>
+      <x>225</x>
+      <y>235</y>
+      <w>165</w>
+      <h>75</h>
     </coordinates>
-    <panel_attributes>/UdpServer/
+    <panel_attributes>/network::UdpServer/
 --
 -socket: DatagramSocket
 -listenerThread: Thread
 --
 +UdpServer(int port): ctor
 +screenshotReceived(Screenshot img): void
--readImage(): void
-+close(): void
-+readImageByParts(): BufferedImage</panel_attributes>
+-readScreenshot(): void
++close(): void</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>231</x>
-      <y>189</y>
-      <w>28</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>364</x>
-      <y>189</y>
-      <w>28</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>798</x>
-      <y>189</y>
-      <w>28</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>952</x>
-      <y>189</y>
-      <w>28</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>672</x>
-      <y>217</y>
-      <w>21</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>518</x>
-      <y>217</y>
-      <w>21</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
