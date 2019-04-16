@@ -69,8 +69,8 @@ public abstract class TcpClient
 	}
 
 	/**
-	 * Reads the message from the server
-	 * @return The message received
+	 * Continuously listens for any message on the socket. Calls received(message) once a message arrives. <br>
+	 * Warning: This method blocks until the socket is closed or some error occurs
 	 */
 	private void listenForMessages()
 	{

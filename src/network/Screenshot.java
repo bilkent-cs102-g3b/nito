@@ -3,111 +3,191 @@ package network;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.DatagramPacket;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import javax.imageio.ImageIO;
 
 /**
- * A wrapper class for sending and receiving images from UDP
+ * A wrapper class for sending and receiving images over UDP
  * @author Ziya Mukhtarov
- * @version 24/02/2019
+ * @version 16/04/2019
  */
-public class Screenshot
+public class Screenshot implements Serializable, Cloneable
 {
-	// Common
-	private BufferedImage img;
+	private static final long serialVersionUID = -1789450675592222566L;
 
-	// For receiving
-	private InetAddress ip;
-	private int port;
-
-	// For sending
-	/**The maximum bytes the screenshot can have for sending due to UDP limits*/
+	/** The maximum bytes the screenshot can have for sending due to UDP limits */
 	public static final int MAX_SIZE = 64000;
+
+	private transient BufferedImage img;
+	private InetAddress sourceIP;
+	private int sourcePort;
 	private double scale;
 
 	/**
-	 * Creates a screenshot from the received datagram packet<br>
-	 * <strong>Note:</strong> To be used only for received screenshots
-	 * @param packet - The DatagramPacket containing the image byte data
-	 */
-	public Screenshot(DatagramPacket packet)
-	{
-		ip = packet.getAddress();
-		port = packet.getPort();
-
-		ByteArrayInputStream input = new ByteArrayInputStream(packet.getData());
-		try
-		{
-			img = ImageIO.read(input);
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Creates a screenshot for sending. The scale may be reduced if this scaling leads to a image byte size bigger than {@value #MAX_SIZE}<br>
-	 * <strong>Note:</strong> To be used only for sending screenshots
+	 * Creates a screenshot for sending. The scale may be reduced if this scaling leads to a byte size bigger than {@value #MAX_SIZE}<br>
 	 * @param img - the screenshot image
 	 * @param scale - the intended scaling during sending
 	 */
-	public Screenshot(BufferedImage img, double scale)
+	public Screenshot( BufferedImage img, double scale)
 	{
 		if (scale <= 0 || scale > 1)
+		{
 			throw new IllegalArgumentException("The scale value should be in the range (0,1].");
+		}
 		this.img = img;
 		this.scale = scale;
 	}
 
 	/**
-	 * Returns the current screenshot as a byte array
-	 * @return the current screenshot as a byte array
+	 * Writes object to ObjectOutputStream during serialization
+	 * @param out - The output stream
 	 */
-	public byte[] toByteArray()
-	{
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		try
+    private void writeObject( ObjectOutputStream out)
+    {
+    	try
 		{
-			ImageIO.write(img, "jpg", output);
+			out.defaultWriteObject();
+	    	ImageIO.write( img, "png", out);
 		}
-		catch (IOException e1)
-		{
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try
-		{
-			output.flush();
-		}
-		catch (IOException e1)
+    	catch (IOException e)
 		{
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
-		return output.toByteArray();
-	}
+    }
 
-	public Screenshot clone()
+    /**
+	 * Reads object from ObjectInputStream during deserialization
+	 * @param in - The input stream
+     */
+    private void readObject( ObjectInputStream in)
+    {
+    	try
+		{
+    		in.defaultReadObject();
+			img = ImageIO.read(in);
+		}
+    	catch (IOException | ClassNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+	/**
+	 * Serializes the Screenshot into byte array
+	 * @return The byte array denoting this object
+	 */
+	public byte[] serialize()
 	{
-		Screenshot clone = new Screenshot(img, scale);
-		clone.ip = ip;
-		clone.port = port;
-		return clone;
+		byte[] result;
+		ByteArrayOutputStream baos;
+		ObjectOutputStream oos;
+		
+		try
+		{
+			baos = new ByteArrayOutputStream();
+			oos = new ObjectOutputStream( baos);
+			
+			oos.writeObject(this);
+			oos.flush();
+			result = baos.toByteArray();
+			
+			oos.close();
+			baos.close();
+			
+			return result;
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
+	/**
+	 * Deserializes the Screenshot from byte array
+	 * @param data - The byte array containing serialization of a Screenshot
+	 * @return 
+	 */
+	public static Screenshot deserialize( byte[] data)
+	{
+		Screenshot result;
+		ByteArrayInputStream bais;
+		ObjectInputStream ois;
+		
+		try
+		{
+			bais = new ByteArrayInputStream( data);
+			ois = new ObjectInputStream( bais);
+			
+			result = (Screenshot) ois.readObject();
+
+			ois.close();
+			bais.close();
+			
+			return result;
+		}
+		catch (IOException | ClassNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * Returns the byte size of serialized current screenshot
+	 * @return The byte size of serialized current screenshot
+	 */
+	public int getSize()
+	{
+		return serialize().length;
+	}
+
+	@Override
+	public Object clone()
+	{
+		try
+		{
+			Screenshot s;
+			s = (Screenshot) super.clone();
+
+			ColorModel cm = img.getColorModel();
+			s.img = new BufferedImage( cm, img.copyData(null), cm.isAlphaPremultiplied(), null);
+		
+			s.sourceIP = InetAddress.getByName( sourceIP.getHostName());
+			
+			return s;
+		}
+		catch (CloneNotSupportedException | UnknownHostException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * Updates the value of scale to the biggest possible scaling that does not exceed UDP limits.
+	 * This method uses Binary Search algorithm to work efficiently
+	 */
 	private void updateScale()
 	{
 		double l, r, m;
-		byte[] data;
-		Screenshot tmp = this.clone();
+		Screenshot tmp = (Screenshot) this.clone();
 		tmp.scale(scale);
-		if (tmp.toByteArray().length <= MAX_SIZE)
+		if ( tmp.getSize() <= MAX_SIZE)
 		{
 			return;
 		}
@@ -117,10 +197,9 @@ public class Screenshot
 		while (r - l > 0.01)
 		{
 			m = (l + r) / 2;
-			tmp = this.clone();
+			tmp = (Screenshot) this.clone();
 			tmp.scale(m);
-			data = tmp.toByteArray();
-			if (data.length > MAX_SIZE)
+			if ( tmp.getSize() > MAX_SIZE)
 				r = m;
 			else
 				l = m;
@@ -129,9 +208,9 @@ public class Screenshot
 	}
 
 	/**
-	 * Prepares the screenshot for sending over UDP. Scales the image to specified scale or the maximum possible scaling
+	 * Prepares the screenshot for sending over UDP. Scales the image to specified scale or the maximum possible scaling.
 	 * The original screenshot will be lost and replaced with the scaled one<br>
-	 * <strong>Note:</strong> To be used only for sending screenshots, always before sending
+	 * <strong>Note:</strong> Always call before sending
 	 */
 	public void prepareForSending()
 	{
@@ -167,23 +246,21 @@ public class Screenshot
 	}
 
 	/**
-	 * Returns the IP that the screenshot sent from<br>
-	 * <strong>Note:</strong> To be used only for received screenshots
-	 * @return The IP that the screenshot sent from
+	 * Returns the IP of the source
+	 * @return The IP of the source
 	 */
-	public InetAddress getIP()
+	public InetAddress getSourceIP()
 	{
-		return ip;
+		return sourceIP;
 	}
 
 	/**
-	 * Returns the port that the screenshot sent from<br>
-	 * <strong>Note:</strong> To be used only for received screenshots
-	 * @return The port that the screenshot sent from
+	 * Returns the port of the source
+	 * @return The port of the source
 	 */
-	public int getPort()
+	public int getSourcePort()
 	{
-		return port;
+		return sourcePort;
 	}
 
 	/**

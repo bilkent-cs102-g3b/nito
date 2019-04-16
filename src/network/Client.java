@@ -46,12 +46,12 @@ public abstract class Client
 	}
 
 	/**
-	 * Sends an image to the server
-	 * @param screenshot - The BufferedImage to be sent
+	 * Sends a Screenshot to the server
+	 * @param screenshot - The Screenshot to be sent
 	 */
-	public void sendImage(Screenshot screenshot)
+	public void sendImage( Screenshot screenshot)
 	{
-		udp.sendImage(screenshot);
+		udp.sendScreenshot( screenshot);
 	}
 
 	/**

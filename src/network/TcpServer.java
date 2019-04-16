@@ -24,7 +24,7 @@ public abstract class TcpServer
 	 * Opens a new socket for receiving TCP connections
 	 * @param port The port to listen on
 	 */
-	public TcpServer(int port)
+	public TcpServer( int port)
 	{
 		isBlocked = false;
 		sockets = new ArrayList<>();
@@ -40,8 +40,8 @@ public abstract class TcpServer
 		}
 
 		// Listens for connections
-		connectionListenerThread = new Thread(new Runnable()
-		{
+		connectionListenerThread = new Thread(new Runnable() {
+			@Override
 			public void run()
 			{
 				listenForConnections();
@@ -92,19 +92,19 @@ public abstract class TcpServer
 				}
 			}
 			isBlocked = true;
-			sockets.add(socket);
+			sockets.add( socket);
 			isBlocked = false;
-			System.out.println(socket.getInetAddress() + ":" + socket.getPort() + " is now connected!");
+			System.out.println( socket.getInetAddress() + ":" + socket.getPort() + " is now connected!");
 
 			// Listens for messages
-			msgListenerThreads.add(new Thread(new Runnable()
+			msgListenerThreads.add( new Thread( new Runnable()
 			{
 				public void run()
 				{
 					listenForMessages(socket);
 				}
 			}));
-			msgListenerThreads.get(msgListenerThreads.size() - 1).start();
+			msgListenerThreads.get( msgListenerThreads.size() - 1).start();
 		}
 	}
 
@@ -112,7 +112,7 @@ public abstract class TcpServer
 	 * Listens for incoming messages from the specified socket
 	 * @param socket The socket to listen on
 	 */
-	private void listenForMessages(Socket socket)
+	private void listenForMessages( Socket socket)
 	{
 		String message = "";
 		boolean isAlive = true;
