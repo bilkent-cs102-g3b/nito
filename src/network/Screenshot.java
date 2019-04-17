@@ -1,7 +1,12 @@
 package network;
 
+import java.awt.AWTException;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.io.ByteArrayInputStream;
@@ -10,15 +15,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
 /**
- * A wrapper class for sending and receiving images over UDP
+ * A class for working with screenshots
  * @author Ziya Mukhtarov
- * @version 16/04/2019
+ * @version 17/04/2019
  */
 public class Screenshot implements Serializable, Cloneable
 {
@@ -28,8 +31,6 @@ public class Screenshot implements Serializable, Cloneable
 	public static final int MAX_SIZE = 64000;
 
 	private transient BufferedImage img;
-	private InetAddress sourceIP;
-	private int sourcePort;
 	private double scale;
 
 	/**
@@ -37,13 +38,22 @@ public class Screenshot implements Serializable, Cloneable
 	 * @param img - the screenshot image
 	 * @param scale - the intended scaling during sending
 	 */
-	public Screenshot( BufferedImage img, double scale)
+	public Screenshot( double scale)
 	{
+		try
+		{
+			img = new Robot().createScreenCapture ( new Rectangle (Toolkit.getDefaultToolkit().getScreenSize()));
+		}
+		catch (HeadlessException | AWTException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		if (scale <= 0 || scale > 1)
 		{
 			throw new IllegalArgumentException("The scale value should be in the range (0,1].");
 		}
-		this.img = img;
 		this.scale = scale;
 	}
 
@@ -165,12 +175,10 @@ public class Screenshot implements Serializable, Cloneable
 
 			ColorModel cm = img.getColorModel();
 			s.img = new BufferedImage( cm, img.copyData(null), cm.isAlphaPremultiplied(), null);
-		
-			s.sourceIP = InetAddress.getByName( sourceIP.getHostName());
 			
 			return s;
 		}
-		catch (CloneNotSupportedException | UnknownHostException e)
+		catch (CloneNotSupportedException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -246,26 +254,8 @@ public class Screenshot implements Serializable, Cloneable
 	}
 
 	/**
-	 * Returns the IP of the source
-	 * @return The IP of the source
-	 */
-	public InetAddress getSourceIP()
-	{
-		return sourceIP;
-	}
-
-	/**
-	 * Returns the port of the source
-	 * @return The port of the source
-	 */
-	public int getSourcePort()
-	{
-		return sourcePort;
-	}
-
-	/**
-	 * Returns the screenshot
-	 * @return The screenshot
+	 * Returns the screenshot itself
+	 * @return The screenshot itself
 	 */
 	public BufferedImage getImage()
 	{

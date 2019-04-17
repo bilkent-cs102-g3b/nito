@@ -1,5 +1,6 @@
 package network;
 
+import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -7,7 +8,7 @@ import java.net.UnknownHostException;
 /**
  * A server containing TCP and UDP servers
  * @author Ziya Mukhtarov
- * @version 16/02/2019
+ * @version 17/04/2019
  */
 public abstract class Server
 {
@@ -40,9 +41,9 @@ public abstract class Server
 
 		udp = new UdpServer(UDP_PORT)
 		{
-			public void screenshotReceived( Screenshot img)
+			public void screenshotReceived( Screenshot img, DatagramPacket packet)
 			{
-				ths.screenshotReceived(img);
+				ths.screenshotReceived(img, packet);
 			}
 		};
 	}
@@ -62,9 +63,10 @@ public abstract class Server
 
 	/**
 	 * Processes the received Screenshot
-	 * @param img - the received Screenshot
+	 * @param img - the received Screenshot via packet
+	 * @param packet - The Datagram Packet
 	 */
-	public abstract void screenshotReceived( Screenshot img);
+	public abstract void screenshotReceived( Screenshot img, DatagramPacket packet);
 
 	/**
 	 * Sends a message to all connected clients 

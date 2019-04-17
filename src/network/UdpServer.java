@@ -8,7 +8,7 @@ import java.net.SocketException;
 /**
  * Simple UDP Server for receiving images
  * @author Ziya Mukhtarov
- * @version 11/01/2019
+ * @version 17/04/2019
  */
 public abstract class UdpServer
 {
@@ -43,9 +43,10 @@ public abstract class UdpServer
 
 	/**
 	 * Handles the received Screenshot
-	 * @param img - the Screenshot received
+	 * @param img - the Screenshot received via the packet
+	 * @param packet - The Datagram Packet 
 	 */
-	public abstract void screenshotReceived( Screenshot img);
+	public abstract void screenshotReceived( Screenshot img, DatagramPacket packet);
 
 	/**
 	 * Receives the screenshot sent to this server
@@ -67,7 +68,7 @@ public abstract class UdpServer
 				e.printStackTrace();
 			}
 
-			screenshotReceived( Screenshot.deserialize( packet.getData()));
+			screenshotReceived( Screenshot.deserialize( packet.getData()), packet);
 		}
 	}
 
