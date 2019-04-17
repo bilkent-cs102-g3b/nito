@@ -19,10 +19,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/CS102_Project/external_jars/miglayout-javafx-5.3-20190328.230134-117-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Ziya/Desktop/ALL ABOUT PROGRAMMING AND SOWTWARE DEVELOPMENT/Java/Eclipse_Workspace/external/controlsfx-8.40.14/controlsfx-8.40.14.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="https://controlsfx.bitbucket.io/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="external_jars/controlsfx-8.40.14/controlsfx-8.40.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
