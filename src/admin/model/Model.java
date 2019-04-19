@@ -2,6 +2,8 @@ package admin.model;
 
 import java.util.ArrayList;
 
+import admin.NitoAdminView;
+
 /**
  * The main model class for admin interface
  * @author Ziya Mukhtarov
@@ -9,6 +11,8 @@ import java.util.ArrayList;
  */
 public class Model
 {
+	private ArrayList<NitoAdminView> views;
+	
 	private ArrayList<Group> groups;
 	private ArrayList<Examinee> examinees;
 
@@ -75,5 +79,26 @@ public class Model
 	public String toString()
 	{
 		return "Model [groups=" + groups + "]";
+	}
+
+	/**
+	 * Adds a view to this model. The updateView method of this view will be automatically called whenever it is necessary 
+	 * @param view - The view to add to this model
+	 */
+	public void addView( NitoAdminView view)
+	{
+		views.add( view);
+	}
+
+	/**
+	 * Calls the update view method of all views added to this model 
+	 */
+	public void updateViews()
+	{
+		// TODO Open new threads for updates?
+		for ( NitoAdminView view : views)
+		{
+			view.updateView( this);
+		}
 	}
 }
