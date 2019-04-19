@@ -26,50 +26,62 @@ public abstract class Server
 	{
 		Server ths = this;
 
-		tcp = new TcpServer(TCP_PORT)
-		{
-			public void connectionLost( Socket socket)
+		tcp = new TcpServer( TCP_PORT) {
+			@Override
+			public void connectionEstablished( Socket socket)
 			{
-				ths.connectionLost(socket);
+				ths.connectionEstablished( socket);
 			}
 
+			@Override
+			public void connectionTerminated( Socket socket)
+			{
+				ths.connectionTerminated( socket);
+			}
+
+			@Override
 			public void received( String message, Socket socket)
 			{
-				ths.messageReceived(message, socket);
+				ths.messageReceived( message, socket);
 			}
 		};
 
-		udp = new UdpServer(UDP_PORT)
-		{
+		udp = new UdpServer( UDP_PORT) {
 			public void screenshotReceived( Screenshot img, DatagramPacket packet)
 			{
-				ths.screenshotReceived(img, packet);
+				ths.screenshotReceived( img, packet);
 			}
 		};
 	}
 
 	/**
+	 * Handles the new opened connection
+	 * @param socket - The new socket
+	 */
+	public abstract void connectionEstablished( Socket socket);
+	
+	/**
 	 * Handles the closed connection
 	 * @param socket - the socket that has been closed
 	 */
-	public abstract void connectionLost( Socket socket);
+	public abstract void connectionTerminated( Socket socket);
 
 	/**
 	 * Processes the received message
-	 * @param msg - the contents of the message
+	 * @param msg    - the contents of the message
 	 * @param socket - the connection that received the message from
 	 */
 	public abstract void messageReceived( String msg, Socket socket);
 
 	/**
 	 * Processes the received Screenshot
-	 * @param img - the received Screenshot via packet
+	 * @param img    - the received Screenshot via packet
 	 * @param packet - The Datagram Packet
 	 */
 	public abstract void screenshotReceived( Screenshot img, DatagramPacket packet);
 
 	/**
-	 * Sends a message to all connected clients 
+	 * Sends a message to all connected clients
 	 * @param msg - The message to be sent
 	 */
 	public void sendMessageToAll( String msg)
@@ -80,7 +92,7 @@ public abstract class Server
 
 	/**
 	 * Sends a message to the specified client
-	 * @param msg - The message to be sent
+	 * @param msg     - The message to be sent
 	 * @param address - The InetAddress of the client
 	 */
 	public void sendMessage( String msg, InetAddress address)
@@ -91,9 +103,11 @@ public abstract class Server
 
 	/**
 	 * Sends a message to the specified client
-	 * @param msg - The message to be sent
+	 * @param msg     - The message to be sent
 	 * @param address - The IP of the client
-	 * @throws UnknownHostException if no IP address for the host could be found, or if a scope_id was specified for a global IPv6 address
+	 * @throws UnknownHostException if no IP address for the host could be found, or
+	 *                              if a scope_id was specified for a global IPv6
+	 *                              address
 	 */
 	public void sendMessage( String msg, String address) throws UnknownHostException
 	{
