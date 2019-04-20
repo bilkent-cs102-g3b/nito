@@ -35,7 +35,6 @@ public class Screenshot implements Serializable, Cloneable
 
 	/**
 	 * Creates a screenshot for sending. The scale may be reduced if this scaling leads to a byte size bigger than {@value #MAX_SIZE}<br>
-	 * @param img - the screenshot image
 	 * @param scale - the intended scaling during sending
 	 */
 	public Screenshot( double scale)
@@ -128,7 +127,7 @@ public class Screenshot implements Serializable, Cloneable
 	/**
 	 * Deserializes the Screenshot from byte array
 	 * @param data - The byte array containing serialization of a Screenshot
-	 * @return 
+	 * @return The deserialized screenshot
 	 */
 	public static Screenshot deserialize( byte[] data)
 	{

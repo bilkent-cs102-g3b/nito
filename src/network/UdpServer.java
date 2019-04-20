@@ -50,7 +50,6 @@ public abstract class UdpServer
 
 	/**
 	 * Receives the screenshot sent to this server
-	 * @return The Screenshot object containing the data about the sender and the image
 	 */
 	private void readScreenshot()
 	{

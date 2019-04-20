@@ -17,7 +17,7 @@ public class TcpServerTester
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner (System.in);
 		Server server = new Server() {
-			public void connectionLost( Socket socket)
+			public void connectionTerminated( Socket socket)
 			{
 				System.out.println( "Connection lost with " + socket.getInetAddress());
 			}
@@ -29,6 +29,12 @@ public class TcpServerTester
 
 			public void screenshotReceived( Screenshot img, DatagramPacket packet)
 			{
+			}
+
+			@Override
+			public void connectionEstablished( Socket socket)
+			{
+				System.out.println("Connection established with " + socket.getInetAddress().getHostAddress());
 			}
 		};
 		String s;

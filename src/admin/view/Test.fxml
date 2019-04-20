@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<MigPane cols="[grow 10][grow 40][grow 10][grow 10]" rows="[]-4[]50[]push[]" fx:controller="admin.view.Test" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label text="Nito stores your work in the specified folder" style="-fx-font-size: 25;" MigPane.cc="span, wrap"/>
+        <Label text="Select your workspace folder" style="-fx-font-size: 20" MigPane.cc="span, wrap"/>
+        
+        <Label text="Workspace:" style="-fx-font-size: 25" MigPane.cc="right"/>
+        <TextField MigPane.cc="spanx 2, grow"/>
+        <Button text="Browse" MigPane.cc="wrap, grow"/>
+        
+       <CheckBox text="Set it as default and do not ask again"  MigPane.cc="spanx 2"/>
+       <Button text="OK" MigPane.cc="grow"/>
+       <Button text="Cancel" MigPane.cc="grow"/>
+        
+    </children>
+</MigPane>
