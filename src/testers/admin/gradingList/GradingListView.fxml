@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.MenuBar?>
+
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import testers.admin.gradingList.*?> 
+
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testers.admin.gradingList.GradingListViewController">
+	<!-- Menu bar -->
+	<MenuBar useSystemMenuBar="true">
+		<Menu text="File">
+			<Menu text="New">
+				<MenuItem text="Exam" />
+				<MenuItem text="Exam Instructions" />
+				<MenuItem text="..." />
+			</Menu>
+		</Menu>
+		<Menu text="Edit">
+			<MenuItem text="..." />
+		</Menu>
+		<Menu text="Window">
+			<MenuItem text="..." />
+		</Menu>
+		<Menu text="Help">
+			<MenuItem text="..." />
+		</Menu>
+	</MenuBar>
+	
+	<!-- Table -->
+	<TableView fx:id="table" >
+		<columns>
+		
+			<TableColumn text = "Select" fx:id = "select">
+			</TableColumn> 
+			
+			<TableColumn text = "Full Name" fx:id = "name">
+				<cellValueFactory><PropertyValueFactory property="name" />
+        		</cellValueFactory>
+			</TableColumn> 
+			
+			<TableColumn text = "ID" fx:id = "idNumber">
+				<cellValueFactory><PropertyValueFactory property="idNumber" />
+        		</cellValueFactory>
+			</TableColumn> 
+			
+			<TableColumn text = "Group" fx:id = "group">
+			<cellValueFactory><PropertyValueFactory property="group" />
+        		</cellValueFactory>
+			</TableColumn> 
+			
+			<TableColumn text = "Question 1" fx:id = "q1">
+			</TableColumn> 
+			
+			<TableColumn text = "Question 2" fx:id = "q2">
+			</TableColumn> 
+		</columns>
+		
+		<items>
+			 <FXCollections fx:factory="observableArrayList">
+			 	<ExamineeTableItem name="Mokhlaroyim raupova" group="3GB" idNumber= "21801355"/>
+			 </FXCollections>
+		</items>
+		
+	</TableView>
+</VBox>
+
