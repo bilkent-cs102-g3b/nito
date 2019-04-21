@@ -21,7 +21,7 @@ public class Group extends ArrayList<Examinee>
 
 	/**
 	 * Creates new Group with the specified title.
-	 * @param title - The title of the group
+	 * @param title The title of the group
 	 */
 	public Group( String title)
 	{
@@ -40,7 +40,7 @@ public class Group extends ArrayList<Examinee>
 	}
 
 	/**
-	 * @param title - The title to set
+	 * @param title The title to set
 	 */
 	public void setTitle( String title)
 	{

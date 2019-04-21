@@ -31,7 +31,7 @@ public abstract class TcpServer
 		msgListenerThreads = new ArrayList<>();
 		try
 		{
-			server = new ServerSocket(port);
+			server = new ServerSocket( port);
 		}
 		catch (IOException e)
 		{
@@ -40,7 +40,7 @@ public abstract class TcpServer
 		}
 
 		// Listens for connections
-		connectionListenerThread = new Thread(new Runnable() {
+		connectionListenerThread = new Thread( new Runnable() {
 			@Override
 			public void run()
 			{
@@ -51,24 +51,30 @@ public abstract class TcpServer
 	}
 
 	/**
-	 * Handles the closed connection
-	 * @param socket The socket that was closed
+	 * Handles the new opened connection
+	 * @param socket - The new socket
 	 */
-	public abstract void connectionLost(Socket socket);
+	public abstract void connectionEstablished( Socket socket);
+
+	/**
+	 * Handles the closed connection
+	 * @param socket - The socket that was closed
+	 */
+	public abstract void connectionTerminated( Socket socket);
 
 	/**
 	 * Processes the incoming message
 	 * @param message The message received
-	 * @param socket The socket that the message received from
+	 * @param socket  The socket that the message received from
 	 */
-	public abstract void received(String message, Socket socket);
+	public abstract void received( String message, Socket socket);
 
 	/**
 	 * Listens for connections and creates a new socket for them
 	 */
 	private void listenForConnections()
 	{
-		while (true)
+		while ( true)
 		{
 			Socket socket;
 			try
@@ -81,11 +87,11 @@ public abstract class TcpServer
 			}
 
 			// Wait until the work on sockets finishes
-			while (isBlocked)
+			while ( isBlocked)
 			{
 				try
 				{
-					Thread.sleep(100);
+					Thread.sleep( 100);
 				}
 				catch (InterruptedException e)
 				{
@@ -94,14 +100,14 @@ public abstract class TcpServer
 			isBlocked = true;
 			sockets.add( socket);
 			isBlocked = false;
+			connectionEstablished( socket);
 			System.out.println( socket.getInetAddress() + ":" + socket.getPort() + " is now connected!");
 
 			// Listens for messages
-			msgListenerThreads.add( new Thread( new Runnable()
-			{
+			msgListenerThreads.add( new Thread( new Runnable() {
 				public void run()
 				{
-					listenForMessages(socket);
+					listenForMessages( socket);
 				}
 			}));
 			msgListenerThreads.get( msgListenerThreads.size() - 1).start();
@@ -117,7 +123,7 @@ public abstract class TcpServer
 		String message = "";
 		boolean isAlive = true;
 
-		while (isAlive)
+		while ( isAlive)
 		{
 			try
 			{
@@ -128,26 +134,26 @@ public abstract class TcpServer
 				isAlive = false;
 			}
 
-			if (message.contains(Server.TERMINATION))
+			if ( message.contains( Server.TERMINATION))
 			{
-				received(message.substring(0, message.length() - 3), socket);
+				received( message.substring( 0, message.length() - 3), socket);
 				message = "";
 			}
 		}
 
-		connectionLost(socket);
-		while (isBlocked)
+		connectionTerminated( socket);
+		while ( isBlocked)
 		{
 			try
 			{
-				Thread.sleep(100);
+				Thread.sleep( 100);
 			}
 			catch (InterruptedException e)
 			{
 			}
 		}
 		isBlocked = true;
-		sockets.remove(socket);
+		sockets.remove( socket);
 		isBlocked = false;
 	}
 
@@ -155,29 +161,29 @@ public abstract class TcpServer
 	 * Sends a message over all available connections
 	 * @param msg The message to send
 	 */
-	public void sendMessageToAll(String msg)
+	public void sendMessageToAll( String msg)
 	{
 		ArrayList<Socket> erase = new ArrayList<>();
 
 		byte[] data = msg.getBytes();
-		for (Socket socket : sockets)
+		for ( Socket socket : sockets)
 		{
 			try
 			{
-				socket.getOutputStream().write(data);
+				socket.getOutputStream().write( data);
 			}
 			catch (IOException e)
 			{
-				connectionLost(socket);
-				erase.add(socket);
+				connectionTerminated( socket);
+				erase.add( socket);
 			}
 		}
 
-		while (isBlocked)
+		while ( isBlocked)
 		{
 			try
 			{
-				Thread.sleep(100);
+				Thread.sleep( 100);
 			}
 			catch (InterruptedException e)
 			{
@@ -186,41 +192,41 @@ public abstract class TcpServer
 			}
 		}
 		isBlocked = true;
-		sockets.removeAll(erase);
+		sockets.removeAll( erase);
 		isBlocked = false;
 	}
 
 	/**
 	 * Send a message to the specified address
-	 * @param msg The message to send
+	 * @param msg     The message to send
 	 * @param address The address of the intended receiver
 	 */
-	public void sendMessage(String msg, InetAddress address)
+	public void sendMessage( String msg, InetAddress address)
 	{
 		ArrayList<Socket> erase = new ArrayList<>();
 
 		byte[] data = msg.getBytes();
-		for (Socket socket : sockets)
+		for ( Socket socket : sockets)
 		{
-			if (address.equals(socket.getInetAddress()))
+			if ( address.equals( socket.getInetAddress()))
 			{
 				try
 				{
-					socket.getOutputStream().write(data);
+					socket.getOutputStream().write( data);
 				}
 				catch (IOException e)
 				{
-					connectionLost(socket);
-					erase.add(socket);
+					connectionTerminated( socket);
+					erase.add( socket);
 				}
 			}
 		}
 
-		while (isBlocked)
+		while ( isBlocked)
 		{
 			try
 			{
-				Thread.sleep(100);
+				Thread.sleep( 100);
 			}
 			catch (InterruptedException e)
 			{
@@ -229,19 +235,21 @@ public abstract class TcpServer
 			}
 		}
 		isBlocked = true;
-		sockets.removeAll(erase);
+		sockets.removeAll( erase);
 		isBlocked = false;
 	}
 
 	/**
 	 * Send a message to the specified address
-	 * @param msg The message to send
+	 * @param msg     The message to send
 	 * @param address The address of the intended receiver
-	 * @throws UnknownHostException if no IP address for the host could be found, or if a scope_id was specified for a global IPv6 address
+	 * @throws UnknownHostException if no IP address for the host could be found, or
+	 *                              if a scope_id was specified for a global IPv6
+	 *                              address
 	 */
-	public void sendMessage(String msg, String address) throws UnknownHostException
+	public void sendMessage( String msg, String address) throws UnknownHostException
 	{
-		sendMessage(msg, InetAddress.getByName(address));
+		sendMessage( msg, InetAddress.getByName( address));
 	}
 
 	/**
@@ -249,15 +257,15 @@ public abstract class TcpServer
 	 */
 	public void close()
 	{
-		// Closing listeners 
-		for (Thread msgListenerThread : msgListenerThreads)
+		// Closing listeners
+		for ( Thread msgListenerThread : msgListenerThreads)
 		{
 			msgListenerThread.interrupt();
 		}
 		connectionListenerThread.interrupt();
 
 		// Closing connections
-		for (Socket socket : sockets)
+		for ( Socket socket : sockets)
 		{
 			try
 			{

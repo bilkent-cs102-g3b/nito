@@ -51,7 +51,7 @@ public class UdpServerTester
 		mmPanel.add( scroll);
 		
 		Server server = new Server() {
-			public void connectionLost( Socket socket)
+			public void connectionTerminated( Socket socket)
 			{
 				System.out.println("Connection lost with " + socket.getInetAddress());
 			}
@@ -80,6 +80,12 @@ public class UdpServerTester
 				img.scale(panel.getPreferredSize().width, panel.getPreferredSize().height);
 				panel.show(img);
 				//frame.validate();
+			}
+
+			@Override
+			public void connectionEstablished( Socket socket)
+			{
+				System.out.println("Connection established with " + socket.getInetAddress());
 			}
 		};
 		slider.addChangeListener(new ChangeListener() {

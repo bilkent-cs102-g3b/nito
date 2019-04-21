@@ -17,7 +17,7 @@ public class IDGenerator
 	/**
 	 * Generates a unique random ID for the specified className and marks this ID as
 	 * used
-	 * @param className - The name of the class this id will represent
+	 * @param className The name of the class this id will represent
 	 * @return Unique random ID
 	 */
 	public static String generate( String className)
@@ -36,7 +36,7 @@ public class IDGenerator
 
 	/**
 	 * Randomly generates an ID without checking for uniqueness
-	 * @param className
+	 * @param className The name of the class this id will represent
 	 * @return Random ID
 	 */
 	private static String randomGenerate( String className)
