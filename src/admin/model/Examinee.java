@@ -1,5 +1,6 @@
 package admin.model;
 
+import java.io.File;
 import java.net.Socket;
 
 import network.Screenshot;
@@ -26,6 +27,7 @@ public class Examinee
 	// private Exam exam;
 	private int status;
 	private Group group;
+	private File folder;
 
 	/**
 	 * Creates a new examinee with the specified name
@@ -49,6 +51,7 @@ public class Examinee
 		setName( name);
 		setGroup( group);
 		this.socket = socket;
+		folder = Workspace.getFolderOfExaminee( this);
 	}
 
 	/**

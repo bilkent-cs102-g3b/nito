@@ -6,30 +6,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>245</x>
-      <y>84</y>
-      <w>182</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>Model
---
-+TYPE_EXAM = 1: int
-+TYPE_QUESTION = 2: int
-+TYPE_PART = 3: int
-+TYPE_... = ...: int
--server: Server
--entries: ArrayList
--examinees: ArrayList
---
-+createEntry(type, id, title, ...): void
-+editEntry(Entry, String?): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>490</x>
-      <y>91</y>
+      <x>721</x>
+      <y>259</y>
       <w>182</w>
       <h>112</h>
     </coordinates>
@@ -47,8 +25,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>105</y>
+      <x>931</x>
+      <y>273</y>
       <w>112</w>
       <h>84</h>
     </coordinates>
@@ -64,22 +42,27 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>266</x>
-      <y>273</y>
+      <x>490</x>
+      <y>441</y>
       <w>140</w>
-      <h>49</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Exam
 --
 -startTime: LocalDateTime
--length: int</panel_attributes>
+-length: int
+--
++isStarted(): boolean
++isEnded(): boolean
++timeLeft(): int
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
-      <y>273</y>
+      <x>728</x>
+      <y>441</y>
       <w>91</w>
       <h>35</h>
     </coordinates>
@@ -92,8 +75,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>273</y>
+      <x>826</x>
+      <y>441</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -106,9 +89,9 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
-      <y>273</y>
-      <w>77</w>
+      <x>637</x>
+      <y>441</y>
+      <w>84</w>
       <h>21</h>
     </coordinates>
     <panel_attributes>Instruction</panel_attributes>
@@ -117,8 +100,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>756</x>
-      <y>273</y>
+      <x>987</x>
+      <y>441</y>
       <w>56</w>
       <h>21</h>
     </coordinates>
@@ -128,8 +111,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>686</x>
-      <y>273</y>
+      <x>917</x>
+      <y>441</y>
       <w>63</w>
       <h>21</h>
     </coordinates>
@@ -139,19 +122,19 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
-      <y>196</y>
-      <w>238</w>
+      <x>567</x>
+      <y>364</y>
+      <w>245</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>320.0;10.0;320.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+    <additional_attributes>330.0;10.0;330.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
-      <y>147</y>
+      <x>896</x>
+      <y>315</y>
       <w>49</w>
       <h>21</h>
     </coordinates>
@@ -159,23 +142,10 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>385</x>
-      <y>35</y>
-      <w>77</w>
-      <h>35</h>
-    </coordinates>
-    <panel_attributes>Workspace
---
--folder: File</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>196</y>
+      <x>679</x>
+      <y>364</y>
       <w>133</w>
       <h>91</h>
     </coordinates>
@@ -185,8 +155,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>532</x>
-      <y>196</y>
+      <x>763</x>
+      <y>364</y>
       <w>49</w>
       <h>91</h>
     </coordinates>
@@ -196,8 +166,8 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>196</y>
+      <x>791</x>
+      <y>364</y>
       <w>84</w>
       <h>91</h>
     </coordinates>
@@ -207,19 +177,19 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>196</y>
-      <w>175</w>
+      <x>791</x>
+      <y>364</y>
+      <w>168</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;230.0;70.0;230.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;220.0;70.0;220.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>196</y>
+      <x>791</x>
+      <y>364</y>
       <w>238</w>
       <h>91</h>
     </coordinates>
@@ -227,54 +197,10 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
     <additional_attributes>10.0;10.0;10.0;70.0;320.0;70.0;320.0;110.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>56</x>
-      <y>84</y>
-      <w>126</w>
-      <h>182</h>
-    </coordinates>
-    <panel_attributes>Examinee
---
-+STATUS_... = ...: int
--status: int
--address: InetAddress
--folder: File
--id: String
--name: String
--group: Group
--exam: Exam
--notes: String
--solutions: ?
--points: ?
---
-+Examinee(): ctor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>56</x>
-      <y>308</y>
-      <w>126</w>
-      <h>105</h>
-    </coordinates>
-    <panel_attributes>Group
---
--id: String
--title: String
--examinees: ArrayList
---
-+Group(id, name): ctor
-+add
-+remove</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>154</y>
+      <x>651</x>
+      <y>322</y>
       <w>84</w>
       <h>28</h>
     </coordinates>
@@ -285,8 +211,8 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>21</y>
+      <x>805</x>
+      <y>189</y>
       <w>196</w>
       <h>98</h>
     </coordinates>
@@ -297,37 +223,142 @@ m1=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>322</x>
-      <y>49</y>
-      <w>77</w>
-      <h>49</h>
+      <x>532</x>
+      <y>84</y>
+      <w>28</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>105</x>
-      <y>259</y>
-      <w>35</w>
-      <h>63</h>
+      <y>427</y>
+      <w>126</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=0..*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0;160.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
-      <y>154</y>
-      <w>84</w>
+      <x>301</x>
+      <y>322</y>
+      <w>77</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=0..*</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>105</y>
+      <w>308</w>
+      <h>329</h>
+    </coordinates>
+    <panel_attributes>admin.model::Examinee
+--
++STATUS_DISCONNECTED = 1: int
++STATUS_CONNECTED = 2: int
++STATUS_BANNED = 3: int
++STATUS_SUSPENDED = 4: int
++STATUS_DONE = 5: int
+-socket: Socket
+-screen: Screenshot
+-id: String
+-name: String
+-status: int
+-group: Group
+-folder: File
+--
++Examinee(String name, Socket socket): ctor
++Examinee(String name, Group group, Socket socket): ctor
++getName(): String
++setName(String name): void
++getGroup(): Group
++setGroup(Group group): void
++getId(): String
++getStatus(): int
++toString(): String
++getScreen(): Screenshot
++setScreen(Screenshot screen): void
++getSocket(): Socket</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>217</x>
+      <y>441</y>
+      <w>266</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>admin.model::Group
+--
+-serialVersionUID = 3723395721432132991L: long
++DEFAULT = new Group("Default"): Group
+-id: String
+-title: String
+--
++Group(String title): ctor
++getTitle(): String
++setTitle(String title): void
++getId(): String
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>364</x>
+      <y>147</y>
+      <w>294</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>admin.model::Model
+--
+-secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09": String
+-views: ArrayList&lt;NitoAdminView&gt;
+-groups: ArrayList&lt;Group&gt;
+-server: Server
+-socketMap: TreeMap&lt;String, Examinee&gt;
+--
++Model(): ctor
++createGroup(String title): Group
+-createExaminee(String name, Socket socket): Examinee
++changeExamineeGroup(Examinee e, Group g): void
++sendMessage(String msg, Examinee examinee): void
++getGroups(): ArrayList&lt;Group&gt;
++getExaminees(): Collection&lt;Examinee&gt;
++toString(): String
++addView(NitoAdminView view): void
+-updateViews(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>0</y>
+      <w>224</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>admin.model::Workspace
+--
+-workspace: File
+--
++setWorkspace(File workspace): void
++getWorkspace(): File
++getExamineesFolder(): File
++getFolderOfExaminee(Examinee e): File</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
