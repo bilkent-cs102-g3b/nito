@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.CheckBoxTreeItem?>
+<?import javafx.scene.control.TreeItem?>
+<?import javafx.scene.control.Button?>
+
+<SplitPane minWidth="400" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="examinee.view.MainScreenController"
+	dividerPositions="0.3f">
+	<VBox alignment="TOP_CENTER">
+		<!-- QUESTIONS TREE -->
+		<TreeView minWidth="100" showRoot="true" fx:id="treeView" />
+
+
+		<MigPane layout="wrap" rows="push[]push[]push" cols="[]" VBox.vgrow="ALWAYS">
+			<!-- TIME -->
+			<Label text="TIME: 80.15 / 120" MigPane.cc="span, center" style="-fx-font-size: 17"/>
+			<!-- SUBMIT ALL WORK -->
+			<Button text="Submit All Work" />
+		</MigPane>
+	</VBox>
+
+	<Pane />
+
+	<!-- TEXT EDITOR -->
+</SplitPane>
+
