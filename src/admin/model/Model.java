@@ -17,6 +17,8 @@ import network.Server;
  */
 public class Model
 {
+	private String secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
+
 	private ArrayList<NitoAdminView> views;
 
 	private ArrayList<Group> groups;
@@ -49,10 +51,16 @@ public class Model
 			{
 				String[] parts = msg.split( ":");
 
-				if ( parts[0].equals( "name"))
+				if ( !parts[0].equals( secret))
+				{
+					// Not from Nito. Ignore
+					return;
+				}
+
+				if ( parts[1].equals( "name"))
 				{
 					// Connection request
-					createExaminee( parts[1], socket);
+					createExaminee( parts[2], socket);
 				}
 				else
 				{
@@ -86,6 +94,7 @@ public class Model
 	public Group createGroup( String title)
 	{
 		groups.add( new Group( title));
+		updateViews();
 		return groups.get( groups.size() - 1);
 	}
 
@@ -99,6 +108,7 @@ public class Model
 	{
 		Examinee e = new Examinee( name, socket);
 		socketMap.put( socket.getInetAddress().getHostAddress(), e);
+		updateViews();
 		return e;
 	}
 
@@ -110,6 +120,7 @@ public class Model
 	public void changeExamineeGroup( Examinee e, Group g)
 	{
 		e.setGroup( g);
+		updateViews();
 	}
 
 	/**
@@ -119,7 +130,7 @@ public class Model
 	 */
 	public void sendMessage( String msg, Examinee examinee)
 	{
-		server.sendMessage( msg, examinee.getSocket().getInetAddress());
+		server.sendMessage( secret + ":message:" + msg, examinee.getSocket().getInetAddress());
 	}
 
 	/**
@@ -145,13 +156,15 @@ public class Model
 	}
 
 	/**
-	 * Adds a view to this model. The updateView method of this view will be
-	 * automatically called whenever it is necessary
+	 * Adds a view to this model and immediately calls updateView method. The
+	 * updateView method of this view will be automatically called whenever it is
+	 * necessary
 	 * @param view The view to add to this model
 	 */
 	public void addView( NitoAdminView view)
 	{
 		views.add( view);
+		view.updateView( this);
 	}
 
 	/**
@@ -159,10 +172,16 @@ public class Model
 	 */
 	private void updateViews()
 	{
-		// TODO Open new threads for updates?
+		Model ref = this;
 		for ( NitoAdminView view : views)
 		{
-			view.updateView( this);
+			new Thread( new Runnable() {
+				@Override
+				public void run()
+				{
+					view.updateView( ref);
+				}
+			}).start();
 		}
 	}
 }

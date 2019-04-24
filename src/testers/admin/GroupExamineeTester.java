@@ -1,10 +1,10 @@
-package testers.admin.model;
+package testers.admin;
 
 /**
  * @author Ziya Mukhtarov
  * @version 18/04/2019
  */
-public class GroupExaminee
+public class GroupExamineeTester
 {
 	public static void main( String[] args)
 	{
