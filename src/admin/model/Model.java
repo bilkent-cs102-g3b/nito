@@ -3,8 +3,6 @@ package admin.model;
 import java.net.DatagramPacket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.TreeMap;
 
 import admin.NitoAdminView;
 import network.Screenshot;
@@ -22,9 +20,9 @@ public class Model
 	private ArrayList<NitoAdminView> views;
 
 	private ArrayList<Group> groups;
+	private Examinees examinees;
 
 	private Server server;
-	private TreeMap<String, Examinee> socketMap;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -33,6 +31,8 @@ public class Model
 	{
 		groups = new ArrayList<>();
 		groups.add( Group.DEFAULT);
+
+		examinees = new Examinees();
 
 		server = new Server() {
 			@Override
@@ -71,7 +71,7 @@ public class Model
 			@Override
 			public void screenshotReceived( Screenshot img, DatagramPacket packet)
 			{
-				Examinee e = socketMap.get( packet.getAddress().getHostAddress());
+				Examinee e = examinees.getByIP( packet.getAddress().getHostAddress());
 				if ( e != null)
 				{
 					e.setScreen( img);
@@ -82,8 +82,6 @@ public class Model
 				}
 			}
 		};
-
-		socketMap = new TreeMap<>();
 	}
 
 	/**
@@ -106,8 +104,7 @@ public class Model
 	 */
 	private Examinee createExaminee( String name, Socket socket)
 	{
-		Examinee e = new Examinee( name, socket);
-		socketMap.put( socket.getInetAddress().getHostAddress(), e);
+		Examinee e = examinees.newExaminee( name, socket);
 		updateViews();
 		return e;
 	}
@@ -144,9 +141,9 @@ public class Model
 	/**
 	 * @return The examinees
 	 */
-	public Collection<Examinee> getExaminees()
+	public Examinees getExaminees()
 	{
-		return socketMap.values();
+		return examinees;
 	}
 
 	@Override

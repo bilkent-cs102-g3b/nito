@@ -9,7 +9,7 @@ import java.io.File;
 public class Workspace
 {
 	private static File workspace;
-	
+
 	/**
 	 * @param workspace - The new workspace folder
 	 */
@@ -17,12 +17,16 @@ public class Workspace
 	{
 		Workspace.workspace = workspace;
 	}
-	
+
 	/**
 	 * @return The workspace folder
 	 */
 	public static File getWorkspace()
 	{
+		if ( workspace == null)
+		{
+			setWorkspace( new File( System.getProperty( "user.dir") + File.separator + "Workpsace"));
+		}
 		workspace.mkdirs();
 		return workspace;
 	}
@@ -32,11 +36,11 @@ public class Workspace
 	 */
 	public static File getExamineesFolder()
 	{
-		File folder = new File( workspace.getPath() + File.separator + "Examinees");
+		File folder = new File( getWorkspace().getPath() + File.separator + "Examinees");
 		folder.mkdirs();
 		return folder;
 	}
-	
+
 	/**
 	 * @param e - The examinee
 	 * @return The folder of the specified examinee inside the workspace

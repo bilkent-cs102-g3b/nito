@@ -114,6 +114,16 @@ public class Examinee
 	}
 
 	/**
+	 * @return A string that can be used for searching. In other words, if this
+	 *         returned string contains some search text, then this examinee can be
+	 *         a search result
+	 */
+	public String getStringForSearch()
+	{
+		return name;
+	}
+
+	/**
 	 * @return The screen
 	 */
 	public Screenshot getScreen()
