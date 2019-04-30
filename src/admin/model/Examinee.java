@@ -8,7 +8,7 @@ import network.Screenshot;
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 18/04/2019
+ * @version 01/05/2019
  */
 public class Examinee
 {
@@ -51,7 +51,6 @@ public class Examinee
 		setName( name);
 		setGroup( group);
 		this.socket = socket;
-		folder = Workspace.getFolderOfExaminee( this);
 	}
 
 	/**
@@ -111,6 +110,16 @@ public class Examinee
 	public String toString()
 	{
 		return "Examinee [id=" + id + ", name=" + name + ", status=" + status + ", group=" + group.getTitle() + "]";
+	}
+
+	/**
+	 * @return A string that can be used for searching. In other words, if this
+	 *         returned string contains some search text, then this examinee can be
+	 *         a search result
+	 */
+	public String getStringForSearch()
+	{
+		return name;
 	}
 
 	/**
