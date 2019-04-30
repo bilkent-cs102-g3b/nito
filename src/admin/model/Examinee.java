@@ -8,7 +8,7 @@ import network.Screenshot;
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 18/04/2019
+ * @version 01/05/2019
  */
 public class Examinee
 {
@@ -51,7 +51,6 @@ public class Examinee
 		setName( name);
 		setGroup( group);
 		this.socket = socket;
-		folder = Workspace.getFolderOfExaminee( this);
 	}
 
 	/**
