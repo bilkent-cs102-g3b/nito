@@ -1,5 +1,6 @@
 package testers.tcp;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ import network.*;
  */
 public class TcpServerTester
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner (System.in);

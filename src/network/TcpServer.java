@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Simple TCP Server for sending and receiving messages
  * @author Ziya Mukhtarov
- * @version 11/01/2019
+ * @version 01/05/2019
  */
 public abstract class TcpServer
 {
@@ -23,22 +23,14 @@ public abstract class TcpServer
 	/**
 	 * Opens a new socket for receiving TCP connections
 	 * @param port The port to listen on
+	 * @throws IOException if an I/O error occurs when opening the socket.
 	 */
-	public TcpServer( int port)
+	public TcpServer( int port) throws IOException
 	{
 		isBlocked = false;
 		sockets = new ArrayList<>();
 		msgListenerThreads = new ArrayList<>();
-		try
-		{
-			server = new ServerSocket( port);
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		server = new ServerSocket( port);
 		// Listens for connections
 		connectionListenerThread = new Thread( new Runnable() {
 			@Override
@@ -52,13 +44,13 @@ public abstract class TcpServer
 
 	/**
 	 * Handles the new opened connection
-	 * @param socket - The new socket
+	 * @param socket The new socket
 	 */
 	public abstract void connectionEstablished( Socket socket);
 
 	/**
 	 * Handles the closed connection
-	 * @param socket - The socket that was closed
+	 * @param socket The socket that was closed
 	 */
 	public abstract void connectionTerminated( Socket socket);
 
@@ -83,6 +75,7 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
+				e.printStackTrace();
 				continue;
 			}
 
@@ -95,6 +88,8 @@ public abstract class TcpServer
 				}
 				catch (InterruptedException e)
 				{
+					e.printStackTrace();
+					Thread.currentThread().interrupt();
 				}
 			}
 			isBlocked = true;
@@ -131,6 +126,7 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
+				e.printStackTrace();
 				isAlive = false;
 			}
 
@@ -150,6 +146,8 @@ public abstract class TcpServer
 			}
 			catch (InterruptedException e)
 			{
+				e.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
 		}
 		isBlocked = true;
@@ -174,6 +172,7 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
+				e.printStackTrace();
 				connectionTerminated( socket);
 				erase.add( socket);
 			}
@@ -187,8 +186,8 @@ public abstract class TcpServer
 			}
 			catch (InterruptedException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
 		}
 		isBlocked = true;
@@ -216,6 +215,7 @@ public abstract class TcpServer
 				}
 				catch (IOException e)
 				{
+					e.printStackTrace();
 					connectionTerminated( socket);
 					erase.add( socket);
 				}
@@ -230,8 +230,8 @@ public abstract class TcpServer
 			}
 			catch (InterruptedException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
 		}
 		isBlocked = true;
@@ -273,7 +273,6 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -283,10 +282,9 @@ public abstract class TcpServer
 		{
 			server.close();
 		}
-		catch (IOException e1)
+		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 }

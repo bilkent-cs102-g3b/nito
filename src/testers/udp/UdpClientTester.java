@@ -1,16 +1,20 @@
 package testers.udp;
 
 import java.awt.AWTException;
-import java.net.UnknownHostException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import network.Client;
 import network.Screenshot;
 
+/**
+ * @author Ziya Mukhtarov
+ * @version 01/05/2019
+ */
 public class UdpClientTester
 {
 	static double scale = 0.25;
-	public static void main(String[] args) throws UnknownHostException, AWTException
+	public static void main(String[] args) throws AWTException, IOException
 	{
 		Scanner scan = new Scanner( System.in);
 		String addr = "localhost";
