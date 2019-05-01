@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<Dialog headerText="Create a new exam" title="New Exam" xmlns:fx="http://javafx.com/fxml/1">
+	<dialogPane>
+		<DialogPane prefHeight="400" prefWidth="800">
+			<!-- Dialog icon -->
+	 	   <!-- Dialog content -->
+		    <content>
+			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10][grow 10]20" rows="30[]push[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					<Label text="Title:" MigPane.cc="width 114, left"/>
+					<TextField MigPane.cc="grow, wrap"/>
+				        
+					<Label text="Start Date and Time:" MigPane.cc="width 130, left"/>
+					<DatePicker MigPane.cc="" promptText="DD/MM/YYYY"/>
+					<Spinner MigPane.cc=""/>
+					<Spinner MigPane.cc="wrap"/>
+					
+					<Label text="Length:" MigPane.cc="width 114, left"/>
+					<Spinner MigPane.cc="width 100"/>
+					<Spinner MigPane.cc="width 100, wrap"/>
+				</MigPane>
+			</content>
+			
+			<!-- Dialog buttons -->
+			<buttonTypes>
+				<ButtonType fx:constant="OK"/>
+				<ButtonType fx:constant="CANCEL" />
+			</buttonTypes>
+		</DialogPane>
+	</dialogPane>
+</Dialog>
