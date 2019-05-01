@@ -13,7 +13,7 @@ public class DialogTester extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws MalformedURLException, IOException {
-		((Dialog<?>) FXMLLoader.load(new File("src/admin/view/NewExamDialog.fxml").toURI().toURL())).showAndWait();
+		((Dialog<?>) FXMLLoader.load(new File("src/admin/view/NewQuestionPartDialog.fxml").toURI().toURL())).showAndWait();
 	}
 
 	public static void main(String[] args) {
