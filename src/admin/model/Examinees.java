@@ -51,10 +51,7 @@ public class Examinees
 	{
 		// TODO check if socket already exists in map?
 		Examinee e = new Examinee( name, socket);
-		// TODO
-		// TODO
-		// TODO
-		socketMap.put( IDGenerator.generate( "smth"), e);
+		socketMap.put( socket.getInetAddress().getHostAddress(), e);
 		return e;
 	}
 }

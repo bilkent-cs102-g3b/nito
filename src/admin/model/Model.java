@@ -1,5 +1,6 @@
 package admin.model;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -11,15 +12,14 @@ import network.Server;
 /**
  * The main model class for admin interface
  * @author Ziya Mukhtarov
- * @version 18/04/2019
+ * @version 01/05/2019
  */
 public class Model
 {
-	private String secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
+	private static final String secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 
 	private ArrayList<NitoAdminView> views;
 
-	private ArrayList<Group> groups;
 	private Examinees examinees;
 
 	private Server server;
@@ -29,71 +29,64 @@ public class Model
 	 */
 	public Model()
 	{
-		groups = new ArrayList<>();
-		groups.add( Group.DEFAULT);
-
 		examinees = new Examinees();
 
-		server = new Server() {
-			@Override
-			public void connectionEstablished( Socket socket)
-			{
-			}
-
-			@Override
-			public void connectionTerminated( Socket socket)
-			{
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void messageReceived( String msg, Socket socket)
-			{
-				String[] parts = msg.split( ":");
-
-				if ( !parts[0].equals( secret))
+		try
+		{
+			server = new Server() {
+				@Override
+				public void connectionEstablished( Socket socket)
 				{
-					// Not from Nito. Ignore
-					return;
 				}
 
-				if ( parts[1].equals( "name"))
+				@Override
+				public void connectionTerminated( Socket socket)
 				{
-					// Connection request
-					createExaminee( parts[2], socket);
+					// TODO Auto-generated method stub
 				}
-				else
-				{
-					// TODO
-				}
-			}
 
-			@Override
-			public void screenshotReceived( Screenshot img, DatagramPacket packet)
-			{
-				Examinee e = examinees.getByIP( packet.getAddress().getHostAddress());
-				if ( e != null)
+				@Override
+				public void messageReceived( String msg, Socket socket)
 				{
-					e.setScreen( img);
-				}
-				else
-				{
-					System.out.println( "Received screenshot, but examinee not initialized! From IP: " + packet.getAddress().getHostAddress());
-				}
-			}
-		};
-	}
+					String[] parts = msg.split( ":::");
 
-	/**
-	 * Creates new group for examinees with the specified title
-	 * @param title The title
-	 * @return The reference to created Group
-	 */
-	public Group createGroup( String title)
-	{
-		groups.add( new Group( title));
-		updateViews();
-		return groups.get( groups.size() - 1);
+					if ( !parts[0].equals( secret))
+					{
+						// Not from Nito. Ignore
+						return;
+					}
+
+					if ( parts[1].equals( "name"))
+					{
+						// Connection request
+						createExaminee( parts[2], socket);
+					}
+					else
+					{
+						// TODO
+					}
+				}
+
+				@Override
+				public void screenshotReceived( Screenshot img, DatagramPacket packet)
+				{
+					Examinee e = examinees.getByIP( packet.getAddress().getHostAddress());
+					if ( e != null)
+					{
+						e.setScreen( img);
+					}
+					else
+					{
+						System.out.println( "Received screenshot, but examinee not initialized! From IP: " + packet.getAddress().getHostAddress());
+					}
+				}
+			};
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -110,17 +103,6 @@ public class Model
 	}
 
 	/**
-	 * Changes the group of an examinee
-	 * @param e The examinee to change the group of
-	 * @param g The new group of the examinee
-	 */
-	public void changeExamineeGroup( Examinee e, Group g)
-	{
-		e.setGroup( g);
-		updateViews();
-	}
-
-	/**
 	 * Sends the message to the specified examinee
 	 * @param msg      The message to send
 	 * @param examinee The examinee to send the message to
@@ -131,25 +113,11 @@ public class Model
 	}
 
 	/**
-	 * @return The groups
-	 */
-	public ArrayList<Group> getGroups()
-	{
-		return groups;
-	}
-
-	/**
 	 * @return The examinees
 	 */
 	public Examinees getExaminees()
 	{
 		return examinees;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Model [groups=" + groups + "]";
 	}
 
 	/**
