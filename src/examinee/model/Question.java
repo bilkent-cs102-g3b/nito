@@ -7,9 +7,4 @@ public class Question extends ExamEntry
 	{
 		super(id, title, content, markable, editable);
 	}
-	
-	public void save()
-	{
-		//TODO: File saving system
-	}
 }
