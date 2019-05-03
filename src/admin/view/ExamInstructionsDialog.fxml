@@ -9,25 +9,25 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create parts" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create new instructions for the exams" title="New Exam Instruction" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane prefHeight="300" prefWidth="600">
+		<DialogPane prefHeight="280" prefWidth="500">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10]20" rows="30[]20[]20[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10]20" rows="20[]20[]20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 					
-					<Label text="Title:" MigPane.cc="width 60, left"/>
-					<TextField MigPane.cc="grow, wrap"/>
+					<Label text="Exam:" MigPane.cc="width 60, left"/>
+					<ChoiceBox MigPane.cc="width 100, wrap"/>
 				        
-					<Label text="Maximum points:" MigPane.cc="width 100, left"/>
-					<Spinner MigPane.cc="width 80, wrap"/>
+					<CheckBox text="Import" MigPane.cc="width 60"/>
+					<TextField promptText="Import text file" MigPane.cc="width 160"/>
+					<Button mnemonicParsing="false" text="Browse" />
 				</MigPane>
 			</content>
 			
 			<!-- Dialog buttons -->
 			<buttonTypes>
-				<ButtonType fx:constant="PREVIOUS" />
 				<ButtonType fx:constant="OK" />
 				<ButtonType fx:constant="CANCEL" />
 			</buttonTypes>
