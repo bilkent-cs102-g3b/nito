@@ -1,6 +1,7 @@
 package testers.udp;
 
 import java.awt.Dimension;
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.Socket;
 import java.util.Collection;
@@ -19,17 +20,16 @@ import javax.swing.event.ChangeListener;
 import network.Screenshot;
 import network.Server;
 
+/**
+ * @author Ziya Mukhtarov
+ * @version 01/05/2019
+ */
 public class UdpServerTester
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
 	{
-		try
-		{
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e)
-		{
-		}
+		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		
 		JFrame frame = new JFrame();
 		JPanel mmPanel = new JPanel();
 		frame.setBounds(100, 100, 450, 300);

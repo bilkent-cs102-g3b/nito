@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<Dialog headerText="Nito stores your work in the specified folder" title="Workspace" xmlns:fx="http://javafx.com/fxml/1">
+	<dialogPane>
+		<DialogPane>
+			<!-- Dialog icon -->
+	 	   <!-- Dialog content -->
+		    <content>
+			    <MigPane cols="[grow 10][grow 40][grow 10][grow 10]" rows="[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					<Label text="Workspace:" MigPane.cc="right"/>
+					<TextField MigPane.cc="spanx 2, grow"/>
+					<Button text="Browse" MigPane.cc="wrap, grow"/>
+				        
+					<CheckBox text="Set it as default and do not ask again"  MigPane.cc="spanx 2"/>
+				</MigPane>
+			</content>
+			
+			<!-- Dialog buttons -->
+			<buttonTypes>
+				<ButtonType fx:constant="OK" />
+				<ButtonType fx:constant="CANCEL" />
+			</buttonTypes>
+		</DialogPane>
+	</dialogPane>
+</Dialog>

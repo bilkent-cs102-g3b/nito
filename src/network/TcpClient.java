@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 /**
  * Simple TCP client for sending and receiving messages
  * @author Ziya Mukhtarov
- * @version 15/02/2019
+ * @version 01/05/2019
  */
 public abstract class TcpClient
 {
@@ -17,24 +17,17 @@ public abstract class TcpClient
 
 	/**
 	 * Creates a TCP client and connects it to the specified server
-	 * @param serverAddress - The IP address of the server
-	 * @param serverPort - The port that the server is listening
-	 * @throws UnknownHostException - if no IP address for the host could be found, or if a scope_id was specified for a global IPv6 address
+	 * @param serverAddress The IP address of the server
+	 * @param serverPort    The port that the server is listening
+	 * @throws IOException          if an I/O error occurs when creating the socket.
+	 * @throws UnknownHostException if no IP address for the host could be found, or
+	 *                              if a scope_id was specified for a global IPv6
+	 *                              address
 	 */
-	public TcpClient(String serverAddress, int serverPort) throws UnknownHostException
+	public TcpClient( String serverAddress, int serverPort) throws UnknownHostException, IOException
 	{
-		try
-		{
-			socket = new Socket(serverAddress, serverPort);
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		msgListenerThread = new Thread(new Runnable()
-		{
+		socket = new Socket( serverAddress, serverPort);
+		msgListenerThread = new Thread( new Runnable() {
 			public void run()
 			{
 				listenForMessages();
@@ -45,31 +38,31 @@ public abstract class TcpClient
 
 	/**
 	 * Handles the received message
-	 * @param msg - The message received
+	 * @param msg The message received
 	 */
-	public abstract void received(String msg);
+	public abstract void received( String msg);
 
 	/**
 	 * Sends a message to the server
-	 * @param msg - The message to be sent
+	 * @param msg The message to be sent
 	 */
-	public void sendMessage(String msg)
+	public void sendMessage( String msg)
 	{
 		msg += Server.TERMINATION;
 		byte[] data = msg.getBytes();
 		try
 		{
-			socket.getOutputStream().write(data);
+			socket.getOutputStream().write( data);
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * Continuously listens for any message on the socket. Calls received(message) once a message arrives. <br>
+	 * Continuously listens for any message on the socket. Calls received(message)
+	 * once a message arrives. <br>
 	 * Warning: This method blocks until the socket is closed or some error occurs
 	 */
 	private void listenForMessages()
@@ -81,15 +74,15 @@ public abstract class TcpClient
 		{
 			stream = socket.getInputStream();
 		}
-		catch (IOException e1)
+		catch (IOException e)
 		{
 			return;
 		}
 
-		while (true)
+		while ( true)
 		{
 			msg = "";
-			while (!msg.contains(Server.TERMINATION))
+			while ( !msg.contains( Server.TERMINATION))
 			{
 				try
 				{
@@ -97,12 +90,12 @@ public abstract class TcpClient
 				}
 				catch (IOException e)
 				{
-					// TODO Auto-generated catch block
+					e.printStackTrace();
 					return;
 				}
 			}
 
-			received(msg.substring(0, msg.length() - 3));
+			received( msg.substring( 0, msg.length() - 3));
 		}
 	}
 
@@ -118,7 +111,6 @@ public abstract class TcpClient
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

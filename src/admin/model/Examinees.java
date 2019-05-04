@@ -3,11 +3,10 @@ package admin.model;
 import java.net.Socket;
 import java.util.TreeMap;
 
-// TODO Singleton?
 /**
  * For handling all the work associated with examinees during exam
  * @author Ziya Mukhtarov
- * @version 29/04/2019
+ * @version 04/05/2019
  */
 public class Examinees
 {
@@ -51,10 +50,7 @@ public class Examinees
 	{
 		// TODO check if socket already exists in map?
 		Examinee e = new Examinee( name, socket);
-		// TODO
-		// TODO
-		// TODO
-		socketMap.put( IDGenerator.generate( "smth"), e);
+		socketMap.put( socket.getInetAddress().getHostAddress(), e);
 		return e;
 	}
 }

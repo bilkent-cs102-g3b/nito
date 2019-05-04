@@ -4,12 +4,13 @@ import network.*;
 
 public class ExamEntry extends ExamContainer
 {
-	private String id;
+	protected String id;
 	private boolean markable;
 	private boolean editable;
 	private boolean done;
 	private String title;
-	protected String content;
+	private String content;
+	protected final String SECRET = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 	
 	public ExamEntry( String id, String title, String content, boolean markable, boolean editable)
 	{
@@ -22,11 +23,6 @@ public class ExamEntry extends ExamContainer
 		this.markable = markable;
 		this.editable = editable;
 		done = false;
-	}
-	
-	public void send( Client c)
-	{
-		c.sendMessage(content);
 	}
 	
 	public void setDone()

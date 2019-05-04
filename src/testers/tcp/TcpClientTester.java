@@ -1,13 +1,17 @@
 package testers.tcp;
 
-import java.net.UnknownHostException;
+import java.io.IOException;
 import java.util.Scanner;
 
-import network.*;
+import network.Client;
 
+/**
+ * @author Ziya Mukhtarov
+ * @version 01/05/2019
+ */
 public class TcpClientTester
 {
-	public static void main(String[] args) throws UnknownHostException
+	public static void main(String[] args) throws IOException
 	{
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner (System.in);

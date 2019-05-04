@@ -1,6 +1,5 @@
 package admin.model;
 
-import java.io.File;
 import java.net.Socket;
 
 import network.Screenshot;
@@ -8,7 +7,7 @@ import network.Screenshot;
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 01/05/2019
+ * @version 04/05/2019
  */
 public class Examinee
 {
@@ -26,8 +25,6 @@ public class Examinee
 	private String name;
 	// private Exam exam;
 	private int status;
-	private Group group;
-	private File folder;
 
 	/**
 	 * Creates a new examinee with the specified name
@@ -36,20 +33,8 @@ public class Examinee
 	 */
 	public Examinee( String name, Socket socket)
 	{
-		this( name, Group.DEFAULT, socket);
-	}
-
-	/**
-	 * Creates a new examinee with the specified name and assigns this to the group
-	 * @param name   The name of the examinee
-	 * @param group  The group to add this examinee to
-	 * @param socket The socket to this examinee
-	 */
-	public Examinee( String name, Group group, Socket socket)
-	{
-		id = IDGenerator.generate( getClass().getName());
+		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);
-		setGroup( group);
 		this.socket = socket;
 	}
 
@@ -67,27 +52,6 @@ public class Examinee
 	public void setName( String name)
 	{
 		this.name = name;
-	}
-
-	/**
-	 * @return The group
-	 */
-	public Group getGroup()
-	{
-		return group;
-	}
-
-	/**
-	 * @param group The group to set
-	 */
-	public void setGroup( Group group)
-	{
-		if ( this.group != null)
-		{
-			this.group.remove( this);
-		}
-		this.group = group;
-		group.add( this);
 	}
 
 	/**
@@ -109,7 +73,7 @@ public class Examinee
 	@Override
 	public String toString()
 	{
-		return "Examinee [id=" + id + ", name=" + name + ", status=" + status + ", group=" + group.getTitle() + "]";
+		return "Examinee [id=" + id + ", name=" + name + ", status=" + status + "]";
 	}
 
 	/**

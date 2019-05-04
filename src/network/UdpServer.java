@@ -8,7 +8,7 @@ import java.net.SocketException;
 /**
  * Simple UDP Server for receiving images
  * @author Ziya Mukhtarov
- * @version 17/04/2019
+ * @version 01/05/2019
  */
 public abstract class UdpServer
 {
@@ -18,21 +18,14 @@ public abstract class UdpServer
 	/**
 	 * Opens a new socket for receiving UDP connections
 	 * @param port The port to listen on
+	 * @throws SocketException if the socket could not be opened, or the socket
+	 *                         could not bind to the specified local port.
 	 */
-	public UdpServer(int port)
+	public UdpServer( int port) throws SocketException
 	{
-		try
-		{
-			socket = new DatagramSocket(port);
-		}
-		catch (SocketException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		socket = new DatagramSocket( port);
 
-		listenerThread = new Thread(new Runnable()
-		{
+		listenerThread = new Thread( new Runnable() {
 			public void run()
 			{
 				readScreenshot();
@@ -43,8 +36,8 @@ public abstract class UdpServer
 
 	/**
 	 * Handles the received Screenshot
-	 * @param img - the Screenshot received via the packet
-	 * @param packet - The Datagram Packet 
+	 * @param img    the Screenshot received via the packet
+	 * @param packet The Datagram Packet
 	 */
 	public abstract void screenshotReceived( Screenshot img, DatagramPacket packet);
 
@@ -53,17 +46,16 @@ public abstract class UdpServer
 	 */
 	private void readScreenshot()
 	{
-		while (true)
+		while ( true)
 		{
-			byte[] buf = new byte[ Screenshot.MAX_SIZE + 1];
-			DatagramPacket packet = new DatagramPacket(buf, buf.length);
+			byte[] buf = new byte[Screenshot.MAX_SIZE + 1];
+			DatagramPacket packet = new DatagramPacket( buf, buf.length);
 			try
 			{
-				socket.receive(packet);
+				socket.receive( packet);
 			}
 			catch (IOException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -76,6 +68,7 @@ public abstract class UdpServer
 	 */
 	public void close()
 	{
+		listenerThread.interrupt();
 		socket.close();
 	}
 }

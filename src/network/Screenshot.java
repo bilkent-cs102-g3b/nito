@@ -2,7 +2,6 @@ package network;
 
 import java.awt.AWTException;
 import java.awt.Graphics2D;
-import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Robot;
@@ -21,7 +20,7 @@ import javax.imageio.ImageIO;
 /**
  * A class for working with screenshots
  * @author Ziya Mukhtarov
- * @version 17/04/2019
+ * @version 01/05/2019
  */
 public class Screenshot implements Serializable, Cloneable
 {
@@ -34,63 +33,55 @@ public class Screenshot implements Serializable, Cloneable
 	private double scale;
 
 	/**
-	 * Creates a screenshot for sending. The scale may be reduced if this scaling leads to a byte size bigger than {@value #MAX_SIZE}<br>
-	 * @param scale - the intended scaling during sending
+	 * Creates a screenshot for sending. The scale may be reduced if this scaling
+	 * leads to a byte size bigger than {@value #MAX_SIZE}<br>
+	 * @param scale the intended scaling during sending
+	 * @throws AWTException if the screen cannot be captured
 	 */
-	public Screenshot( double scale)
+	public Screenshot( double scale) throws AWTException
 	{
-		try
+		img = new Robot().createScreenCapture( new Rectangle( Toolkit.getDefaultToolkit().getScreenSize()));
+
+		if ( scale <= 0 || scale > 1)
 		{
-			img = new Robot().createScreenCapture ( new Rectangle (Toolkit.getDefaultToolkit().getScreenSize()));
-		}
-		catch (HeadlessException | AWTException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		if (scale <= 0 || scale > 1)
-		{
-			throw new IllegalArgumentException("The scale value should be in the range (0,1].");
+			throw new IllegalArgumentException( "The scale value should be in the range (0,1].");
 		}
 		this.scale = scale;
 	}
 
 	/**
 	 * Writes object to ObjectOutputStream during serialization
-	 * @param out - The output stream
+	 * @param out The output stream
 	 */
-    private void writeObject( ObjectOutputStream out)
-    {
-    	try
+	private void writeObject( ObjectOutputStream out)
+	{
+		try
 		{
 			out.defaultWriteObject();
-	    	ImageIO.write( img, "png", out);
+			ImageIO.write( img, "png", out);
 		}
-    	catch (IOException e)
+		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
 
-    /**
+	/**
 	 * Reads object from ObjectInputStream during deserialization
-	 * @param in - The input stream
-     */
-    private void readObject( ObjectInputStream in)
-    {
-    	try
+	 * @param in The input stream
+	 */
+	private void readObject( ObjectInputStream in)
+	{
+		try
 		{
-    		in.defaultReadObject();
-			img = ImageIO.read(in);
+			in.defaultReadObject();
+			img = ImageIO.read( in);
 		}
-    	catch (IOException | ClassNotFoundException e)
+		catch (IOException | ClassNotFoundException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
 
 	/**
 	 * Serializes the Screenshot into byte array
@@ -101,24 +92,23 @@ public class Screenshot implements Serializable, Cloneable
 		byte[] result;
 		ByteArrayOutputStream baos;
 		ObjectOutputStream oos;
-		
+
 		try
 		{
 			baos = new ByteArrayOutputStream();
 			oos = new ObjectOutputStream( baos);
-			
-			oos.writeObject(this);
+
+			oos.writeObject( this);
 			oos.flush();
 			result = baos.toByteArray();
-			
+
 			oos.close();
 			baos.close();
-			
+
 			return result;
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -126,7 +116,7 @@ public class Screenshot implements Serializable, Cloneable
 
 	/**
 	 * Deserializes the Screenshot from byte array
-	 * @param data - The byte array containing serialization of a Screenshot
+	 * @param data The byte array containing serialization of a Screenshot
 	 * @return The deserialized screenshot
 	 */
 	public static Screenshot deserialize( byte[] data)
@@ -134,27 +124,26 @@ public class Screenshot implements Serializable, Cloneable
 		Screenshot result;
 		ByteArrayInputStream bais;
 		ObjectInputStream ois;
-		
+
 		try
 		{
 			bais = new ByteArrayInputStream( data);
 			ois = new ObjectInputStream( bais);
-			
+
 			result = (Screenshot) ois.readObject();
 
 			ois.close();
 			bais.close();
-			
+
 			return result;
 		}
 		catch (IOException | ClassNotFoundException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Returns the byte size of serialized current screenshot
 	 * @return The byte size of serialized current screenshot
@@ -173,27 +162,27 @@ public class Screenshot implements Serializable, Cloneable
 			s = (Screenshot) super.clone();
 
 			ColorModel cm = img.getColorModel();
-			s.img = new BufferedImage( cm, img.copyData(null), cm.isAlphaPremultiplied(), null);
-			
+			s.img = new BufferedImage( cm, img.copyData( null), cm.isAlphaPremultiplied(), null);
+
 			return s;
 		}
 		catch (CloneNotSupportedException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	/**
-	 * Updates the value of scale to the biggest possible scaling that does not exceed UDP limits.
-	 * This method uses Binary Search algorithm to work efficiently
+	 * Updates the value of scale to the biggest possible scaling that does not
+	 * exceed UDP limits. This method uses Binary Search algorithm to work
+	 * efficiently
 	 */
 	private void updateScale()
 	{
 		double l, r, m;
 		Screenshot tmp = (Screenshot) this.clone();
-		tmp.scale(scale);
+		tmp.scale( scale);
 		if ( tmp.getSize() <= MAX_SIZE)
 		{
 			return;
@@ -201,11 +190,11 @@ public class Screenshot implements Serializable, Cloneable
 
 		l = 0;
 		r = scale - 0.01;
-		while (r - l > 0.01)
+		while ( r - l > 0.01)
 		{
 			m = (l + r) / 2;
 			tmp = (Screenshot) this.clone();
-			tmp.scale(m);
+			tmp.scale( m);
 			if ( tmp.getSize() > MAX_SIZE)
 				r = m;
 			else
@@ -215,40 +204,42 @@ public class Screenshot implements Serializable, Cloneable
 	}
 
 	/**
-	 * Prepares the screenshot for sending over UDP. Scales the image to specified scale or the maximum possible scaling.
-	 * The original screenshot will be lost and replaced with the scaled one<br>
+	 * Prepares the screenshot for sending over UDP. Scales the image to specified
+	 * scale or the maximum possible scaling. The original screenshot will be lost
+	 * and replaced with the scaled one<br>
 	 * <strong>Note:</strong> Always call before sending
 	 */
 	public void prepareForSending()
 	{
 		updateScale();
-		scale(scale);
+		scale( scale);
 	}
 
 	/**
 	 * Scales the screenshot
-	 * @param scale - A double value that will be multiplied with the current dimensions
+	 * @param scale A double value that will be multiplied with the current
+	 *              dimensions
 	 */
-	public void scale(double scale)
+	public void scale( double scale)
 	{
 		int newWidth = (int) (img.getWidth() * scale);
 		int newHeight = (int) (img.getHeight() * scale);
-		scale(newWidth, newHeight);
+		scale( newWidth, newHeight);
 	}
 
 	/**
 	 * Scales the screenshot
-	 * @param newWidth - The width of the resulting screenshot
-	 * @param newHeight - The height of the resulting screenshot
+	 * @param newWidth  The width of the resulting screenshot
+	 * @param newHeight The height of the resulting screenshot
 	 */
-	public void scale(int newWidth, int newHeight)
+	public void scale( int newWidth, int newHeight)
 	{
-		Image result = img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-		img = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_3BYTE_BGR);
+		Image result = img.getScaledInstance( newWidth, newHeight, Image.SCALE_SMOOTH);
+		img = new BufferedImage( newWidth, newHeight, BufferedImage.TYPE_3BYTE_BGR);
 
 		// Converting Image to BufferedImage
 		Graphics2D g2d = img.createGraphics();
-		g2d.drawImage(result, 0, 0, null);
+		g2d.drawImage( result, 0, 0, null);
 		g2d.dispose();
 	}
 

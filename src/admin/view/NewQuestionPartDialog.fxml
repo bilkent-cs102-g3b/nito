@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<Dialog headerText="Create parts" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
+	<dialogPane>
+		<DialogPane prefHeight="300" prefWidth="600">
+			<!-- Dialog icon -->
+	 	   <!-- Dialog content -->
+		    <content>
+			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10]20" rows="30[]20[]20[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					
+					<Label text="Title:" MigPane.cc="width 60, left"/>
+					<TextField MigPane.cc="grow, wrap"/>
+				        
+					<Label text="Maximum points:" MigPane.cc="width 100, left"/>
+					<Spinner MigPane.cc="width 80, wrap"/>
+				</MigPane>
+			</content>
+			
+			<!-- Dialog buttons -->
+			<buttonTypes>
+				<ButtonType fx:constant="PREVIOUS" />
+				<ButtonType fx:constant="OK" />
+				<ButtonType fx:constant="CANCEL" />
+			</buttonTypes>
+		</DialogPane>
+	</dialogPane>
+</Dialog>

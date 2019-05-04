@@ -7,10 +7,4 @@ public class Instruction extends ExamEntry
 	{
 		super(id, title, content, markable, editable);
 	}
-	
-	public void save()
-	{
-		//TODO: File saving system
-	}
-	
 }

@@ -2,7 +2,7 @@ package examinee.model;
 
 import network.*;
 
-public class QuestionPart extends ExamEntry implements Sendable
+public class QuestionPart extends ExamEntry implements Submitable
 {
 	// properties
 	private String solution;
@@ -20,27 +20,16 @@ public class QuestionPart extends ExamEntry implements Sendable
 		solution = answerTemplate;
 	}
 
-
-	@Override
-	public void send()
-	{
-		
-	}
 	
 	public void updateSolution(String s)
 	{
 		solution = s;
 	}
-	
-	public void save()
-	{
-		
-	}
-	
-	public void submit( Client c)
-	{
-		this.content = solution;
-		super.send(c);
-	}
 
+	@Override
+	public void submit(Client c)
+	{	
+		c.sendMessage( SECRET + ":::" + "solution" + ":::"+ id + solution);	
+	}
+	
 }
