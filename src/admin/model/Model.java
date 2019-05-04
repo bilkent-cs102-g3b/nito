@@ -12,17 +12,20 @@ import network.Server;
 /**
  * The main model class for admin interface
  * @author Ziya Mukhtarov
- * @version 01/05/2019
+ * @version 04/05/2019
  */
 public class Model
 {
 	private static final String secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
+	public static final int STATUS_PREPARATION = 1;
+	public static final int STATUS_EXAM_MODE = 2;
+	public static final int STATUS_GRADING = 3;
 
+	private int status;
 	private ArrayList<NitoAdminView> views;
-
 	private Examinees examinees;
-
 	private Server server;
+	private Container entries;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -30,7 +33,21 @@ public class Model
 	public Model()
 	{
 		examinees = new Examinees();
+		entries = new Container();
+		status = STATUS_PREPARATION;
+	}
 
+	/**************************** PREPARATION ****************************/
+	// TODO
+
+	/**************************** MONITORING *****************************/
+	/**
+	 * Start the specified exam
+	 * @param e the exam to start TODO
+	 */
+	public void startExam( Exam exam)
+	{
+		Model _this = this;
 		try
 		{
 			server = new Server() {
@@ -59,7 +76,8 @@ public class Model
 					if ( parts[1].equals( "name"))
 					{
 						// Connection request
-						createExaminee( parts[2], socket);
+						Examinee examinee = createExaminee( parts[2], socket);
+						exam.send( examinee, _this);
 					}
 					else
 					{
@@ -87,6 +105,8 @@ public class Model
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		status = STATUS_EXAM_MODE;
 	}
 
 	/**
@@ -107,9 +127,9 @@ public class Model
 	 * @param msg      The message to send
 	 * @param examinee The examinee to send the message to
 	 */
-	public void sendMessage( String msg, Examinee examinee)
+	public void sendMessage( String msg, String type, Examinee examinee)
 	{
-		server.sendMessage( secret + ":message:" + msg, examinee.getSocket().getInetAddress());
+		server.sendMessage( secret + ":::" + type + ":::" + msg, examinee.getSocket().getInetAddress());
 	}
 
 	/**
@@ -120,6 +140,10 @@ public class Model
 		return examinees;
 	}
 
+	/****************************** GRADING ******************************/
+	// TODO
+
+	/****************************** GENERAL ******************************/
 	/**
 	 * Adds a view to this model and immediately calls updateView method. The
 	 * updateView method of this view will be automatically called whenever it is
@@ -148,5 +172,13 @@ public class Model
 				}
 			}).start();
 		}
+	}
+
+	/**
+	 * @return Current status of this model
+	 */
+	public int getStatus()
+	{
+		return status;
 	}
 }

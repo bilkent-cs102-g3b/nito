@@ -7,7 +7,7 @@ import network.Screenshot;
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 01/05/2019
+ * @version 04/05/2019
  */
 public class Examinee
 {
@@ -33,7 +33,7 @@ public class Examinee
 	 */
 	public Examinee( String name, Socket socket)
 	{
-		id = IDGenerator.generate( getClass().getName());
+		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);
 		this.socket = socket;
 	}

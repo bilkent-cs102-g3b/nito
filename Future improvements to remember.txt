@@ -1,0 +1,1 @@
+1) Replace/Improve network to use UPnP? Look at: https://github.com/adolfintel/WaifUPnP
