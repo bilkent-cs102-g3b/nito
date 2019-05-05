@@ -61,8 +61,11 @@
 		
 		<!-- EDITOR -->
 		<TabPane minWidth="300">
-			<Tab text="item1">
+			<Tab text="Question 1">
+			<SplitPane dividerPositions="0.15f" orientation="VERTICAL">
 				<NumberedEditor />
+				<NumberedEditor />
+			</SplitPane>
 			</Tab>
 		</TabPane>
 		
