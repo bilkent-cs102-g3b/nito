@@ -1,4 +1,4 @@
-package default_package;
+package common;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

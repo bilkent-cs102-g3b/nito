@@ -1,4 +1,4 @@
-package default_package;
+package common;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;

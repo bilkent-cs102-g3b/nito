@@ -3,7 +3,7 @@ package testers.tcp;
 import java.io.IOException;
 import java.util.Scanner;
 
-import network.Client;
+import common.network.Client;
 
 /**
  * @author Ziya Mukhtarov

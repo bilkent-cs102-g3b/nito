@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 import admin.NitoAdminView;
-import network.Screenshot;
-import network.Server;
+import common.network.Screenshot;
+import common.network.Server;
 
 /**
  * The main model class for admin interface

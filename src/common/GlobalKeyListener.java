@@ -1,4 +1,4 @@
-package default_package;
+package common;
 
 import me.coley.simplejna.hook.key.KeyEventReceiver;
 import me.coley.simplejna.hook.key.KeyHookManager;

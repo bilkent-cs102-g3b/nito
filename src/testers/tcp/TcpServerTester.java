@@ -5,7 +5,8 @@ import java.net.DatagramPacket;
 import java.net.Socket;
 import java.util.Scanner;
 
-import network.*;
+import common.network.Screenshot;
+import common.network.Server;
 
 /**
  * @author Ziya Mukhtarov

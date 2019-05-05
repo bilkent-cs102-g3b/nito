@@ -7,20 +7,20 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class MainTester extends Application
+public class WelcomeTabTester extends Application
 {
 
 	@Override
 	public void start( Stage stage) throws MalformedURLException, IOException
 	{
-		Pane root;
+		TabPane root;
 		String resource;
 
-		resource = "/admin/view/fxml/Main.fxml";
+		resource = "/admin/view/fxml/WelcomeTab.fxml";
 		root = FXMLLoader.load( getClass().getResource( resource));
 		Scene scene = new Scene( root, 1200, 675);
 		stage.setScene( scene);

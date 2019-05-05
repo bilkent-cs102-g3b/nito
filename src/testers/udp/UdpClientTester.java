@@ -4,8 +4,8 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import network.Client;
-import network.Screenshot;
+import common.network.Client;
+import common.network.Screenshot;
 
 /**
  * @author Ziya Mukhtarov

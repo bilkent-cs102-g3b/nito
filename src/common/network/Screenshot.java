@@ -1,4 +1,4 @@
-package network;
+package common.network;
 
 import java.awt.AWTException;
 import java.awt.Graphics2D;

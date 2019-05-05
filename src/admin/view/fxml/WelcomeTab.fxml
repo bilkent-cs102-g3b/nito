@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<TabPane minWidth="300" xmlns:fx="http://javafx.com/fxml/1">
+	<Tab text="Welcome">
+		<VBox VBox.vgrow="ALWAYS">
+			<MigPane cols="push[]push[]push[]push">
+				<ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="/logo.png"/>
+					</image>
+				</ImageView>
+				
+				<Pane/>
+				
+				<ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="/BilLogo.png"/>
+					</image>
+				</ImageView>
+			</MigPane>
+			<MigPane layout="nogrid" cols="[grow 25][grow 25][grow 25][grow 25]" rows="40[]30[]35[]20[]push[]" style="-fx-font-size: 25;">
+				<Label text="Welcome to the Nito Exam System" MigPane.cc="spanx, center, wrap"/>
+
+				<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="9.0" fx:id="logoPlus" MigPane.cc="spany 2, alignx 45%"/>
+				<Hyperlink text="New Exam" MigPane.cc=""/>
+			
+				<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="12.0" fx:id="instructions" MigPane.cc="spany 2, gapleft 130"/>
+				<Hyperlink text="Instructions" MigPane.cc="wrap"/>
+				
+				<Label text="Create a new exam" MigPane.cc="alignx 70%" style="-fx-font-size:15px;"/>
+				<Label text="See the basics of using Nito" MigPane.cc="gapleft 189, wrap" style="-fx-font-size:15px;"/>
+				
+				<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="9.0" fx:id="importExam" MigPane.cc="spany 2, alignx 36%"/>
+				<Hyperlink text="Import Exam" MigPane.cc=""/>
+				
+				<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="12.0" fx:id="about" MigPane.cc="spany 2, gapleft 110"/>
+				<Hyperlink text="About" MigPane.cc="gapleft 15, wrap"/>
+				
+				<Label text="Import an existing exam" MigPane.cc="alignx 63%" style="-fx-font-size:15px;"/>
+				<Label text="Learn more about Nito" MigPane.cc="gapleft 170, wrap" style="-fx-font-size:15px;"/>
+			</MigPane>
+		</VBox> 
+	</Tab>
+</TabPane>

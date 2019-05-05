@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import network.Screenshot;
+import common.network.Screenshot;
 
 public class ScreenPanel extends JPanel
 {

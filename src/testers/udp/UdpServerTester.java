@@ -17,8 +17,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import network.Screenshot;
-import network.Server;
+import common.network.Screenshot;
+import common.network.Server;
 
 /**
  * @author Ziya Mukhtarov

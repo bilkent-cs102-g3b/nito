@@ -11,7 +11,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
-<?import default_package.NumberedEditor?>
+<?import common.NumberedEditor?>
 
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.MainController">
 
@@ -62,10 +62,7 @@
 		<!-- EDITOR -->
 		<TabPane minWidth="300">
 			<Tab text="Question 1">
-			<SplitPane dividerPositions="0.15f" orientation="VERTICAL">
-				<NumberedEditor />
-				<NumberedEditor />
-			</SplitPane>
+			<NumberedEditor />
 			</Tab>
 		</TabPane>
 		

@@ -1,4 +1,4 @@
-package default_package;
+package common;
 
 
 import javafx.beans.value.ChangeListener;

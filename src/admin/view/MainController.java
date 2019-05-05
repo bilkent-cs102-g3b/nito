@@ -2,7 +2,7 @@ package admin.view;
 
 import org.controlsfx.control.BreadCrumbBar;
 
-import default_package.NumberedEditor;
+import common.NumberedEditor;
 import javafx.fxml.FXML;
 import javafx.scene.control.TreeItem;
 

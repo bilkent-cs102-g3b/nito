@@ -2,7 +2,7 @@ package admin.model;
 
 import java.net.Socket;
 
-import network.Screenshot;
+import common.network.Screenshot;
 
 /**
  * This class is for one examinee during an exam
