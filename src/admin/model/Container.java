@@ -8,10 +8,10 @@ import java.util.*;
  * @version 19/04/2019
  */
 
-public class Container 
+public class Container
 {
 	//properties
-	private ArrayList<Examinee> children;
+	private ArrayList<Entry> children;
 	
 	//constructors
 	/**
@@ -19,9 +19,32 @@ public class Container
 	 */
 	public Container() 
 	{
-		children = new ArrayList< Examinee>();
-	}
+		children = new ArrayList<Entry>();
+	}		
 	
 	//methods
 	
+	/**
+	 * This method adds an entry to the Container of children
+	 * @param entry
+	 */
+	public void add( Entry entry)
+	{
+		children.add( entry);
+	}
+	
+	public ArrayList<Entry> getAll() 
+	{
+		ArrayList<Entry> entries  = new ArrayList<Entry>();
+		for( int x = 0; x < children.size(); x++)
+		{
+			entries.add( children.get( x));
+		}
+		return entries;
+	}
+	
+	public void remove( Entry entry)
+	{
+		children.remove( entry);
+	}
 }
