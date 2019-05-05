@@ -11,22 +11,19 @@
 
 <Dialog headerText="Create a new exam" title="New Exam" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane prefHeight="400" prefWidth="800">
+		<DialogPane prefHeight="200" prefWidth="500">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10][grow 10]20" rows="30[]push[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-					<Label text="Title:" MigPane.cc="width 114, left"/>
-					<TextField MigPane.cc="grow, wrap"/>
-				        
-					<Label text="Start Date and Time:" MigPane.cc="width 130, left"/>
-					<DatePicker MigPane.cc="" promptText="DD/MM/YYYY"/>
-					<Spinner MigPane.cc=""/>
-					<Spinner MigPane.cc="wrap"/>
+			    <MigPane cols="[][grow][][grow][]" rows="push[]push[]push">
+					<Label text="Title:" MigPane.cc="left"/>
+					<TextField MigPane.cc="grow, span, wrap"/>
 					
-					<Label text="Length:" MigPane.cc="width 114, left"/>
-					<Spinner MigPane.cc="width 100"/>
-					<Spinner MigPane.cc="width 100, wrap"/>
+					<Label text="Length:" MigPane.cc="left"/>
+					<Spinner MigPane.cc="grow, width 100"/>
+					<Label text="hour(s)" />
+					<Spinner MigPane.cc="grow, width 100"/>
+					<Label text="minute(s)" />
 				</MigPane>
 			</content>
 			

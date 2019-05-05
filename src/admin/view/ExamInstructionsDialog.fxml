@@ -9,20 +9,17 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create new instructions for the exams" title="New Exam Instruction" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane prefHeight="280" prefWidth="500">
+		<DialogPane prefHeight="150" prefWidth="300">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10]20" rows="20[]20[]20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			    <MigPane layout="wrap" cols="[][grow]" rows="push[]push[]push">
 					
-					<Label text="Exam:" MigPane.cc="width 60, left"/>
-					<ChoiceBox MigPane.cc="width 100, wrap"/>
-				        
-					<CheckBox text="Import" MigPane.cc="width 60"/>
-					<TextField promptText="Import text file" MigPane.cc="width 160"/>
-					<Button mnemonicParsing="false" text="Browse" />
+					<Label text="Exam:" MigPane.cc="left"/>
+					<ChoiceBox MigPane.cc="grow"/>
+					
 				</MigPane>
 			</content>
 			

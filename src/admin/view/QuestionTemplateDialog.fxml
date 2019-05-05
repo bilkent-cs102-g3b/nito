@@ -11,22 +11,18 @@
 
 <Dialog headerText="Create a new template for questions" title="New Question Template" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane prefHeight="280" prefWidth="550">
+		<DialogPane prefHeight="200" prefWidth="400">
 			<!-- Dialog icon -->
-	 	   <!-- Dialog content -->
+			<!-- Dialog content -->
 		    <content>
-			    <MigPane layout="nogrid" cols="20[grow 10][grow 40][grow 10]20" rows="20[]20[]20[]20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-					
-					<Label text="Exam:" MigPane.cc="width 90, left"/>
-					<ChoiceBox MigPane.cc="width 100, wrap"/>
-				        
-					<Label text="Question and parts:" MigPane.cc="width 90, left"/>
-					<ChoiceBox MigPane.cc="width 100"/>
-					<ChoiceBox MigPane.cc="width 100, wrap"/>
-					
-					<CheckBox text="Import" MigPane.cc="width 90"/>
-					<TextField promptText="Import text file" MigPane.cc="width 160"/>
-					<Button mnemonicParsing="false" text="Browse" />
+			    <MigPane layout="wrap" cols="[][grow][grow]" rows="push[]push[]push">
+
+					<Label text="Exam:" MigPane.cc="left"/>
+					<ChoiceBox MigPane.cc="span, grow"/>
+
+					<Label text="Question and parts:" MigPane.cc="left"/>
+					<ChoiceBox MigPane.cc="grow"/>
+					<ChoiceBox MigPane.cc="grow"/>
 				</MigPane>
 			</content>
 			
