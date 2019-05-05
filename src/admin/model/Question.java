@@ -1,6 +1,10 @@
 package admin.model;
-
-public class Question extends entry 
+/**
+ * This class is for Question
+ * @author Adeem Adil Khatri
+ * @version 5/05/2019
+ */
+public class Question extends Entry 
 {
 
 }
