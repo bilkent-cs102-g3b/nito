@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -18,11 +19,13 @@ public class WelcomeTabTester extends Application
 	public void start( Stage stage) throws MalformedURLException, IOException
 	{
 		TabPane root;
+		Tab w;
 		String resource;
 
 		resource = "/admin/view/fxml/WelcomeTab.fxml";
-		root = FXMLLoader.load( getClass().getResource( resource));
-		Scene scene = new Scene( root, 1200, 675);
+		w = FXMLLoader.load( getClass().getResource( resource));
+		root = new TabPane(w);
+		Scene scene = new Scene( root, 700, 400);
 		stage.setScene( scene);
 
 		stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
