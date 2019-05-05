@@ -35,12 +35,7 @@ public class Container
 	
 	public ArrayList<Entry> getAll() 
 	{
-		ArrayList<Entry> entries  = new ArrayList<Entry>();
-		for( int x = 0; x < children.size(); x++)
-		{
-			entries.add( children.get( x));
-		}
-		return entries;
+		return children;
 	}
 	
 	public void remove( Entry entry)

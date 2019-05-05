@@ -6,5 +6,29 @@ package admin.model;
  */
 public class Question extends Entry 
 {
-
+	//Properties
+	private int maxPoints;
+	
+	//Constructors
+	public Question()
+	{
+		maxPoints = 0;
+	}
+	
+	//Methods
+	/**
+	 * @param points
+	 */
+	public void setMaxPoints( int points)
+	{
+		maxPoints = points;
+	}
+	
+	/**
+	 * @return maxPoints
+	 */
+	public int maxPoints()
+	{
+		return maxPoints;
+	}
 }

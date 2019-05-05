@@ -10,4 +10,7 @@ public class Criteria extends Entry
 {
 	//properties
 	
+	//Constructors
+	
+	//methods
 }

@@ -3,7 +3,7 @@ package admin.model;
 /**
  * This class is for the Entry of an Exam.
  * @author Adeem Adil Khatri
- * @version 19/04/2019
+ * @version 5/05/2019
  */
 
 public class Entry
@@ -26,10 +26,11 @@ public class Entry
 	 */
 	public Entry()
 	{
-		visible = 0;
+		visible = VISIBLE_ALWAYS;
 		title = "";
-		id = "";
 		content = "";
+		id = IDHandler.getInstance().generate( this);
+		
 	}
 	
 	/**
