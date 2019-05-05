@@ -21,8 +21,9 @@ public class Main extends Application
 			Pane root;
 			String path;
 
-			path = "src/admin/view/Main.fxml";
+			path = "src/admin/view/WelcomeView.fxml";
 //			path = "src/examinee/view/Login.fxml";
+//			path= "src/testers/admin/gradingList/GradingListView.fxml";
 			root = (Pane) FXMLLoader.load(new File(path).toURI().toURL());
 			Scene scene = new Scene(root, 1200, 675);
 			stage.setScene( scene);
