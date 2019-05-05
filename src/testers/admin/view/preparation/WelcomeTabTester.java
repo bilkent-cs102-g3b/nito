@@ -25,7 +25,7 @@ public class WelcomeTabTester extends Application
 		resource = "/admin/view/fxml/WelcomeTab.fxml";
 		w = FXMLLoader.load( getClass().getResource( resource));
 		root = new TabPane(w);
-		Scene scene = new Scene( root, 700, 400);
+		Scene scene = new Scene( root, 1000, 600);
 		stage.setScene( scene);
 
 		stage.setOnCloseRequest( new EventHandler<WindowEvent>() {

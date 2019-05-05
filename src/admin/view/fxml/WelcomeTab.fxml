@@ -52,37 +52,37 @@
 	</fx:define>
 	
 	<VBox>
-		<MigPane cols="push[]push[]push[]push" style="-fx-background-color: #f4f4f4">
+		<MigPane cols="push[]push[]push[]push" style="-fx-background-color: #f4f4f4; -fx-padding:20px;">
 			<fx:reference source="logoNito" />
 			<Pane />
 			<fx:reference source="logoBilkent" />
 		</MigPane>
 		
-		<MigPane layout="wrap" rows="push[]push[]push[]push" cols="push[]push[]push" style="-fx-background-color: #eeeeee" VBox.vgrow="ALWAYS">
-			<Label text="Welcome to the Nito Exam System" MigPane.cc="span, center"/>
+		<MigPane layout="wrap" rows="push[]push[]push[]push" cols="push[]push[]push" style="-fx-background-color: #eeeeee; -fx-font-size:20px;" VBox.vgrow="ALWAYS">
+			<Label text="Welcome to the Nito Exam System" MigPane.cc="span, center" style="-fx-font-size:25px;"/>
 
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconPlus" MigPane.cc="spany"/>
-				<Hyperlink text="New Exam" MigPane.cc=""/>
-				<Label text="fsdx" />
+				<Hyperlink text="New Exam" MigPane.cc="" style="-fx-font-size:25px;"/>
+				<Label text="Create a new exam" MigPane.cc="gapleft 5" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconList" MigPane.cc="spany"/>
-				<Hyperlink text="New Exam" MigPane.cc=""/>
-				<Label text="fsdx" />
+				<Hyperlink text="Instructions" MigPane.cc="" style="-fx-font-size:25px;"/>
+				<Label text="See the basics of using Nito" MigPane.cc="gapleft 5" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconDownload" MigPane.cc="spany"/>
-				<Hyperlink text="New Exam" MigPane.cc=""/>
-				<Label text="fsdx" />
+				<Hyperlink text="Import Exam" MigPane.cc="" style="-fx-font-size:25px;"/>
+				<Label text="Import an existing exam" MigPane.cc="gapleft 5" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconInfo" MigPane.cc="spany"/>
-				<Hyperlink text="New Exam" MigPane.cc=""/>
-				<Label text="fsdx" />
+				<Hyperlink text="About" MigPane.cc="" style="-fx-font-size:25px;"/>
+				<Label text="Learn more about Nito" MigPane.cc="gapleft 5" translateY="-12"/>
 			</MigPane>
 			
 		</MigPane>
