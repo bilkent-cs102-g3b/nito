@@ -84,13 +84,13 @@
 								<Label text="Create a new exam" MigPane.cc="alignx 70%" style="-fx-font-size:15px;"/>
 								<Label text="See the basics of using Nito" MigPane.cc="gapleft 189, wrap" style="-fx-font-size:15px;"/>
 								
-								<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="9.0" fx:id="importExam" MigPane.cc="spany 2, alignx 36%"/>
+								<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="9.0" fx:id="importExam" MigPane.cc="spany 2, alignx 37%"/>
 								<Hyperlink text="Import Exam" MigPane.cc=""/>
 								
 								<ImageView fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateY="12.0" fx:id="about" MigPane.cc="spany 2, gapleft 110"/>
 								<Hyperlink text="About" MigPane.cc="gapleft 15, wrap"/>
 								
-								<Label text="Import an existing exam" MigPane.cc="alignx 63%" style="-fx-font-size:15px;"/>
+								<Label text="Import an existing exam" MigPane.cc="alignx 64%" style="-fx-font-size:15px;"/>
 								<Label text="Learn more about Nito" MigPane.cc="gapleft 170, wrap" style="-fx-font-size:15px;"/>
 							</children>
 						</MigPane>
