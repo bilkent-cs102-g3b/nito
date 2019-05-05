@@ -9,13 +9,13 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Nito stores your work in the specified folder" title="Workspace" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Select a workspace.&#10;&#9;Nito stores your work in the workspace.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane>
+		<DialogPane prefWidth="600">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane cols="[grow 10][grow 40][grow 10][grow 10]" rows="[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			    <MigPane cols="[][grow][][]" rows="[]20[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 					<Label text="Workspace:" MigPane.cc="right"/>
 					<TextField MigPane.cc="spanx 2, grow"/>
 					<Button text="Browse" MigPane.cc="wrap, grow"/>

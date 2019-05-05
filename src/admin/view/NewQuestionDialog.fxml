@@ -11,23 +11,23 @@
 
 <Dialog headerText="Create a new question" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
 	<dialogPane>
-		<DialogPane prefHeight="400" prefWidth="600">
+		<DialogPane prefHeight="250" prefWidth="400">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="nogrid" cols="20[grow 10][grow 40]20" rows="30[]push[]push[]push[]" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			    <MigPane layout="wrap" cols="[][grow 40]" rows="push[]push[]push[]push[]push">
 					
-					<Label text="Exam:" MigPane.cc="width 70, left"/>
-					<TextField MigPane.cc="grow, wrap"/>
+					<Label text="Exam:" MigPane.cc="left"/>
+					<TextField MigPane.cc="grow"/>
 				        
-					<Label text="Title:" MigPane.cc="width 70, left"/>
-					<TextField MigPane.cc="grow, wrap"/>
+					<Label text="Title:" MigPane.cc="left"/>
+					<TextField MigPane.cc="grow"/>
 					
-					<Label text="Maximum points:" MigPane.cc="width 114, left"/>
-					<Spinner MigPane.cc="width 100, wrap"/>
+					<Label text="Maximum points:" MigPane.cc="left"/>
+					<Spinner MigPane.cc=""/>
 					
-					<Label text="Number of parts:" MigPane.cc="width 114, left"/>
-					<Spinner MigPane.cc="width 100"/>
+					<Label text="Number of parts:" MigPane.cc="left"/>
+					<Spinner MigPane.cc=""/>
 				</MigPane>
 			</content>
 			
