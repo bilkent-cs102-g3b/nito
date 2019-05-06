@@ -12,7 +12,7 @@
 	<!-- Defining logos and icons -->
 	<fx:define>
 		<Double fx:value="100.0" fx:id="logoSize" />
-		<Double fx:value="80.0" fx:id="iconSize" />
+		<Double fx:value="60.0" fx:id="iconSize" />
 		
 		<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
 			<image>
