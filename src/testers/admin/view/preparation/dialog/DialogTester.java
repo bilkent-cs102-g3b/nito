@@ -15,7 +15,7 @@ public class DialogTester extends Application
 	@Override
 	public void start( Stage primaryStage) throws MalformedURLException, IOException
 	{
-		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/WorkspaceDialog.fxml").toURI().toURL());
+		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/QuestionTemplateDialog.fxml").toURI().toURL());
 		d.setResizable( true);
 		d.showAndWait();
 	}

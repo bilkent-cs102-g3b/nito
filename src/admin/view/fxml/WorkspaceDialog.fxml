@@ -21,7 +21,7 @@
 	</fx:define>
 	
 	<dialogPane>
-		<DialogPane prefWidth="650" graphic="$icon">
+		<DialogPane prefWidth="800" prefHeight="300" graphic="$icon">
 			<!-- Dialog content -->
 		    <content>
 			    <MigPane cols="[][grow][][]" rows="[]20[]">

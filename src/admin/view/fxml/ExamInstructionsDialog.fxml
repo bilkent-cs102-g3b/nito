@@ -10,8 +10,17 @@
 <?import net.miginfocom.layout.AC?>
 
 <Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" xmlns:fx="http://javafx.com/fxml/1">
+
+<fx:define>
+		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
+			<image>
+				<Image url="/icon_plus.PNG"/>
+			</image>
+		</ImageView>
+</fx:define>
+
 	<dialogPane>
-		<DialogPane prefHeight="150" prefWidth="300">
+		<DialogPane prefHeight="200" prefWidth="400" graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>

@@ -10,8 +10,17 @@
 <?import net.miginfocom.layout.AC?>
 
 <Dialog headerText="Create a new question" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
+
+<fx:define>
+		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
+			<image>
+				<Image url="/icon_plus.PNG"/>
+			</image>
+		</ImageView>
+</fx:define>
+
 	<dialogPane>
-		<DialogPane prefHeight="250" prefWidth="400">
+		<DialogPane prefHeight="350" prefWidth="600" graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
