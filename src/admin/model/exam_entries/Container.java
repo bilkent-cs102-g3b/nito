@@ -1,29 +1,29 @@
-package admin.model;
+package admin.model.exam_entries;
 
 import java.util.*;
 
 /**
- * This class is for a Container 
- * @author Adeem Adil Khatri
+ * This class is for a Container
+ * @author Adeem Adil Khatri<br>
+ *         Ziya Mukhtarov
  * @version 19/04/2019
  */
-
 public class Container
 {
-	//properties
-	private ArrayList<Entry> children;
-	
-	//constructors
+	// properties
+	protected ArrayList<Entry> children;
+
+	// constructors
 	/**
 	 * Constructs a basic new Container with default values
 	 */
-	public Container() 
+	public Container()
 	{
 		children = new ArrayList<Entry>();
-	}		
-	
-	//methods
-	
+	}
+
+	// methods
+
 	/**
 	 * This method adds an entry to the Container of children
 	 * @param entry to be added to the list of entries
@@ -32,16 +32,16 @@ public class Container
 	{
 		children.add( entry);
 	}
-	
+
 	/**
 	 * This method gives all of the entries
 	 * @return All of the ArrayList having type 'Entry'
 	 */
-	public ArrayList<Entry> getAll() 
+	public ArrayList<Entry> getAll()
 	{
 		return children;
 	}
-	
+
 	/**
 	 * This method removes the specified entry from the list of entries
 	 * @param entry to be removed from the list
