@@ -6,7 +6,7 @@ package admin.model;
  * @version 5/05/2019
  */
 
-public class Entry
+public class Entry extends Container
 {
 	
 	//Constants

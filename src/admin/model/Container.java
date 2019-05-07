@@ -26,18 +26,26 @@ public class Container
 	
 	/**
 	 * This method adds an entry to the Container of children
-	 * @param entry
+	 * @param entry to be added to the list of entries
 	 */
 	public void add( Entry entry)
 	{
 		children.add( entry);
 	}
 	
+	/**
+	 * This method gives all of the entries
+	 * @return All of the ArrayList having type 'Entry'
+	 */
 	public ArrayList<Entry> getAll() 
 	{
 		return children;
 	}
 	
+	/**
+	 * This method removes the specified entry from the list of entries
+	 * @param entry to be removed from the list
+	 */
 	public void remove( Entry entry)
 	{
 		children.remove( entry);
