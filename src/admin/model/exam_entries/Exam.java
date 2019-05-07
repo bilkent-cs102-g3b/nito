@@ -12,7 +12,8 @@ import admin.model.Model;
 public class Exam extends Entry
 {
 	// properties
-
+	private static final long serialVersionUID = -6393169094783192139L;
+	
 	/**
 	 * Duration of the exam in seconds
 	 */
@@ -22,7 +23,7 @@ public class Exam extends Entry
 	// constructors
 	public Exam( String title, int length)
 	{
-		super( title, "");
+		super( title);
 		this.length = length;
 		timeLeft = 0;
 	}
@@ -32,10 +33,7 @@ public class Exam extends Entry
 	public void send( Examinee e, Model m)
 	{
 		m.sendMessage( "exam", title + Model.MESSAGE_SEPERATOR + length, e);
-		for ( Entry child : children)
-		{
-			child.send( e, m);
-		}
+		sendAll(e, m);
 	}
 
 	/**

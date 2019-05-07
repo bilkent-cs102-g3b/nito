@@ -11,9 +11,11 @@ import admin.model.Model;
  */
 public class Instruction extends Entry
 {
-	public Instruction( String title, String content)
+	private static final long serialVersionUID = 6619354670367450793L;
+
+	public Instruction( String title)
 	{
-		super( title, content);
+		super( title);
 	}
 
 	@Override

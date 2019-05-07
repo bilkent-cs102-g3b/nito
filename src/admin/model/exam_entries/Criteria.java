@@ -9,11 +9,12 @@ package admin.model.exam_entries;
 public class Criteria extends Entry
 {
 	// properties
+	private static final long serialVersionUID = 6767459756448074933L;
 
 	// Constructors
-	public Criteria( String title, String content)
+	public Criteria( String title)
 	{
-		super( title, content);
+		super( title);
 	}
 
 	// methods

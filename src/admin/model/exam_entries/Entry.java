@@ -13,7 +13,8 @@ import admin.model.Model;
 public class Entry extends Container
 {
 	// Constants
-
+	private static final long serialVersionUID = 6649922102661498183L;
+	
 	// Properties
 	protected String title;
 	protected String id;
@@ -23,10 +24,10 @@ public class Entry extends Container
 	/**
 	 * Constructs a basic new Entry with provided values
 	 */
-	public Entry( String title, String content)
+	public Entry( String title)
 	{
 		this.title = title;
-		this.content = content;
+		content = "";
 		id = IDHandler.getInstance().generate( this);
 	}
 

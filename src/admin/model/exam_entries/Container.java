@@ -1,6 +1,10 @@
 package admin.model.exam_entries;
 
-import java.util.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import admin.model.Examinee;
+import admin.model.Model;
 
 /**
  * This class is for a Container
@@ -8,8 +12,10 @@ import java.util.*;
  *         Ziya Mukhtarov
  * @version 19/04/2019
  */
-public class Container
+public class Container implements Serializable
 {
+	private static final long serialVersionUID = -5805193951111349516L;
+
 	// properties
 	protected ArrayList<Entry> children;
 
@@ -49,5 +55,18 @@ public class Container
 	public void remove( Entry entry)
 	{
 		children.remove( entry);
+	}
+
+	/**
+	 * Calls {@link Entry#send(Examinee, Model)} method of all children of this container
+	 * @param e The Examinee to which the data is to be send
+	 * @param m The model from which the data is to be send
+	 */
+	public void sendAll( Examinee e, Model m)
+	{
+		for ( Entry child : children)
+		{
+			child.send( e, m);
+		}
 	}
 }

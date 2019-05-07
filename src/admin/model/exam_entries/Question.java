@@ -11,13 +11,16 @@ import admin.model.Model;
  */
 public class Question extends Entry
 {
+	private static final long serialVersionUID = -2378536027988908676L;
+
 	// Properties
 	private int maxPoints;
 
 	// Constructors
-	public Question( String title)
+	public Question( String title, int maxPoints)
 	{
-		super( title, "");
+		super( title);
+		this.maxPoints = maxPoints;
 	}
 
 	// Methods
@@ -25,10 +28,7 @@ public class Question extends Entry
 	public void send( Examinee e, Model m)
 	{
 		m.sendMessage( "question", id + Model.MESSAGE_SEPERATOR + title, e);
-		for ( Entry child : children)
-		{
-			child.send( e, m);
-		}
+		sendAll( e, m);
 	}
 
 	/**

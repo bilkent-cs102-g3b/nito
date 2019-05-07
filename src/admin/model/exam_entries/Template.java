@@ -8,12 +8,13 @@ package admin.model.exam_entries;
  */
 public class Template extends Entry
 {
+	private static final long serialVersionUID = 4189715828760784690L;
 	// properties
 
 	// constructors
-	public Template( String title, String content)
+	public Template( String title)
 	{
-		super( title, content);
+		super( title);
 	}
 
 	// methods
