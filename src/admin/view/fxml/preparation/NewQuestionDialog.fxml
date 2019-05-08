@@ -11,17 +11,16 @@
 
 <Dialog headerText="Create a new question" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
 
-<fx:define>
+	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
 				<Image url="/icon_plus.PNG"/>
 			</image>
 		</ImageView>
-</fx:define>
+	</fx:define>
 
 	<dialogPane>
 		<DialogPane prefHeight="350" prefWidth="600" graphic="$icon">
-			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
 			    <MigPane layout="wrap" cols="[][grow 40]" rows="push[]push[]push[]push[]push">
@@ -33,7 +32,7 @@
 					<TextField MigPane.cc="grow"/>
 					
 					<Label text="Maximum points:" MigPane.cc="left"/>
-					<Spinner MigPane.cc=""/>
+					<Spinner min="0" max="1000" MigPane.cc=""/>
 					
 					<Label text="Number of parts:" MigPane.cc="left"/>
 					<Spinner MigPane.cc=""/>

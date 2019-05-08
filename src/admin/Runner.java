@@ -1,19 +1,18 @@
 package admin;
 
-import admin.model.Model;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-/**
- * The main runner class for Nito admin interface
- * @author Ziya Mukhtarov
- * @version 19/04/2019
- */
-public class Runner
+public class Runner extends Application
 {
+	@Override
+	public void start( Stage stage)
+	{
+		
+	}
+
 	public static void main( String[] args)
 	{
-		@SuppressWarnings("unused")
-		Model m = new Model();
-		
-		// TODO Create views and controllers
+		launch( args);
 	}
 }

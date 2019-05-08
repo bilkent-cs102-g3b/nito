@@ -9,29 +9,29 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create a new exam" title="New Exam" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create a new exam" title="New Exam" fx:controller="admin.view.NewExamDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
 
-<fx:define>
+	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
 				<Image url="/icon_plus.PNG"/>
 			</image>
 		</ImageView>
-</fx:define>
+	</fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="300" prefWidth="600" graphic="$icon">
+		<DialogPane prefHeight="250" prefWidth="500" graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane cols="[][grow][][grow][]" rows="push[]push[]push">
+			    <MigPane cols="[][][grow][][]" rows="push[]push[]push">
 					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow, span, wrap"/>
+					<TextField MigPane.cc="grow, span, wrap" fx:id="title"/>
 					
 					<Label text="Length:" MigPane.cc="left"/>
-					<Spinner MigPane.cc="grow, width 100"/>
+					<Spinner min="0" max="10" initialValue="2" fx:id="hours"/>
 					<Label text="hour(s)" />
-					<Spinner MigPane.cc="grow, width 100"/>
+					<Spinner min="0" max="59" initialValue="0" fx:id="mins"/>
 					<Label text="minute(s)" />
 				</MigPane>
 			</content>
