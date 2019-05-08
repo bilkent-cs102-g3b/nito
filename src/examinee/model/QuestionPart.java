@@ -1,6 +1,6 @@
 package examinee.model;
 
-import network.*;
+import common.network.*;
 
 public class QuestionPart extends ExamEntry implements Submitable
 {
@@ -31,5 +31,7 @@ public class QuestionPart extends ExamEntry implements Submitable
 	{	
 		c.sendMessage( SECRET + ":::" + "solution" + ":::"+ id + solution);	
 	}
+
+
 	
 }

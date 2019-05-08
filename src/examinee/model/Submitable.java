@@ -1,6 +1,6 @@
 package examinee.model;
 
-import network.Client;
+import common.network.Client;
 
 public interface Submitable
 {

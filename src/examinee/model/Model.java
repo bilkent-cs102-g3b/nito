@@ -3,8 +3,10 @@ package examinee.model;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import network.*;
+import common.network.*;
 
+
+// TODO: Make it proper singleton
 public class Model
 {
 	//properties
@@ -17,24 +19,32 @@ public class Model
 	public final int STATUS_BANNED = 5;
 	public final int STATUS_FINISHED = 6;
 	
+	private static Model instance;
 	
 	private String username;
 	private String adminIP;
+	private String examTitle;
 	private int timeRemain;
 	private int timeTotal;
 	private int status;
 	private Client client;
-	private ExamEntry examData;
+	private ExamEntry reference;
+	private ExamContainer examData;
 	
 	//constructors
 	
 	public Model()
 	{
+		instance = this;
 		status = 0;
-		timeTotal = 120;
-		timeRemain = timeTotal;
-		
+		reference = null;
 	}
+	
+	public static Model getInstance()
+	{
+		return instance;
+	}
+	
 	
 	public boolean login( String name, String ip)
 	{
@@ -69,37 +79,48 @@ public class Model
 		
 	}
 	
+//	private void createEntry( String id, String title, String content, boolean markable, boolean editable)
+//	{
+//		examData = new ExamEntry();
+//	}
+	
 	private void handleMessage( String msg)
 	{
 		String parts[] = msg.split(":::");
 		
 		if ( parts[1].equals("instruction") )
 		{
-			// TODO
+			reference = new Instruction( parts[2], parts[3], parts[4], false, false);
+			examData.add( reference);
+			reference.setParent(examData);
 		}
 		if ( parts[1].equals("question") )
 		{
-			// TODO
+			reference = new Question( parts[2], parts[3], parts[4], true, false);
+			examData.add( reference);
+			reference.setParent(examData);
 		}
 		if ( parts[1].equals("part") )
 		{
-			// TODO
+			reference = new QuestionPart( parts[2], parts[3], parts[4], true, true); 
+			examData.add( reference);
+			
 		}
 		
 		if ( parts[1].equals("exam") )
 		{
-			// TODO
+			examTitle = parts[2];
+			timeTotal = parts[3];
+			timeRemain = timeTotal;
 		}
 		
 		if ( parts[1].equals("ban") )
 		{
-			// TODO
 			status = STATUS_BANNED;
 		}
 		
 		if ( parts[1].equals("suspend") )
 		{
-			// TODO
 			status = STATUS_SUSPENDED;
 		}
 		//TODO

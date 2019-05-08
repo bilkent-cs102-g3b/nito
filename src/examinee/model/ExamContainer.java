@@ -14,6 +14,7 @@ public class ExamContainer
 	public void add( ExamEntry e)
 	{
 		children.add(e);
+		e.setParent(this);
 	}
 	
 	public ArrayList<ExamEntry> getAll()
