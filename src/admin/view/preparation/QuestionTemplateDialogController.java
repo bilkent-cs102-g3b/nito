@@ -8,96 +8,72 @@ import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
 import admin.model.exam_entries.Question;
 import admin.model.exam_entries.QuestionPart;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.Node;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
 
-public class QuestionTemplateDialogController {
-	
+public class QuestionTemplateDialogController
+{
 	@FXML
-	ChoiceBox<Exam> exams;
+	Dialog<QuestionPart> root;
 	@FXML
-	ChoiceBox<Question> questions;
+	ComboBox<Entry> exams;
 	@FXML
-	ChoiceBox<QuestionPart> parts;
-	
-	private Container c = Model.getInstance().getEntries();
-	private Exam e;
-	private Question q;
-	
+	ComboBox<Entry> questions;
+	@FXML
+	ComboBox<Entry> parts;
+
 	public void initialize()
 	{
-		questions.setDisable(true);
-		parts.setDisable(true);
-		findExams();
-	}
-	
-	private void findExams()
-	{
-		ArrayList<Entry> entries = c.getAll();
-		for ( Entry entry : entries)
-		{
-			if (entry instanceof Exam)
-			{
-				exams.getItems().add((Exam)entry);
-			}
-		}
-		exams.getSelectionModel().selectedItemProperty().addListener(listener);
-	}
-	
-	private void findQuestions() 
-	{
-		questions.getItems().clear();
-		parts.getItems().clear();
-		ArrayList<Entry> entries = e.getAll();
-			for (Entry questionEntry : entries)
-			{
-				if (questionEntry instanceof Question)
-				{
-					questions.getItems().add((Question) questionEntry);
-				}
-			}
-		questions.getSelectionModel().selectedItemProperty().addListener(questionsListener);
-	}
-	
-	private void findParts() 
-	{
-		parts.getItems().clear();
-		ArrayList<Entry> entries = q.getAll();
-		for (Entry questionPartEntry : entries)
-		{
-			if (questionPartEntry instanceof QuestionPart)
-			{
-				parts.getItems().add((QuestionPart) questionPartEntry);
-			}
-		}
-	}
-	
-	ChangeListener<Exam> listener = new ChangeListener<Exam>() {
-		 
-        @Override
-        public void changed(ObservableValue<? extends Exam> observable, //
-                Exam oldValue, Exam newValue) {
-            if (newValue != null) {
-            	e = exams.getValue();
-            	questions.setDisable(false);
-                findQuestions();
-            }
-        }
-	};
-	
-	ChangeListener<Question> questionsListener = new ChangeListener<Question>() {
-		 
-        @Override
-        public void changed(ObservableValue<? extends Question> observable, //
-        		Question oldValue, Question newValue) {
-            if (newValue != null) {
-            	q = questions.getValue();
-            	parts.setDisable(false);
-                findParts();
-            }
-        }
-	};
+		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
+		okButton.setDisable( true);
 
+		exams.getItems().addAll( find( Exam.class, Model.getInstance().getEntries()));
+		questions.setDisable( true);
+		parts.setDisable( true);
+
+		exams.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> examSelected( newVal));
+		questions.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> questionSelected( newVal));
+		parts.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> okButton.setDisable( newVal == null));
+
+		root.setResultConverter( button -> {
+			if ( button == ButtonType.OK)
+			{
+				return (QuestionPart) parts.getSelectionModel().getSelectedItem();
+			}
+			return null;
+		});
+	}
+
+	private ArrayList<Entry> find( Class<?> type, Container container)
+	{
+		ArrayList<Entry> result = new ArrayList<>();
+
+		if ( container != null)
+		{
+			container.getAll().stream().forEachOrdered( e -> result.addAll( find( type, e)));
+			container.getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
+		}
+
+		return result;
+	}
+
+	private void examSelected( Entry exam)
+	{
+		questions.getItems().setAll( find( Question.class, exam));
+		questions.setPromptText( "Select a question");
+		questions.setDisable( false);
+
+		parts.setDisable( true);
+		parts.setPromptText( "Select a question to continue");
+	}
+
+	private void questionSelected( Entry question)
+	{
+		parts.getItems().setAll( find( QuestionPart.class, question));
+		parts.setPromptText( "Select a part");
+		parts.setDisable( false);
+	}
 }

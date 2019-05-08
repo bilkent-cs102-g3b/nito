@@ -164,6 +164,13 @@ public class Model implements Serializable
 		e.setContent( content);
 	}
 
+	/**
+	 * @return the entries
+	 */
+	public Container getEntries() {
+		return entries;
+	}
+
 	/**************************** MONITORING *****************************/
 	/**
 	 * Start the specified exam
@@ -400,12 +407,5 @@ public class Model implements Serializable
 	public int getStatus()
 	{
 		return status;
-	}
-
-	/**
-	 * @return the entries
-	 */
-	public Container getEntries() {
-		return entries;
 	}
 }
