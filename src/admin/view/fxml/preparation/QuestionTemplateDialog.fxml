@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create a new template for questions" title="New Question Template" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create a new template for questions" title="New Question Template" fx:controller="admin.view.QuestionTemplateDialogController" xmlns:fx="http://javafx.com/fxml/1">
 
 <fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -27,11 +27,11 @@
 			    <MigPane layout="wrap" cols="[][grow][grow]" rows="push[]push[]push">
 
 					<Label text="Exam:" MigPane.cc="left"/>
-					<ChoiceBox MigPane.cc="span, grow"/>
+					<ChoiceBox fx:id="exams" MigPane.cc="span, grow"/>
 
 					<Label text="Question and parts:" MigPane.cc="left"/>
-					<ChoiceBox MigPane.cc="grow"/>
-					<ChoiceBox MigPane.cc="grow"/>
+					<ChoiceBox fx:id="questions" MigPane.cc="grow"/>
+					<ChoiceBox fx:id="parts" MigPane.cc="grow"/>
 				</MigPane>
 			</content>
 			

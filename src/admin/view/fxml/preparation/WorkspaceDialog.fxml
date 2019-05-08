@@ -10,7 +10,7 @@
 <?import net.miginfocom.layout.AC?>
 <?import javafx.scene.image.ImageView?>
 
-<Dialog headerText="Select a workspace.&#10;&#9;Nito stores your work in the workspace.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace selector" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Select a workspace.&#10;&#9;Nito stores your work in the workspace.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace selector" fx:controller="admin.view.WorkspaceDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
 	<!-- Loading icon -->
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -26,16 +26,16 @@
 		    <content>
 			    <MigPane cols="[][grow][][]" rows="[]20[]">
 					<Label text="Workspace:" MigPane.cc="right"/>
-					<TextField MigPane.cc="spanx 2, grow"/>
-					<Button text="Browse" MigPane.cc="wrap, grow"/>
+					<TextField disable="true" MigPane.cc="spanx 2, grow" fx:id="field"/>
+					<Button text="Browse" MigPane.cc="wrap, grow" onAction="#browse"/>
 				        
-					<CheckBox text="Set it as default and do not ask again"  MigPane.cc="spanx 2"/>
+					<CheckBox text="Set it as default and do not ask again"  MigPane.cc="spanx 2" fx:id="checkBox"/>
 				</MigPane>
 			</content>
 			
 			<!-- Dialog buttons -->
 			<buttonTypes>
-				<ButtonType fx:constant="OK" />
+				<ButtonType fx:constant="OK"/>
 				<ButtonType fx:constant="CANCEL" />
 			</buttonTypes>
 		</DialogPane>
