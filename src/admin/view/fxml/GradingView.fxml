@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ToolBar?>
+<?import org.controlsfx.control.BreadCrumbBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import common.NumberedEditor?>
+
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.GradingViewConroller">
+<!-- MAIN -->
+	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
+	
+		<!-- EXAMS TREE -->
+		<TreeView minWidth="100">
+			<TreeItem value="Examinees" expanded="true" fx:id="questionTree">
+			</TreeItem>
+		</TreeView>
+		
+		<!-- EDITOR -->
+		<TabPane minWidth="300">
+			<Tab text="Question 1">
+			<NumberedEditor />
+			</Tab>
+		</TabPane>
+		
+	</SplitPane>
+</VBox>
+
