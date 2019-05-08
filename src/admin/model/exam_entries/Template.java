@@ -12,12 +12,19 @@ public class Template extends Entry
 	// properties
 
 	// constructors
+	/**
+	 * This constructs an instance of Criteria using superclass's constructor, with the given title.
+	 * @param title
+	 */
 	public Template( String title)
 	{
 		super( title);
 	}
 
 	// methods
+	
+	/**
+	 */
 	@Override
 	public String toString()
 	{

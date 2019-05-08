@@ -12,6 +12,10 @@ public class Criteria extends Entry
 	private static final long serialVersionUID = 6767459756448074933L;
 
 	// Constructors
+	/**
+	 * This constructs an instance of Criteria using superclass's constructor, with the given title.
+	 * @param title
+	 */
 	public Criteria( String title)
 	{
 		super( title);

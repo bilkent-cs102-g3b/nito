@@ -17,6 +17,11 @@ public class Question extends Entry
 	private int maxPoints;
 
 	// Constructors
+	/**
+	 * Creates a Question
+	 * @param title
+	 * @param maxPoints
+	 */
 	public Question( String title, int maxPoints)
 	{
 		super( title);

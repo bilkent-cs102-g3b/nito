@@ -21,6 +21,11 @@ public class Exam extends Entry
 	private int timeLeft;
 
 	// constructors
+	/**
+	 * Creates an Exam
+	 * @param title
+	 * @param length
+	 */
 	public Exam( String title, int length)
 	{
 		super( title);
@@ -29,6 +34,7 @@ public class Exam extends Entry
 	}
 
 	// methods
+	
 	@Override
 	public void send( Examinee e, Model m)
 	{
