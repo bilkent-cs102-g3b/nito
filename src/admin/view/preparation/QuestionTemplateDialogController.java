@@ -18,10 +18,14 @@ public class QuestionTemplateDialogController {
 	@FXML
 	ChoiceBox<Exam> exams;
 	@FXML
-	ChoiceBox<String> questions;
+	ChoiceBox<Question> questions;
 	@FXML
 	ChoiceBox<QuestionPart> parts;
-
+	
+	private Container c = Model.getInstance().getEntries();
+	private Exam e;
+	private Question q;
+	
 	public void initialize()
 	{
 		questions.setDisable(true);
@@ -31,7 +35,6 @@ public class QuestionTemplateDialogController {
 	
 	private void findExams()
 	{
-		Container c = Model.getInstance().getEntries();
 		ArrayList<Entry> entries = c.getAll();
 		for ( Entry entry : entries)
 		{
@@ -40,8 +43,35 @@ public class QuestionTemplateDialogController {
 				exams.getItems().add((Exam)entry);
 			}
 		}
-		
 		exams.getSelectionModel().selectedItemProperty().addListener(listener);
+	}
+	
+	private void findQuestions() 
+	{
+		questions.getItems().clear();
+		parts.getItems().clear();
+		ArrayList<Entry> entries = e.getAll();
+			for (Entry questionEntry : entries)
+			{
+				if (questionEntry instanceof Question)
+				{
+					questions.getItems().add((Question) questionEntry);
+				}
+			}
+		questions.getSelectionModel().selectedItemProperty().addListener(questionsListener);
+	}
+	
+	private void findParts() 
+	{
+		parts.getItems().clear();
+		ArrayList<Entry> entries = q.getAll();
+		for (Entry questionPartEntry : entries)
+		{
+			if (questionPartEntry instanceof QuestionPart)
+			{
+				parts.getItems().add((QuestionPart) questionPartEntry);
+			}
+		}
 	}
 	
 	ChangeListener<Exam> listener = new ChangeListener<Exam>() {
@@ -50,8 +80,22 @@ public class QuestionTemplateDialogController {
         public void changed(ObservableValue<? extends Exam> observable, //
                 Exam oldValue, Exam newValue) {
             if (newValue != null) {
+            	e = exams.getValue();
             	questions.setDisable(false);
-                questions.getItems().add("Test");
+                findQuestions();
+            }
+        }
+	};
+	
+	ChangeListener<Question> questionsListener = new ChangeListener<Question>() {
+		 
+        @Override
+        public void changed(ObservableValue<? extends Question> observable, //
+        		Question oldValue, Question newValue) {
+            if (newValue != null) {
+            	q = questions.getValue();
+            	parts.setDisable(false);
+                findParts();
             }
         }
 	};

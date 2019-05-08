@@ -401,4 +401,11 @@ public class Model implements Serializable
 	{
 		return status;
 	}
+
+	/**
+	 * @return the entries
+	 */
+	public Container getEntries() {
+		return entries;
+	}
 }

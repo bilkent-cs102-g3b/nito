@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create a new template for questions" title="New Question Template" fx:controller="admin.view.QuestionTemplateDialogController" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create a new template for questions" title="New Question Template" fx:controller="admin.view.preparation.QuestionTemplateDialogController" xmlns:fx="http://javafx.com/fxml/1">
 
 <fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -20,18 +20,18 @@
 </fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="300" prefWidth="500" graphic="$icon">
+		<DialogPane prefHeight="300" prefWidth="510" graphic="$icon">
 			<!-- Dialog icon -->
 			<!-- Dialog content -->
 		    <content>
 			    <MigPane layout="wrap" cols="[][grow][grow]" rows="push[]push[]push">
 
 					<Label text="Exam:" MigPane.cc="left"/>
-					<ChoiceBox fx:id="exams" MigPane.cc="span, grow"/>
+					<ChoiceBox fx:id="exams" MigPane.cc="span, grow, wmax 220"/>
 
 					<Label text="Question and parts:" MigPane.cc="left"/>
-					<ChoiceBox fx:id="questions" MigPane.cc="grow"/>
-					<ChoiceBox fx:id="parts" MigPane.cc="grow"/>
+					<ChoiceBox fx:id="questions" MigPane.cc="width 105, wmax 105"/>
+					<ChoiceBox fx:id="parts" MigPane.cc="width 105, wmax 105"/>
 				</MigPane>
 			</content>
 			
