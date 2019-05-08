@@ -1,4 +1,4 @@
-package admin.view;
+package admin.view.preparation;
 
 import java.io.File;
 
