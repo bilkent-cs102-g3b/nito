@@ -9,8 +9,9 @@
 <?import javafx.scene.control.CheckBoxTreeItem?>
 <?import javafx.scene.control.TreeItem?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
 
-<SplitPane minWidth="400" xmlns:fx="http://javafx.com/fxml/1"
+<SplitPane minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:id="sp"
 	fx:controller="examinee.view.MainScreenController"
 	dividerPositions="0.3f">
 	<VBox alignment="TOP_CENTER">
@@ -25,8 +26,7 @@
 			<Button text="Submit All Work" />
 		</MigPane>
 	</VBox>
-
-	<Pane />
+	
 
 	<!-- TEXT EDITOR -->
 </SplitPane>

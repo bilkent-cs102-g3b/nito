@@ -1,22 +1,28 @@
 package examinee.view;
 
-import java.io.File;
 import java.net.MalformedURLException;
 
+import examinee.model.Model;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 public class LoginController
 {
-	@FXML
-	private ImageView logoNito;
-	@FXML
-	private ImageView logoBilkent;
+	@FXML Button login;
+	@FXML TextField id;
+	@FXML TextField ip;
 	
 	public void initialize() throws MalformedURLException
 	{
-		logoNito.setImage( new Image( new File("Resources/logo.png").toURI().toURL().toString()));
-		logoBilkent.setImage( new Image( new File("Resources/bilLogo.png").toURI().toURL().toString()));
+	}
+	
+	public void buttonAction() throws MalformedURLException
+	{
+		if ( login.isPressed())
+		{
+			Model.getInstance().login( id.getText(), ip.getText());
+		}
 	}
 }

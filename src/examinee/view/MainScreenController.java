@@ -1,7 +1,9 @@
 package examinee.view;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JInternalFrame;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 
@@ -15,9 +17,10 @@ public class MainScreenController
 	private TreeItem<String> rootItem;
 	@FXML
 	private TreeItem<String> question1;
-	
 	@FXML
 	private TreeItem<String> question2;
+	private JDesktopPane jdp;
+	private JInternalFrame jif;
 	
 	public void initialize()
 	{
@@ -28,6 +31,10 @@ public class MainScreenController
 		treeView.setRoot(rootItem);
 		treeView.setShowRoot(true);
 		addItems();
+		jdp = new JDesktopPane();
+		jif = new JInternalFrame( "Question1");
+		jdp.add( jif);
+		jif.show();
 	}
 	
 	@SuppressWarnings("unchecked")

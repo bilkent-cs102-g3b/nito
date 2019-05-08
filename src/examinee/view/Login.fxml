@@ -11,22 +11,38 @@
 
 <MigPane cols="[grow 25][grow 50, align 50%][grow 25]" rows="[]push[]push[]push[]push[]" fx:controller="examinee.view.LoginController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="right" fx:id="logoNito" />
-        <Label text="Nito" style="-fx-font-size: 25"/>
-        <ImageView fitWidth="100.0" pickOnBounds="true" preserveRatio="true" MigPane.cc="wrap, growx, left" fx:id="logoBilkent"/>
+    	<fx:define>
+    		<Double fx:value="100.0" fx:id="logoSize" />
+    		
+   			<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
+				<image>
+					<Image url="/logo_nito.png"/>
+				</image>
+			</ImageView>
+			
+			<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoBilkent">
+				<image>
+					<Image url="/logo_bilkent.png"/>
+				</image>
+			</ImageView>
+		</fx:define>
+		
+		<fx:reference source="logoNito" />
+		<Label text="Nito" style="-fx-font-size: 25"/>
+		<fx:reference source="logoBilkent" MigPane.cc="span, right"/>
         
         <Label text="ID Number"/>
-        <TextField MigPane.cc="span, wrap, growx"/>
+        <TextField MigPane.cc="span, wrap, growx" fx:id="id" />
         
         <Label text="Passcode"/>
         <PasswordField MigPane.cc="span, wrap, growx"/>
         
         <Label text="Admin IP address"/>
-        <ComboBox prefWidth="200.0" MigPane.cc="span, wrap, growx"/>
+        <TextField MigPane.cc="span, wrap, growx" fx:id="ip" />
         
         <HBox alignment="BOTTOM_RIGHT" MigPane.cc="span, growx">
             <children>
-                <Button mnemonicParsing="false" text="Login" />
+                <Button mnemonicParsing="false" text="Login" fx:id="login" onAction="#buttonAction" />
             </children>
         
         </HBox>

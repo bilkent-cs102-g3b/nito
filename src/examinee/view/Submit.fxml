@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+<?import javafx.scene.control.Label?>
+
+<MigPane rows="[]push[]push[]" cols="[][]" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="examinee.view.SubmitController" >
+	<fx:define>
+  		<ImageView fitWidth="120" preserveRatio="true" fx:id="greenTick">
+			<image>
+				<Image url="/GreenTick.png"/>
+			</image>
+		</ImageView>
+	</fx:define>
+		
+	<children>
+		<fx:reference source="greenTick" MigPane.cc="span"/>
+		<!-- Submit -->
+		<Label text="You have submitted your answers in time, thank you for
+	your participation" MigPane.cc="span" />
+		<Label text="Reason: (Reason input from admin)" />
+		<Button text="Quit" fx:id="quit" onAction="#buttonAction"/>
+	
+	</children>
+</MigPane>
+
