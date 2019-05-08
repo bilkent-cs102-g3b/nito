@@ -22,7 +22,7 @@ public class WelcomeTabTester extends Application
 		Tab w;
 		String resource;
 
-		resource = "/admin/view/fxml/WelcomeTab.fxml";
+		resource = "/admin/view/fxml/preparation/WelcomeTab.fxml";
 		w = FXMLLoader.load( getClass().getResource( resource));
 		root = new TabPane(w);
 		Scene scene = new Scene( root, 1000, 600);

@@ -20,7 +20,7 @@
 	</fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="250" prefWidth="400" graphic="$icon">
+		<DialogPane prefHeight="300" prefWidth="500" graphic="$icon">
 			<!-- Dialog content -->
 		    <content>
 			    <MigPane layout="wrap" cols="[]20[grow]" rows="push[]push[]push[]push">
@@ -28,7 +28,11 @@
 					<Label text="Exam:" MigPane.cc="left"/>
 					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow"/>
 
-					<Label text="Question:" MigPane.cc="left"/>
+					<Label text="Question:" MigPane.cc="left">
+					<minWidth>
+							<Region fx:constant="USE_PREF_SIZE"/>
+						</minWidth>
+					</Label>
 					<ComboBox promptText="Select an exam to continue" fx:id="questions" MigPane.cc="grow"/>
 
 					<Label text="Part:" MigPane.cc="left"/>

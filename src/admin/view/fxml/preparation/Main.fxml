@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +14,25 @@
 <?import javafx.scene.control.TextField?>
 <?import common.NumberedEditor?>
 
-<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.MainController">
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.MainController">
+
+	<fx:define>
+		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_home">
+			<image>
+				<Image url="/icon_home.PNG"/>
+			</image>
+		</ImageView>
+		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_listView">
+			<image>
+				<Image url="/icon_listView.PNG"/>
+			</image>
+		</ImageView>
+		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_otherView">
+			<image>
+				<Image url="/icon_otherView.png"/>
+			</image>
+		</ImageView>
+	</fx:define>
 
 	<!-- MENU -->
 	<MenuBar useSystemMenuBar="true">
@@ -47,11 +66,13 @@
 		<Pane HBox.hgrow="ALWAYS" />
 		<Separator />
 		
-		<Button text="Nav"/>
+		<Button graphic="$icon_home"/>
+		<Button graphic="$icon_listView"/>
+		<Button graphic="$icon_otherView"/>
 	</ToolBar>
 	
 	<!-- MAIN -->
-	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
+	<SplitPane dividerPositions="0.20f" VBox.vgrow="ALWAYS">
 	
 		<!-- EXAMS TREE -->
 		<TreeView minWidth="100">

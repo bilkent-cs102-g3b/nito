@@ -24,6 +24,8 @@ public class QuestionTemplateDialogController
 	ComboBox<Entry> questions;
 	@FXML
 	ComboBox<Entry> parts;
+	@FXML
+	final int USE_PREF_SIZE = 50;
 
 	public void initialize()
 	{

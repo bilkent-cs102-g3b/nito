@@ -20,7 +20,7 @@ public class MainTester extends Application
 		Pane root;
 		String resource;
 
-		resource = "/admin/view/fxml/Main.fxml";
+		resource = "/admin/view/fxml/preparation/Main.fxml";
 		root = FXMLLoader.load( getClass().getResource( resource));
 		Scene scene = new Scene( root, 1200, 675);
 		stage.setScene( scene);
