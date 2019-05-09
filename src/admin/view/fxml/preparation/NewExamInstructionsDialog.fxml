@@ -20,11 +20,11 @@
 </fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="200" prefWidth="450" graphic="$icon">
+		<DialogPane graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="wrap" cols="[][grow]" rows="push[]push[]push">
+			    <MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push">
 					
 					<Label text="Exam:" MigPane.cc="left">
 					<minWidth>

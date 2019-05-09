@@ -1,0 +1,9 @@
+.navButton
+{
+	-fx-background-color:transparent ;
+}
+
+.navButton:focused
+{
+	-fx-background-color:rgb(204,204,204)
+}

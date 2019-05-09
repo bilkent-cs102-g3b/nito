@@ -20,17 +20,17 @@
 </fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="300" prefWidth="500" graphic="$icon">
+		<DialogPane graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
-			    <MigPane layout="wrap" cols="[][grow]" rows="push[]push[]push">
+			    <MigPane layout="wrap" cols="2mm[22mm:22mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push">
 					
 					<Label text="Title:" MigPane.cc="left"/>
 					<TextField MigPane.cc="grow"/>
 				        
 					<Label text="Maximum points:" MigPane.cc="left"/>
-					<Spinner/>
+					<TextField alignment="CENTER_RIGHT" MigPane.cc="grow"/>
 				</MigPane>
 			</content>
 			

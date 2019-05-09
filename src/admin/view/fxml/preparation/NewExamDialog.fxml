@@ -20,10 +20,10 @@
 	</fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="250" prefWidth="500" graphic="$icon">
+		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
 		    <content>
-			    <MigPane layout="wrap" cols="[][grow][]" rows="push[]push[]push">
+			    <MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push">
 					<Label text="Title:" MigPane.cc="left"/>
 					<TextField MigPane.cc="grow, span" fx:id="title"/>
 					

@@ -13,21 +13,25 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
 <?import common.NumberedEditor?>
+<?import java.net.URL?>
 
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.MainController">
+	<stylesheets>
+      <URL value="@../../../../common/stylesheet.css" />
+    </stylesheets>
 
 	<fx:define>
-		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_home">
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_home">
 			<image>
 				<Image url="/icon_home.PNG"/>
 			</image>
 		</ImageView>
-		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_listView">
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_listView">
 			<image>
 				<Image url="/icon_listView.PNG"/>
 			</image>
 		</ImageView>
-		<ImageView fitHeight="38.0" preserveRatio="true" fx:id="icon_otherView">
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_otherView">
 			<image>
 				<Image url="/icon_otherView.png"/>
 			</image>
@@ -66,9 +70,9 @@
 		<Pane HBox.hgrow="ALWAYS" />
 		<Separator />
 		
-		<Button graphic="$icon_home"/>
-		<Button graphic="$icon_listView"/>
-		<Button graphic="$icon_otherView"/>
+		<Button graphic="$icon_home" styleClass="navButton"/>
+		<Button graphic="$icon_listView" styleClass="navButton"/>
+		<Button graphic="$icon_otherView" styleClass="navButton"/>
 	</ToolBar>
 	
 	<!-- MAIN -->

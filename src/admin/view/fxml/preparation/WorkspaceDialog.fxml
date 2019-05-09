@@ -21,11 +21,11 @@
 	</fx:define>
 	
 	<dialogPane>
-		<DialogPane prefWidth="800" prefHeight="300" graphic="$icon">
+		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
 		    <content>
-			    <MigPane cols="[][grow][][]" rows="[]20[]">
-					<Label text="Workspace:" MigPane.cc="right"/>
+			    <MigPane cols="2mm[15mm:15mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm[:20mm:]2mm" rows="10:push[]10:push[]10:push">
+					<Label text="Workspace:" MigPane.cc="left"/>
 					<TextField disable="true" MigPane.cc="spanx 2, grow" fx:id="field"/>
 					<Button text="Browse" MigPane.cc="wrap, grow" onAction="#browse"/>
 				        

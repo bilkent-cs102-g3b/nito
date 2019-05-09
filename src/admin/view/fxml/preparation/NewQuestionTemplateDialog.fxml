@@ -20,10 +20,10 @@
 	</fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="300" prefWidth="500" graphic="$icon">
+		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
 		    <content>
-			    <MigPane layout="wrap" cols="[]20[grow]" rows="push[]push[]push[]push">
+			    <MigPane layout="wrap" cols="2mm[13mm:13mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
 
 					<Label text="Exam:" MigPane.cc="left"/>
 					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow"/>
