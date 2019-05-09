@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.awt.Dimension?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.*?>
@@ -10,14 +11,15 @@
 <?import javafx.scene.control.TreeItem?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javax.swing.JDesktopPane?>
+<?import javafx.embed.swing.SwingNode?>
 
-<SplitPane minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:id="sp"
-	fx:controller="examinee.view.MainScreenController"
-	dividerPositions="0.3f">
+<SplitPane minWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:id="sp"
+	fx:controller="examinee.view.MainScreenController">
 	<VBox alignment="TOP_CENTER">
 		<!-- QUESTIONS TREE -->
 		<TreeView minWidth="100" showRoot="true" fx:id="treeView" />
-
 
 		<MigPane layout="wrap" rows="push[]push[]push" cols="[]" VBox.vgrow="ALWAYS">
 			<!-- TIME -->
@@ -27,7 +29,10 @@
 		</MigPane>
 	</VBox>
 	
-
-	<!-- TEXT EDITOR -->
+	<!-- WORKING FRAMES -->
+	<SwingNode fx:id="swingNode">
+		<content>
+			<JDesktopPane fx:id="jdp" />
+		</content>
+	</SwingNode>
 </SplitPane>
-

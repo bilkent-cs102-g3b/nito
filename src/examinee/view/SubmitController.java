@@ -4,12 +4,13 @@ import java.net.MalformedURLException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 
 public class SubmitController
 {
 	@FXML
-	Button quit;
-
+	private Button quit;
+	
 	public void initialize() throws MalformedURLException
 	{
 	}
