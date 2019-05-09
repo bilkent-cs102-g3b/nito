@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create a new question" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog resizable="true" headerText="Create a new question" title="New Question" fx:controller="admin.view.preparation.NewQuestionDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -20,22 +20,19 @@
 	</fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="350" prefWidth="600" graphic="$icon">
-	 	   <!-- Dialog content -->
+		<DialogPane graphic="$icon">
+			<!-- Dialog content -->
 		    <content>
-			    <MigPane layout="wrap" cols="[][grow 40]" rows="push[]push[]push[]push[]push">
+			    <MigPane layout="wrap" cols="2mm[25mm:25mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
 					
 					<Label text="Exam:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow"/>
+					<ComboBox MigPane.cc="grow" fx:id="examsBox"/>
 				        
 					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow"/>
+					<TextField MigPane.cc="grow" fx:id="titleField"/>
 					
-					<Label text="Maximum points:" MigPane.cc="left"/>
-					<Spinner min="0" max="1000" MigPane.cc=""/>
-					
-					<Label text="Number of parts:" MigPane.cc="left"/>
-					<Spinner MigPane.cc=""/>
+					<Label text="Number of parts:" MigPane.cc="left" />
+					<TextField text="10" MigPane.cc="grow" fx:id="numOfPartsField"/>
 				</MigPane>
 			</content>
 			

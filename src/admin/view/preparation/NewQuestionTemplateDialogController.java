@@ -1,9 +1,6 @@
 package admin.view.preparation;
 
-import java.util.ArrayList;
-
 import admin.model.Model;
-import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
 import admin.model.exam_entries.Question;
@@ -14,7 +11,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 
-public class QuestionTemplateDialogController
+public class NewQuestionTemplateDialogController
 {
 	@FXML
 	Dialog<QuestionPart> root;
@@ -32,7 +29,7 @@ public class QuestionTemplateDialogController
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 		okButton.setDisable( true);
 
-		exams.getItems().addAll( find( Exam.class, Model.getInstance().getEntries()));
+		exams.getItems().addAll( Model.getInstance().getEntries().findAll( Exam.class));
 		questions.setDisable( true);
 		parts.setDisable( true);
 
@@ -43,28 +40,15 @@ public class QuestionTemplateDialogController
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{
-				return (QuestionPart) parts.getSelectionModel().getSelectedItem();
+				return (QuestionPart) parts.getValue();
 			}
 			return null;
 		});
 	}
 
-	private ArrayList<Entry> find( Class<?> type, Container container)
-	{
-		ArrayList<Entry> result = new ArrayList<>();
-
-		if ( container != null)
-		{
-			container.getAll().stream().forEachOrdered( e -> result.addAll( find( type, e)));
-			container.getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
-		}
-
-		return result;
-	}
-
 	private void examSelected( Entry exam)
 	{
-		questions.getItems().setAll( find( Question.class, exam));
+		questions.getItems().setAll( exam.findAll( Question.class));
 		questions.setPromptText( "Select a question");
 		questions.setDisable( false);
 
@@ -74,7 +58,7 @@ public class QuestionTemplateDialogController
 
 	private void questionSelected( Entry question)
 	{
-		parts.getItems().setAll( find( QuestionPart.class, question));
+		parts.getItems().setAll( question.findAll( QuestionPart.class));
 		parts.setPromptText( "Select a part");
 		parts.setDisable( false);
 	}

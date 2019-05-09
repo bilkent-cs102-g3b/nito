@@ -12,7 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
 
-public class QuestionTemplateDialogTester extends Application
+public class NewQuestionTemplateDialogTester extends Application
 {
 
 	Exam e;
@@ -30,7 +30,7 @@ public class QuestionTemplateDialogTester extends Application
 		Model.getInstance().createQuestion( e, "Question 2", 50);
 
 		Model.getInstance().createQuestionPart( q, "Part", 50);
-		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/QuestionTemplateDialog.fxml").toURI().toURL());
+		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml").toURI().toURL());
 		d.setResizable( true);
 		System.out.println( d.showAndWait());
 	}

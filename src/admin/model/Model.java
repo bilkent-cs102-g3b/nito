@@ -52,6 +52,9 @@ public class Model implements Serializable
 		lastExam = null;
 	}
 
+	/**
+	 * @return the instance of the Nito Admin interface model
+	 */
 	public static Model getInstance()
 	{
 		if ( instance == null)
@@ -104,9 +107,9 @@ public class Model implements Serializable
 	 * @param maxPoints The maximum amount of points available for this question
 	 * @return The reference to the created question
 	 */
-	public Question createQuestion( Entry parent, String title, int maxPoints)
+	public Question createQuestion( Entry parent, String title)
 	{
-		Question q = new Question( title, maxPoints);
+		Question q = new Question( title);
 		parent.add( q);
 		return q;
 	}
@@ -212,6 +215,9 @@ public class Model implements Serializable
 		status = STATUS_EXAM_MODE;
 	}
 
+	/**
+	 * TODO
+	 */
 	public void endCurrentExam()
 	{
 		if ( currentExam == null)
@@ -223,6 +229,11 @@ public class Model implements Serializable
 		currentExam = null;
 	}
 
+	/**
+	 * TODO
+	 * @param msg
+	 * @param socket
+	 */
 	private void handleMessage( String msg, Socket socket)
 	{
 		String[] parts = msg.split( ":::");
@@ -248,6 +259,12 @@ public class Model implements Serializable
 		}
 	}
 
+	/**
+	 * TODO
+	 * @param content
+	 * @param id
+	 * @param from
+	 */
 	private void solutionReceived( String content, String id, Examinee from)
 	{
 		Object object = IDHandler.getInstance().getByID( id);

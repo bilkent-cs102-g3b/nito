@@ -12,7 +12,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 
-public class ExamInstructionsDialogController
+public class NewExamInstructionDialogController
 {
 	@FXML
 	Dialog<Exam> root;

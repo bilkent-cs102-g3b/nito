@@ -70,4 +70,19 @@ public class Container implements Serializable
 			child.send( e, m);
 		}
 	}
+	
+	/**
+	 * Finds all entries of the given type in this container. Includes result from subcontainers too.
+	 * @param type The type of entries to search for
+	 * @return An arraylist containing all entries of the specified type
+	 */
+	public ArrayList<Entry> findAll( Class<?> type)
+	{
+		ArrayList<Entry> result = new ArrayList<>();
+		
+		getAll().stream().forEachOrdered( e -> result.addAll( e.findAll( type)));
+		getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
+
+		return result;
+	}
 }

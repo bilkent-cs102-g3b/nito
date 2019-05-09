@@ -20,12 +20,10 @@ public class Question extends Entry
 	/**
 	 * Creates a Question
 	 * @param title
-	 * @param maxPoints
 	 */
-	public Question( String title, int maxPoints)
+	public Question( String title)
 	{
 		super( title);
-		this.maxPoints = maxPoints;
 	}
 
 	// Methods
@@ -37,18 +35,20 @@ public class Question extends Entry
 	}
 
 	/**
-	 * @param points
-	 */
-	public void setMaxPoints( int points)
-	{
-		maxPoints = points;
-	}
-
-	/**
 	 * @return maxPoints
 	 */
 	public int getMaxPoints()
 	{
 		return maxPoints;
+	}
+	
+	@Override
+	public void add( Entry entry)
+	{
+		super.add( entry);
+		if (entry instanceof QuestionPart)
+		{
+			maxPoints += ((QuestionPart) entry).getMaxPoints();
+		}
 	}
 }

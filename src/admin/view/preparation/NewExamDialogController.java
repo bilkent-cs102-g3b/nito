@@ -1,5 +1,7 @@
 package admin.view.preparation;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ButtonType;
@@ -30,17 +32,10 @@ public class NewExamDialogController
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 		okButton.setDisable( true);
 
-		title.textProperty().addListener( (o, oldVal, newVal) -> {
-			okButton.setDisable( !isValid());
-		});
-
-		hours.textProperty().addListener( (o, oldVal, newVal) -> {
-			okButton.setDisable( !isValid());
-		});
-
-		mins.textProperty().addListener( (o, oldVal, newVal) -> {
-			okButton.setDisable( !isValid());
-		});
+		ChangeListener<? super String> listener = ( ObservableValue<?> o, Object oldVal, Object newVal) -> okButton.setDisable( !isValid());
+		title.textProperty().addListener( listener);
+		hours.textProperty().addListener( listener);
+		mins.textProperty().addListener( listener);
 		
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)

@@ -9,28 +9,27 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create part X" title="New Question" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog resizable="true" headerText="Create part X" title="New Question" fx:controller="admin.view.preparation.NewQuestionPartDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
-<fx:define>
+	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
 				<Image url="/icon_plus.PNG"/>
 			</image>
 		</ImageView>
-</fx:define>
+	</fx:define>
 
 	<dialogPane>
 		<DialogPane graphic="$icon">
-			<!-- Dialog icon -->
-	 	   <!-- Dialog content -->
+			<!-- Dialog content -->
 		    <content>
 			    <MigPane layout="wrap" cols="2mm[22mm:22mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push">
 					
 					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow"/>
+					<TextField MigPane.cc="grow" fx:id="titleField"/>
 				        
 					<Label text="Maximum points:" MigPane.cc="left"/>
-					<TextField alignment="CENTER_RIGHT" MigPane.cc="grow"/>
+					<TextField MigPane.cc="grow" fx:id="maxPointsField"/>
 				</MigPane>
 			</content>
 			
@@ -38,7 +37,6 @@
 			<buttonTypes>
 				<ButtonType fx:constant="PREVIOUS" />
 				<ButtonType fx:constant="NEXT" />
-				<ButtonType fx:constant="FINISH" />
 				<ButtonType fx:constant="CANCEL" />
 			</buttonTypes>
 		</DialogPane>
