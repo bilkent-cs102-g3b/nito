@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" fx:controller="admin.view.preparation.ExamInstructionsDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 <fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -20,14 +20,18 @@
 </fx:define>
 
 	<dialogPane>
-		<DialogPane prefHeight="200" prefWidth="400" graphic="$icon">
+		<DialogPane prefHeight="200" prefWidth="450" graphic="$icon">
 			<!-- Dialog icon -->
 	 	   <!-- Dialog content -->
 		    <content>
 			    <MigPane layout="wrap" cols="[][grow]" rows="push[]push[]push">
 					
-					<Label text="Exam:" MigPane.cc="left"/>
-					<ChoiceBox MigPane.cc="grow"/>
+					<Label text="Exam:" MigPane.cc="left">
+					<minWidth>
+							<Region fx:constant="USE_PREF_SIZE"/>
+						</minWidth>
+					</Label>
+					<ComboBox MigPane.cc="grow" fx:id="exams"/>
 					
 				</MigPane>
 			</content>
