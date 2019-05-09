@@ -10,14 +10,17 @@ import javafx.scene.image.ImageView;
 
 public class LoginController
 {
-	@FXML Button login;
-	@FXML TextField id;
-	@FXML TextField ip;
-	
+	@FXML
+	Button login;
+	@FXML
+	TextField id;
+	@FXML
+	TextField ip;
+
 	public void initialize() throws MalformedURLException
 	{
 	}
-	
+
 	public void buttonAction() throws MalformedURLException
 	{
 		if ( login.isPressed())

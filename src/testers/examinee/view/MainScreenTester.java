@@ -15,7 +15,7 @@ import javafx.stage.WindowEvent;
 public class MainScreenTester extends Application
 {
 	@Override
-	public void start(Stage stage)
+	public void start( Stage stage)
 	{
 		try
 		{
@@ -23,32 +23,32 @@ public class MainScreenTester extends Application
 			String path;
 
 			path = "src/examinee/view/MainScreen.fxml";
-			root = (SplitPane) FXMLLoader.load(new File(path).toURI().toURL());
-			Scene scene = new Scene(root, 1200, 675);
+			root = (SplitPane) FXMLLoader.load( new File( path).toURI().toURL());
+			Scene scene = new Scene( root, 1200, 675);
 			stage.setScene( scene);
-			
+
 			// TODO Delete this?
-			stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
 				@Override
-				public void handle(WindowEvent event)
+				public void handle( WindowEvent event)
 				{
-					System.exit(0);
+					System.exit( 0);
 				}
 			});
-			
-			System.out.println( new File("Resources/logo.png").toURI().toURL().toString());
-			stage.getIcons().add( new Image( new File("Resources/logo.png").toURI().toURL().toString()));
-			stage.setTitle("Sample frame");
+
+			System.out.println( new File( "Resources/logo.png").toURI().toURL().toString());
+			stage.getIcons().add( new Image( new File( "Resources/logo.png").toURI().toURL().toString()));
+			stage.setTitle( "Sample frame");
 			stage.show();
 		}
-		catch( Exception e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] args)
+
+	public static void main( String[] args)
 	{
-		launch(args);
+		launch( args);
 	}
 }

@@ -9,7 +9,7 @@
 	<fx:define>
   		<ImageView fitWidth="120" preserveRatio="true" fx:id="greenTick">
 			<image>
-				<Image url="/GreenTick.png"/>
+				<Image url="/tick_green.png"/>
 			</image>
 		</ImageView>
 	</fx:define>

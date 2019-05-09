@@ -58,7 +58,8 @@ public class Container implements Serializable
 	}
 
 	/**
-	 * Calls {@link Entry#send(Examinee, Model)} method of all children of this container
+	 * Calls {@link Entry#send(Examinee, Model)} method of all children of this
+	 * container
 	 * @param e The Examinee to which the data is to be send
 	 * @param m The model from which the data is to be send
 	 */

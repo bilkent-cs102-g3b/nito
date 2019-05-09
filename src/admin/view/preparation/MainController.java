@@ -14,25 +14,25 @@ public class MainController
 	private NumberedEditor editor;
 	@FXML
 	private TreeItem<String> examTree;
-	
-//	private ArrayList<String> exams;
-	
+
+	// private ArrayList<String> exams;
+
 	public void initialize()
 	{
 		test();
 	}
-	
+
 	/**
 	 * TODO Remove after testing
 	 */
 	private void test()
 	{
 		breadCrumb.setSelectedCrumb( BreadCrumbBar.buildTreeModel( "Some", "crumb", "here", "!"));
-//		breadCrumb.autosize();
-		
-		examTree.getChildren().add(new TreeItem<String>("Exam1"));
+		// breadCrumb.autosize();
+
+		examTree.getChildren().add( new TreeItem<String>( "Exam1"));
 	}
-	
+
 	/**
 	 * Adds exam to the view
 	 * @param name - The name of the exam

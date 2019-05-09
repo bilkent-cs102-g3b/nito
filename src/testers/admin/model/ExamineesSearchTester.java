@@ -1,4 +1,4 @@
-package testers.admin;
+package testers.admin.model;
 
 import java.util.Arrays;
 

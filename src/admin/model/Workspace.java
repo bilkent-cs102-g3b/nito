@@ -174,7 +174,7 @@ public class Workspace
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		// TODO save other data
 	}
 

@@ -13,7 +13,7 @@ public class Exam extends Entry
 {
 	// properties
 	private static final long serialVersionUID = -6393169094783192139L;
-	
+
 	/**
 	 * Duration of the exam in seconds
 	 */
@@ -34,12 +34,12 @@ public class Exam extends Entry
 	}
 
 	// methods
-	
+
 	@Override
 	public void send( Examinee e, Model m)
 	{
 		m.sendMessage( "exam", title + Model.MESSAGE_SEPERATOR + length, e);
-		sendAll(e, m);
+		sendAll( e, m);
 	}
 
 	/**

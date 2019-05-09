@@ -6,9 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.Socket;
-import java.util.ArrayList;
 
-import admin.NitoAdminView;
 import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
@@ -37,7 +35,6 @@ public class Model implements Serializable
 	private static Model instance;
 
 	private transient int status;
-	private transient ArrayList<NitoAdminView> views;
 	private transient Examinees examinees;
 	private transient Server server;
 	private Container entries;
@@ -71,7 +68,6 @@ public class Model implements Serializable
 	private void initialize()
 	{
 		status = STATUS_PREPARATION;
-		views = new ArrayList<>();
 		examinees = new Examinees();
 		currentExam = null;
 		examEndCheckerThread = null;
@@ -167,7 +163,8 @@ public class Model implements Serializable
 	/**
 	 * @return the entries
 	 */
-	public Container getEntries() {
+	public Container getEntries()
+	{
 		return entries;
 	}
 
@@ -273,7 +270,6 @@ public class Model implements Serializable
 	private Examinee createExaminee( String name, Socket socket)
 	{
 		Examinee e = examinees.newExaminee( name, socket);
-		updateViews();
 		return e;
 	}
 
@@ -361,37 +357,6 @@ public class Model implements Serializable
 	// TODO
 
 	/****************************** GENERAL ******************************/
-	/**
-	 * Adds a view to this model and immediately calls updateView method. The
-	 * updateView method of this view will be automatically called whenever it is
-	 * necessary
-	 * @param view The view to add to this model
-	 */
-	public void addView( NitoAdminView view)
-	{
-		views.add( view);
-		view.updateView( this);
-	}
-
-	/**
-	 * Calls the update view method of all views added to this model
-	 */
-	private void updateViews()
-	{
-		// TODO Remember to add this to everywhere!
-		Model ref = this;
-		for ( NitoAdminView view : views)
-		{
-			new Thread( new Runnable() {
-				@Override
-				public void run()
-				{
-					view.updateView( ref);
-				}
-			}).start();
-		}
-	}
-
 	/**
 	 * Deserialization method
 	 */

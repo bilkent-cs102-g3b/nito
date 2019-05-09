@@ -14,7 +14,7 @@ public class Entry extends Container
 {
 	// Constants
 	private static final long serialVersionUID = 6649922102661498183L;
-	
+
 	// Properties
 	protected String title;
 	protected String id;
@@ -81,5 +81,11 @@ public class Entry extends Container
 	public String getId()
 	{
 		return id;
+	}
+
+	@Override
+	public String toString()
+	{
+		return title;
 	}
 }

@@ -1,4 +1,4 @@
-package testers.tcp;
+package testers.common.tcp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -14,10 +14,10 @@ import common.network.Server;
  */
 public class TcpServerTester
 {
-	public static void main(String[] args) throws IOException
+	public static void main( String[] args) throws IOException
 	{
 		@SuppressWarnings("resource")
-		Scanner scan = new Scanner (System.in);
+		Scanner scan = new Scanner( System.in);
 		Server server = new Server() {
 			public void connectionTerminated( Socket socket)
 			{
@@ -26,7 +26,7 @@ public class TcpServerTester
 
 			public void messageReceived( String msg, Socket socket)
 			{
-				System.out.println ("Message from " + socket.getInetAddress()+ ": " + msg);
+				System.out.println( "Message from " + socket.getInetAddress() + ": " + msg);
 			}
 
 			public void screenshotReceived( Screenshot img, DatagramPacket packet)
@@ -36,15 +36,15 @@ public class TcpServerTester
 			@Override
 			public void connectionEstablished( Socket socket)
 			{
-				System.out.println("Connection established with " + socket.getInetAddress().getHostAddress());
+				System.out.println( "Connection established with " + socket.getInetAddress().getHostAddress());
 			}
 		};
 		String s;
-		
-		while (true)
+
+		while ( true)
 		{
 			s = scan.nextLine();
-			server.sendMessageToAll(s);
+			server.sendMessageToAll( s);
 		}
 	}
 }

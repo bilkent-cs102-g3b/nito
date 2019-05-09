@@ -13,7 +13,8 @@ public class Template extends Entry
 
 	// constructors
 	/**
-	 * This constructs an instance of Criteria using superclass's constructor, with the given title.
+	 * This constructs an instance of Criteria using superclass's constructor, with
+	 * the given title.
 	 * @param title
 	 */
 	public Template( String title)
@@ -22,7 +23,7 @@ public class Template extends Entry
 	}
 
 	// methods
-	
+
 	/**
 	 */
 	@Override

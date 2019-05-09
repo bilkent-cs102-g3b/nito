@@ -1,4 +1,4 @@
-package testers.admin.view.preparation;
+package testers.admin.view.grading;
 
 import java.io.IOException;
 
@@ -10,10 +10,11 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class GradingListViewTester extends Application {
+public class GradingListViewTester extends Application
+{
 
 	@Override
-	public void start(Stage stage) throws IOException
+	public void start( Stage stage) throws IOException
 	{
 		TableView<?> root;
 		String resource;
@@ -35,7 +36,8 @@ public class GradingListViewTester extends Application {
 		stage.show();
 	}
 
-	public static void main(String[] args) {
-		launch(args);
+	public static void main( String[] args)
+	{
+		launch( args);
 	}
 }

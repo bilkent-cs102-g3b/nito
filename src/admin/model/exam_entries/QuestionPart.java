@@ -10,13 +10,13 @@ import admin.model.Model;
 public class QuestionPart extends Entry
 {
 	private static final long serialVersionUID = -7659809221309413824L;
-	
+
 	private int maxPoints;
 
 	/**
 	 * Creates a question part
-	 * @param title The title of this part
-	 * @param content The content
+	 * @param title     The title of this part
+	 * @param content   The content
 	 * @param maxPoints
 	 */
 	public QuestionPart( String title, int maxPoints)
@@ -24,14 +24,14 @@ public class QuestionPart extends Entry
 		super( title);
 		this.maxPoints = maxPoints;
 	}
-	
+
 	@Override
 	/**
 	 */
 	public void send( Examinee e, Model m)
 	{
 		m.sendMessage( "part", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content, e);
-		sendAll(e, m);
+		sendAll( e, m);
 	}
 
 	/**

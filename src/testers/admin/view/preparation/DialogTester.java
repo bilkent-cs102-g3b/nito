@@ -1,4 +1,4 @@
-package testers.admin.view.preparation.dialog;
+package testers.admin.view.preparation;
 
 import java.io.File;
 import java.io.IOException;

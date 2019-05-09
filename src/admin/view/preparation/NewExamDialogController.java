@@ -19,7 +19,7 @@ public class NewExamDialogController
 {
 	public static final int MAX_SECS = 10 * 60 * 60 + 59 * 60;
 	public static final int MIN_SECS = 59;
-	
+
 	@FXML
 	Dialog<Pair<String, Integer>> root;
 	@FXML
@@ -33,8 +33,7 @@ public class NewExamDialogController
 	{
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 
-		okButton.addEventFilter( ActionEvent.ACTION, e ->
-		{
+		okButton.addEventFilter( ActionEvent.ACTION, e -> {
 			if ( !isValid())
 			{
 				Alert alert = new Alert( AlertType.ERROR);
@@ -42,13 +41,12 @@ public class NewExamDialogController
 				alert.setHeaderText( "Invalid arguments");
 				alert.setContentText( "The values you provided are invalid. Please check them and try again.");
 				alert.showAndWait();
-				
+
 				e.consume();
 			}
 		});
 
-		root.setResultConverter( button ->
-		{
+		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{
 				return new Pair<>( title.getText(), secs());
@@ -61,7 +59,7 @@ public class NewExamDialogController
 	{
 		return hours.getValue() >= 0 && mins.getValue() >= 0 && secs() >= MIN_SECS && secs() <= MAX_SECS && title.getText().trim().length() > 0;
 	}
-	
+
 	private int secs()
 	{
 		return hours.getValue() * 60 * 60 + mins.getValue() * 60;

@@ -1,4 +1,4 @@
-package testers.udp;
+package testers.common.udp;
 
 import java.awt.AWTException;
 import java.io.IOException;
@@ -14,23 +14,24 @@ import common.network.Screenshot;
 public class UdpClientTester
 {
 	static double scale = 0.25;
-	public static void main(String[] args) throws AWTException, IOException
+
+	public static void main( String[] args) throws AWTException, IOException
 	{
 		Scanner scan = new Scanner( System.in);
 		String addr = "localhost";
-//		addr = scan.next();
+		// addr = scan.next();
 		scan.close();
-		Client client = new Client(addr) {
-			public void messageReceived(String msg)
+		Client client = new Client( addr) {
+			public void messageReceived( String msg)
 			{
-				System.out.println("\"" + msg + "\"");
-				scale = ((double) Integer.parseInt(msg)) / 100.0;
+				System.out.println( "\"" + msg + "\"");
+				scale = ((double) Integer.parseInt( msg)) / 100.0;
 			}
 		};
-		
-		while (true)
+
+		while ( true)
 		{
-//			Thread.sleep(33);
+			// Thread.sleep(33);
 			client.sendImage( new Screenshot( scale));
 		}
 	}

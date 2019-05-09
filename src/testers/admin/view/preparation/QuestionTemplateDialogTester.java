@@ -1,4 +1,4 @@
-package testers.admin;
+package testers.admin.view.preparation;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,10 +25,10 @@ public class QuestionTemplateDialogTester extends Application
 		Model.getInstance().createExam( "Exam2", 50);
 		Model.getInstance().createExam( "Exam3", 50);
 		e = Model.getInstance().createExam( "Exam", 50);
-		
+
 		q = Model.getInstance().createQuestion( e, "Question", 50);
 		Model.getInstance().createQuestion( e, "Question 2", 50);
-		
+
 		Model.getInstance().createQuestionPart( q, "Part", 50);
 		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/QuestionTemplateDialog.fxml").toURI().toURL());
 		d.setResizable( true);

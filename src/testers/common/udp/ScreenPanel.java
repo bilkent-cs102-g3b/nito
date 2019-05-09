@@ -1,4 +1,4 @@
-package testers.udp;
+package testers.common.udp;
 
 import java.awt.Graphics;
 
@@ -10,17 +10,17 @@ public class ScreenPanel extends JPanel
 {
 	private static final long serialVersionUID = 4418933199627236391L;
 	private Screenshot screen;
-	
+
 	public void show( Screenshot screen)
 	{
 		this.screen = screen;
 		repaint();
 	}
-	
+
 	@Override
-	protected void paintComponent(Graphics g)
+	protected void paintComponent( Graphics g)
 	{
-		super.paintComponent(g);
+		super.paintComponent( g);
 		g.drawImage( screen.getImage(), 0, 0, null);
 	}
 }

@@ -13,7 +13,8 @@ public class Criteria extends Entry
 
 	// Constructors
 	/**
-	 * This constructs an instance of Criteria using superclass's constructor, with the given title.
+	 * This constructs an instance of Criteria using superclass's constructor, with
+	 * the given title.
 	 * @param title
 	 */
 	public Criteria( String title)
