@@ -1,13 +1,9 @@
 package admin.view.preparation;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.util.Pair;
 
@@ -25,31 +21,31 @@ public class NewExamDialogController
 	@FXML
 	TextField title;
 	@FXML
-	Spinner<Integer> hours;
+	TextField hours;
 	@FXML
-	Spinner<Integer> mins;
+	TextField mins;
 
 	public void initialize()
 	{
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
+		okButton.setDisable( true);
 
-		okButton.addEventFilter( ActionEvent.ACTION, e -> {
-			if ( !isValid())
-			{
-				Alert alert = new Alert( AlertType.ERROR);
-				alert.setTitle( "Invalid arguments");
-				alert.setHeaderText( "Invalid arguments");
-				alert.setContentText( "The values you provided are invalid. Please check them and try again.");
-				alert.showAndWait();
-
-				e.consume();
-			}
+		title.textProperty().addListener( (o, oldVal, newVal) -> {
+			okButton.setDisable( !isValid());
 		});
 
+		hours.textProperty().addListener( (o, oldVal, newVal) -> {
+			okButton.setDisable( !isValid());
+		});
+
+		mins.textProperty().addListener( (o, oldVal, newVal) -> {
+			okButton.setDisable( !isValid());
+		});
+		
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{
-				return new Pair<>( title.getText(), secs());
+				return new Pair<>( title.getText(), toSecs());
 			}
 			return null;
 		});
@@ -57,11 +53,22 @@ public class NewExamDialogController
 
 	private boolean isValid()
 	{
-		return hours.getValue() >= 0 && mins.getValue() >= 0 && secs() >= MIN_SECS && secs() <= MAX_SECS && title.getText().trim().length() > 0;
+		try
+		{
+			int hour = Integer.parseInt( hours.getText());
+			int min = Integer.parseInt( mins.getText());
+			return hour >= 0 && hour <= 10 && min >= 0 && min <= 59 && toSecs() >= MIN_SECS && toSecs() <= MAX_SECS && title.getText().trim().length() > 0;
+		}
+		catch (NumberFormatException e)
+		{
+			return false;
+		}
 	}
 
-	private int secs()
+	private int toSecs()
 	{
-		return hours.getValue() * 60 * 60 + mins.getValue() * 60;
+		int hour = Integer.parseInt( hours.getText());
+		int min = Integer.parseInt( mins.getText());
+		return hour * 60 * 60 + min * 60;
 	}
 }
