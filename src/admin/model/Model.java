@@ -164,6 +164,15 @@ public class Model implements Serializable
 	}
 
 	/**
+	 * Deletes the entry
+	 * @param e The entry to delete
+	 */
+	public void deleteEntry( Entry e)
+	{
+		e.getParent().remove( e);
+	}
+
+	/**
 	 * @return the entries
 	 */
 	public Container getEntries()

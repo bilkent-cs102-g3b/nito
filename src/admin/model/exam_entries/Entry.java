@@ -19,6 +19,7 @@ public class Entry extends Container
 	protected String title;
 	protected String id;
 	protected String content;
+	protected Container parent;
 
 	// Constructors
 	/**
@@ -29,6 +30,7 @@ public class Entry extends Container
 		this.title = title;
 		content = "";
 		id = IDHandler.getInstance().generate( this);
+		parent = null;
 	}
 
 	// methods
@@ -95,5 +97,21 @@ public class Entry extends Container
 		if ( e == null)
 			return false;
 		return id.equals( ((Entry) e).id);
+	}
+
+	/**
+	 * @return The parent
+	 */
+	public Container getParent()
+	{
+		return parent;
+	}
+
+	/**
+	 * @param parent The parent to set
+	 */
+	public void setParent( Container parent)
+	{
+		this.parent = parent;
 	}
 }

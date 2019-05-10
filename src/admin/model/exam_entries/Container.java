@@ -37,6 +37,7 @@ public class Container implements Serializable
 	public void add( Entry entry)
 	{
 		children.add( entry);
+		entry.setParent( this);
 	}
 
 	/**
@@ -55,6 +56,7 @@ public class Container implements Serializable
 	public void remove( Entry entry)
 	{
 		children.remove( entry);
+		entry.setParent( null);
 	}
 
 	/**
@@ -70,16 +72,17 @@ public class Container implements Serializable
 			child.send( e, m);
 		}
 	}
-	
+
 	/**
-	 * Finds all entries of the given type in this container. Includes result from subcontainers too.
+	 * Finds all entries of the given type in this container. Includes result from
+	 * subcontainers too.
 	 * @param type The type of entries to search for
 	 * @return An arraylist containing all entries of the specified type
 	 */
 	public ArrayList<Entry> findAll( Class<?> type)
 	{
 		ArrayList<Entry> result = new ArrayList<>();
-		
+
 		getAll().stream().forEachOrdered( e -> result.addAll( e.findAll( type)));
 		getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
 
