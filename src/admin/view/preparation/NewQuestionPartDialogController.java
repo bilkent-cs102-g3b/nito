@@ -24,6 +24,8 @@ public class NewQuestionPartDialogController
 
 	public void initialize()
 	{
+		root.getDialogPane().lookupButton(ButtonType.PREVIOUS).setDisable(true);
+		
 		root.setOnShown( e -> {
 			Node continueButton;
 			@SuppressWarnings("unchecked")

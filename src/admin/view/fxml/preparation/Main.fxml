@@ -44,7 +44,7 @@
 			<Menu text="New"  styleClass="menu-item">
 				<MenuItem text="Exam" onAction="#addExam"/>
 				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
-<!-- 				<MenuItem text="Question" onAction="#addQuestion"/> -->
+				<MenuItem text="Question" onAction="#addQuestion"/>
 <!-- 				<MenuItem text="Question Part" onAction="#addPart"/> -->
 				<MenuItem text="Question Template" onAction="#addTemplate"/>
 			</Menu>
@@ -72,7 +72,7 @@
 		<Pane HBox.hgrow="ALWAYS" />
 		<Separator />
 		
-		<Button graphic="$icon_home" styleClass="navButton"/>
+		<Button graphic="$icon_home" styleClass="selectedNavButton"/>
 		<Button graphic="$icon_listView" styleClass="navButton"/>
 		<Button graphic="$icon_otherView" styleClass="navButton"/>
 	</ToolBar>
@@ -81,16 +81,12 @@
 	<SplitPane dividerPositions="0.20f" VBox.vgrow="ALWAYS">
 	
 		<!-- EXAMS TREE -->
-		<TreeView minWidth="100">
+		<TreeView minWidth="100" fx:id="examTreeView">
 			<TreeItem value="Exams" expanded="true" fx:id="examTree" />
 		</TreeView>
 		
 		<!-- EDITOR -->
-		<TabPane minWidth="300">
-			<Tab text="Question 1">
-			<NumberedEditor />
-			</Tab>
-		</TabPane>
+		<TabPane minWidth="300" fx:id="tabPane" />
 		
 	</SplitPane>
 </VBox>

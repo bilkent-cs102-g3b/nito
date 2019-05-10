@@ -48,6 +48,11 @@ public class NewQuestionDialogController
 			return null;
 		});
 	}
+	
+	public void openQuestionParts()
+	{
+		
+	}
 
 	private boolean isValid()
 	{

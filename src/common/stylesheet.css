@@ -3,11 +3,25 @@
 	-fx-background-color:transparent ;
 }
 
-.navButton:focused
+.navButton:hover
+{
+	-fx-background-color: rgb(153,179,255) 
+}
+
+.selectedNavButton
 {
 	-fx-background-color:rgb(204,204,204);
 }
 
+.selectedNavButton:hover
+{
+	-fx-background-color: rgb(153,179,255) 
+}
+
 .menu-item {
     -fx-padding:  5 80 5 5;
+}
+
+.tab-pane {
+  -fx-tab-min-width:100px;
 }

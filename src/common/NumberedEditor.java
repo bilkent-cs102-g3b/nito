@@ -55,7 +55,6 @@ public class NumberedEditor extends HBox
 		super();
 
 		editor = new TextArea();
-		editor.setText( initialContent);
 		setHgrow( editor, Priority.ALWAYS);
 
 		lastNum = 1;
@@ -123,6 +122,7 @@ public class NumberedEditor extends HBox
 				sizeTextAreaToText( lineNums, currentNums);
 			}
 		});
+		editor.setText( initialContent);
 	}
 
 	/**
