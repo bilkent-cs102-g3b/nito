@@ -82,8 +82,7 @@
 	
 		<!-- EXAMS TREE -->
 		<TreeView minWidth="100">
-			<TreeItem value="Exams" expanded="true" fx:id="examTree">
-			</TreeItem>
+			<TreeItem value="Exams" expanded="true" fx:id="examTree" />
 		</TreeView>
 		
 		<!-- EDITOR -->

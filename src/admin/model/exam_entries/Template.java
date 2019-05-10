@@ -21,14 +21,4 @@ public class Template extends Entry
 	{
 		super( title);
 	}
-
-	// methods
-
-	/**
-	 */
-	@Override
-	public String toString()
-	{
-		return "[Title= " + super.getTitle() + ", content= " + super.getContent() + "]";
-	}
 }

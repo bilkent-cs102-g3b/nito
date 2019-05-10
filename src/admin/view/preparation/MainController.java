@@ -1,16 +1,17 @@
 package admin.view.preparation;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Optional;
 
 import org.controlsfx.control.BreadCrumbBar;
 
 import admin.model.Model;
+import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
-import admin.model.exam_entries.Question;
+import admin.model.exam_entries.Instruction;
 import admin.model.exam_entries.QuestionPart;
+import admin.model.exam_entries.Template;
 import common.NumberedEditor;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,40 +28,28 @@ public class MainController
 	@FXML
 	private TreeItem<Entry> examTree;
 
-	
-	private TreeItem<Entry> intermediate;
-
-	// private ArrayList<String> exams;
-
 	public void initialize()
 	{
-		test();
+		updateTreeView();
 	}
 
-	/**
-	 * TODO Remove after testing
-	 */
-	private void test()
+	private void updateTreeView()
 	{
-		//breadCrumb.setSelectedCrumb( BreadCrumbBar.buildTreeModel( "Some", "crumb", "here", "!"));
-		// breadCrumb.autosize();
-
-		fillTreeView(examTree);
+		updateTreeView( examTree, Model.getInstance().getEntries());
 	}
-	
-	private void fillTreeView(TreeItem<Entry> item) 
+
+	private void updateTreeView( TreeItem<Entry> item, Container container)
 	{
-		if(item == examTree)
-		{
-			Model.getInstance().getEntries().getAll().forEach(d -> item.getChildren().add(new TreeItem<Entry>(d)));
-		}
-		item.getChildren().forEach(e -> 
-		{
-			e.getValue().getAll().forEach(d -> 
-			{
-				e.getChildren().add(new TreeItem<Entry>(d));
-			});
-			fillTreeView(e);
+		container.getAll().forEach( e -> {
+			TreeItem<Entry> nextItem = new TreeItem<>( e);
+
+			Optional<TreeItem<Entry>> optional = item.getChildren().stream().filter( ti -> ti.getValue().equals( e)).findAny();
+			if ( optional.isPresent())
+				nextItem = optional.get();
+			else
+				item.getChildren().add( nextItem);
+
+			updateTreeView( nextItem, e);
 		});
 	}
 
@@ -72,80 +61,98 @@ public class MainController
 	{
 		Dialog<Pair<String, Integer>> d;
 		Optional<Pair<String, Integer>> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewExamDialog.fxml"));
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamDialog.fxml"));
 			result = d.showAndWait();
-			if(result.isPresent())
-			{
-				Model.getInstance().createExam(result.get().getKey(), result.get().getValue());
-			}
-			
-		} catch (IOException e) {
+			result.ifPresent( p -> {
+				Exam e = Model.getInstance().createExam( p.getKey(), p.getValue());
+				updateTreeView();
+				openTab( e);
+			});
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void addInstructions()
 	{
 		Dialog<Exam> d;
 		Optional<Exam> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
 			result = d.showAndWait();
-			if(result.isPresent())
-			{
-				Model.getInstance().createInstruction(result.get());
-			}
-			
-		} catch (IOException e) {
+			result.ifPresent( e -> {
+				Instruction i = Model.getInstance().createInstruction( e);
+				updateTreeView();
+				openTab( i);
+			});
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	// public void addQuestion()
+	// {
+	// Dialog<Exam> d;
+	// Optional<Exam> test;
+	// try {
+	// d =
+	// FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
+	// test = d.showAndWait();
+	//
+	// } catch (IOException e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	// }
+
+	// public void addPart()
+	// {
+	// Dialog<Exam> d;
+	// Optional<Exam> test;
+	// try {
+	// d =
+	// FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionPartDialog.fxml"));
+	// test = d.showAndWait();
+	//
+	// } catch (IOException e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	// }
+
+	public void addTemplate()
+	{
+		Dialog<QuestionPart> d;
+		Optional<QuestionPart> result;
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
+			result = d.showAndWait();
+			result.ifPresent( qp -> {
+				Template t = Model.getInstance().createTemplate( qp);
+				updateTreeView();
+				openTab(t);
+			});
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-//	public void addQuestion()
-//	{
-//		Dialog<Exam> d;
-//		Optional<Exam> test;
-//		try {
-//			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
-//			test = d.showAndWait();
-//			
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-	
-//	public void addPart()
-//	{
-//		Dialog<Exam> d;
-//		Optional<Exam> test;
-//		try {
-//			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionPartDialog.fxml"));
-//			test = d.showAndWait();
-//			
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-	
-	public void addTemplate()
+	public void openTab( Entry e)
 	{
-		Dialog<QuestionPart> d;
-		Optional<QuestionPart> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
-			result = d.showAndWait();
-			if(result.isPresent())
-			{
-				Model.getInstance().createTemplate(result.get());
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		// TODO
+		System.out.println( "Contents of " + e + " is displayed");
 	}
 }

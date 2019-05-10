@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" fx:controller="admin.view.preparation.ExamInstructionsDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
+<Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" fx:controller="admin.view.preparation.NewExamInstructionDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 <fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">

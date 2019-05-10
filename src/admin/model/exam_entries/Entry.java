@@ -88,4 +88,12 @@ public class Entry extends Container
 	{
 		return title;
 	}
+
+	@Override
+	public boolean equals( Object e)
+	{
+		if ( e == null)
+			return false;
+		return id.equals( ((Entry) e).id);
+	}
 }
