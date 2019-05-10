@@ -2,7 +2,6 @@ package admin.model;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -30,9 +29,30 @@ public class Workspace
 {
 	private File workspace;
 	private static Workspace instance;
+	private Thread autoSave;
 
 	private Workspace()
 	{
+		autoSave = new Thread( new Runnable() {
+			@Override
+			public void run()
+			{
+				while (true)
+				{
+					try
+					{
+						Thread.sleep( 5000);
+					}
+					catch (InterruptedException e)
+					{
+						Thread.currentThread().interrupt();
+						break;
+					}
+					save();
+				}
+			}
+		});
+		autoSave.start();
 	}
 
 	/**
@@ -55,7 +75,7 @@ public class Workspace
 	 */
 	public boolean set( File newWorkspace)
 	{
-		if ( newWorkspace.isDirectory() && getByRelativePath( ".nito") == null)
+		if ( newWorkspace.isDirectory() && getByRelativePath( ".nito", newWorkspace) == null && newWorkspace.listFiles().length > 0)
 		{
 			// Non-empty folder. DANGER! Don't accept it for beta version.
 			// TODO ask whether the user is sure about it instead of ignoring
@@ -68,6 +88,7 @@ public class Workspace
 			moveContents( newWorkspace);
 		}
 		workspace = newWorkspace;
+		load();
 
 		try
 		{
@@ -78,8 +99,6 @@ public class Workspace
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		load();
 		return true;
 	}
 
@@ -120,9 +139,9 @@ public class Workspace
 	 * @return The file object referring to the file that was found, or null if no
 	 *         such file was found
 	 */
-	private File getByRelativePath( String path)
+	private static File getByRelativePath( String path, File root)
 	{
-		File[] files = get().listFiles();
+		File[] files = root.listFiles();
 		for ( File file : files)
 		{
 			String pathToFile = file.getPath();
@@ -161,6 +180,10 @@ public class Workspace
 	 */
 	public void load()
 	{
+		if (getByRelativePath( ".nito", get()) == null)
+		{
+			return;
+		}
 		try
 		{
 			FileInputStream fis = new FileInputStream( getModelFile());
@@ -221,5 +244,10 @@ public class Workspace
 	public File getModelFile()
 	{
 		return new File( getExamEntriesFolder() + File.separator + "model");
+	}
+	
+	public void stopAutoSave()
+	{
+		autoSave.interrupt();
 	}
 }

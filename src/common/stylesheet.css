@@ -23,5 +23,5 @@
 }
 
 .tab-pane {
-  -fx-tab-min-width:100px;
+  -fx-tab-min-width: 10mm;
 }

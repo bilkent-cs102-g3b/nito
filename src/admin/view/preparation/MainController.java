@@ -26,9 +26,13 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.util.Pair;
 
-public class MainController {
+public class MainController
+{
+	@FXML
+	VBox root;
 	@FXML
 	private BreadCrumbBar<String> breadCrumb;
 	@FXML
@@ -38,162 +42,189 @@ public class MainController {
 	@FXML
 	private TabPane tabPane;
 
-	public void initialize() {
-
+	public void initialize()
+	{
 		updateTreeView();
-		examTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		examTreeView.setOnMouseClicked( new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(MouseEvent mouseEvent) {
-		    	TreeItem<Entry> intermediate = examTreeView.getSelectionModel().getSelectedItem();
-		        if(mouseEvent.getClickCount() == 2 && intermediate.isLeaf())
-		        	openTab( intermediate.getValue());
+			public void handle( MouseEvent mouseEvent)
+			{
+				TreeItem<Entry> intermediate = examTreeView.getSelectionModel().getSelectedItem();
+				if ( mouseEvent.getClickCount() == 2 && intermediate != null && intermediate.isLeaf() && intermediate != examTree)
+					openTab( intermediate.getValue());
 			}
 		});
-		
+
 		MenuItem item = new MenuItem( "Delete");
 		item.setOnAction( e -> {
 			TreeItem<Entry> selected = examTreeView.getSelectionModel().getSelectedItem();
-			if (selected != examTree)
-				Model.getInstance().deleteEntry(selected.getValue());
+			if ( selected != examTree)
+				Model.getInstance().deleteEntry( selected.getValue());
 			else
 				Model.getInstance().getEntries().getAll().clear();
 			updateTreeView();
 		});
-		ContextMenu menu = new ContextMenu(item);
-		
+		ContextMenu menu = new ContextMenu( item);
+
 		examTreeView.setContextMenu( menu);
 	}
 
-	private void updateTreeView() {
-		updateTreeView(examTree, Model.getInstance().getEntries());
+	private void updateTreeView()
+	{
+		updateTreeView( examTree, Model.getInstance().getEntries());
 	}
 
-	private void updateTreeView(TreeItem<Entry> item, Container container) {
+	private void updateTreeView( TreeItem<Entry> item, Container container)
+	{
 		ArrayList<TreeItem<Entry>> listOfItems = new ArrayList<>();
-		
-		container.getAll().forEach(e -> {
-			TreeItem<Entry> nextItem = new TreeItem<>(e);
 
-			Optional<TreeItem<Entry>> optional = item.getChildren().stream().filter(ti -> ti.getValue().equals(e)).findAny();
-			if (optional.isPresent())
+		container.getAll().forEach( e -> {
+			TreeItem<Entry> nextItem = new TreeItem<>( e);
+
+			Optional<TreeItem<Entry>> optional = item.getChildren().stream().filter( ti -> ti.getValue().equals( e)).findAny();
+			if ( optional.isPresent())
 				nextItem = optional.get();
 			else
-				item.getChildren().add(nextItem);
-			
-			listOfItems.add(nextItem);
-			updateTreeView(nextItem, e);
+				item.getChildren().add( nextItem);
+
+			listOfItems.add( nextItem);
+			updateTreeView( nextItem, e);
 		});
-		
+
 		item.getChildren().retainAll( listOfItems);
 	}
 
 	/**
 	 * Adds exam to the view
-	 * 
 	 * @param name - The name of the exam
 	 */
-	public void addExam() {
+	public void addExam()
+	{
 		Dialog<Pair<String, Integer>> d;
 		Optional<Pair<String, Integer>> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewExamDialog.fxml"));
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamDialog.fxml"));
+			d.initOwner( root.getScene().getWindow());
 			result = d.showAndWait();
-			result.ifPresent(p -> {
-				Exam e = Model.getInstance().createExam(p.getKey(), p.getValue());
+			result.ifPresent( p -> {
+				Exam e = Model.getInstance().createExam( p.getKey(), p.getValue());
 				updateTreeView();
-				openTab(e);
+				openTab( e);
 			});
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void addInstructions() {
+	public void addInstructions()
+	{
 		Dialog<Exam> d;
 		Optional<Exam> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
+			d.initOwner( root.getScene().getWindow());
 			result = d.showAndWait();
-			result.ifPresent(e -> {
-				Instruction i = Model.getInstance().createInstruction(e);
+			result.ifPresent( e -> {
+				Instruction i = Model.getInstance().createInstruction( e);
 				updateTreeView();
-				openTab(i);
+				openTab( i);
 			});
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void addQuestion() {
+	public void addQuestion()
+	{
 		Dialog<Pair<Entry, Pair<String, Integer>>> questionDialog;
 		Optional<Pair<Entry, Pair<String, Integer>>> result;
-		try {
-			questionDialog = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
+		try
+		{
+			questionDialog = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
+			questionDialog.initOwner( root.getScene().getWindow());
 			result = questionDialog.showAndWait();
-			result.ifPresent(e -> {
-				Question q = Model.getInstance().createQuestion(e.getKey(), e.getValue().getKey());
-				for(int i = 1; i <= e.getValue().getValue(); i++)
+			result.ifPresent( e -> {
+				Question q = Model.getInstance().createQuestion( e.getKey(), e.getValue().getKey());
+				for ( int i = 1; i <= e.getValue().getValue(); i++)
 				{
-					try {
-						Dialog<Pair<String, Integer>> partDialog = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionPartDialog.fxml"));
-						partDialog.getDialogPane().setUserData(new Pair<Integer, Boolean>(i, i==e.getValue().getValue()));
+					try
+					{
+						Dialog<Pair<String, Integer>> partDialog = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionPartDialog.fxml"));
+						partDialog.getDialogPane().setUserData( new Pair<Integer, Boolean>( i, i == e.getValue().getValue()));
+						partDialog.initOwner( root.getScene().getWindow());
 						Optional<Pair<String, Integer>> partResult = partDialog.showAndWait();
-						if(partResult.isPresent())
+						if ( partResult.isPresent())
 						{
-							QuestionPart qp = Model.getInstance().createQuestionPart(q, partResult.get().getKey(), partResult.get().getValue());
+							Model.getInstance().createQuestionPart( q, partResult.get().getKey(), partResult.get().getValue());
 						}
 						else
 						{
-							Model.getInstance().deleteEntry(q);
+							Model.getInstance().deleteEntry( q);
 						}
-					} catch (IOException e1) {
+					}
+					catch (IOException e1)
+					{
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
 				updateTreeView();
 			});
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void addTemplate() {
+	public void addTemplate()
+	{
 		Dialog<QuestionPart> d;
 		Optional<QuestionPart> result;
-		try {
-			d = FXMLLoader.load(getClass().getResource("/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
+			d.initOwner( root.getScene().getWindow());
 			result = d.showAndWait();
-			result.ifPresent(qp -> {
-				Template t = Model.getInstance().createTemplate(qp);
+			result.ifPresent( qp -> {
+				Template t = Model.getInstance().createTemplate( qp);
 				updateTreeView();
-				openTab(t);
+				openTab( t);
 			});
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void openTab(Entry e) {
+	public void openTab( Entry e)
+	{
 		NumberedEditor editor = new NumberedEditor( e.getContent());
-		editor.addListenerToText((o, oldVal, newVal) -> {
-			Model.getInstance().setContentOfEntry(e, newVal);
+		editor.addListenerToText( ( o, oldVal, newVal) -> {
+			Model.getInstance().setContentOfEntry( e, newVal);
 		});
 		Tab tabData = new Tab( e.toString(), editor);
-		tabData.setUserData(e);
-		if (!tabPane.getTabs().stream().anyMatch(t -> t.getUserData().equals(e)))
+		tabData.setUserData( e);
+		if ( !tabPane.getTabs().stream().anyMatch( t -> e.equals( t.getUserData())))
 		{
-			tabPane.getTabs().add(tabData);
-			tabPane.getSelectionModel().select(tabData);
+			tabPane.getTabs().add( tabData);
+			tabPane.getSelectionModel().select( tabData);
 		}
 		else
 		{
-			tabPane.getTabs().stream().filter(t -> t.getUserData().equals(e)).findAny().ifPresent(tabPane.getSelectionModel()::select);
+			tabPane.getTabs().stream().filter( t -> t.getUserData().equals( e)).findAny().ifPresent( tabPane.getSelectionModel()::select);
 		}
-		
+
 	}
 }

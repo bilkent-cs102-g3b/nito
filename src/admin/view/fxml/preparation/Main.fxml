@@ -15,7 +15,7 @@
 <?import common.NumberedEditor?>
 <?import java.net.URL?>
 
-<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.MainController">
+<VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.MainController" fx:id="root">
 	<stylesheets>
       <URL value="@../../../../common/stylesheet.css" />
     </stylesheets>
@@ -46,7 +46,7 @@
 				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
 				<MenuItem text="Question" onAction="#addQuestion"/>
 <!-- 				<MenuItem text="Question Part" onAction="#addPart"/> -->
-				<MenuItem text="Question Template" onAction="#addTemplate"/>
+				<MenuItem text="Question Part Template" onAction="#addTemplate"/>
 			</Menu>
 		</Menu>
 		<Menu text="Edit">
@@ -62,9 +62,9 @@
 	
 	<!-- TOOLBAR -->
 	<ToolBar>
-		<Button text="Tool"/>
+<!-- 		<Pane/> -->
 		
-		<Separator />
+<!-- 		<Separator /> -->
 		<Pane HBox.hgrow="ALWAYS" />
 		
 <!-- 		<BreadCrumbBar fx:id="breadCrumb"/> -->
