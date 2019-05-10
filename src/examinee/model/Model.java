@@ -6,6 +6,11 @@ import java.net.UnknownHostException;
 import common.network.*;
 
 // TODO: Make it proper singleton
+/**
+ * Model class for examinee
+ * @author Alper Sari
+ * @version 09/05/2019
+ */
 public class Model
 {
 	// properties
@@ -44,10 +49,14 @@ public class Model
 		return instance;
 	}
 
+	/**
+	 * Create client with network package and connect to admin ip
+	 * @param name Name of user
+	 * @param ip Admin ip to connect to
+	 * @return true if connection successful
+	 */
 	public boolean login( String name, String ip)
 	{
-		// TODO
-
 		adminIP = ip;
 
 		try
@@ -57,8 +66,7 @@ public class Model
 				@Override
 				public void messageReceived( String msg)
 				{
-					handleMessage( msg);
-					// TODO Auto-generated method stub
+					handleMessage( msg); // Pass message to handle method
 				}
 
 			};
@@ -69,9 +77,8 @@ public class Model
 		}
 		catch (IOException e)
 		{
-			// TODO Login failed
+			//Login failed
 			return false;
-			// e.printStackTrace();
 		}
 
 	}
@@ -81,42 +88,56 @@ public class Model
 	// {
 	// examData = new ExamEntry();
 	// }
-
+	
+	/**
+	 * Handles message according to protocol
+	 * @param msg Received message
+	 */
 	private void handleMessage( String msg)
 	{
 		String parts[] = msg.split( ":::");
 
+		// Create an Instruction, goes into exam
 		if ( parts[1].equals( "instruction"))
 		{
 			reference = new Instruction( parts[2], parts[3], parts[4], false, false);
 			examData.add( reference);
 			reference.setParent( examData);
+			// TODO
 		}
+		
+		// Create a Question, goes into exam
 		if ( parts[1].equals( "question"))
 		{
 			reference = new Question( parts[2], parts[3], parts[4], true, false);
 			examData.add( reference);
 			reference.setParent( examData);
+			// TODO
 		}
+		
+		// Create part, goes into Question
 		if ( parts[1].equals( "part"))
 		{
 			reference = new QuestionPart( parts[2], parts[3], parts[4], true, true);
 			examData.add( reference);
-
+			// TODO
 		}
-
+		
+		// Create an exam, everything else is placed within this container
 		if ( parts[1].equals( "exam"))
 		{
 			examTitle = parts[2];
-			timeTotal = parts[3];
+			timeTotal = Integer.parseInt(parts[3]);
 			timeRemain = timeTotal;
 		}
-
+		
+		// Change status to banned
 		if ( parts[1].equals( "ban"))
 		{
 			status = STATUS_BANNED;
 		}
-
+		
+		// Change status to suspended
 		if ( parts[1].equals( "suspend"))
 		{
 			status = STATUS_SUSPENDED;

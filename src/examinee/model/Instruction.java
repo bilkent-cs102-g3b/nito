@@ -1,5 +1,10 @@
 package examinee.model;
 
+/**
+ * Instruction class
+ * @author Alper Sari
+ * @version 09/05/2019
+ */
 public class Instruction extends ExamEntry
 {
 

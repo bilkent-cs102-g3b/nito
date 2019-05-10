@@ -1,5 +1,10 @@
 package examinee.model;
 
+/**
+ * Question class
+ * @author Alper Sari
+ * @version 09/05/2019
+ */
 public class Question extends ExamEntry
 {
 
