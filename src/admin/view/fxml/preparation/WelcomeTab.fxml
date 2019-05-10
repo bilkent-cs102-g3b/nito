@@ -64,25 +64,25 @@
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconPlus" MigPane.cc="spany"/>
 				<Hyperlink text="New Exam" MigPane.cc="" style="-fx-font-size:25px;"/>
-				<Label text="Create a new exam" MigPane.cc="gapleft 1mm" translateY="-12"/>
+				<Label text="Create a new exam" MigPane.cc="gapleft 1.5mm" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconList" MigPane.cc="spany"/>
 				<Hyperlink text="Instructions" MigPane.cc="" style="-fx-font-size:25px;"/>
-				<Label text="See the basics of using Nito" MigPane.cc="gapleft 1mm" translateY="-12"/>
+				<Label text="See the basics of using Nito" MigPane.cc="gapleft 1.5mm" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconDownload" MigPane.cc="spany"/>
 				<Hyperlink text="Import Exam" MigPane.cc="" style="-fx-font-size:25px;"/>
-				<Label text="Import an existing exam" MigPane.cc="gapleft 1mm" translateY="-12"/>
+				<Label text="Import an existing exam" MigPane.cc="gapleft 1.5mm" translateY="-12"/>
 			</MigPane>
 			
 			<MigPane layout="wrap" rows="[]" cols="[][]">
 				<fx:reference source="iconInfo" MigPane.cc="spany"/>
 				<Hyperlink text="About" MigPane.cc="" style="-fx-font-size:25px;"/>
-				<Label text="Learn more about Nito" MigPane.cc="gapleft 1mm" translateY="-12"/>
+				<Label text="Learn more about Nito" MigPane.cc="gapleft 1.5mm" translateY="-12"/>
 			</MigPane>
 			
 		</MigPane>

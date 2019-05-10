@@ -26,11 +26,11 @@ public class NewQuestionTemplateDialogTester extends Application
 		Model.getInstance().createExam( "Exam3", 50);
 		e = Model.getInstance().createExam( "Exam", 50);
 
-		q = Model.getInstance().createQuestion( e, "Question", 50);
-		Model.getInstance().createQuestion( e, "Question 2", 50);
+		q = Model.getInstance().createQuestion( e, "Question");
+		Model.getInstance().createQuestion( e, "Question 2");
 
 		Model.getInstance().createQuestionPart( q, "Part", 50);
-		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml").toURI().toURL());
+		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/NewQuestionPartOnlyDialog.fxml").toURI().toURL());
 		d.setResizable( true);
 		System.out.println( d.showAndWait());
 	}

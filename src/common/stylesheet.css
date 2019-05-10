@@ -5,5 +5,9 @@
 
 .navButton:focused
 {
-	-fx-background-color:rgb(204,204,204)
+	-fx-background-color:rgb(204,204,204);
+}
+
+.menu-item {
+    -fx-padding:  5 80 5 5;
 }

@@ -41,10 +41,12 @@
 	<!-- MENU -->
 	<MenuBar useSystemMenuBar="true">
 		<Menu text="File">
-			<Menu text="New">
-				<MenuItem text="Exam" />
-				<MenuItem text="Exam Instructions" />
-				<MenuItem text="..." />
+			<Menu text="New"  styleClass="menu-item">
+				<MenuItem text="Exam" onAction="#addExam"/>
+				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
+<!-- 				<MenuItem text="Question" onAction="#addQuestion"/> -->
+<!-- 				<MenuItem text="Question Part" onAction="#addPart"/> -->
+				<MenuItem text="Question Template" onAction="#addTemplate"/>
 			</Menu>
 		</Menu>
 		<Menu text="Edit">
@@ -65,7 +67,7 @@
 		<Separator />
 		<Pane HBox.hgrow="ALWAYS" />
 		
-		<BreadCrumbBar fx:id="breadCrumb"/>
+<!-- 		<BreadCrumbBar fx:id="breadCrumb"/> -->
 		
 		<Pane HBox.hgrow="ALWAYS" />
 		<Separator />
