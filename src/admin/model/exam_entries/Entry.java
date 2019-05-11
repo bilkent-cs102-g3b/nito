@@ -46,6 +46,25 @@ public class Entry extends Container
 	}
 
 	/**
+	 * Finds the first ancestor of this entry of the specified type. If this entry
+	 * has the specified type, then it will be returned
+	 * @param type The type of the ancestor to look for
+	 * @return The specified ancestor, or null if that could not be found
+	 */
+	public Entry findFirstAncestor( Class<?> type)
+	{
+		if ( getClass() == type)
+		{
+			return this;
+		}
+		if ( parent == null || !(parent instanceof Entry))
+		{
+			return null;
+		}
+		return ((Entry) parent).findFirstAncestor( type);
+	}
+
+	/**
 	 * @return The title
 	 */
 	public String getTitle()

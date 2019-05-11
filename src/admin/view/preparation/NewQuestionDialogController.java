@@ -34,7 +34,20 @@ public class NewQuestionDialogController
 		nextButton.setDisable( true);
 
 		examsBox.getItems().setAll( Model.getInstance().getEntries().findAll( Exam.class));
-
+		
+		root.setOnShown( e -> {
+			Object userData = root.getDialogPane().getUserData();
+			if ( userData != null && userData instanceof Entry)
+			{
+				Entry entryUserData = (Entry) userData;
+				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
+				if ( selectedExam != null)
+				{
+					examsBox.getSelectionModel().select( selectedExam);
+				}
+			}
+		});
+		
 		ChangeListener<? super Object> listener = ( ObservableValue<?> o, Object oldVal, Object newVal) -> nextButton.setDisable( !isValid());
 		examsBox.valueProperty().addListener( listener);
 		titleField.textProperty().addListener( listener);

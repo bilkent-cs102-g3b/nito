@@ -44,9 +44,27 @@ public class NewQuestionPartOnlyDialogController
 		questions.valueProperty().addListener( listener);
 		title.textProperty().addListener( listener);
 		points.textProperty().addListener( listener);
-		
 		exams.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> examSelected( newVal));
-
+		
+		root.setOnShown( e -> {
+			Object userData = root.getDialogPane().getUserData();
+			if ( userData != null && userData instanceof Entry)
+			{
+				Entry entryUserData = (Entry) userData;
+				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
+				if ( selectedExam != null)
+				{
+					exams.getSelectionModel().select( selectedExam);
+				}
+				
+				Entry selectedQuestion = entryUserData.findFirstAncestor( Question.class);
+				if ( selectedQuestion != null)
+				{
+					questions.getSelectionModel().select( selectedQuestion);
+				}
+			}
+		});
+		
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{

@@ -2,6 +2,7 @@ package admin;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.Optional;
@@ -26,8 +27,11 @@ public class Runner extends Application
 	@Override
 	public void start( Stage stage) throws MalformedURLException, IOException, URISyntaxException
 	{
+		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
+		
 		@SuppressWarnings("unchecked")
 		Dialog<Pair<File, Boolean>> d = (Dialog<Pair<File, Boolean>>) FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WorkspaceDialog.fxml").toURI().toURL());
+		((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( logo);
 		Optional<Pair<File, Boolean>> result = d.showAndWait();
 		if ( !result.isPresent())
 		{
@@ -36,7 +40,7 @@ public class Runner extends Application
 		boolean success = Workspace.getInstance().set( result.get().getKey());
 		if ( !success)
 		{
-			Alert alert = new Alert( AlertType.ERROR, "You can not select non-empty folder as a workspace folder!");
+			Alert alert = new Alert( AlertType.ERROR, "In this version, in order to prevent fatal problems, you can not select non-empty folder as a workspace folder. Please try again with an empty folder or an already existing workspace folder");
 			alert.setHeaderText( "Non-empty folder!");
 			alert.showAndWait();
 			System.exit( 0);
@@ -47,7 +51,7 @@ public class Runner extends Application
 
 		stage.setScene( scene);
 		stage.setTitle( "Sample frame");
-		stage.getIcons().add( new Image( getClass().getResourceAsStream( "/logo_nito.png")));
+		stage.getIcons().add( logo);
 		stage.setOnCloseRequest( e -> {
 			Workspace.getInstance().stopAutoSave();
 			Workspace.getInstance().save();
