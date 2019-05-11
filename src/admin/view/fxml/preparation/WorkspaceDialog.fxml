@@ -10,7 +10,7 @@
 <?import net.miginfocom.layout.AC?>
 <?import javafx.scene.image.ImageView?>
 
-<Dialog resizable="true" headerText="Select a workspace.&#10;&#9;Nito autosaves your work to the workspace every 10 seconds.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace selector" fx:controller="admin.view.preparation.WorkspaceDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog resizable="true" headerText="Select a workspace.&#10;&#9;Nito autosaves your work to the workspace every 5 seconds.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace selector" fx:controller="admin.view.preparation.WorkspaceDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
 	<!-- Loading icon -->
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">

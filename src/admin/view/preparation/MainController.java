@@ -270,6 +270,7 @@ public class MainController
 		}
 		else
 		{
+			// TODO NullPointerException here! Fix it
 			tabPane.getTabs().stream().filter( t -> t.getUserData().equals( e)).findAny().ifPresent( tabPane.getSelectionModel()::select);
 		}
 

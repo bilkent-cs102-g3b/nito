@@ -1,29 +1,21 @@
 package admin.view.preparation;
 
-import org.tbee.javafx.scene.layout.fxml.MigPane;
-
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Tab;
 
-public class WelcomeTabController {
-
+public class WelcomeTabController
+{
 	@FXML
-	Hyperlink newExam;
-	@FXML
-	MigPane newExamPane;
+	Tab tab;
 	
-	public void initialise()
+	public void initialize()
 	{
-		System.out.println("Hello");
-		newExamPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle( MouseEvent mouseEvent)
-			{
-				System.out.println("Hello");
-			}
-		});
+//		tab.getTabPane().getParent().
 	}
-	
+
+	@FXML
+	public void addExam()
+	{
+
+	}
 }

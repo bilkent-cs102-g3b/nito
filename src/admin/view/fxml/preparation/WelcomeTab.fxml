@@ -10,7 +10,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.layout.*?>
 
-<Tab text="Welcome" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.WelcomeTabController">
+<Tab text="Welcome" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.preparation.WelcomeTabController" fx:id="tab">
 	
 	<!-- Defining logos and icons -->
 	<fx:define>
@@ -68,9 +68,9 @@
 		<MigPane layout="wrap" rows="push[]push[]push[]push" cols="push[]push[]push" style="-fx-background-color: #eeeeee; -fx-font-size:20px;" VBox.vgrow="ALWAYS">
 			<Label text="Welcome to the Nito Exam System" MigPane.cc="span, center" style="-fx-font-size:25px;"/>
 
-			<MigPane layout="wrap" rows="[]" cols="[][]" styleClass="pane" fx:id="newExamPane" minWidth = "350">
+			<MigPane layout="wrap" rows="[]" cols="[][]" styleClass="pane" minWidth = "350" onMouseClicked="#addExam">
 				<fx:reference source="iconPlus" MigPane.cc="spany"/>
-				<Hyperlink text="New Exam" MigPane.cc="" style="-fx-font-size:25px;" fx:id="newExam"/>
+				<Hyperlink text="New Exam" MigPane.cc="" style="-fx-font-size:25px;"/>
 				<Label text="Create a new exam" MigPane.cc="gapleft 1.5mm" translateY="-12"/>
 			</MigPane>
 			
