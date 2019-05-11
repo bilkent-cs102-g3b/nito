@@ -45,7 +45,7 @@
 				<MenuItem text="Exam" onAction="#addExam"/>
 				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
 				<MenuItem text="Question" onAction="#addQuestion"/>
-<!-- 				<MenuItem text="Question Part" onAction="#addPart"/> -->
+				<MenuItem text="Question Part" onAction="#addPart"/>
 				<MenuItem text="Question Part Template" onAction="#addTemplate"/>
 			</Menu>
 		</Menu>

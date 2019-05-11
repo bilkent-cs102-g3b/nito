@@ -185,6 +185,27 @@ public class MainController
 			e.printStackTrace();
 		}
 	}
+	
+	public void addPart()
+	{
+		Dialog<Pair<Entry, Pair<String, Integer>>> d;
+		Optional<Pair<Entry, Pair<String, Integer>>> result;
+		try
+		{
+			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionPartOnlyDialog.fxml"));
+			d.initOwner( root.getScene().getWindow());
+			result = d.showAndWait();
+			result.ifPresent( p -> {
+				Model.getInstance().createQuestionPart(p.getKey(), p.getValue().getKey(), p.getValue().getValue());
+				updateTreeView();
+			});
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void addTemplate()
 	{

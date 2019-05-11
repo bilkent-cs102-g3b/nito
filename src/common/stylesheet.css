@@ -18,10 +18,44 @@
 	-fx-background-color: rgb(153,179,255) 
 }
 
-.menu-item {
+.menu-item 
+{
     -fx-padding:  5 80 5 5;
 }
 
-.tab-pane {
+.tab-pane
+{
   -fx-tab-min-width: 10mm;
 }
+
+.hyperlink,
+.hyperlink:visited:armed,
+.hyperlink:hover:armed 
+{
+    -fx-text-background-color: rgb(200, 164, 219);
+    -fx-border-color:transparent ;
+    -fx-underline:false ;
+}
+.hyperlink:hover,
+.hyperlink:visited 
+{
+    -fx-text-background-color:rgb(200, 164, 219);
+}
+.hyperlink,
+.hyperlink:visited 
+{
+    -fx-text-background-color:rgb(200, 164, 219);
+}
+.hyperlink:hover,
+.hyperlink:armed 
+{
+    -fx-text-background-color:rgb(200, 164, 219);
+}
+
+.pane:hover
+{
+	-fx-background-color:rgb(204,204,204);
+}
+
+
+

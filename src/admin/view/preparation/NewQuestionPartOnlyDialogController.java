@@ -60,8 +60,15 @@ public class NewQuestionPartOnlyDialogController
 	private void examSelected( Entry exam)
 	{
 		questions.getItems().setAll( exam.findAll( Question.class));
-		questions.setPromptText( "Select a question");
-		questions.setDisable( false);
+		if(!exam.findAll( Question.class).isEmpty())
+		{
+			questions.setPromptText( "Select a question");
+			questions.setDisable( false);
+		}
+		else
+		{
+			questions.setPromptText( "Exam has no questions");
+		}
 	}
 	
 	private boolean isValid()
