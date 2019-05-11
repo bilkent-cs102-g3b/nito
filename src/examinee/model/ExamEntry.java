@@ -13,7 +13,7 @@ public class ExamEntry extends ExamContainer
 	private boolean done;
 	private ExamContainer parent;
 	private String title;
-	private String content;
+	protected String content;
 	protected final String SECRET = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 
 	public ExamEntry( String id, String title, String content, boolean markable, boolean editable)
@@ -45,6 +45,48 @@ public class ExamEntry extends ExamContainer
 	public boolean isDone()
 	{
 		return done;
+	}
+	
+	// TODO Crate get and set methods for all properties
+
+	/**
+	 * @return id
+	 */
+	public String getId()
+	{
+		return id;
+	}
+	
+	/**
+	 * @return title
+	 */
+	public String getTitle()
+	{
+		return title;
+	}
+	
+	/**
+	 * @return content
+	 */
+	public String getContent()
+	{
+		return content;
+	}
+	
+	/**
+	 * @return markable
+	 */
+	public boolean getMarkable()
+	{
+		return markable;
+	}
+	
+	/**
+	 * @return editable
+	 */
+	public boolean getEditable()
+	{
+		return editable;
 	}
 	
 	/**

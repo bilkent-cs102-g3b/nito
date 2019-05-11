@@ -5,7 +5,6 @@ import java.net.UnknownHostException;
 
 import common.network.*;
 
-// TODO: Make it proper singleton
 /**
  * Model class for examinee
  * @author Alper Sari
@@ -33,19 +32,24 @@ public class Model
 	private int status;
 	private Client client;
 	private ExamEntry reference;
-	private ExamContainer examData;
+	private ExamEntry examData;
 
 	// constructors
 
-	public Model()
+	private Model()
 	{
-		instance = this;
 		status = 0;
 		reference = null;
 	}
 
-	public static Model getInstance()
+	/**
+	 * Get singleton object
+	 * @return Instance of Model
+	 */
+	public static synchronized Model getInstance()
 	{
+		if ( instance == null)
+			instance = new Model();
 		return instance;
 	}
 
@@ -72,7 +76,8 @@ public class Model
 			};
 
 			client.sendMessage( SECRET + ":::" + "name" + ":::" + name);
-
+			status = STATUS_CONNECTED;
+			
 			return true;
 		}
 		catch (IOException e)
@@ -82,12 +87,26 @@ public class Model
 		}
 
 	}
-
-	// private void createEntry( String id, String title, String content, boolean
-	// markable, boolean editable)
-	// {
-	// examData = new ExamEntry();
-	// }
+	
+	// TODO Make submit all
+	
+	/**
+	 * Get total exam time
+	 * @return Total time
+	 */
+	public int getTimeTotal()
+	{
+		return timeTotal;
+	}
+	
+	/**
+	 * Get remaining exam time
+	 * @return Remaining time
+	 */
+	public int getTimeRemain()
+	{
+		return timeRemain;
+	}
 	
 	/**
 	 * Handles message according to protocol
@@ -107,7 +126,7 @@ public class Model
 		}
 		
 		// Create a Question, goes into exam
-		if ( parts[1].equals( "question"))
+		if ( parts[1].equals( "question") )
 		{
 			reference = new Question( parts[2], parts[3], parts[4], true, false);
 			examData.add( reference);
@@ -116,18 +135,18 @@ public class Model
 		}
 		
 		// Create part, goes into Question
-		if ( parts[1].equals( "part"))
+		if ( parts[1].equals( "part") && reference.getId() == "question" )
 		{
-			reference = new QuestionPart( parts[2], parts[3], parts[4], true, true);
-			examData.add( reference);
+			ExamEntry tmp = new QuestionPart( parts[2], parts[3], parts[4], true, true);
+			reference.add( tmp);
 			// TODO
 		}
 		
 		// Create an exam, everything else is placed within this container
-		if ( parts[1].equals( "exam"))
+		if ( parts[1].equals( "exam") && reference == null )
 		{
-			examTitle = parts[2];
-			timeTotal = Integer.parseInt(parts[3]);
+			examData = new ExamEntry( parts[2], parts[3], "", false, false);
+			timeTotal = Integer.parseInt(parts[4]); // Time in seconds
 			timeRemain = timeTotal;
 		}
 		
@@ -142,7 +161,30 @@ public class Model
 		{
 			status = STATUS_SUSPENDED;
 		}
-		// TODO
+		
+		
+		//******************************************************
+		// Test
+		//******************************************************
+		
+		examData = new ExamEntry( "123", "test", "", false, false);
+		timeTotal = 6000; // Time in seconds
+		timeRemain = timeTotal;
+		
+		reference = new Instruction( "001", "Instruction", "Don't Cheat", false, false);
+		examData.add( reference);
+		reference.setParent( examData);
+		
+		reference = new Question( "002", "Question 1", "Why are we here?", true, false);
+		examData.add( reference);
+		reference.setParent(examData);
+		
+		
+		reference.add( new QuestionPart( "101", "part 1", "test1", true, true));
+		
+		reference.add( new QuestionPart( "102", "part 2", "test2", true, true));
+		
+		//******************************************************
 	}
 
 }
