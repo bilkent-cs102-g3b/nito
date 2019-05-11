@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 
 public class ExamineeScreenController
 {
+	private Examinee examinee;
 	@FXML
 	private MigPane root;
 	@FXML
@@ -23,7 +24,11 @@ public class ExamineeScreenController
 	
 	public void initialize()
 	{
-		Examinee e = (Examinee) root.getUserData();
+	}
+	
+	public void setExaminee( Examinee e)
+	{
+		examinee = e;
 		screen.imageProperty().bindBidirectional( e.getScreenImageProperty());
 	}
 	
@@ -37,7 +42,7 @@ public class ExamineeScreenController
 		
 		MigPane content = new MigPane();
 		Label note = new Label("Note: ");
-		TextArea text = new TextArea();
+		TextArea text = new TextArea( examinee.getNotes());
 		
 		content.add(note, "left");
 		content.add(text, "grow, span");
@@ -53,6 +58,6 @@ public class ExamineeScreenController
 		});
 		
 		Optional<String> result = noteDialog.showAndWait();
-		result.ifPresent( System.out::println);
+		result.ifPresent( examinee.setNotes( result.get()));
 	}
 }

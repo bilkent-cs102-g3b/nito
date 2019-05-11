@@ -6,7 +6,6 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.Socket;
-import java.util.ArrayList;
 
 import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
@@ -17,6 +16,8 @@ import admin.model.exam_entries.QuestionPart;
 import admin.model.exam_entries.Template;
 import common.network.Screenshot;
 import common.network.Server;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.util.Pair;
 
 /**
@@ -43,7 +44,7 @@ public class Model implements Serializable
 	private Exam lastExam;
 	private transient Exam currentExam;
 	private transient Thread examEndCheckerThread;
-	private transient ArrayList<Pair<String, Integer>> logs;
+	private transient ObservableList<Pair<String, Integer>> logs;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -78,7 +79,7 @@ public class Model implements Serializable
 		currentExam = null;
 		examEndCheckerThread = null;
 		instance = this;
-		logs = new ArrayList<>();
+		logs = FXCollections.observableArrayList();
 	}
 
 	/**************************** PREPARATION ****************************/
@@ -346,7 +347,7 @@ public class Model implements Serializable
 	/**
 	 * @return The logs
 	 */
-	public ArrayList<Pair<String, Integer>> getLogs()
+	public ObservableList<Pair<String, Integer>> getLogs()
 	{
 		return logs;
 	}
