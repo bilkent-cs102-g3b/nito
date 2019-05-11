@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 04/05/2019
+ * @version 11/05/2019
  */
 public class Examinee
 {
@@ -30,6 +30,7 @@ public class Examinee
 	private String name;
 	private Exam exam;
 	private int status;
+	private String notes;
 
 	/**
 	 * Creates a new examinee with the specified name
@@ -123,5 +124,21 @@ public class Examinee
 	public Socket getSocket()
 	{
 		return socket;
+	}
+
+	/**
+	 * @return The notes
+	 */
+	public String getNotes()
+	{
+		return notes;
+	}
+
+	/**
+	 * @param notes The notes to set
+	 */
+	public void setNotes( String notes)
+	{
+		this.notes = notes;
 	}
 }

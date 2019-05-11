@@ -28,6 +28,7 @@ public class Runner extends Application
 	{
 		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
 		
+		/*********************** WORKSPACE SELECTOR ****************************/
 		@SuppressWarnings("unchecked")
 		Dialog<Pair<File, Boolean>> d = (Dialog<Pair<File, Boolean>>) FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WorkspaceDialog.fxml").toURI().toURL());
 		((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( logo);
@@ -45,6 +46,7 @@ public class Runner extends Application
 			System.exit( 0);
 		}
 
+		/*******************************  PREPARATION PART ******************************/
 		Pane root = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/Main.fxml"));
 		Scene scene = new Scene( root, Screen.getScreens().get( 0).getBounds().getWidth() * 0.8, Screen.getScreens().get( 0).getBounds().getHeight() * 0.8);
 

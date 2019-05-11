@@ -103,7 +103,7 @@ public class MainController
 		try
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamDialog.fxml"));
-//			d.initOwner( root.getScene().getWindow());
+			d.initOwner( root.getScene().getWindow());
 			result = d.showAndWait();
 			result.ifPresent( p -> {
 				Exam e = Model.getInstance().createExam( p.getKey(), p.getValue());

@@ -95,9 +95,9 @@ public class Container implements Serializable
 	@Override
 	public boolean equals( Object e)
 	{
-		if ( e == null)
+		if ( e == null || !(e instanceof Container))
 			return false;
-		return id.equals( ((Entry) e).id);
+		return id.equals( ((Container) e).id);
 	}
 
 	/**
