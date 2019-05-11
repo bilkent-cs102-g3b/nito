@@ -1,0 +1,58 @@
+package admin.view.monitoring;
+
+import java.util.Optional;
+
+import org.tbee.javafx.scene.layout.MigPane;
+
+import admin.model.Examinee;
+import javafx.beans.property.Property;
+import javafx.fxml.FXML;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class ExamineeScreenController
+{
+	@FXML
+	private MigPane root;
+	@FXML
+	private ImageView screen;
+	
+	public void initialize()
+	{
+		Examinee e = (Examinee) root.getUserData();
+//		screen.imageProperty().bindBidirectional( new Property<Image>() {});;
+	}
+	
+	@FXML
+	public void openNotes()
+	{
+		Dialog<String> noteDialog = new Dialog<String>();
+		noteDialog.setHeaderText("Notes");
+		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.APPLY);
+		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.CANCEL);
+		
+		MigPane content = new MigPane();
+		Label note = new Label("Note: ");
+		TextArea text = new TextArea();
+		
+		content.add(note, "left");
+		content.add(text, "grow, span");
+		
+		noteDialog.getDialogPane().setContent(content);
+		
+		noteDialog.setResultConverter( button -> {
+			if ( button == ButtonType.APPLY)
+			{
+				return text.getText();
+			}
+			return null;
+		});
+		
+		Optional<String> result = noteDialog.showAndWait();
+		result.ifPresent( System.out::println);
+	}
+}
