@@ -3,7 +3,6 @@ package admin.view.grading;
 // import java.util.ArrayList;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
 public class ExamineeTableItem
@@ -16,12 +15,9 @@ public class ExamineeTableItem
 	public ExamineeTableItem()
 	{
 		name = new SimpleStringProperty( "");
-		group = new SimpleStringProperty( "");
 		idNumber = new SimpleStringProperty( "");
 		grade = new SimpleStringProperty( "");
 		select = new CheckBox();
-		notes = new Button( "BUTTON");
-		notes.setMinWidth( 100);
 	}
 
 	public String getIdNumber()
@@ -55,17 +51,6 @@ public class ExamineeTableItem
 		;
 	}
 
-	public String getGroup()
-	{
-		return group.get();
-	}
-
-	public void setGroup( String group)
-	{
-		this.group.set( group);
-		;
-	}
-
 	public CheckBox getSelect()
 	{
 		return select;
@@ -76,30 +61,4 @@ public class ExamineeTableItem
 		this.select = select;
 
 	}
-
-	public void setSelected( Button button)
-	{
-		this.notes = button;
-		notes.setText( "notes");
-	}
-	// public void addQuestionAnswer(String qAnswer)
-	// {
-	// questionAnswers.add(qAnswer);
-	// }
-	//
-	// public ArrayList<String> getAllAnswers()
-	// {
-	// return questionAnswers;
-	// }
-	//
-	// public String getQuestionAnswers(int index)
-	// {
-	// return questionAnswers.get(index);
-	// }
-	//
-	// public void setQuestionAnswers(ArrayList<String> questionAnswers)
-	// {
-	// this.questionAnswers = questionAnswers;
-	// }
-
 }
