@@ -264,7 +264,9 @@ public class Model implements Serializable
 			case "name":
 				// Connection request
 				from = createExaminee( parts[2], socket);
+				System.out.println(currentExam + " " + from + " " + this);
 				currentExam.send( from, this);
+				log( from.getName() + " is connected");
 				break;
 			case "solution":
 				solutionReceived( parts[3], parts[2], from);

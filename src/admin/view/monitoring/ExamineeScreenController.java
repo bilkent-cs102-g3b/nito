@@ -58,6 +58,6 @@ public class ExamineeScreenController
 		});
 		
 		Optional<String> result = noteDialog.showAndWait();
-		result.ifPresent( examinee.setNotes( result.get()));
+		result.ifPresent( c -> examinee.setNotes( result.get()));
 	}
 }

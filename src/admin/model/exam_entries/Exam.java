@@ -57,7 +57,7 @@ public class Exam extends Entry
 					try
 					{
 						Thread.sleep( 1000);
-						timeLeft -= 1000;
+						timeLeft -= 1;
 					}
 					catch (InterruptedException e)
 					{
