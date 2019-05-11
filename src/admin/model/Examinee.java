@@ -2,7 +2,11 @@ package admin.model;
 
 import java.net.Socket;
 
+import admin.model.exam_entries.Exam;
 import common.network.Screenshot;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 
 /**
  * This class is for one examinee during an exam
@@ -20,10 +24,11 @@ public class Examinee
 
 	private Socket socket;
 	private Screenshot screen;
+	private SimpleObjectProperty<Image> screenImageProperty;
 
 	private String id;
 	private String name;
-	// private Exam exam;
+	private Exam exam;
 	private int status;
 
 	/**
@@ -33,6 +38,7 @@ public class Examinee
 	 */
 	public Examinee( String name, Socket socket)
 	{
+		screenImageProperty = new SimpleObjectProperty<>();
 		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);
 		this.socket = socket;
@@ -85,7 +91,15 @@ public class Examinee
 	{
 		return name;
 	}
-
+	
+	/**
+	 * @return The screen image property
+	 */
+	public SimpleObjectProperty<Image> getScreenImageProperty()
+	{
+		return screenImageProperty;
+	}
+	
 	/**
 	 * @return The screen
 	 */
@@ -100,6 +114,7 @@ public class Examinee
 	public void setScreen( Screenshot screen)
 	{
 		this.screen = screen;
+		screenImageProperty.set( SwingFXUtils.toFXImage( screen.getImage(), null));
 	}
 
 	/**

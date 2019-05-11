@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
@@ -16,6 +17,7 @@ import admin.model.exam_entries.QuestionPart;
 import admin.model.exam_entries.Template;
 import common.network.Screenshot;
 import common.network.Server;
+import javafx.util.Pair;
 
 /**
  * The main model class for admin interface
@@ -41,6 +43,7 @@ public class Model implements Serializable
 	private Exam lastExam;
 	private transient Exam currentExam;
 	private transient Thread examEndCheckerThread;
+	private transient ArrayList<Pair<String, Integer>> logs;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -75,6 +78,7 @@ public class Model implements Serializable
 		currentExam = null;
 		examEndCheckerThread = null;
 		instance = this;
+		logs = new ArrayList<>();
 	}
 
 	/**************************** PREPARATION ****************************/
@@ -323,11 +327,28 @@ public class Model implements Serializable
 	}
 
 	/**
+	 * Logs the message and the current elapsed time from the start of the exam
+	 * @param message The message to log
+	 */
+	public void log( String message)
+	{
+		logs.add( new Pair<String, Integer>( message, currentExam.getTimeElapsed()));
+	}
+
+	/**
 	 * @return The examinees
 	 */
 	public Examinees getExaminees()
 	{
 		return examinees;
+	}
+
+	/**
+	 * @return The logs
+	 */
+	public ArrayList<Pair<String, Integer>> getLogs()
+	{
+		return logs;
 	}
 
 	/**

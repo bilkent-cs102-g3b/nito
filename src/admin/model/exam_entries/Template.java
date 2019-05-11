@@ -1,5 +1,8 @@
 package admin.model.exam_entries;
 
+import admin.model.Examinee;
+import admin.model.Model;
+
 /**
  * This class is for Template
  * @author Adeem Adil Khatri<br>
@@ -20,5 +23,11 @@ public class Template extends Entry
 	public Template( String title)
 	{
 		super( title);
+	}
+
+	@Override
+	public void send( Examinee e, Model m)
+	{
+		m.sendMessage( "template", id + Model.MESSAGE_SEPERATOR + content + Model.MESSAGE_SEPERATOR + parent.id, e);
 	}
 }

@@ -24,7 +24,7 @@ public class ExamineeScreenController
 	public void initialize()
 	{
 		Examinee e = (Examinee) root.getUserData();
-//		screen.imageProperty().bindBidirectional( new Property<Image>() {});;
+		screen.imageProperty().bindBidirectional( e.getScreenImageProperty());
 	}
 	
 	@FXML

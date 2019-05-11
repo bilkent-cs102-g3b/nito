@@ -38,7 +38,7 @@ public class Exam extends Entry
 	@Override
 	public void send( Examinee e, Model m)
 	{
-		m.sendMessage( "exam", title + Model.MESSAGE_SEPERATOR + length, e);
+		m.sendMessage( "exam", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + length, e);
 		sendAll( e, m);
 	}
 
@@ -75,5 +75,13 @@ public class Exam extends Entry
 	public int getTimeLeft()
 	{
 		return timeLeft;
+	}
+
+	/**
+	 * @return The time elapsed from the beginning of this exam in seconds.
+	 */
+	public int getTimeElapsed()
+	{
+		return length - timeLeft;
 	}
 }

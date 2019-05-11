@@ -26,11 +26,9 @@ public class QuestionPart extends Entry
 	}
 
 	@Override
-	/**
-	 */
 	public void send( Examinee e, Model m)
 	{
-		m.sendMessage( "part", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content, e);
+		m.sendMessage( "part", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content + Model.MESSAGE_SEPERATOR + parent.id, e);
 		sendAll( e, m);
 	}
 

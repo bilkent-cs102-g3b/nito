@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import admin.model.Examinee;
+import admin.model.IDHandler;
 import admin.model.Model;
 
 /**
@@ -18,6 +19,7 @@ public class Container implements Serializable
 
 	// properties
 	protected ArrayList<Entry> children;
+	protected String id;
 
 	// constructors
 	/**
@@ -26,6 +28,7 @@ public class Container implements Serializable
 	public Container()
 	{
 		children = new ArrayList<Entry>();
+		id = IDHandler.getInstance().generate( this);
 	}
 
 	// methods
@@ -87,5 +90,21 @@ public class Container implements Serializable
 		getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
 
 		return result;
+	}
+
+	@Override
+	public boolean equals( Object e)
+	{
+		if ( e == null)
+			return false;
+		return id.equals( ((Entry) e).id);
+	}
+
+	/**
+	 * @return The id
+	 */
+	public String getId()
+	{
+		return id;
 	}
 }

@@ -1,7 +1,6 @@
 package admin.model.exam_entries;
 
 import admin.model.Examinee;
-import admin.model.IDHandler;
 import admin.model.Model;
 
 /**
@@ -17,7 +16,6 @@ public class Entry extends Container
 
 	// Properties
 	protected String title;
-	protected String id;
 	protected String content;
 	protected Container parent;
 
@@ -29,7 +27,6 @@ public class Entry extends Container
 	{
 		this.title = title;
 		content = "";
-		id = IDHandler.getInstance().generate( this);
 		parent = null;
 	}
 
@@ -96,26 +93,10 @@ public class Entry extends Container
 		this.content = content;
 	}
 
-	/**
-	 * @return The id
-	 */
-	public String getId()
-	{
-		return id;
-	}
-
 	@Override
 	public String toString()
 	{
 		return title;
-	}
-
-	@Override
-	public boolean equals( Object e)
-	{
-		if ( e == null)
-			return false;
-		return id.equals( ((Entry) e).id);
 	}
 
 	/**
