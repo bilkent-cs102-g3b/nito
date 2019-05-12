@@ -3,7 +3,7 @@ package testers.admin.view.preparation;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import admin.view.preparation.MainController;
+import admin.view.preparation.MainEditorController;
 import admin.view.preparation.WelcomeTabController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -16,7 +16,7 @@ import javafx.stage.WindowEvent;
 
 public class WelcomeTabTester extends Application
 {
-	private MainController mainController;
+	private MainEditorController mainController;
 	private WelcomeTabController welcomeTabController;
 
 	@Override

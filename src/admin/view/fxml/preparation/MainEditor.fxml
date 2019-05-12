@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+
+<?import common.NumberedEditor?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import org.controlsfx.control.BreadCrumbBar?>
+
+<SplitPane dividerPositions="0.20f" VBox.vgrow="ALWAYS" fx:id="root" fx:controller="admin.view.preparation.MainEditorController" xmlns:fx="http://javafx.com/fxml/1">
+	<!-- EXAMS TREE -->
+	<TreeView minWidth="100" fx:id="examTreeView">
+		<TreeItem value="Exams" expanded="true" fx:id="examTree" />
+		<contextMenu>
+			<ContextMenu>
+			<items>
+				<Menu text="New"  styleClass="menu-item">
+					<MenuItem text="Exam" onAction="#addExam"/>
+					<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
+					<MenuItem text="Question" onAction="#addQuestion"/>
+					<MenuItem text="Question Part" onAction="#addPart"/>
+					<MenuItem text="Question Part Template" onAction="#addTemplate"/>
+				</Menu>
+				<MenuItem text="Delete" onAction="#delete"/>
+			</items>
+			</ContextMenu>
+		</contextMenu>
+	</TreeView>
+
+	<!-- EDITOR -->
+	<TabPane minWidth="300" fx:id="tabPane" />
+</SplitPane>

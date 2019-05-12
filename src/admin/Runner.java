@@ -13,8 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
@@ -27,27 +25,31 @@ public class Runner extends Application
 	public void start( Stage stage) throws MalformedURLException, IOException, URISyntaxException
 	{
 		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
-		
+
 		/*********************** WORKSPACE SELECTOR ****************************/
-		@SuppressWarnings("unchecked")
-		Dialog<Pair<File, Boolean>> d = (Dialog<Pair<File, Boolean>>) FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WorkspaceDialog.fxml").toURI().toURL());
-		((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( logo);
-		Optional<Pair<File, Boolean>> result = d.showAndWait();
-		if ( !result.isPresent())
+		while ( true)
 		{
-			System.exit( 0);
-		}
-		boolean success = Workspace.getInstance().set( result.get().getKey());
-		if ( !success)
-		{
-			Alert alert = new Alert( AlertType.ERROR, "In this version, in order to prevent fatal problems, you can not select non-empty folder as a workspace folder. Please try again with an empty folder or an already existing workspace folder");
-			alert.setHeaderText( "Non-empty folder!");
-			alert.showAndWait();
-			System.exit( 0);
+			@SuppressWarnings("unchecked")
+			Dialog<Pair<File, Boolean>> d = (Dialog<Pair<File, Boolean>>) FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WorkspaceDialog.fxml").toURI().toURL());
+			((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( logo);
+			Optional<Pair<File, Boolean>> result = d.showAndWait();
+			if ( !result.isPresent())
+			{
+				System.exit( 0);
+			}
+			boolean success = Workspace.getInstance().set( result.get().getKey());
+			if ( !success)
+			{
+				Alert alert = new Alert( AlertType.ERROR, "In this version, in order to prevent fatal problems, you can not select non-empty folder as a workspace folder. Please try again with an empty folder or an already existing workspace folder");
+				alert.setHeaderText( "Non-empty folder!");
+				alert.showAndWait();
+			}
+			else
+				break;
 		}
 
-		/*******************************  PREPARATION PART ******************************/
-		Pane root = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/Main.fxml"));
+		/******************************* MAIN PART ******************************/
+		Pane root = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/Main.fxml"));
 		Scene scene = new Scene( root, Screen.getScreens().get( 0).getBounds().getWidth() * 0.8, Screen.getScreens().get( 0).getBounds().getHeight() * 0.8);
 
 		stage.setScene( scene);
@@ -60,8 +62,9 @@ public class Runner extends Application
 		});
 		stage.show();
 
-		Tab welcomeTab = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WelcomeTab.fxml"));
-		((TabPane) root.lookup( ".tab-pane")).getTabs().add( welcomeTab);
+		// Tab welcomeTab = FXMLLoader.load( getClass().getResource(
+		// "/admin/view/fxml/preparation/WelcomeTab.fxml"));
+		// ((TabPane) root.lookup( ".tab-pane")).getTabs().add( welcomeTab);
 	}
 
 	public static void main( String[] args)

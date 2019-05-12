@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.*?>
 
 <SplitPane orientation="VERTICAL" dividerPositions="0.8f" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.MonitoringViewController">
-    <Pane fx:id="screenPane"/>
+    <FlowPane fx:id="screenPane"/>
     
  	<HBox>
  	      <ListView fx:id="logActionList" layoutX="0.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="1100.0" />

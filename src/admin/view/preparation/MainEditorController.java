@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import org.controlsfx.control.BreadCrumbBar;
-
 import admin.model.Model;
 import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
@@ -18,21 +16,22 @@ import common.NumberedEditor;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import javafx.util.Pair;
 
-public class MainController
+public class MainEditorController
 {
 	@FXML
-	VBox root;
-	@FXML
-	private BreadCrumbBar<String> breadCrumb;
+	SplitPane root;
 	@FXML
 	private TreeItem<Entry> examTree;
 	@FXML
@@ -47,7 +46,7 @@ public class MainController
 			@Override
 			public void handle( MouseEvent mouseEvent)
 			{
-				TreeItem<Entry> intermediate = examTreeView.getSelectionModel().getSelectedItem();
+				TreeItem<Entry> intermediate = getSelectedItem();
 				if ( mouseEvent.getClickCount() == 2 && intermediate != null && intermediate.isLeaf() && intermediate != examTree)
 					openTab( intermediate.getValue());
 			}
@@ -55,19 +54,30 @@ public class MainController
 	}
 
 	@FXML
-	void delete()
+	public void delete()
 	{
-		TreeItem<Entry> selected = examTreeView.getSelectionModel().getSelectedItem();
+		TreeItem<Entry> selected = getSelectedItem();
 		if ( selected == null)
 			return;
-		if ( selected != examTree)
-			Model.getInstance().deleteEntry( selected.getValue());
-		else
-			Model.getInstance().getEntries().getAll().clear();
-		updateTreeView();
+
+		Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to delete " + selected.getValue() + "? This will delete all sub-items. This action can not be undone.");
+		Optional<ButtonType> result = confirmation.showAndWait();
+		if ( result.isPresent() && result.get() == ButtonType.OK)
+		{
+			if ( selected != examTree)
+				Model.getInstance().deleteEntry( selected.getValue());
+			else
+				Model.getInstance().getEntries().getAll().clear();
+			updateTreeView();
+		}
 	}
 
-	private void updateTreeView()
+	public TreeItem<Entry> getSelectedItem()
+	{
+		return examTreeView.getSelectionModel().getSelectedItem();
+	}
+
+	public void updateTreeView()
 	{
 		updateTreeView( examTree, Model.getInstance().getEntries());
 	}
@@ -127,7 +137,7 @@ public class MainController
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
 
-			TreeItem<Entry> selection = examTreeView.getSelectionModel().getSelectedItem();
+			TreeItem<Entry> selection = getSelectedItem();
 			if ( selection != null)
 			{
 				d.getDialogPane().setUserData( selection.getValue());
@@ -156,7 +166,7 @@ public class MainController
 			questionDialog = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
 			questionDialog.initOwner( root.getScene().getWindow());
 
-			TreeItem<Entry> selection = examTreeView.getSelectionModel().getSelectedItem();
+			TreeItem<Entry> selection = getSelectedItem();
 			if ( selection != null)
 			{
 				questionDialog.getDialogPane().setUserData( selection.getValue());
@@ -206,13 +216,13 @@ public class MainController
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionPartOnlyDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
-			
-			TreeItem<Entry> selection = examTreeView.getSelectionModel().getSelectedItem();
+
+			TreeItem<Entry> selection = getSelectedItem();
 			if ( selection != null)
 			{
 				d.getDialogPane().setUserData( selection.getValue());
 			}
-			
+
 			result = d.showAndWait();
 			result.ifPresent( p -> {
 				Model.getInstance().createQuestionPart( p.getKey(), p.getValue().getKey(), p.getValue().getValue());
@@ -234,13 +244,13 @@ public class MainController
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
-			
-			TreeItem<Entry> selection = examTreeView.getSelectionModel().getSelectedItem();
+
+			TreeItem<Entry> selection = getSelectedItem();
 			if ( selection != null)
 			{
 				d.getDialogPane().setUserData( selection.getValue());
 			}
-			
+
 			result = d.showAndWait();
 			result.ifPresent( qp -> {
 				Template t = Model.getInstance().createTemplate( qp);

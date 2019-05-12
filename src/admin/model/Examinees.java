@@ -37,6 +37,7 @@ public class Examinees
 	 */
 	public Examinee[] search( String text)
 	{
+		// TODO ConcurrentModificationException
 		return socketMap.values().stream().filter( e -> e.getStringForSearch().toLowerCase().indexOf( text.toLowerCase()) != -1).toArray( Examinee[]::new);
 	}
 
