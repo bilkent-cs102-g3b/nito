@@ -1,10 +1,14 @@
 package examinee.model;
 
+import java.awt.AWTException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
+import javax.swing.Timer;
 
 import common.network.*;
+import javafx.beans.property.IntegerProperty;
 
 /**
  * Model class for examinee
@@ -19,28 +23,31 @@ public class Model
 	public final int STATUS_CONNECTED = 1;
 	public final int STATUS_DISCONNECTED = 2;
 	public final int STATUS_LOGIN = 3;
-	public final int STATUS_SUSPENDED = 4;
-	public final int STATUS_BANNED = 5;
-	public final int STATUS_FINISHED = 6;
+	public final int STATUS_FINISHED = 4;
 
 	private static Model instance;
 
 	private String username;
 	private String adminIP;
-	private String examTitle;
+	private boolean dataEnd;
 	private int timeRemain;
 	private int timeTotal;
-	private int status;
+	private IntegerProperty status;
 	private Client client;
 	private ExamEntry reference;
 	private ExamEntry examData;
+	private Timer timer;
 
 	// constructors
 
 	private Model()
 	{
-		status = 0;
+		status.set(0);
 		reference = null;
+		dataEnd = false;
+		
+		timer = new Timer( 1000, new TimerListener());
+		timer.stop();
 	}
 
 	/**
@@ -54,6 +61,18 @@ public class Model
 		return instance;
 	}
 
+	/**
+	 * Send message to server using client instance
+	 * @param protocol - Protocol when sending message
+	 * @param msg - Message to send
+	 */
+	public void sendMessage( String protocol, String msg)
+	{
+		client.sendMessage( SECRET + ":::" + protocol + ":::" + msg);
+	}
+	
+	
+	
 	/**
 	 * Create client with network package and connect to admin ip
 	 * @param name Name of user
@@ -76,12 +95,12 @@ public class Model
 
 			};
 
-			client.sendMessage( SECRET + ":::" + "name" + ":::" + username);
-			status = STATUS_CONNECTED;
+			sendMessage( "name", username);
+			status.set(STATUS_CONNECTED);;
 			
 			return true;
 		}
-		catch (IOException e)
+		catch (IOException e )
 		{
 			//Login failed
 			return false;
@@ -89,7 +108,30 @@ public class Model
 
 	}
 	
-	// TODO Make submit all
+	/**
+	 * Submits all question part entries
+	 */
+	public void submitAll()
+	{
+		ArrayList<ExamEntry> list = examData.getAll();
+		for( int i = 0; i < list.size(); i++)
+		{
+			if ( list.get(i) instanceof Question )
+			{
+				QuestionPart part = null;
+				ArrayList<ExamEntry> partList = list.get(i).getAll();
+				for( int k = 0; k < partList.size(); k++)
+				{
+					if ( partList.get(k) instanceof QuestionPart)
+					{
+						part = (QuestionPart) partList.get(k);
+						part.submit( client);
+					}
+				}
+			}
+		}
+		status.set(STATUS_FINISHED);
+	}
 	
 	/**
 	 * Get total exam time
@@ -109,6 +151,38 @@ public class Model
 		return timeRemain;
 	}
 	
+	/**
+	 * Get status as integer property
+	 * @return status
+	 */
+	public IntegerProperty getStatus()
+	{
+		return status;
+	}
+	
+	/**
+	 * Get ExamEntry instance containing all other entries
+	 * @return examData
+	 */
+	public ExamEntry getExamData()
+	{
+		return examData;
+	}
+	
+	/**
+	 * Returns true if examData has been completely filled
+	 * @return dataEnd
+	 */
+	public boolean isExamReady()
+	{
+		return dataEnd;
+	}
+	
+	/**
+	 * Searches the existing exam data for a given id
+	 * @param id-Id to search for
+	 * @return Found entry
+	 */
 	private ExamEntry searchId( String id)
 	{
 		ArrayList<ExamEntry> list = examData.getAll();
@@ -137,7 +211,6 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
 		// Create a Question, goes into exam
@@ -147,7 +220,6 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
 		// Create part, goes into Question
@@ -157,37 +229,79 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
+		// Add template solution to question part
 		if ( parts[1].equals( "template") )
 		{
 			QuestionPart part = (QuestionPart) searchId( parts[4]);
 			part.updateSolution( parts[3]);
-			// TODO
 		}
 		
 		// Create an exam, everything else is placed within this container
 		if ( parts[1].equals( "exam") && reference == null )
 		{
 			examData = new ExamEntry( parts[2], parts[3], "", false, false);
-			examTitle = examData.getTitle();
 			timeTotal = Integer.parseInt(parts[4]); // Time in seconds
 			timeRemain = timeTotal;
 		}
 		
-		// Change status to banned
-		if ( parts[1].equals( "ban"))
+		// 
+		if ( parts[1].equals( "data_end") )
 		{
-			status = STATUS_BANNED;
+			dataEnd = !dataEnd;
+			timer.start();
 		}
 		
-		// Change status to suspended
-		if ( parts[1].equals( "suspend"))
+		if ( parts[1].equals( "exam_ended") )
 		{
-			status = STATUS_SUSPENDED;
+			submitAll();
+			client.close();
+		}
+		
+		// Send screenshot after server request
+		if ( parts[1].equals( "screenshot_scale") )
+		{
+			try
+			{
+				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
+				client.sendImage( screen);
+			} catch (NumberFormatException e)
+			{
+				e.printStackTrace();
+			} catch (AWTException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		if ( parts[1].equals( "screenshot_width") )
+		{
+			try
+			{
+				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
+				client.sendImage( screen);
+			} catch (NumberFormatException e)
+			{
+				e.printStackTrace();
+			} catch (AWTException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
+	
+	private class TimerListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			timeRemain--;
+		}
+		
+	}
+	
 	//******************************************************
 	// Test
 	//******************************************************

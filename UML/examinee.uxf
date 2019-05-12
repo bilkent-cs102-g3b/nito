@@ -2,31 +2,30 @@
 <diagram program="umlet" version="14.3.0">
   <help_text>fontsize=16
 fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>670</x>
-      <y>130</y>
-      <w>220</w>
-      <h>110</h>
+      <x>657</x>
+      <y>153</y>
+      <w>198</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>ExamContainer
 --
 -children: ArrayList
 --
 +add(ExamEntry): void
-+getAll(): ArrayList
-??? +remove(ExamEntry) ???</panel_attributes>
++getAll(): ArrayList</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>100</y>
-      <w>190</w>
-      <h>200</h>
+      <x>432</x>
+      <y>126</y>
+      <w>171</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>ExamEntry
 --
@@ -35,31 +34,40 @@ fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced</help_text>
 -editable: boolean
 -done: boolean
 -title: String
+-parent: ExamEntry
 -content: String
+-SECRET: String
 --
 +setDone()
-+isDone()</panel_attributes>
++isDone()
++getId(): String
++getTitle(): String
++getContent(): String
++getMarkable(): boolean
++getEditable(): boolean
++setparent( ExamEntry parent)
++getParent(): ExamEntry</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
-      <y>180</y>
-      <w>100</w>
-      <h>40</h>
+      <x>342</x>
+      <y>198</y>
+      <w>108</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>180</y>
-      <w>90</w>
-      <h>30</h>
+      <x>594</x>
+      <y>198</y>
+      <w>81</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -67,22 +75,22 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>10</y>
-      <w>270</w>
-      <h>140</h>
+      <x>522</x>
+      <y>72</y>
+      <w>243</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;
 m1=0..*</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0;250.0;10.0;250.0;120.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;250.0;10.0;250.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>500</y>
-      <w>250</w>
-      <h>150</h>
+      <x>369</x>
+      <y>495</y>
+      <w>225</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>QuestionPart
 --
@@ -90,91 +98,88 @@ m1=0..*</panel_attributes>
 --
 +Solution(): ctor
 +Solution(answerTemplate): ctor
-+updateSolution(String): void
-+save(): void
-</panel_attributes>
++updateSolution(String): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>500</y>
-      <w>150</w>
-      <h>70</h>
+      <x>72</x>
+      <y>513</y>
+      <w>135</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Question
 --
-+Question(...): ctor
-+save(): void</panel_attributes>
++Question(...): ctor</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>0</y>
-      <w>330</w>
-      <h>410</h>
+      <x>54</x>
+      <y>36</y>
+      <w>297</w>
+      <h>387</h>
     </coordinates>
     <panel_attributes>Model
 --
 +STATUS_CONNECTED = 1: int
 +STATUS_DISCONNECTED = 2: int
 +STATUS_LOGIN = 3: int
-+STATUS_SUSPENDED = 4: int
-+STATUS_BANNED = 5: int
-+STATUS_FINISHED = 6: int
++STATUS_FINISHED = 4: int
 -username: String
--password: String
 -adminIP: String
+-dataEnd: boolean
 -timeRemain: int
 -timeTotal: int
 -client: Client
 -status: int
+-reference: ExamEntry
 -examData: ExamEntry
 --
-+Model(): ctor
+-Model(): ctor
++getInstance(): Model
 +login( name, ip): boolean
-+getExamData(): void
++getTimeTotal(): int
++getTimeRemain(): int
++getExamData(): ExamEntry
 +submitAll(): void
-+setDone(ExamEntry): void
-+setSolution(ExamEntry, String): void
-+sendScreen()</panel_attributes>
++searchId( String id): ExamEntry
++handleMessage( String msg): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>290</y>
-      <w>440</w>
-      <h>230</h>
+      <x>135</x>
+      <y>432</y>
+      <w>396</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>420.0;10.0;420.0;150.0;10.0;150.0;10.0;210.0</additional_attributes>
+    <additional_attributes>420.0;10.0;420.0;30.0;10.0;30.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>500</y>
-      <w>160</w>
-      <h>70</h>
+      <x>216</x>
+      <y>513</y>
+      <w>144</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Instruction
 --
-+Instruction(...): ctor
-+save(): void</panel_attributes>
++Instruction(...): ctor</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>430</y>
-      <w>30</w>
-      <h>90</h>
+      <x>279</x>
+      <y>450</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -182,21 +187,21 @@ m1=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>500</x>
-      <y>430</y>
-      <w>30</w>
-      <h>90</h>
+      <x>504</x>
+      <y>450</y>
+      <w>27</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>540</y>
-      <w>120</w>
-      <h>80</h>
+      <x>675</x>
+      <y>531</y>
+      <w>108</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Submitable
@@ -207,10 +212,10 @@ Submitable
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>570</y>
-      <w>120</w>
-      <h>30</h>
+      <x>585</x>
+      <y>558</y>
+      <w>108</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>

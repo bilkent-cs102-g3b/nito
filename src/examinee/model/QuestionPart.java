@@ -40,7 +40,7 @@ public class QuestionPart extends ExamEntry implements Submitable
 	@Override
 	public void submit( Client c)
 	{
-		c.sendMessage( SECRET + ":::" + "solution" + ":::" + id + solution);
+		Model.getInstance().sendMessage( "solution", id + ":::" + solution);
 	}
 
 }

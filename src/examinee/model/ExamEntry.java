@@ -14,7 +14,6 @@ public class ExamEntry extends ExamContainer
 	private ExamContainer parent;
 	private String title;
 	protected String content;
-	protected final String SECRET = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 
 	public ExamEntry( String id, String title, String content, boolean markable, boolean editable)
 	{
@@ -106,5 +105,11 @@ public class ExamEntry extends ExamContainer
 	public ExamContainer getParent()
 	{
 		return parent;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return title;	
 	}
 }
