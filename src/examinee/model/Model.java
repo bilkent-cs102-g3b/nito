@@ -1,5 +1,6 @@
 package examinee.model;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class Model
 			
 			return true;
 		}
-		catch (IOException e)
+		catch (IOException e )
 		{
 			//Login failed
 			return false;
@@ -89,7 +90,29 @@ public class Model
 
 	}
 	
-	// TODO Make submit all
+	/**
+	 * Submits all question part entries
+	 */
+	public void submitAll()
+	{
+		ArrayList<ExamEntry> list = examData.getAll();
+		for( int i = 0; i < list.size(); i++)
+		{
+			if ( list.get(i) instanceof Question )
+			{
+				QuestionPart part = null;
+				ArrayList<ExamEntry> partList = list.get(i).getAll();
+				for( int k = 0; k < partList.size(); k++)
+				{
+					if ( partList.get(k) instanceof QuestionPart)
+					{
+						part = (QuestionPart) partList.get(k);
+						part.submit( client);
+					}
+				}
+			}
+		}
+	}
 	
 	/**
 	 * Get total exam time
@@ -137,7 +160,6 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
 		// Create a Question, goes into exam
@@ -147,7 +169,6 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
 		// Create part, goes into Question
@@ -157,14 +178,13 @@ public class Model
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
-			// TODO
 		}
 		
+		// Add template solution to question part
 		if ( parts[1].equals( "template") )
 		{
 			QuestionPart part = (QuestionPart) searchId( parts[4]);
 			part.updateSolution( parts[3]);
-			// TODO
 		}
 		
 		// Create an exam, everything else is placed within this container
@@ -174,6 +194,37 @@ public class Model
 			examTitle = examData.getTitle();
 			timeTotal = Integer.parseInt(parts[4]); // Time in seconds
 			timeRemain = timeTotal;
+		}
+		
+		// Send screenshot after server request
+		if ( parts[1].equals( "screenshot_scale") )
+		{
+			try
+			{
+				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
+				client.sendImage( screen);
+			} catch (NumberFormatException e)
+			{
+				e.printStackTrace();
+			} catch (AWTException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		if ( parts[1].equals( "screenshot_width") )
+		{
+			try
+			{
+				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
+				client.sendImage( screen);
+			} catch (NumberFormatException e)
+			{
+				e.printStackTrace();
+			} catch (AWTException e)
+			{
+				e.printStackTrace();
+			}
 		}
 		
 		// Change status to banned
