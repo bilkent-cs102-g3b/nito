@@ -33,8 +33,20 @@ public class Screenshot implements Serializable, Cloneable
 	private double scale;
 
 	/**
+	 * Creates a screenshot for sending. The given width will be used to determine
+	 * the scaling. The scale may be reduced if this scaling leads to a byte size
+	 * bigger than {@value #MAX_SIZE}
+	 * @param scale the intended scaling during sending
+	 * @throws AWTException if the screen cannot be captured
+	 */
+	public Screenshot( int width) throws AWTException
+	{
+		this( 1.0 * width / Toolkit.getDefaultToolkit().getScreenSize().width);
+	}
+
+	/**
 	 * Creates a screenshot for sending. The scale may be reduced if this scaling
-	 * leads to a byte size bigger than {@value #MAX_SIZE}<br>
+	 * leads to a byte size bigger than {@value #MAX_SIZE}
 	 * @param scale the intended scaling during sending
 	 * @throws AWTException if the screen cannot be captured
 	 */

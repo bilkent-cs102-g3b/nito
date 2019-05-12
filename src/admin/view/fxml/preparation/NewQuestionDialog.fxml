@@ -32,7 +32,7 @@
 					<TextField MigPane.cc="grow" fx:id="titleField"/>
 					
 					<Label text="Number of parts:" MigPane.cc="left" />
-					<TextField text="10" MigPane.cc="grow" fx:id="numOfPartsField"/>
+					<TextField text="1" MigPane.cc="grow" fx:id="numOfPartsField"/>
 				</MigPane>
 			</content>
 			

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import admin.model.Examinee;
+import admin.model.IDHandler;
 import admin.model.Model;
 
 /**
@@ -18,6 +19,7 @@ public class Container implements Serializable
 
 	// properties
 	protected ArrayList<Entry> children;
+	protected String id;
 
 	// constructors
 	/**
@@ -26,6 +28,7 @@ public class Container implements Serializable
 	public Container()
 	{
 		children = new ArrayList<Entry>();
+		id = IDHandler.getInstance().generate( this);
 	}
 
 	// methods
@@ -37,6 +40,7 @@ public class Container implements Serializable
 	public void add( Entry entry)
 	{
 		children.add( entry);
+		entry.setParent( this);
 	}
 
 	/**
@@ -55,6 +59,7 @@ public class Container implements Serializable
 	public void remove( Entry entry)
 	{
 		children.remove( entry);
+		entry.setParent( null);
 	}
 
 	/**
@@ -70,19 +75,36 @@ public class Container implements Serializable
 			child.send( e, m);
 		}
 	}
-	
+
 	/**
-	 * Finds all entries of the given type in this container. Includes result from subcontainers too.
+	 * Finds all entries of the given type in this container. Includes result from
+	 * subcontainers too.
 	 * @param type The type of entries to search for
 	 * @return An arraylist containing all entries of the specified type
 	 */
 	public ArrayList<Entry> findAll( Class<?> type)
 	{
 		ArrayList<Entry> result = new ArrayList<>();
-		
+
 		getAll().stream().forEachOrdered( e -> result.addAll( e.findAll( type)));
 		getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
 
 		return result;
+	}
+
+	@Override
+	public boolean equals( Object e)
+	{
+		if ( e == null || !(e instanceof Container))
+			return false;
+		return id.equals( ((Container) e).id);
+	}
+
+	/**
+	 * @return The id
+	 */
+	public String getId()
+	{
+		return id;
 	}
 }

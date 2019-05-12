@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import net.miginfocom.layout.AC?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<MigPane layout="wrap" rows="[][]" cols="[center]" fx:id="root" fx:controller="admin.view.monitoring.ExamineeScreenController" xmlns:fx="http://javafx.com/fxml/1">
+	<ImageView fx:id="screen"/>
+
+	 <Button onAction="#openNotes">
+	 	<graphic>
+	 		<ImageView fitWidth="30.0" preserveRatio="true">
+	 			<Image url= "/note.png" />
+	 		</ImageView>
+	 	</graphic>
+	 </Button>
+</MigPane>
+

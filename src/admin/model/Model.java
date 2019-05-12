@@ -16,6 +16,9 @@ import admin.model.exam_entries.QuestionPart;
 import admin.model.exam_entries.Template;
 import common.network.Screenshot;
 import common.network.Server;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.util.Pair;
 
 /**
  * The main model class for admin interface
@@ -35,12 +38,13 @@ public class Model implements Serializable
 	private static Model instance;
 
 	private transient int status;
-	private transient Examinees examinees;
+	private Examinees examinees;
 	private transient Server server;
 	private Container entries;
 	private Exam lastExam;
 	private transient Exam currentExam;
 	private transient Thread examEndCheckerThread;
+	private transient ObservableList<Pair<String, Integer>> logs;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -75,6 +79,7 @@ public class Model implements Serializable
 		currentExam = null;
 		examEndCheckerThread = null;
 		instance = this;
+		logs = FXCollections.observableArrayList();
 	}
 
 	/**************************** PREPARATION ****************************/
@@ -164,6 +169,15 @@ public class Model implements Serializable
 	}
 
 	/**
+	 * Deletes the entry
+	 * @param e The entry to delete
+	 */
+	public void deleteEntry( Entry e)
+	{
+		e.getParent().remove( e);
+	}
+
+	/**
 	 * @return the entries
 	 */
 	public Container getEntries()
@@ -174,7 +188,7 @@ public class Model implements Serializable
 	/**************************** MONITORING *****************************/
 	/**
 	 * Start the specified exam
-	 * @param e the exam to start TODO
+	 * @param exam the exam to start
 	 */
 	public void startExam( Exam exam)
 	{
@@ -215,8 +229,18 @@ public class Model implements Serializable
 		status = STATUS_EXAM_MODE;
 	}
 
+	public void setScreenshotScaling( double scale)
+	{
+		sendMessage( "screenshot_scaling", scale + "");
+	}
+
+	public void setScreenshotWidth( int width)
+	{
+		sendMessage( "screenshot_width", width + "");
+	}
+	
 	/**
-	 * TODO
+	 * Ends the current exam and forces examinees to submit their solutions
 	 */
 	public void endCurrentExam()
 	{
@@ -230,9 +254,9 @@ public class Model implements Serializable
 	}
 
 	/**
-	 * TODO
-	 * @param msg
-	 * @param socket
+	 * Handles the message coming from to the server
+	 * @param msg The message content
+	 * @param socket The socket from which this message came from
 	 */
 	private void handleMessage( String msg, Socket socket)
 	{
@@ -250,20 +274,21 @@ public class Model implements Serializable
 			case "name":
 				// Connection request
 				from = createExaminee( parts[2], socket);
+				System.out.println( currentExam + " " + from + " " + this);
 				currentExam.send( from, this);
+				log( from.getName() + " is connected");
 				break;
 			case "solution":
 				solutionReceived( parts[3], parts[2], from);
 				break;
-			default: // TODO
 		}
 	}
 
 	/**
-	 * TODO
-	 * @param content
-	 * @param id
-	 * @param from
+	 * Handles the solution submitted by the examinee
+	 * @param content The content of the solution
+	 * @param id The id of the question part
+	 * @param from The examinee who submitted this
 	 */
 	private void solutionReceived( String content, String id, Examinee from)
 	{
@@ -275,7 +300,7 @@ public class Model implements Serializable
 		}
 
 		QuestionPart part = (QuestionPart) object;
-		// TODO
+		from.addSolution( part, content);
 	}
 
 	/**
@@ -314,11 +339,28 @@ public class Model implements Serializable
 	}
 
 	/**
+	 * Logs the message and the current elapsed time from the start of the exam
+	 * @param message The message to log
+	 */
+	public void log( String message)
+	{
+		logs.add( new Pair<String, Integer>( message, currentExam.getTimeElapsed()));
+	}
+
+	/**
 	 * @return The examinees
 	 */
 	public Examinees getExaminees()
 	{
 		return examinees;
+	}
+
+	/**
+	 * @return The logs
+	 */
+	public ObservableList<Pair<String, Integer>> getLogs()
+	{
+		return logs;
 	}
 
 	/**
@@ -346,7 +388,8 @@ public class Model implements Serializable
 		@Override
 		public void connectionTerminated( Socket socket)
 		{
-			// TODO Auto-generated method stub
+			Examinee e = examinees.getByIP( socket.getInetAddress().getHostAddress());
+			if ( e != null) log( e.getName() + " is disconnected");
 		}
 
 		@Override

@@ -30,7 +30,7 @@ public class Question extends Entry
 	@Override
 	public void send( Examinee e, Model m)
 	{
-		m.sendMessage( "question", id + Model.MESSAGE_SEPERATOR + title, e);
+		m.sendMessage( "question", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + parent.id, e);
 		sendAll( e, m);
 	}
 
@@ -41,12 +41,12 @@ public class Question extends Entry
 	{
 		return maxPoints;
 	}
-	
+
 	@Override
 	public void add( Entry entry)
 	{
 		super.add( entry);
-		if (entry instanceof QuestionPart)
+		if ( entry instanceof QuestionPart)
 		{
 			maxPoints += ((QuestionPart) entry).getMaxPoints();
 		}

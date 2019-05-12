@@ -1,7 +1,6 @@
 package admin.model.exam_entries;
 
 import admin.model.Examinee;
-import admin.model.IDHandler;
 import admin.model.Model;
 
 /**
@@ -17,8 +16,8 @@ public class Entry extends Container
 
 	// Properties
 	protected String title;
-	protected String id;
 	protected String content;
+	protected Container parent;
 
 	// Constructors
 	/**
@@ -28,7 +27,7 @@ public class Entry extends Container
 	{
 		this.title = title;
 		content = "";
-		id = IDHandler.getInstance().generate( this);
+		parent = null;
 	}
 
 	// methods
@@ -41,6 +40,25 @@ public class Entry extends Container
 	 */
 	public void send( Examinee e, Model m)
 	{
+	}
+
+	/**
+	 * Finds the first ancestor of this entry of the specified type. If this entry
+	 * has the specified type, then it will be returned
+	 * @param type The type of the ancestor to look for
+	 * @return The specified ancestor, or null if that could not be found
+	 */
+	public Entry findFirstAncestor( Class<?> type)
+	{
+		if ( getClass() == type)
+		{
+			return this;
+		}
+		if ( parent == null || !(parent instanceof Entry))
+		{
+			return null;
+		}
+		return ((Entry) parent).findFirstAncestor( type);
 	}
 
 	/**
@@ -75,25 +93,25 @@ public class Entry extends Container
 		this.content = content;
 	}
 
-	/**
-	 * @return The id
-	 */
-	public String getId()
-	{
-		return id;
-	}
-
 	@Override
 	public String toString()
 	{
 		return title;
 	}
 
-	@Override
-	public boolean equals( Object e)
+	/**
+	 * @return The parent
+	 */
+	public Container getParent()
 	{
-		if ( e == null)
-			return false;
-		return id.equals( ((Entry) e).id);
+		return parent;
+	}
+
+	/**
+	 * @param parent The parent to set
+	 */
+	public void setParent( Container parent)
+	{
+		this.parent = parent;
 	}
 }

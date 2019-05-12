@@ -11,6 +11,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 public class NewQuestionDialogTester extends Application
 {
@@ -26,7 +27,8 @@ public class NewQuestionDialogTester extends Application
 		Model.getInstance().createQuestion( e, "Question 2");
 
 		Model.getInstance().createQuestionPart( q, "Part", 50);
-		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/NewQuestionDialog.fxml").toURI().toURL());
+		Dialog<?> d = (Dialog<?>) FXMLLoader.load( new File( "src/admin/view/fxml/preparation/NewQuestionPartDialog.fxml").toURI().toURL());
+		d.getDialogPane().setUserData( new Pair<Integer, Boolean>( 2, false));
 		System.out.println( d.showAndWait());
 	}
 

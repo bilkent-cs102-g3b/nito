@@ -1,9 +1,6 @@
 package admin.view.preparation;
 
-import java.util.ArrayList;
-
 import admin.model.Model;
-import admin.model.exam_entries.Container;
 import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
 import javafx.fxml.FXML;
@@ -26,7 +23,21 @@ public class NewExamInstructionDialogController
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 		okButton.setDisable( true);
 
-		exams.getItems().addAll( find( Exam.class, Model.getInstance().getEntries()));
+		exams.getItems().addAll( Model.getInstance().getEntries().findAll( Exam.class));
+
+		root.setOnShown( e -> {
+			Object userData = root.getDialogPane().getUserData();
+			if ( userData != null && userData instanceof Entry)
+			{
+				Entry entryUserData = (Entry) userData;
+				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
+				if ( selectedExam != null)
+				{
+					exams.getSelectionModel().select( selectedExam);
+				}
+			}
+		});
+		
 		exams.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> okButton.setDisable( newVal == null));
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
@@ -35,18 +46,5 @@ public class NewExamInstructionDialogController
 			}
 			return null;
 		});
-	}
-
-	private ArrayList<Entry> find( Class<?> type, Container container)
-	{
-		ArrayList<Entry> result = new ArrayList<>();
-
-		if ( container != null)
-		{
-			container.getAll().stream().forEachOrdered( e -> result.addAll( find( type, e)));
-			container.getAll().stream().filter( e -> e.getClass() == type).forEachOrdered( result::add);
-		}
-
-		return result;
 	}
 }

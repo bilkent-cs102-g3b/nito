@@ -14,7 +14,7 @@ import javafx.scene.text.TextAlignment;
 /**
  * A JavaFX class for editor with line numbering
  * @author Ziya Mukhtarov
- * @version 09/04/2019
+ * @version 10/05/2019
  */
 public class NumberedEditor extends HBox
 {
@@ -39,9 +39,18 @@ public class NumberedEditor extends HBox
 	private boolean rightAligned;
 
 	/**
-	 * Initializes the editor
+	 * Creates new empty editor
 	 */
 	public NumberedEditor()
+	{
+		this( "");
+	}
+
+	/**
+	 * Initializes the editor with the given content
+	 * @param initialContent The initial content of the editor
+	 */
+	public NumberedEditor( String initialContent)
 	{
 		super();
 
@@ -113,6 +122,7 @@ public class NumberedEditor extends HBox
 				sizeTextAreaToText( lineNums, currentNums);
 			}
 		});
+		editor.setText( initialContent);
 	}
 
 	/**
@@ -166,5 +176,22 @@ public class NumberedEditor extends HBox
 	public String getText()
 	{
 		return editor.getText();
+	}
+
+	/**
+	 * Adds the change listener to editor's text property
+	 * @param listener The listener to add
+	 */
+	public void addListenerToText( ChangeListener<? super String> listener)
+	{
+		editor.textProperty().addListener( listener);
+	}
+
+	/**
+	 * Makes the editor non-editable
+	 */
+	public void disableEditor()
+	{
+		editor.setDisable( true);
 	}
 }

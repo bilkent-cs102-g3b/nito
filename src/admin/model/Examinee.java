@@ -1,16 +1,24 @@
 package admin.model;
 
+import java.io.Serializable;
 import java.net.Socket;
+import java.util.TreeMap;
 
+import admin.model.exam_entries.QuestionPart;
 import common.network.Screenshot;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 
 /**
  * This class is for one examinee during an exam
  * @author Ziya Mukhtarov
- * @version 04/05/2019
+ * @version 12/05/2019
  */
-public class Examinee
+public class Examinee implements Serializable
 {
+	private static final long serialVersionUID = 663825998181836230L;
+	
 	// TODO
 	public static int STATUS_DISCONNECTED = 1;
 	public static int STATUS_CONNECTED = 2;
@@ -18,13 +26,15 @@ public class Examinee
 	public static int STATUS_SUSPENDED = 4;
 	public static int STATUS_DONE = 5;
 
-	private Socket socket;
-	private Screenshot screen;
+	private transient Socket socket;
+	private transient Screenshot screen;
+	private transient SimpleObjectProperty<Image> screenImageProperty;
 
 	private String id;
 	private String name;
-	// private Exam exam;
 	private int status;
+	private String notes;
+	private TreeMap<QuestionPart, String> solutions;
 
 	/**
 	 * Creates a new examinee with the specified name
@@ -33,9 +43,21 @@ public class Examinee
 	 */
 	public Examinee( String name, Socket socket)
 	{
+		solutions = new TreeMap<QuestionPart, String>();
+		screenImageProperty = new SimpleObjectProperty<>();
 		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);
 		this.socket = socket;
+	}
+	
+	/**
+	 * Saves the submitted solution
+	 * @param part The question part that this solution belongs to
+	 * @param solution The submitted solution
+	 */
+	public void addSolution( QuestionPart part, String solution)
+	{
+		solutions.put( part, solution);
 	}
 
 	/**
@@ -87,6 +109,14 @@ public class Examinee
 	}
 
 	/**
+	 * @return The screen image property
+	 */
+	public SimpleObjectProperty<Image> getScreenImageProperty()
+	{
+		return screenImageProperty;
+	}
+
+	/**
 	 * @return The screen
 	 */
 	public Screenshot getScreen()
@@ -100,6 +130,7 @@ public class Examinee
 	public void setScreen( Screenshot screen)
 	{
 		this.screen = screen;
+		screenImageProperty.set( SwingFXUtils.toFXImage( screen.getImage(), null));
 	}
 
 	/**
@@ -108,5 +139,29 @@ public class Examinee
 	public Socket getSocket()
 	{
 		return socket;
+	}
+
+	/**
+	 * @return The notes
+	 */
+	public String getNotes()
+	{
+		return notes;
+	}
+
+	/**
+	 * @param notes The notes to set
+	 */
+	public void setNotes( String notes)
+	{
+		this.notes = notes;
+	}
+	
+	/**
+	 * @return The solutions
+	 */
+	public TreeMap<QuestionPart, String> getSolutions()
+	{
+		return solutions;
 	}
 }

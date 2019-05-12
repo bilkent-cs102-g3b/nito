@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.collections.*?> 
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane orientation="VERTICAL" dividerPositions="0.8f" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.MonitoringViewController">
+    <FlowPane fx:id="screenPane"/>
+    
+ 	<HBox>
+ 	      <ListView fx:id="logActionList" layoutX="0.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="1100.0" />
+ 	      <ListView fx:id="logTimeList" layoutX="1100.0" nodeOrientation="RIGHT_TO_LEFT" prefWidth="100.0" />
+ 	</HBox>
+	
+</SplitPane>
+

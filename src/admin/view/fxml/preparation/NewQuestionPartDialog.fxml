@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 
-<Dialog resizable="true" headerText="Create part X" title="New Question" fx:controller="admin.view.preparation.NewQuestionPartDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
+<Dialog resizable="true" title="New Question" fx:controller="admin.view.preparation.NewQuestionPartDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
@@ -36,7 +36,6 @@
 			<!-- Dialog buttons -->
 			<buttonTypes>
 				<ButtonType fx:constant="PREVIOUS" />
-				<ButtonType fx:constant="NEXT" />
 				<ButtonType fx:constant="CANCEL" />
 			</buttonTypes>
 		</DialogPane>
