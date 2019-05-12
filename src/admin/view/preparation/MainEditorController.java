@@ -12,19 +12,21 @@ import admin.model.exam_entries.Instruction;
 import admin.model.exam_entries.Question;
 import admin.model.exam_entries.QuestionPart;
 import admin.model.exam_entries.Template;
+import admin.view.MainController;
 import common.NumberedEditor;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Pair;
 
@@ -39,8 +41,27 @@ public class MainEditorController
 	@FXML
 	private TabPane tabPane;
 
+	private MainController mainController;
+	private ArrayList<TreeItem<Entry>> disabledItems;
+
 	public void initialize()
 	{
+//		examTreeView.setCellFactory( ( TreeView<Entry> item) -> {
+//			final TreeCell<Entry> cell = new TreeCell<Entry>();
+//
+//			cell.itemProperty().addListener( ( o, oldVal, newVal) -> {
+//				if ( newVal != null)
+//					cell.setText( newVal.getTitle());
+//
+//				if ( newVal == Model.getInstance().getLastExam())
+//					cell.setDisable( true);
+//			});
+//
+//			return cell;
+//		});
+		examTree.setValue( new Entry( "Exams"));
+		examTreeView.setRoot( examTree);
+
 		updateTreeView();
 		examTreeView.setOnMouseClicked( new EventHandler<MouseEvent>() {
 			@Override
@@ -51,6 +72,44 @@ public class MainEditorController
 					openTab( intermediate.getValue());
 			}
 		});
+
+		try
+		{
+			FXMLLoader loader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/preparation/WelcomeTab.fxml"));
+			Tab welcomeTab = loader.load();
+			welcomeTab.setUserData( new Entry( "TRASH"));
+			((WelcomeTabController) loader.getController()).setMainController( this);
+			tabPane.getTabs().add( welcomeTab);
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void setMainController( MainController controller)
+	{
+		mainController = controller;
+	}
+
+	@FXML
+	public void startExam()
+	{
+		TreeItem<Entry> selected = getSelectedItem();
+		if ( selected == null || selected == examTree)
+		{
+			return;
+		}
+
+		Exam e = (Exam) selected.getValue().findFirstAncestor( Exam.class);
+		Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to start " + e + "? This will make this exam and its public data available for examiness.");
+		Optional<ButtonType> result = confirmation.showAndWait();
+		if ( result.isPresent() && result.get() == ButtonType.OK)
+		{
+			Model.getInstance().startExam( e);
+			mainController.changeToMonitoring();
+		}
 	}
 
 	@FXML
@@ -95,6 +154,10 @@ public class MainEditorController
 			else
 				item.getChildren().add( nextItem);
 
+			if ( Model.getInstance().getLastExam() == e)
+			{
+				// examTreeView.cell
+			}
 			listOfItems.add( nextItem);
 			updateTreeView( nextItem, e);
 		});
@@ -271,8 +334,10 @@ public class MainEditorController
 		editor.addListenerToText( ( o, oldVal, newVal) -> {
 			Model.getInstance().setContentOfEntry( e, newVal);
 		});
+
 		Tab tabData = new Tab( e.toString(), editor);
 		tabData.setUserData( e);
+
 		if ( !tabPane.getTabs().stream().anyMatch( t -> e.equals( t.getUserData())))
 		{
 			tabPane.getTabs().add( tabData);

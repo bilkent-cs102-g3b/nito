@@ -96,7 +96,6 @@ public abstract class TcpServer
 			sockets.add( socket);
 			isBlocked = false;
 			connectionEstablished( socket);
-			System.out.println( socket.getInetAddress() + ":" + socket.getPort() + " is now connected!");
 
 			// Listens for messages
 			msgListenerThreads.add( new Thread( new Runnable() {

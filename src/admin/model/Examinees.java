@@ -5,6 +5,9 @@ import java.net.Socket;
 import java.util.Collection;
 import java.util.TreeMap;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  * For handling all the work associated with examinees during exam
  * @author Ziya Mukhtarov
@@ -13,8 +16,9 @@ import java.util.TreeMap;
 public class Examinees implements Serializable
 {
 	private static final long serialVersionUID = -772277559421890526L;
-	
+
 	private TreeMap<String, Examinee> socketMap;
+	private transient ObservableList<Examinee> examinees;
 
 	/**
 	 * Initializes examinees with empty set
@@ -22,6 +26,7 @@ public class Examinees implements Serializable
 	public Examinees()
 	{
 		socketMap = new TreeMap<>();
+		examinees = FXCollections.observableArrayList();
 	}
 
 	/**
@@ -56,6 +61,7 @@ public class Examinees implements Serializable
 		// TODO check if socket already exists in map?
 		Examinee e = new Examinee( name, socket);
 		socketMap.put( socket.getInetAddress().getHostAddress(), e);
+		examinees.add( e);
 		return e;
 	}
 
@@ -65,5 +71,13 @@ public class Examinees implements Serializable
 	public Collection<Examinee> getAll()
 	{
 		return socketMap.values();
+	}
+
+	/**
+	 * @return all examinees connected during the last exam
+	 */
+	public ObservableList<Examinee> getAllAsObservable()
+	{
+		return examinees;
 	}
 }

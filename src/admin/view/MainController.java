@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 /**
@@ -58,6 +59,8 @@ public class MainController
 
 		// TODO load grading
 
+		((MainEditorController) preparationLoader.getController()).setMainController( this);
+		
 		currentStage = STAGE_PREPARATION;
 		root.getChildren().add( preparation);
 	}
@@ -100,6 +103,8 @@ public class MainController
 			currentStage = STAGE_PREPARATION;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( preparation);
+			VBox.setVgrow( preparation, Priority.ALWAYS);
+			preparationController.updateTreeView();
 
 			preparationButton.getStyleClass().add( "selectedNavButton");
 			monitoringButton.getStyleClass().add( "navButton");
@@ -118,6 +123,7 @@ public class MainController
 			currentStage = STAGE_MONITORING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( monitoring);
+			VBox.setVgrow( monitoring, Priority.ALWAYS);
 
 			preparationButton.getStyleClass().add( "navButton");
 			monitoringButton.getStyleClass().add( "selectedNavButton");
@@ -136,6 +142,7 @@ public class MainController
 			currentStage = STAGE_GRADING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( grading);
+			VBox.setVgrow( grading, Priority.ALWAYS);
 
 			preparationButton.getStyleClass().add( "navButton");
 			monitoringButton.getStyleClass().add( "navButton");

@@ -15,7 +15,7 @@ public class TcpClientTester
 	{
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner( System.in);
-		String addr = "localhost";
+		String addr = "192.168.43.105";
 		// addr = scan.next();
 		Client client = new Client( addr) {
 			public void messageReceived( String msg)
