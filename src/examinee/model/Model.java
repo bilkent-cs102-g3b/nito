@@ -1,10 +1,14 @@
 package examinee.model;
 
 import java.awt.AWTException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.Timer;
 
 import common.network.*;
+import javafx.beans.property.IntegerProperty;
 
 /**
  * Model class for examinee
@@ -25,22 +29,25 @@ public class Model
 
 	private String username;
 	private String adminIP;
-	private String examTitle;
 	private boolean dataEnd;
 	private int timeRemain;
 	private int timeTotal;
-	private int status;
+	private IntegerProperty status;
 	private Client client;
 	private ExamEntry reference;
 	private ExamEntry examData;
+	private Timer timer;
 
 	// constructors
 
 	private Model()
 	{
-		status = 0;
+		status.set(0);
 		reference = null;
 		dataEnd = false;
+		
+		timer = new Timer( 1000, new TimerListener());
+		timer.stop();
 	}
 
 	/**
@@ -54,6 +61,18 @@ public class Model
 		return instance;
 	}
 
+	/**
+	 * Send message to server using client instance
+	 * @param protocol - Protocol when sending message
+	 * @param msg - Message to send
+	 */
+	public void sendMessage( String protocol, String msg)
+	{
+		client.sendMessage( SECRET + ":::" + protocol + ":::" + msg);
+	}
+	
+	
+	
 	/**
 	 * Create client with network package and connect to admin ip
 	 * @param name Name of user
@@ -76,8 +95,8 @@ public class Model
 
 			};
 
-			client.sendMessage( SECRET + ":::" + "name" + ":::" + username);
-			status = STATUS_CONNECTED;
+			sendMessage( "name", username);
+			status.set(STATUS_CONNECTED);;
 			
 			return true;
 		}
@@ -111,7 +130,7 @@ public class Model
 				}
 			}
 		}
-		status = STATUS_FINISHED;
+		status.set(STATUS_FINISHED);
 	}
 	
 	/**
@@ -130,6 +149,15 @@ public class Model
 	public int getTimeRemain()
 	{
 		return timeRemain;
+	}
+	
+	/**
+	 * Get status as integer property
+	 * @return status
+	 */
+	public IntegerProperty getStatus()
+	{
+		return status;
 	}
 	
 	/**
@@ -214,17 +242,22 @@ public class Model
 		if ( parts[1].equals( "exam") && reference == null )
 		{
 			examData = new ExamEntry( parts[2], parts[3], "", false, false);
-			examTitle = examData.getTitle();
 			timeTotal = Integer.parseInt(parts[4]); // Time in seconds
 			timeRemain = timeTotal;
 		}
 		
 		// 
 		if ( parts[1].equals( "data_end") )
+		{
 			dataEnd = !dataEnd;
+			timer.start();
+		}
 		
 		if ( parts[1].equals( "exam_ended") )
+		{
 			submitAll();
+			client.close();
+		}
 		
 		// Send screenshot after server request
 		if ( parts[1].equals( "screenshot_scale") )
@@ -257,6 +290,18 @@ public class Model
 			}
 		}
 	}
+	
+	private class TimerListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			timeRemain--;
+		}
+		
+	}
+	
 	//******************************************************
 	// Test
 	//******************************************************
