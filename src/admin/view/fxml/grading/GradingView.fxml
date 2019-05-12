@@ -25,29 +25,9 @@
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.grading.GradingViewController">
 <!-- MAIN -->
 	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
-	
 		<!-- EXAMINEE LIST -->
-		
 		<ListView fx:id="examineeList"/>
-		<TabPane minWidth="500">
-			<Tab text="Question 1">
-			<NumberedEditor />
-			</Tab>
-		</TabPane>
-		
-		<VBox>
-		
-		    <Label style="-fx-font: NORMAL 30 Tahoma;" text=" GRADING" >
-    		</Label>
-    					
-			<Label style="-fx-font: NORMAL 30 Tahoma;" text=" NOTES" >
-    		</Label>
-    		
-    		<TextArea minHeight ="300">
-    		</TextArea>
-    		
-		</VBox>
-		
+		<TabPane fx:id="questionTabs" minWidth="500" />
 	</SplitPane>
 </VBox>
 

@@ -28,10 +28,7 @@ public class ExamineeScreenController
 	
 	@FXML
 	public void openNotes()
-	{
-		// TODO
-		screen.imageProperty().unbindBidirectional( examinee.getScreenImageProperty());
-		
+	{	
 		Dialog<String> noteDialog = new Dialog<String>();
 		noteDialog.setHeaderText("Notes");
 		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.APPLY);

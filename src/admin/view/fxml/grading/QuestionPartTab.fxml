@@ -7,19 +7,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<TabPane xmlns:fx="http://javafx.com/fxml/1">
-	<Tab>
+<Tab fx:id="questionPart" xmlns:fx="http://javafx.com/fxml/1">
+
 		<SplitPane VBox.vgrow="ALWAYS">
-			<NumberedEditor />
+			<NumberedEditor fx:id="editor"/>
 			<VBox>
-				<Label text="GRADING"/>
-				<TextField/>
+				<HBox>
+					<Label text="GRADING"/>
+					<Label fx:id="maxPointLabel"/>
+					<TextField fx:id="grade"/>
+				</HBox>
 				
 				<Label text="NOTES"/>
-				<TextArea/>
+				<TextArea fx:id="notes"/>
 			</VBox>
 		</SplitPane>
-	</Tab>
-</TabPane>
+</Tab>
 
