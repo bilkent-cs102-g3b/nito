@@ -38,7 +38,6 @@ public class GradingViewController
 		examineeList.getSelectionModel().selectedItemProperty().addListener( (o, oldVal, newVal) -> {
 			openTabs(newVal);
 		});
-//		test();
 	}
 	private void openTabs( Examinee e)
 	{
