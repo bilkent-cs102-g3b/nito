@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -16,7 +17,7 @@ public class MonitoringViewTester extends Application
 	@Override
 	public void start( Stage stage) throws MalformedURLException, IOException
 	{
-		SplitPane root;
+		VBox root;
 		String resource;
 
 		resource = "/admin/view/fxml/monitoring/MonitoringView.fxml";

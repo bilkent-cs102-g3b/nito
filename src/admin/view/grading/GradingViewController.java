@@ -1,7 +1,11 @@
 package admin.view.grading;
 
+import admin.model.Examinee;
 import common.NumberedEditor;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,12 +23,26 @@ public class GradingViewController
 	private TableColumn<GradingTableItem, String> criteria;
 	@FXML
 	private TableColumn<GradingTableItem, TextField> points;
-
-	// private ArrayList<String> exams;
+	@FXML
+	private ListView <Examinee>examineeList;
+	@FXML
+	private TabPane questionTabs;
 
 	public void initialize()
 	{
-		test();
+		//examineeList.getItems().addAll( Model.getInstance().getExaminees().getAll());
+		examineeList.getSelectionModel().selectedItemProperty().addListener( (o, oldVal, newVal) -> {
+			
+		});
+//		test();
+	}
+	private void openTabs( Examinee e)
+	{
+		questionTabs.getTabs().clear();
+		e.getSolutions().forEach((part, solution) -> {
+			Tab tab = new Tab( part.getTitle());
+//			tab.setContent( );
+		});
 	}
 
 	/**

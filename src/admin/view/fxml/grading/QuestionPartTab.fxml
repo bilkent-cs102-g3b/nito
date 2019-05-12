@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.SplitPane?>
+<?import common.NumberedEditor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml/1">
+	<Tab>
+		<SplitPane VBox.vgrow="ALWAYS">
+			<NumberedEditor />
+			<VBox>
+				<Label text="GRADING"/>
+				<TextField/>
+				
+				<Label text="NOTES"/>
+				<TextArea/>
+			</VBox>
+		</SplitPane>
+	</Tab>
+</TabPane>
+

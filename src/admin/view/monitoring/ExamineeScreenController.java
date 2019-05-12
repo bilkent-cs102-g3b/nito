@@ -5,13 +5,11 @@ import java.util.Optional;
 import org.tbee.javafx.scene.layout.MigPane;
 
 import admin.model.Examinee;
-import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class ExamineeScreenController
@@ -22,10 +20,6 @@ public class ExamineeScreenController
 	@FXML
 	private ImageView screen;
 	
-	public void initialize()
-	{
-	}
-	
 	public void setExaminee( Examinee e)
 	{
 		examinee = e;
@@ -35,6 +29,9 @@ public class ExamineeScreenController
 	@FXML
 	public void openNotes()
 	{
+		// TODO
+		screen.imageProperty().unbindBidirectional( examinee.getScreenImageProperty());
+		
 		Dialog<String> noteDialog = new Dialog<String>();
 		noteDialog.setHeaderText("Notes");
 		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.APPLY);
@@ -59,5 +56,11 @@ public class ExamineeScreenController
 		
 		Optional<String> result = noteDialog.showAndWait();
 		result.ifPresent( c -> examinee.setNotes( result.get()));
+	}
+
+	public void setWidth(int width)
+	{
+		if (examinee != null)
+			examinee.setScreenWidth( width);
 	}
 }

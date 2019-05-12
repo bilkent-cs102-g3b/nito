@@ -17,14 +17,17 @@
 <?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-<SplitPane orientation="VERTICAL" dividerPositions="0.8f" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.MonitoringViewController">
-    <FlowPane fx:id="screenPane"/>
-    
- 	<HBox>
- 	      <ListView fx:id="logActionList" layoutX="0.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="1100.0" />
- 	      <ListView fx:id="logTimeList" layoutX="1100.0" nodeOrientation="RIGHT_TO_LEFT" prefWidth="100.0" />
- 	</HBox>
-	
-</SplitPane>
+<?import javafx.scene.control.Slider?>
+<VBox alignment="TOP_RIGHT" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.MonitoringViewController" fx:id="root">
+	<SplitPane orientation="VERTICAL" dividerPositions="0.8f" VBox.vgrow = "ALWAYS" fx:id="splitPane">
+	    <ScrollPane>
+	    	<FlowPane fx:id="screenPane"/>
+	    </ScrollPane>
+	 	<HBox>
+	 	      <ListView fx:id="logActionList" nodeOrientation="LEFT_TO_RIGHT" HBox.hgrow="ALWAYS"/>
+	 	      <ListView fx:id="logTimeList" nodeOrientation="RIGHT_TO_LEFT"/>
+	 	</HBox>
+	</SplitPane>
+	<Slider min="200" value="200" maxWidth="300" showTickLabels="true" showTickMarks="true" minorTickCount="5" fx:id="zoomSlider"/>
+</VBox>
 

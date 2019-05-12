@@ -13,20 +13,29 @@ import common.network.Screenshot;
  */
 public class ExamineeSimulator
 {
+	static int width = 100;
+		
 	public static void main( String[] args) throws UnknownHostException, IOException, AWTException
 	{
 		Client c = new Client( "localhost") {
 			@Override
 			public void messageReceived( String msg)
 			{
+				try
+				{
+					width = Integer.parseInt( msg.split(":::")[2]);
+				}
+				catch ( Exception e)
+				{
+				}
 			}
 		};
 		
-		c.sendMessage( "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09:::name:::Ziya Mukhtarov");
+		c.sendMessage( "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09:::name:::Mokhlaroyim Raupova");
 		
 		while (true)
 		{
-			Screenshot s = new Screenshot( 0.25);
+			Screenshot s = new Screenshot( width);
 			c.sendImage( s);
 		}
 	}
