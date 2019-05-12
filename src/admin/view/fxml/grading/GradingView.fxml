@@ -10,27 +10,25 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Tab.*?>
 <?import javafx.scene.control.TextField?>
 <?import common.NumberedEditor?>
 
 <?import javafx.collections.*?> 
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.cell.*?> 
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
 <?import admin.view.grading.*?>
+<?import javafx.scene.control.Label?>
 
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.grading.GradingViewController">
 <!-- MAIN -->
 	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
 	
-		<!-- EXAMS TREE -->
-		<TreeView minWidth="100">
-			<TreeItem value="Students" expanded="true" fx:id="questionTree">
-			</TreeItem>
-		</TreeView>
+		<!-- EXAMINEE LIST -->
 		
-		<!-- EDITOR -->
+		<ListView fx:id="examineeList"/>
 		<TabPane minWidth="500">
 			<Tab text="Question 1">
 			<NumberedEditor />
@@ -41,34 +39,7 @@
 		
 		    <Label style="-fx-font: NORMAL 30 Tahoma;" text=" GRADING" >
     		</Label>
-    		
-			<TableView fx:id="gradingTable" editable = "true" maxHeight="Infinity" maxWidth="Infinity" GridPane.columnIndex="0" 
-        			GridPane.rowIndex="1">
-				<columns>
-					<TableColumn text = "Criteria" fx:id="criteria" prefWidth ="${gradingTable.width*0.8}">
-						 <cellValueFactory>
-						 	<PropertyValueFactory property="criteria1" />
-        				 </cellValueFactory>
-					</TableColumn>
-					<TableColumn text = "Points" fx:id="points" predWidth ="${gradingTable.width*0.2}"/>
-				</columns>
-				
-				<items>
-					<FXCollections fx:factory="observableArrayList">
-						<GradingTableItem criteria1 = "Javadoc Comments"/>
-						<GradingTableItem criteria1 = "No Compile Errors"/>
-						<GradingTableItem criteria1 = "Properly Named Variables"/>
-						<GradingTableItem criteria1 = "Easy to Understand"/>
-						<GradingTableItem criteria1 = "Total"/>
-					</FXCollections>
-				</items>
-				
-				<columnResizePolicy>
-    				<TableView fx:constant = "CONSTRAINED_RESIZE_POLICY"/>
-    			</columnResizePolicy>
-				
-			</TableView>
-			
+    					
 			<Label style="-fx-font: NORMAL 30 Tahoma;" text=" NOTES" >
     		</Label>
     		

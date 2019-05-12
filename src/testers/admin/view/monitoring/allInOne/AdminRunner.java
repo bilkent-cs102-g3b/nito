@@ -11,7 +11,7 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.SplitPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -20,7 +20,7 @@ public class AdminRunner extends Application
 	@Override
 	public void start( Stage stage) throws IOException
 	{
-		SplitPane root;
+		VBox root;
 		String resource;
 
 		resource = "/admin/view/fxml/monitoring/MonitoringView.fxml";
