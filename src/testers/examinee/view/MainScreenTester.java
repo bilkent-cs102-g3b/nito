@@ -1,6 +1,5 @@
 package testers.examinee.view;
 
-import java.awt.Dimension;
 import java.io.File;
 
 import javax.swing.UIManager;
@@ -11,8 +10,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 public class MainScreenTester extends Application
@@ -24,11 +23,13 @@ public class MainScreenTester extends Application
 		{
 			SplitPane root;
 			String path;
-			new Dimension();
+			stage.initStyle( StageStyle.UNDECORATED);
+			stage.setFullScreenExitHint("");
+//			stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
 			stage.setFullScreen( true);
 			path = "src/examinee/view/fxml/MainScreen.fxml";
 			root = (SplitPane) FXMLLoader.load( new File( path).toURI().toURL());
-			Scene scene = new Scene( root, 1200, 675);
+			Scene scene = new Scene(root);
 			stage.setScene( scene);
 
 			// TODO Delete this?
@@ -40,9 +41,6 @@ public class MainScreenTester extends Application
 				}
 			});
 
-			System.out.println( new File( "Resources/logo.png").toURI().toURL().toString());
-			stage.getIcons().add( new Image( new File( "Resources/logo.png").toURI().toURL().toString()));
-			stage.setTitle( "Sample frame");
 			stage.show();
 		}
 		catch (Exception e)
@@ -53,7 +51,7 @@ public class MainScreenTester extends Application
 
 	public static void main( String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
 	{
-		UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName ());
+		UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName());
 		launch( args);
 	}
 }

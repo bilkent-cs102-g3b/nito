@@ -14,25 +14,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javax.swing.JDesktopPane?>
 <?import javafx.embed.swing.SwingNode?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
 
-<SplitPane minWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:id="sp"
-	fx:controller="examinee.view.MainScreenController">
-	<VBox alignment="TOP_CENTER">
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" fx:id="splitPane" fx:controller="examinee.view.MainScreenController">
+
+<stylesheets>
+	<URL value="@../../../common/stylesheet.css" />
+</stylesheets>
+
+	<VBox minWidth="100" alignment="TOP_CENTER">
 		<!-- QUESTIONS TREE -->
-		<TreeView minWidth="100" showRoot="true" fx:id="treeView" />
+		<TreeView VBox.vgrow="ALWAYS" fx:id="treeView" />
 
-		<MigPane layout="wrap" rows="push[]push[]push" cols="[]" VBox.vgrow="ALWAYS">
+		<MigPane layout="wrap" rows="2mm:push[]2mm:push[]2mm:push" cols="push[center]push">
 			<!-- TIME -->
-			<Label text="TIME: 80.15 / 120" MigPane.cc="span, center" style="-fx-font-size: 17"/>
+			<Label styleClass="bigFont" MigPane.cc="center" fx:id="time"/>
+			<ProgressBar style="-fx-accent: green;" styleClass="timeProgressBar" fx:id="bar" />
 			<!-- SUBMIT ALL WORK -->
-			<Button text="Submit All Work" />
+			<Button text="Submit All Work" style="-fx-background-color: MediumSeaGreen" styleClass="bigFont" fx:id="submit" onAction="#submit" />
 		</MigPane>
 	</VBox>
 	
 	<!-- WORKING FRAMES -->
 	<SwingNode fx:id="swingNode">
 		<content>
-			<JDesktopPane fx:id="jdp" />
+			<JDesktopPane fx:id="desktopPane" />
 		</content>
 	</SwingNode>
 </SplitPane>
