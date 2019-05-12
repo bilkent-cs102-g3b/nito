@@ -132,6 +132,15 @@ public class Model
 		return timeRemain;
 	}
 	
+	/**
+	 * Get ExamEntry instance containing all other entries
+	 * @return examData
+	 */
+	public ExamEntry getExamData()
+	{
+		return examData;
+	}
+	
 	private ExamEntry searchId( String id)
 	{
 		ArrayList<ExamEntry> list = examData.getAll();
