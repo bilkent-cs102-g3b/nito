@@ -1,15 +1,19 @@
 package admin.model;
 
+import java.io.Serializable;
 import java.net.Socket;
+import java.util.Collection;
 import java.util.TreeMap;
 
 /**
  * For handling all the work associated with examinees during exam
  * @author Ziya Mukhtarov
- * @version 04/05/2019
+ * @version 12/05/2019
  */
-public class Examinees
+public class Examinees implements Serializable
 {
+	private static final long serialVersionUID = -772277559421890526L;
+	
 	private TreeMap<String, Examinee> socketMap;
 
 	/**
@@ -53,5 +57,13 @@ public class Examinees
 		Examinee e = new Examinee( name, socket);
 		socketMap.put( socket.getInetAddress().getHostAddress(), e);
 		return e;
+	}
+
+	/**
+	 * @return all examinees connected during the last exam
+	 */
+	public Collection<Examinee> getAll()
+	{
+		return socketMap.values();
 	}
 }

@@ -177,7 +177,7 @@ public class NumberedEditor extends HBox
 	{
 		return editor.getText();
 	}
-	
+
 	/**
 	 * Adds the change listener to editor's text property
 	 * @param listener The listener to add
@@ -185,5 +185,13 @@ public class NumberedEditor extends HBox
 	public void addListenerToText( ChangeListener<? super String> listener)
 	{
 		editor.textProperty().addListener( listener);
+	}
+
+	/**
+	 * Makes the editor non-editable
+	 */
+	public void disableEditor()
+	{
+		editor.setDisable( true);
 	}
 }
