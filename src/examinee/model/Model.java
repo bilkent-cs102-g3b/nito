@@ -2,7 +2,6 @@ package examinee.model;
 
 import java.awt.AWTException;
 import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 import common.network.*;
@@ -20,15 +19,14 @@ public class Model
 	public final int STATUS_CONNECTED = 1;
 	public final int STATUS_DISCONNECTED = 2;
 	public final int STATUS_LOGIN = 3;
-	public final int STATUS_SUSPENDED = 4;
-	public final int STATUS_BANNED = 5;
-	public final int STATUS_FINISHED = 6;
+	public final int STATUS_FINISHED = 4;
 
 	private static Model instance;
 
 	private String username;
 	private String adminIP;
 	private String examTitle;
+	private boolean dataEnd;
 	private int timeRemain;
 	private int timeTotal;
 	private int status;
@@ -42,6 +40,7 @@ public class Model
 	{
 		status = 0;
 		reference = null;
+		dataEnd = false;
 	}
 
 	/**
@@ -112,6 +111,7 @@ public class Model
 				}
 			}
 		}
+		status = STATUS_FINISHED;
 	}
 	
 	/**
@@ -141,6 +141,20 @@ public class Model
 		return examData;
 	}
 	
+	/**
+	 * Returns true if examData has been completely filled
+	 * @return dataEnd
+	 */
+	public boolean isExamReady()
+	{
+		return dataEnd;
+	}
+	
+	/**
+	 * Searches the existing exam data for a given id
+	 * @param id-Id to search for
+	 * @return Found entry
+	 */
 	private ExamEntry searchId( String id)
 	{
 		ArrayList<ExamEntry> list = examData.getAll();
@@ -205,6 +219,13 @@ public class Model
 			timeRemain = timeTotal;
 		}
 		
+		// 
+		if ( parts[1].equals( "data_end") )
+			dataEnd = !dataEnd;
+		
+		if ( parts[1].equals( "exam_ended") )
+			submitAll();
+		
 		// Send screenshot after server request
 		if ( parts[1].equals( "screenshot_scale") )
 		{
@@ -234,18 +255,6 @@ public class Model
 			{
 				e.printStackTrace();
 			}
-		}
-		
-		// Change status to banned
-		if ( parts[1].equals( "ban"))
-		{
-			status = STATUS_BANNED;
-		}
-		
-		// Change status to suspended
-		if ( parts[1].equals( "suspend"))
-		{
-			status = STATUS_SUSPENDED;
 		}
 	}
 	//******************************************************
