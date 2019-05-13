@@ -1,8 +1,12 @@
 package admin.view.grading;
 
+import java.io.IOException;
+
 import admin.model.Examinee;
+import admin.model.Model;
 import common.NumberedEditor;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -24,42 +28,31 @@ public class GradingViewController
 	@FXML
 	private TableColumn<GradingTableItem, TextField> points;
 	@FXML
-	private ListView <Examinee>examineeList;
+	private ListView<Examinee> examineeList;
 	@FXML
 	private TabPane questionTabs;
 
 	public void initialize()
 	{
-		//examineeList.getItems().addAll( Model.getInstance().getExaminees().getAll());
+		examineeList.getItems().addAll( Model.getInstance().getExaminees().getAll());
 		examineeList.getSelectionModel().selectedItemProperty().addListener( (o, oldVal, newVal) -> {
-			
+			openTabs(newVal);
 		});
-//		test();
 	}
 	private void openTabs( Examinee e)
 	{
 		questionTabs.getTabs().clear();
 		e.getSolutions().forEach((part, solution) -> {
-			Tab tab = new Tab( part.getTitle());
+			try {
+				FXMLLoader loader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/grading/QuestionPartTab.fxml"));
+				Tab tab = loader.load();
+				((QuestionPartTabController) loader.getController()).setExamineeAndPart(e, part);
+				questionTabs.getTabs().add(tab);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 //			tab.setContent( );
 		});
 	}
-
-	/**
-	 * TODO Remove after testing
-	 */
-	private void test()
-	{
-		questionTree.getChildren().add( new TreeItem<String>( "Ziya Mukhtarov"));
-		questionTree.getChildren().add( new TreeItem<String>( "Mokhlaroyim Raupova"));
-	}
-
-	/**
-	 * Adds student to the view
-	 * @param name - The name of the student
-	 */
-	public void addStudent( String name)
-	{
-	}
-
 }

@@ -7,18 +7,14 @@ public class WelcomeTabController
 {
 	@FXML
 	Tab tab;
-	
+
 	private MainEditorController mainController;
-	
-	public void initialize()
+
+	public void setMainController( MainEditorController mainController)
 	{
-//		tab.getTabPane().getParent().
+		this.mainController = mainController;
 	}
 
-	public void controllerInstance(MainEditorController mainController) {
-		   this.mainController = mainController;
-	}
-	
 	public void addExam()
 	{
 		mainController.addExam();

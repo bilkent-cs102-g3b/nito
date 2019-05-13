@@ -6,7 +6,6 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -41,6 +40,7 @@ public class SubmitTester extends Application
 			stage.setTitle( "Sample frame");
 			stage.setMaxHeight( 500);
 			stage.setMaxWidth( 600);
+			stage.setResizable( false);
 			stage.show();
 		}
 		catch (Exception e)

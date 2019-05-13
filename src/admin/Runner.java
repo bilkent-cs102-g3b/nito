@@ -61,10 +61,6 @@ public class Runner extends Application
 			System.exit( 0);
 		});
 		stage.show();
-
-		// Tab welcomeTab = FXMLLoader.load( getClass().getResource(
-		// "/admin/view/fxml/preparation/WelcomeTab.fxml"));
-		// ((TabPane) root.lookup( ".tab-pane")).getTabs().add( welcomeTab);
 	}
 
 	public static void main( String[] args)

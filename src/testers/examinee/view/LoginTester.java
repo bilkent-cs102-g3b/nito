@@ -6,7 +6,6 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -39,6 +38,9 @@ public class LoginTester extends Application
 			System.out.println( new File( "Resources/logo.png").toURI().toURL().toString());
 			stage.getIcons().add( new Image( new File( "Resources/logo.png").toURI().toURL().toString()));
 			stage.setTitle( "Sample frame");
+			stage.setMaxHeight( 600);
+			stage.setMaxWidth( 800);
+			stage.setResizable( false);
 			stage.show();
 		}
 		catch (Exception e)

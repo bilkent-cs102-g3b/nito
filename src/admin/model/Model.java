@@ -31,9 +31,6 @@ public class Model implements Serializable
 	private static final String secret = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 
 	public static final String MESSAGE_SEPERATOR = ":::";
-	public static final int STATUS_PREPARATION = 1;
-	public static final int STATUS_EXAM_MODE = 2;
-	public static final int STATUS_GRADING = 3;
 
 	private static Model instance;
 
@@ -74,7 +71,6 @@ public class Model implements Serializable
 	 */
 	private void initialize()
 	{
-		status = STATUS_PREPARATION;
 		examinees = new Examinees();
 		currentExam = null;
 		examEndCheckerThread = null;
@@ -226,7 +222,6 @@ public class Model implements Serializable
 			}
 		});
 		examEndCheckerThread.start();
-		status = STATUS_EXAM_MODE;
 	}
 
 	public void setScreenshotScaling( double scale)
@@ -238,7 +233,7 @@ public class Model implements Serializable
 	{
 		sendMessage( "screenshot_width", width + "");
 	}
-	
+
 	/**
 	 * Ends the current exam and forces examinees to submit their solutions
 	 */
@@ -254,8 +249,16 @@ public class Model implements Serializable
 	}
 
 	/**
+	 * @return The lastExam
+	 */
+	public Exam getLastExam()
+	{
+		return lastExam;
+	}
+
+	/**
 	 * Handles the message coming from to the server
-	 * @param msg The message content
+	 * @param msg    The message content
 	 * @param socket The socket from which this message came from
 	 */
 	private void handleMessage( String msg, Socket socket)
@@ -274,7 +277,6 @@ public class Model implements Serializable
 			case "name":
 				// Connection request
 				from = createExaminee( parts[2], socket);
-				System.out.println( currentExam + " " + from + " " + this);
 				currentExam.send( from, this);
 				log( from.getName() + " is connected");
 				break;
@@ -287,8 +289,8 @@ public class Model implements Serializable
 	/**
 	 * Handles the solution submitted by the examinee
 	 * @param content The content of the solution
-	 * @param id The id of the question part
-	 * @param from The examinee who submitted this
+	 * @param id      The id of the question part
+	 * @param from    The examinee who submitted this
 	 */
 	private void solutionReceived( String content, String id, Examinee from)
 	{
@@ -389,7 +391,8 @@ public class Model implements Serializable
 		public void connectionTerminated( Socket socket)
 		{
 			Examinee e = examinees.getByIP( socket.getInetAddress().getHostAddress());
-			if ( e != null) log( e.getName() + " is disconnected");
+			if ( e != null)
+				log( e.getName() + " is disconnected");
 		}
 
 		@Override

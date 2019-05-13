@@ -38,7 +38,7 @@ your participation" MigPane.cc="span">				<font>
 		<!-- Quit Button -->
 		<HBox alignment="BOTTOM_CENTER" MigPane.cc="span, growx">
             <children>
-                <Button mnemonicParsing="false" fx:id="quit" onAction="#buttonAction" >
+                <Button mnemonicParsing="false" fx:id="quit" >
      				<graphic>
         				<fx:reference source="quitIcon"/>
      			    </graphic>

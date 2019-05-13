@@ -30,6 +30,7 @@ public class Workspace
 	private File workspace;
 	private static Workspace instance;
 	private Thread autoSave;
+	private boolean autoSaveStarted;
 
 	private Workspace()
 	{
@@ -37,7 +38,7 @@ public class Workspace
 			@Override
 			public void run()
 			{
-				while (true)
+				while ( true)
 				{
 					try
 					{
@@ -52,7 +53,7 @@ public class Workspace
 				}
 			}
 		});
-		autoSave.start();
+		autoSaveStarted = false;
 	}
 
 	/**
@@ -85,6 +86,7 @@ public class Workspace
 		if ( workspace != null)
 		{
 			// Move all files from previous workspace to the new one
+			save();
 			moveContents( newWorkspace);
 		}
 		workspace = newWorkspace;
@@ -98,6 +100,11 @@ public class Workspace
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+
+		if ( !autoSaveStarted)
+		{
+			autoSave.start();
 		}
 		return true;
 	}
@@ -180,7 +187,7 @@ public class Workspace
 	 */
 	public void load()
 	{
-		if (getByRelativePath( ".nito", get()) == null)
+		if ( getByRelativePath( ".nito", get()) == null)
 		{
 			return;
 		}
@@ -198,7 +205,7 @@ public class Workspace
 			e.printStackTrace();
 		}
 
-		// TODO save other data
+		// TODO load other data
 	}
 
 	/**
@@ -245,7 +252,7 @@ public class Workspace
 	{
 		return new File( getExamEntriesFolder() + File.separator + "model");
 	}
-	
+
 	public void stopAutoSave()
 	{
 		autoSave.interrupt();

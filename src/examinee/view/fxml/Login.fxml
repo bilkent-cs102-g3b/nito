@@ -8,47 +8,52 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import javafx.scene.text.Font?>
 
-<MigPane cols="[grow 25][grow 50, align 50%][grow 25]" rows="[]push[]push[]push[]push[]" fx:controller="examinee.view.LoginController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-    	<fx:define>
-    		<Double fx:value="100.0" fx:id="logoSize" />
-    		
-   			<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
-				<image>
-					<Image url="/logo_nito.png"/>
-				</image>
-			</ImageView>
+<Dialog resizable="true" fx:controller="examinee.view.LoginController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
+<fx:define>
+	<Double fx:value="100.0" fx:id="logoSize" />
+	
+	<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
+	<image>
+		<Image url="/logo_nito.png" />
+	</image>
+	</ImageView>
+
+	<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoBilkent">
+	<image>
+		<Image url="/logo_bilkent.png" />
+	</image>
+	</ImageView>
+</fx:define>
+
+<dialogPane>
+	<DialogPane>
+		<content>
+		<MigPane layout="wrap" cols="[grow][center][grow]" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push[]2mm:push">
+			<fx:reference source="logoNito" />
+			<Label text="Nito">
+			<font>
+				<Font size="40" />
+			</font>
+			</Label>
+			<fx:reference source="logoBilkent" MigPane.cc="span, right" />
 			
-			<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoBilkent">
-				<image>
-					<Image url="/logo_bilkent.png"/>
-				</image>
-			</ImageView>
-		</fx:define>
-		
-		<fx:reference source="logoNito" />
-		<Label text="Nito" style="-fx-font-size: 25"/>
-		<fx:reference source="logoBilkent" MigPane.cc="span, right"/>
-        
-        <Label text="ID Number"/>
-        <TextField MigPane.cc="span, wrap, growx" fx:id="id" />
-        
-        <Label text="Passcode"/>
-        <PasswordField MigPane.cc="span, wrap, growx"/>
-        
-        <Label text="Admin IP address"/>
-        <TextField MigPane.cc="span, wrap, growx" fx:id="ip" />
-        
-        <HBox alignment="BOTTOM_RIGHT" MigPane.cc="span, growx">
-            <children>
-                <Button mnemonicParsing="false" text="Login" fx:id="login" onAction="#buttonAction" />
-            </children>
-        
-        </HBox>
-    </children>
-    
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-    </padding>
-</MigPane>
+			<Label text="Name:">
+			<font>
+				<Font size="20" />
+			</font>
+			</Label>
+			<TextField MigPane.cc="span, grow" fx:id="name" />
+	
+			<Label text="IP address of &#10;exam administrator:">
+			<font>
+				<Font size="20" />
+			</font>
+			</Label>
+			<TextField MigPane.cc="span, growx" fx:id="ip" />
+		</MigPane>
+		</content>
+	</DialogPane>
+</dialogPane>
+</Dialog>

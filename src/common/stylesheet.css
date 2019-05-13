@@ -58,4 +58,13 @@
 }
 
 
+.bigFont
+{
+	-fx-font-size: 7mm;
+}
 
+.timeProgressBar > .bar
+{
+    -fx-background-insets: 1mm;
+    -fx-padding: 5mm;
+}

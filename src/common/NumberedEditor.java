@@ -170,6 +170,14 @@ public class NumberedEditor extends HBox
 	}
 
 	/**
+	 * @param text The text to set
+	 */
+	public void setText( String text)
+	{
+		editor.setText( text);
+	}
+
+	/**
 	 * Returns the textual content of the editor
 	 * @return The textual content of the editor
 	 */
@@ -193,5 +201,6 @@ public class NumberedEditor extends HBox
 	public void disableEditor()
 	{
 		editor.setDisable( true);
+		editor.setOpacity( 1);
 	}
 }

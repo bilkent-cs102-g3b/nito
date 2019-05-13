@@ -2,9 +2,11 @@ package examinee.view;
 
 import java.net.MalformedURLException;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 
 public class SubmitController
 {
@@ -13,13 +15,14 @@ public class SubmitController
 	
 	public void initialize() throws MalformedURLException
 	{
+		quit.setOnAction( new EventHandler<ActionEvent>() 
+		{
+			@Override
+			public void handle( ActionEvent event)
+			{
+				System.exit(0);
+			}
+		});
 	}
 
-	public void buttonAction()
-	{
-		if ( quit.isPressed())
-		{
-			System.exit( 0);
-		}
-	}
 }
