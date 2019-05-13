@@ -3,13 +3,11 @@ package testers.admin.view.monitoring;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-
-import org.tbee.javafx.scene.layout.fxml.MigPane;
-
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -18,13 +16,14 @@ public class ExamineeScreenTester extends Application
 	@Override
 	public void start( Stage stage) throws MalformedURLException, IOException
 	{
-		MigPane root;
+		Pane root;
 		String resource;
 
 		resource = "/admin/view/fxml/monitoring/ExamineeScreen.fxml";
 		root = FXMLLoader.load( getClass().getResource( resource));
 		Scene scene = new Scene( root, 1200, 675);
 		stage.setScene( scene);
+		
 
 		stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
 			@Override

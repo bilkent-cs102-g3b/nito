@@ -10,13 +10,17 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 
 public class ExamineeScreenController
 {
 	private Examinee examinee;
 	@FXML
-	private MigPane root;
+	private Pane root;
+	@FXML
+	TitledPane titlePane;
 	@FXML
 	private ImageView screen;
 	
@@ -24,6 +28,7 @@ public class ExamineeScreenController
 	{
 		examinee = e;
 		screen.imageProperty().bindBidirectional( e.getScreenImageProperty());
+		titlePane.setText(e.getName());
 	}
 	
 	@FXML

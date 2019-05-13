@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TitledPane?>
 
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
@@ -10,15 +10,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 
-<MigPane layout="wrap" rows="[][]" cols="[center]" fx:id="root" fx:controller="admin.view.monitoring.ExamineeScreenController" xmlns:fx="http://javafx.com/fxml/1">
-	<ImageView fx:id="screen"/>
-
-	 <Button onAction="#openNotes">
-	 	<graphic>
-	 		<ImageView fitWidth="30.0" preserveRatio="true">
-	 			<Image url= "/note.png" />
-	 		</ImageView>
-	 	</graphic>
-	 </Button>
-</MigPane>
+<Pane fx:id="root" fx:controller="admin.view.monitoring.ExamineeScreenController" xmlns:fx="http://javafx.com/fxml/1">
+	<TitledPane fx:id="titlePane" >
+		<MigPane layout="wrap" rows="[][]" cols="[center]">
+			<ImageView fx:id="screen"/>
+		
+			 <Button onAction="#openNotes">
+			 	<graphic>
+			 		<ImageView fitWidth="30.0" preserveRatio="true">
+			 			<Image url= "/note.png" />
+			 		</ImageView>
+			 	</graphic>
+			 </Button>
+		</MigPane>
+	</TitledPane>
+</Pane>
 
