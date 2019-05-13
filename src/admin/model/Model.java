@@ -149,7 +149,7 @@ public class Model implements Serializable
 	 */
 	public Instruction createInstruction( Entry parent)
 	{
-		Instruction i = new Instruction( "Exam instructions");
+		Instruction i = new Instruction();
 		parent.add( i);
 		return i;
 	}
@@ -190,6 +190,11 @@ public class Model implements Serializable
 	{
 		currentExam = exam;
 		lastExam = exam;
+
+		if ( server != null)
+		{
+			server.close();
+		}
 		try
 		{
 			server = new ServerForExam();
@@ -222,11 +227,6 @@ public class Model implements Serializable
 			}
 		});
 		examEndCheckerThread.start();
-	}
-
-	public void setScreenshotScaling( double scale)
-	{
-		sendMessage( "screenshot_scaling", scale + "");
 	}
 
 	public void setScreenshotWidth( int width)

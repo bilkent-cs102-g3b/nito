@@ -33,12 +33,12 @@ public class WelcomeTabTester extends Application
 		welcomeTabController = loader.getController();
 
 		FXMLLoader loader2 = new FXMLLoader();
-		resource2 = "/admin/view/fxml/preparation/Main.fxml";
+		resource2 = "/admin/view/fxml/preparation/MainEditor.fxml";
 		loader2.setLocation( getClass().getResource( resource2));
 		loader2.load();
 		mainController = loader2.getController();
 
-		welcomeTabController.controllerInstance( mainController);
+		welcomeTabController.setMainController( mainController);
 
 		root2 = new TabPane( w);
 		Scene scene = new Scene( root2, 1000, 600);

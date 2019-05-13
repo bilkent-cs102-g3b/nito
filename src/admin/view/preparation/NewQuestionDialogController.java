@@ -33,7 +33,9 @@ public class NewQuestionDialogController
 		Node nextButton = root.getDialogPane().lookupButton( ButtonType.NEXT);
 		nextButton.setDisable( true);
 
+		Entry lastExam = Model.getInstance().getLastExam();
 		examsBox.getItems().setAll( Model.getInstance().getEntries().findAll( Exam.class));
+		examsBox.getItems().remove( lastExam);
 		
 		root.setOnShown( e -> {
 			Object userData = root.getDialogPane().getUserData();
@@ -41,7 +43,7 @@ public class NewQuestionDialogController
 			{
 				Entry entryUserData = (Entry) userData;
 				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
-				if ( selectedExam != null)
+				if ( selectedExam != null && lastExam != selectedExam)
 				{
 					examsBox.getSelectionModel().select( selectedExam);
 				}

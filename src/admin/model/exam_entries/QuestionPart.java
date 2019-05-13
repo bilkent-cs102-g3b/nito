@@ -12,6 +12,7 @@ public class QuestionPart extends Entry
 	private static final long serialVersionUID = -7659809221309413824L;
 
 	private int maxPoints;
+	private boolean hasTemplate;
 
 	/**
 	 * Creates a question part
@@ -22,6 +23,7 @@ public class QuestionPart extends Entry
 	public QuestionPart( String title, int maxPoints)
 	{
 		super( title);
+		hasTemplate = false;
 		this.maxPoints = maxPoints;
 	}
 
@@ -32,6 +34,26 @@ public class QuestionPart extends Entry
 		sendAll( e, m);
 	}
 
+	@Override
+	public void add( Entry entry)
+	{
+		if ( entry instanceof Template)
+		{
+			if ( !hasTemplate)
+			{
+				super.add( entry);
+				hasTemplate = true;
+			}
+		}
+		else
+			super.add( entry);
+	}
+	
+	public boolean hasTemplate()
+	{
+		return hasTemplate;
+	}
+	
 	/**
 	 * @return The maxPoints
 	 */

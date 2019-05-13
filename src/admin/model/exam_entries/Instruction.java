@@ -13,9 +13,9 @@ public class Instruction extends Entry
 {
 	private static final long serialVersionUID = 6619354670367450793L;
 
-	public Instruction( String title)
+	public Instruction()
 	{
-		super( title);
+		super( "Instructions");
 	}
 
 	@Override

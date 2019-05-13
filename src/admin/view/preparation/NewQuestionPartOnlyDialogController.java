@@ -36,7 +36,10 @@ public class NewQuestionPartOnlyDialogController
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 		okButton.setDisable( true);
 
+		Entry lastExam = Model.getInstance().getLastExam();
 		exams.getItems().addAll( Model.getInstance().getEntries().findAll( Exam.class));
+		exams.getItems().remove( lastExam);
+		
 		questions.setDisable( true);
 		
 		ChangeListener<? super Object> listener = ( ObservableValue<?> o, Object oldVal, Object newVal) -> okButton.setDisable( !isValid());
@@ -52,7 +55,7 @@ public class NewQuestionPartOnlyDialogController
 			{
 				Entry entryUserData = (Entry) userData;
 				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
-				if ( selectedExam != null)
+				if ( selectedExam != null && selectedExam != lastExam)
 				{
 					exams.getSelectionModel().select( selectedExam);
 				}

@@ -200,7 +200,7 @@ public class NumberedEditor extends HBox
 	 */
 	public void disableEditor()
 	{
+		editor.getStyleClass().add( "disabledEditor");
 		editor.setDisable( true);
-		editor.setOpacity( 1);
 	}
 }

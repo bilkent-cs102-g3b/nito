@@ -3,6 +3,7 @@ package admin.view.preparation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.TreeMap;
 
 import admin.model.Model;
 import admin.model.exam_entries.Container;
@@ -14,6 +15,8 @@ import admin.model.exam_entries.QuestionPart;
 import admin.model.exam_entries.Template;
 import admin.view.MainController;
 import common.NumberedEditor;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +27,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
@@ -34,32 +36,20 @@ public class MainEditorController
 {
 	@FXML
 	SplitPane root;
+	private TreeItem<String> examTree;
 	@FXML
-	private TreeItem<Entry> examTree;
-	@FXML
-	private TreeView<Entry> examTreeView;
+	private TreeView<String> examTreeView;
 	@FXML
 	private TabPane tabPane;
 
 	private MainController mainController;
-	private ArrayList<TreeItem<Entry>> disabledItems;
+	private TreeMap<TreeItem<String>, Entry> map;
 
 	public void initialize()
 	{
-//		examTreeView.setCellFactory( ( TreeView<Entry> item) -> {
-//			final TreeCell<Entry> cell = new TreeCell<Entry>();
-//
-//			cell.itemProperty().addListener( ( o, oldVal, newVal) -> {
-//				if ( newVal != null)
-//					cell.setText( newVal.getTitle());
-//
-//				if ( newVal == Model.getInstance().getLastExam())
-//					cell.setDisable( true);
-//			});
-//
-//			return cell;
-//		});
-		examTree.setValue( new Entry( "Exams"));
+		map = new TreeMap<>();
+		examTree = new ComparableTreeItem( "Exams");
+		map.put( examTree, new Entry( "TRASH"));
 		examTreeView.setRoot( examTree);
 
 		updateTreeView();
@@ -67,9 +57,9 @@ public class MainEditorController
 			@Override
 			public void handle( MouseEvent mouseEvent)
 			{
-				TreeItem<Entry> intermediate = getSelectedItem();
-				if ( mouseEvent.getClickCount() == 2 && intermediate != null && intermediate.isLeaf() && intermediate != examTree)
-					openTab( intermediate.getValue());
+				Entry e = getSelectedEntry();
+				if ( mouseEvent.getClickCount() == 2 && e != null && examTreeView.getSelectionModel().getSelectedItem().isLeaf())
+					openTab( e);
 			}
 		});
 
@@ -96,18 +86,18 @@ public class MainEditorController
 	@FXML
 	public void startExam()
 	{
-		TreeItem<Entry> selected = getSelectedItem();
-		if ( selected == null || selected == examTree)
-		{
+		Entry selected = getSelectedEntry();
+		if ( selected == null)
 			return;
-		}
 
-		Exam e = (Exam) selected.getValue().findFirstAncestor( Exam.class);
-		Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to start " + e + "? This will make this exam and its public data available for examiness.");
+		Exam e = (Exam) selected.findFirstAncestor( Exam.class);
+		Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to start " + e + "? This will make this exam and its public data available for examiness.\nWARNING: It will overwrite all existing examinee solutions and grades");
 		Optional<ButtonType> result = confirmation.showAndWait();
 		if ( result.isPresent() && result.get() == ButtonType.OK)
 		{
 			Model.getInstance().startExam( e);
+
+			// TODO open tabs! disable
 			mainController.changeToMonitoring();
 		}
 	}
@@ -115,25 +105,50 @@ public class MainEditorController
 	@FXML
 	public void delete()
 	{
-		TreeItem<Entry> selected = getSelectedItem();
+		Entry e = getSelectedEntry();
+		TreeItem<String> selected = examTreeView.getSelectionModel().getSelectedItem();
+
+		if ( Model.getInstance().getLastExam() != null)
+		{
+			if ( selected == examTree || e.findFirstAncestor( Exam.class) == Model.getInstance().getLastExam())
+			{
+				Alert error = new Alert( AlertType.ERROR, "You cannot edit the content of the last started exam.");
+				error.showAndWait();
+				return;
+			}
+		}
 		if ( selected == null)
 			return;
 
-		Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to delete " + selected.getValue() + "? This will delete all sub-items. This action can not be undone.");
-		Optional<ButtonType> result = confirmation.showAndWait();
-		if ( result.isPresent() && result.get() == ButtonType.OK)
+		if ( selected == examTree)
 		{
-			if ( selected != examTree)
-				Model.getInstance().deleteEntry( selected.getValue());
-			else
+			Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to delete all the data? This action can not be undone.");
+			Optional<ButtonType> result = confirmation.showAndWait();
+			if ( result.isPresent() && result.get() == ButtonType.OK)
+			{
 				Model.getInstance().getEntries().getAll().clear();
-			updateTreeView();
+				updateTreeView();
+			}
+		}
+		else
+		{
+			Alert confirmation = new Alert( AlertType.CONFIRMATION, "Are you sure you want to delete " + e.getTitle() + "? This will delete all sub-items. This action can not be undone.");
+			Optional<ButtonType> result = confirmation.showAndWait();
+			if ( result.isPresent() && result.get() == ButtonType.OK)
+			{
+				Model.getInstance().deleteEntry( e);
+				updateTreeView();
+			}
 		}
 	}
 
-	public TreeItem<Entry> getSelectedItem()
+	public Entry getSelectedEntry()
 	{
-		return examTreeView.getSelectionModel().getSelectedItem();
+		TreeItem<String> selected = examTreeView.getSelectionModel().getSelectedItem();
+		if ( selected == null || selected == examTree)
+			return null;
+
+		return map.get( selected);
 	}
 
 	public void updateTreeView()
@@ -141,28 +156,33 @@ public class MainEditorController
 		updateTreeView( examTree, Model.getInstance().getEntries());
 	}
 
-	private void updateTreeView( TreeItem<Entry> item, Container container)
+	private void updateTreeView( TreeItem<String> item, Container container)
 	{
-		ArrayList<TreeItem<Entry>> listOfItems = new ArrayList<>();
+		ArrayList<TreeItem<String>> listOfItems = new ArrayList<>();
 
 		container.getAll().forEach( e -> {
-			TreeItem<Entry> nextItem = new TreeItem<>( e);
+			TreeItem<String> nextItem = new ComparableTreeItem( e.getTitle());
+			if ( e instanceof Question || e instanceof QuestionPart)
+			{
+				TreeItem<String> statement = new ComparableTreeItem( "Statement");
+				nextItem.getChildren().add( statement);
+				map.put( statement, e);
+			}
 
-			Optional<TreeItem<Entry>> optional = item.getChildren().stream().filter( ti -> ti.getValue().equals( e)).findAny();
+			Optional<TreeItem<String>> optional = item.getChildren().stream().filter( ti -> map.get( ti) != null && map.get( ti).equals( e)).findAny();
 			if ( optional.isPresent())
 				nextItem = optional.get();
 			else
-				item.getChildren().add( nextItem);
-
-			if ( Model.getInstance().getLastExam() == e)
 			{
-				// examTreeView.cell
+				item.getChildren().add( nextItem);
+				map.put( nextItem, e);
 			}
+
 			listOfItems.add( nextItem);
 			updateTreeView( nextItem, e);
 		});
 
-		item.getChildren().retainAll( listOfItems);
+		item.getChildren().removeIf( i -> !listOfItems.contains( i) && !map.get( i).equals( map.get( item)));
 	}
 
 	/**
@@ -179,9 +199,8 @@ public class MainEditorController
 			d.initOwner( root.getScene().getWindow());
 			result = d.showAndWait();
 			result.ifPresent( p -> {
-				Exam e = Model.getInstance().createExam( p.getKey(), p.getValue());
+				Model.getInstance().createExam( p.getKey(), p.getValue());
 				updateTreeView();
-				openTab( e);
 			});
 		}
 		catch (IOException e)
@@ -199,14 +218,9 @@ public class MainEditorController
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewExamInstructionsDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
-
-			TreeItem<Entry> selection = getSelectedItem();
-			if ( selection != null)
-			{
-				d.getDialogPane().setUserData( selection.getValue());
-			}
-
+			d.getDialogPane().setUserData( getSelectedEntry());
 			result = d.showAndWait();
+
 			result.ifPresent( e -> {
 				Instruction i = Model.getInstance().createInstruction( e);
 				updateTreeView();
@@ -228,12 +242,7 @@ public class MainEditorController
 		{
 			questionDialog = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionDialog.fxml"));
 			questionDialog.initOwner( root.getScene().getWindow());
-
-			TreeItem<Entry> selection = getSelectedItem();
-			if ( selection != null)
-			{
-				questionDialog.getDialogPane().setUserData( selection.getValue());
-			}
+			questionDialog.getDialogPane().setUserData( getSelectedEntry());
 
 			result = questionDialog.showAndWait();
 			result.ifPresent( e -> {
@@ -279,17 +288,13 @@ public class MainEditorController
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionPartOnlyDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
-
-			TreeItem<Entry> selection = getSelectedItem();
-			if ( selection != null)
-			{
-				d.getDialogPane().setUserData( selection.getValue());
-			}
+			d.getDialogPane().setUserData( getSelectedEntry());
 
 			result = d.showAndWait();
 			result.ifPresent( p -> {
-				Model.getInstance().createQuestionPart( p.getKey(), p.getValue().getKey(), p.getValue().getValue());
+				QuestionPart qp = Model.getInstance().createQuestionPart( p.getKey(), p.getValue().getKey(), p.getValue().getValue());
 				updateTreeView();
+				openTab( qp);
 			});
 		}
 		catch (IOException e)
@@ -307,12 +312,7 @@ public class MainEditorController
 		{
 			d = FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/NewQuestionTemplateDialog.fxml"));
 			d.initOwner( root.getScene().getWindow());
-
-			TreeItem<Entry> selection = getSelectedItem();
-			if ( selection != null)
-			{
-				d.getDialogPane().setUserData( selection.getValue());
-			}
+			d.getDialogPane().setUserData( getSelectedEntry());
 
 			result = d.showAndWait();
 			result.ifPresent( qp -> {
@@ -330,9 +330,25 @@ public class MainEditorController
 
 	public void openTab( Entry e)
 	{
+		if ( e instanceof Exam)
+			return;
+		
 		NumberedEditor editor = new NumberedEditor( e.getContent());
-		editor.addListenerToText( ( o, oldVal, newVal) -> {
-			Model.getInstance().setContentOfEntry( e, newVal);
+		editor.addListenerToText( new ChangeListener<String>() {
+			@Override
+			public void changed( ObservableValue<? extends String> observable, String oldVal, String newVal)
+			{
+				if ( e.findFirstAncestor( Exam.class) == Model.getInstance().getLastExam())
+				{
+					Alert error = new Alert( AlertType.ERROR, "You cannot edit the content of the last started exam.");
+					error.showAndWait();
+					observable.removeListener( this);
+					editor.setText( oldVal);
+					observable.addListener( this);
+				}
+				else
+					Model.getInstance().setContentOfEntry( e, newVal);
+			}
 		});
 
 		Tab tabData = new Tab( e.toString(), editor);
@@ -345,9 +361,22 @@ public class MainEditorController
 		}
 		else
 		{
-			// TODO NullPointerException here! Fix it
 			tabPane.getTabs().stream().filter( t -> t.getUserData().equals( e)).findAny().ifPresent( tabPane.getSelectionModel()::select);
 		}
 
+	}
+
+	class ComparableTreeItem extends TreeItem<String> implements Comparable<TreeItem<String>>
+	{
+		public ComparableTreeItem( String s)
+		{
+			super( s);
+		}
+
+		@Override
+		public int compareTo( TreeItem<String> o)
+		{
+			return ((Integer) hashCode()).compareTo( o.hashCode());
+		}
 	}
 }

@@ -55,6 +55,7 @@
 .pane:hover
 {
 	-fx-background-color:rgb(204,204,204);
+	-fx-cursor: hand;
 }
 
 
@@ -63,8 +64,28 @@
 	-fx-font-size: 7mm;
 }
 
+.hugeFont
+{
+	-fx-font-size: 12mm;
+}
+
 .timeProgressBar > .bar
 {
     -fx-background-insets: 1mm;
     -fx-padding: 5mm;
+}
+
+.linkLabel
+{
+	-fx-text-fill: rgb(0,149,200);
+}
+
+.disabledEditor:disabled
+{
+	-fx-text-fill: black;
+	-fx-opacity: 1.0;
+}
+.disabledEditor .scroll-pane
+{
+	-fx-opacity: 1.0;
 }

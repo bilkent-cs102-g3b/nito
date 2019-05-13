@@ -13,8 +13,6 @@
 <SplitPane dividerPositions="0.20f" VBox.vgrow="ALWAYS" fx:id="root" fx:controller="admin.view.preparation.MainEditorController" xmlns:fx="http://javafx.com/fxml/1">
 	<!-- EXAMS TREE -->
 	<TreeView minWidth="100" fx:id="examTreeView">
-		<TreeItem expanded="true" fx:id="examTree" />
-		
 	<contextMenu>
 		<ContextMenu>
 		<items>

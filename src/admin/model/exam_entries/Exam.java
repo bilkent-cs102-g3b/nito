@@ -19,6 +19,7 @@ public class Exam extends Entry
 	 */
 	private int length;
 	private int timeLeft;
+	private boolean hasInstructions;
 
 	// constructors
 	/**
@@ -29,6 +30,7 @@ public class Exam extends Entry
 	public Exam( String title, int length)
 	{
 		super( title);
+		hasInstructions = false;
 		this.length = length;
 		timeLeft = 0;
 	}
@@ -69,6 +71,30 @@ public class Exam extends Entry
 		}).start();
 	}
 
+	@Override
+	public void add( Entry entry)
+	{
+		if ( entry instanceof Instruction)
+		{
+			if ( !hasInstructions)
+			{
+				super.add( entry);
+				hasInstructions = true;
+			}
+		}
+		else
+			super.add( entry);
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean hasInstructions()
+	{
+		return hasInstructions;
+	}
+	
 	/**
 	 * @return The time left until the end of this exam in seconds.
 	 */

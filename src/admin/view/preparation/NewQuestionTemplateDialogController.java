@@ -1,5 +1,7 @@
 package admin.view.preparation;
 
+import java.util.ArrayList;
+
 import admin.model.Model;
 import admin.model.exam_entries.Entry;
 import admin.model.exam_entries.Exam;
@@ -29,7 +31,10 @@ public class NewQuestionTemplateDialogController
 		Node okButton = root.getDialogPane().lookupButton( ButtonType.OK);
 		okButton.setDisable( true);
 
+		Entry lastExam = Model.getInstance().getLastExam();
 		exams.getItems().addAll( Model.getInstance().getEntries().findAll( Exam.class));
+		exams.getItems().remove( lastExam);
+
 		questions.setDisable( true);
 		parts.setDisable( true);
 
@@ -43,25 +48,25 @@ public class NewQuestionTemplateDialogController
 			{
 				Entry entryUserData = (Entry) userData;
 				Entry selectedExam = entryUserData.findFirstAncestor( Exam.class);
-				if ( selectedExam != null)
+				if ( selectedExam != null && selectedExam != lastExam)
 				{
 					exams.getSelectionModel().select( selectedExam);
 				}
-				
+
 				Entry selectedQuestion = entryUserData.findFirstAncestor( Question.class);
 				if ( selectedQuestion != null)
 				{
 					questions.getSelectionModel().select( selectedQuestion);
 				}
-				
+
 				Entry selectedPart = entryUserData.findFirstAncestor( QuestionPart.class);
-				if ( selectedPart != null)
+				if ( selectedPart != null && parts.getItems().contains( selectedPart))
 				{
 					parts.getSelectionModel().select( selectedPart);
 				}
 			}
 		});
-		
+
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{
@@ -83,7 +88,9 @@ public class NewQuestionTemplateDialogController
 
 	private void questionSelected( Entry question)
 	{
-		parts.getItems().setAll( question.findAll( QuestionPart.class));
+		ArrayList<Entry> questionsPartList = question.findAll( QuestionPart.class);
+		questionsPartList.removeIf( e -> ((QuestionPart) e).hasTemplate());
+		parts.getItems().setAll( questionsPartList);
 		parts.setPromptText( "Select a part");
 		parts.setDisable( false);
 	}
