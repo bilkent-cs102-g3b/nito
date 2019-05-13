@@ -5,7 +5,8 @@ import me.coley.simplejna.hook.key.KeyHookManager;
 
 public class KeyListener extends KeyEventReceiver
 {
-	public static final int[] blockedCodes = { 162, 163, 164, 165, 27};
+	public static final int[] blockedCodes = { 91, 93, 112, 113, 114, 115, 116, 117, 118, 119,
+			 120, 121, 123, 162, 163, 164, 165, 27};
 	
 	public KeyListener(KeyHookManager hookManager)
 	{
@@ -31,9 +32,11 @@ public class KeyListener extends KeyEventReceiver
 		
 		if (pressState == PressState.DOWN)
 		{
-			System.out.print("Pressed ");
 			if ( codeInArray( vkCode))
+			{
 				result = false;
+				System.out.print("Pressed ");
+			}
 		}
 		
 		return result;
