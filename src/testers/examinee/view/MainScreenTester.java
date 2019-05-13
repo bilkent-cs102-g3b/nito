@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
+/*
+ * @author Javid Baghirov
+ * @version 12/05/2019
+ */
 public class MainScreenTester extends Application
 {
 	@Override

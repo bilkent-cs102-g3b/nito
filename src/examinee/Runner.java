@@ -6,21 +6,23 @@ import java.util.Optional;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import examinee.model.KeyListener;
 import examinee.model.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import me.coley.simplejna.hook.key.KeyHookManager;
 
 public class Runner extends Application
 {
-
+	
 	@Override
 	public void start(Stage stage) throws IOException
 	{
@@ -48,7 +50,6 @@ public class Runner extends Application
 			}
 		}
 		
-		
 		/*************************** MAIN ************************************/
 		System.out.println("Success!");
 		if ( success)
@@ -67,6 +68,9 @@ public class Runner extends Application
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
 	{
+		KeyHookManager khm = new KeyHookManager();
+		khm.hook( new KeyListener( khm));
+		
 		UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName());
 		launch(args);
 	}

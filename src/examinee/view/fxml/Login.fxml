@@ -10,7 +10,7 @@
 <?import net.miginfocom.layout.AC?>
 <?import javafx.scene.text.Font?>
 
-<Dialog resizable="true" fx:controller="examinee.view.LoginController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
+<Dialog title="Nito - Login" resizable="true" fx:controller="examinee.view.LoginController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 <fx:define>
 	<Double fx:value="100.0" fx:id="logoSize" />
 	

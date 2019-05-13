@@ -26,7 +26,7 @@ public class KeyListener extends KeyEventReceiver
 		return result;
 	}
 
-	public boolean onKeyUpdate(SystemState sysState, PressState pressState, int time, int vkCode)
+	public boolean onKeyUpdate( SystemState sysState, PressState pressState, int time, int vkCode)
 	{
 		boolean result = false;
 		

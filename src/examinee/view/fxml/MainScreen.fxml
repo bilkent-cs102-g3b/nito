@@ -16,6 +16,7 @@
 <?import javafx.embed.swing.SwingNode?>
 <?import javafx.scene.text.Font?>
 <?import java.net.URL?>
+<?import org.controlsfx.control.CheckTreeView?>
 
 <SplitPane xmlns:fx="http://javafx.com/fxml/1" fx:id="splitPane" fx:controller="examinee.view.MainScreenController">
 
@@ -25,7 +26,7 @@
 
 	<VBox minWidth="100" alignment="TOP_CENTER">
 		<!-- QUESTIONS TREE -->
-		<TreeView VBox.vgrow="ALWAYS" fx:id="treeView" />
+		<CheckTreeView VBox.vgrow="ALWAYS" fx:id="checkTreeView" />
 
 		<MigPane layout="wrap" rows="2mm:push[]2mm:push[]2mm:push" cols="push[center]push">
 			<!-- TIME -->
