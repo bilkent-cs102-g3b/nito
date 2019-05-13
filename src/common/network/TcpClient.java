@@ -90,7 +90,6 @@ public abstract class TcpClient
 				}
 				catch (IOException e)
 				{
-					e.printStackTrace();
 					return;
 				}
 			}

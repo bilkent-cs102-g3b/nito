@@ -29,8 +29,8 @@ public class Model
 	private String adminIP;
 	private boolean dataEnd;
 	private boolean examStart;
-	private int timeRemain;
-	private int timeTotal;
+	private IntegerProperty timeRemain;
+	private IntegerProperty timeTotal;
 	private int width;
 	private IntegerProperty status;
 	private Client client;
@@ -48,8 +48,10 @@ public class Model
 		dataEnd = false;
 		examStart = false;
 		width = 0;
+		timeTotal = new SimpleIntegerProperty();
+		timeRemain = new SimpleIntegerProperty();
 
-		timer = new Timer( 1000, l -> timeRemain--);
+		timer = new Timer( 1000, l -> timeRemain.set(timeRemain.getValue() - 1));
 	}
 
 	/**
@@ -156,7 +158,7 @@ public class Model
 	 * Get total exam time
 	 * @return Total time
 	 */
-	public int getTimeTotal()
+	public IntegerProperty getTimeTotal()
 	{
 		return timeTotal;
 	}
@@ -165,7 +167,7 @@ public class Model
 	 * Get remaining exam time
 	 * @return Remaining time
 	 */
-	public int getTimeRemain()
+	public IntegerProperty getTimeRemain()
 	{
 		return timeRemain;
 	}
@@ -204,18 +206,20 @@ public class Model
 	
 	/**
 	 * Searches the existing exam data for a given id !!Use only when searching parent id!!
-	 * @param id-Id to search for
+	 * @param id ID to search for
 	 * @return Found entry
 	 */
-	private ExamEntry searchId( String id)
+	private ExamEntry searchId( String id, ExamEntry e)
 	{
-		ArrayList<ExamEntry> list = examData.getAll();
-		ExamEntry result = null;
+		if ( e.getId().equals( id))
+			return e;
 		
-		for( int i = 0; i < list.size(); i++)
+		ExamEntry result = null;
+		for( ExamEntry entry : e.getAll())
 		{
-			if ( list.get(i).getId().equals(id) )
-				result = list.get(i);
+			result = searchId( id, entry);
+			if ( result != null)
+				return result;
 		}
 		return result;
 	}
@@ -243,7 +247,7 @@ public class Model
 		if ( parts[1].equals( "instruction"))
 		{
 			reference = new Instruction( parts[2], parts[3], parts[4], false, false);
-			ExamEntry parent = searchId( parts[5]);
+			ExamEntry parent = examData;
 			parent.add(reference);
 			reference.setParent( parent);
 		}
@@ -251,8 +255,8 @@ public class Model
 		// Create a Question, goes into exam
 		if ( parts[1].equals( "question") )
 		{
-			reference = new Question( parts[2], parts[3], "", true, false);
-			ExamEntry parent = searchId( parts[4]);
+			reference = new Question( parts[2], parts[3], parts[4], true, false);
+			ExamEntry parent = searchId( parts[5], examData);
 			parent.add(reference);
 			reference.setParent( parent);
 		}
@@ -261,7 +265,7 @@ public class Model
 		if ( parts[1].equals( "part") )
 		{
 			reference = new QuestionPart( parts[2], parts[3], "", parts[4], true, true);
-			ExamEntry parent = searchId( parts[5]);
+			ExamEntry parent = searchId( parts[5], examData);
 			parent.add(reference);
 			reference.setParent( parent);
 		}
@@ -269,7 +273,7 @@ public class Model
 		// Add template solution to question part
 		if ( parts[1].equals( "template") )
 		{
-			QuestionPart part = (QuestionPart) searchId( parts[4]);
+			QuestionPart part = (QuestionPart) searchId( parts[4], examData);
 			part.updateSolution( parts[3]);
 		}
 		
@@ -277,8 +281,8 @@ public class Model
 		if ( parts[1].equals( "exam") && reference == null )
 		{
 			examData = new ExamEntry( parts[2], parts[3], "", false, false);
-			timeTotal = Integer.parseInt(parts[4]); // Time in seconds
-			timeRemain = timeTotal;
+			timeTotal.set( Integer.parseInt(parts[4])); // Time in seconds
+			timeRemain.set(timeTotal.getValue());
 		}
 		
 		// Start exam
@@ -300,7 +304,7 @@ public class Model
 			examEnd();
 		
 		if ( parts[1].equals( "time_remain") )
-			timeRemain = Integer.parseInt( parts[2]);
+			timeRemain.set( Integer.parseInt( parts[2]));
 		
 		// Get Screenshot specification
 		if ( parts[1].equals( "screenshot_width") )

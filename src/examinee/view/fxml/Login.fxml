@@ -32,7 +32,7 @@
 		<content>
 		<MigPane layout="wrap" cols="[grow][center][grow]" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push[]2mm:push">
 			<fx:reference source="logoNito" />
-			<Label text="Nito">
+			<Label text="Nito" >
 			<font>
 				<Font size="40" />
 			</font>

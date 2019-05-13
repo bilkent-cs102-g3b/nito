@@ -51,7 +51,6 @@ public class UdpClient
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
 		}
 	}
 

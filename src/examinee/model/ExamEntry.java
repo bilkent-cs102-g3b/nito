@@ -95,7 +95,6 @@ public class ExamEntry extends ExamContainer
 	public void setParent( ExamContainer examContainer)
 	{
 		parent = examContainer;
-		parent.add(this);
 	}
 
 	/**

@@ -10,7 +10,6 @@ import common.network.*;
 public class QuestionPart extends ExamEntry implements Submitable
 {
 	// properties
-	private String solution;
 	private String statement;
 
 	public QuestionPart( String id, String title, String content, String statement, boolean markable, boolean editable)
@@ -53,7 +52,7 @@ public class QuestionPart extends ExamEntry implements Submitable
 	@Override
 	public void submit( Client c)
 	{
-		Model.getInstance().sendMessage( "solution", id + ":::" + solution);
+		Model.getInstance().sendMessage( "solution", id + ":::" + content);
 	}
 
 }

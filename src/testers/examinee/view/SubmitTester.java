@@ -42,8 +42,8 @@ public class SubmitTester extends Application
 			System.out.println( new File( "Resources/logo.png").toURI().toURL().toString());
 			stage.getIcons().add( new Image( new File( "Resources/logo.png").toURI().toURL().toString()));
 			stage.setTitle( "Sample frame");
-			stage.setMaxHeight( 500);
-			stage.setMaxWidth( 600);
+			stage.setMaxHeight( 400);
+			stage.setMaxWidth( 500);
 			stage.setResizable( false);
 			stage.show();
 		}

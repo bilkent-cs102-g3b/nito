@@ -58,9 +58,9 @@ public class Runner extends Application
 			Scene scene = new Scene( mainScreen);
 			stage.setScene( scene);
 //			stage.initStyle( StageStyle.UNDECORATED);
-			stage.setFullScreenExitHint("");
+//			stage.setFullScreenExitHint("");
 //			stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
-			stage.setFullScreen( true);
+//			stage.setFullScreen( true);
 			stage.setTitle( "Nito - Examinee");
 			stage.show();
 		}
