@@ -28,13 +28,13 @@ public class KeyListener extends KeyEventReceiver
 
 	public boolean onKeyUpdate(SystemState sysState, PressState pressState, int time, int vkCode)
 	{
-		boolean result = true;
+		boolean result = false;
 		
 		if (pressState == PressState.DOWN)
 		{
 			if ( codeInArray( vkCode))
 			{
-				result = false;
+				result = true;
 				System.out.print("Pressed ");
 			}
 		}
