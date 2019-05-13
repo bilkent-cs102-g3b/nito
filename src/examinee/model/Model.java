@@ -1,14 +1,13 @@
 package examinee.model;
 
 import java.awt.AWTException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.Timer;
 
 import common.network.*;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 /**
  * Model class for examinee
@@ -21,44 +20,36 @@ public class Model
 
 	private static final String SECRET = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
 	public final int STATUS_CONNECTED = 1;
-	public final int STATUS_DISCONNECTED = 2;
-	public final int STATUS_LOGIN = 3;
-	public final int STATUS_FINISHED = 4;
+	public final int STATUS_START = 2;
+	public final int STATUS_FINISHED = 3;
 
 	private static Model instance;
 
 	private String username;
 	private String adminIP;
 	private boolean dataEnd;
+	private boolean examStart;
 	private int timeRemain;
 	private int timeTotal;
-	private int scale;
-	private int scalePrev;
 	private int width;
-	private int widthPrev;
 	private IntegerProperty status;
 	private Client client;
 	private ExamEntry reference;
 	private ExamEntry examData;
 	private Timer timer;
-	private Timer screenSender;
 
 	// constructors
 
 	private Model()
 	{
+		status = new SimpleIntegerProperty();
 		status.set(0);
 		reference = null;
 		dataEnd = false;
+		examStart = false;
 		width = 0;
-		scale = 0;
-		widthPrev = 0;
-		scalePrev = 0;
-		
-		timer = new Timer( 1000, new TimerListener());
-		timer.stop();
-		screenSender = new Timer( 50, new ScreenshotListener());
-		screenSender.start();
+
+		timer = new Timer( 1000, l -> timeRemain--);
 	}
 
 	/**
@@ -94,6 +85,7 @@ public class Model
 	{
 		adminIP = ip;
 		username = name;
+		examStart = !examStart;
 		try
 		{
 			client = new Client( adminIP) {
@@ -107,7 +99,22 @@ public class Model
 			};
 
 			sendMessage( "name", username);
-			status.set(STATUS_CONNECTED);;
+			status.set(STATUS_CONNECTED);
+			
+			// Send screenshots
+			new Thread( () -> {
+				while( true)
+				{
+					try
+					{
+						client.sendImage( new Screenshot( width));
+					} catch (AWTException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}).start();
 			
 			return true;
 		}
@@ -143,6 +150,7 @@ public class Model
 		}
 		status.set(STATUS_FINISHED);
 	}
+	
 	
 	/**
 	 * Get total exam time
@@ -189,8 +197,13 @@ public class Model
 		return dataEnd;
 	}
 	
+//	if ( examStart )
+//	{
+//		screenThread = new Thread();
+//	}
+	
 	/**
-	 * Searches the existing exam data for a given id
+	 * Searches the existing exam data for a given id !!Use only when searching parent id!!
 	 * @param id-Id to search for
 	 * @return Found entry
 	 */
@@ -214,7 +227,7 @@ public class Model
 	{
 		submitAll();
 		timer.stop();
-		screenSender.stop();
+		status.set(STATUS_FINISHED);
 		client.close();
 	}
 	
@@ -238,8 +251,8 @@ public class Model
 		// Create a Question, goes into exam
 		if ( parts[1].equals( "question") )
 		{
-			reference = new Question( parts[2], parts[3], parts[4], true, false);
-			ExamEntry parent = searchId( parts[5]);
+			reference = new Question( parts[2], parts[3], "", true, false);
+			ExamEntry parent = searchId( parts[4]);
 			parent.add(reference);
 			reference.setParent( parent);
 		}
@@ -247,7 +260,7 @@ public class Model
 		// Create part, goes into Question
 		if ( parts[1].equals( "part") )
 		{
-			reference = new QuestionPart( parts[2], parts[3], parts[4], true, true);
+			reference = new QuestionPart( parts[2], parts[3], "", parts[4], true, true);
 			ExamEntry parent = searchId( parts[5]);
 			parent.add(reference);
 			reference.setParent( parent);
@@ -268,97 +281,32 @@ public class Model
 			timeRemain = timeTotal;
 		}
 		
-		// 
+		// Start exam
+		if ( parts[1].equals( "start") )
+		{
+			status.set(STATUS_START);
+			timer.start();
+		}
+		
+		// Check if data transfer ended
 		if ( parts[1].equals( "data_end") )
 		{
 			dataEnd = !dataEnd;
 			timer.start();
 		}
 		
+		// Check if exam is finished
 		if ( parts[1].equals( "exam_ended") )
 			examEnd();
 		
-		// Send screenshot after server request
-		if ( parts[1].equals( "screenshot_scale") )
-		{
-			scalePrev = scale;
-			scale = Integer.parseInt( parts[2]);
-			
-		}
+		if ( parts[1].equals( "time_remain") )
+			timeRemain = Integer.parseInt( parts[2]);
 		
-		if ( parts[1].equals( "screenshot_scale") && scale == 0  )
-			scale = Integer.parseInt( parts[2]);
-		
-		if ( parts[1].equals( "screenshot_scale") )
+		// Get Screenshot specification
+		if ( parts[1].equals( "screenshot_width") )
 		{
-			widthPrev = width;
 			width = Integer.parseInt( parts[2]);
-			
-		}
-
-		if ( parts[1].equals( "screenshot_width") && width == 0 )
-			width = Integer.parseInt( parts[2]);
-		
-	}
-	
-	// Inner clas for timer listener
-	private class TimerListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent e)
-		{
-			timeRemain--;
 		}
 	}
-	
-	// Inner class for screenshot sending listener
-	private class ScreenshotListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent e)
-		{
-			if ( scale != scalePrev )
-			{
-				try
-				{
-					client.sendImage( new Screenshot( scale));
-				} catch (AWTException e1)
-				{
-					e1.printStackTrace();
-				}
-			}
-			
-			if ( width != widthPrev )
-			{
-				try
-				{
-					client.sendImage( new Screenshot( width));
-				} catch (AWTException e1)
-				{
-					e1.printStackTrace();
-				}
-			}
-		}
-	}
-	
-	//******************************************************
-	// Test
-	//******************************************************
-//	examData = new ExamEntry( "123", "test", "", false, false);
-//	timeTotal = 6000; // Time in seconds
-//	timeRemain = timeTotal;
-//			
-//	reference = new Instruction( "001", "Instruction", "Don't Cheat", false, false);
-//	examData.add( reference);
-//	reference.setParent( examData);
-//			
-//	reference = new Question( "002", "Question 1", "Why are we here?", true, false);
-//	examData.add( reference);
-//	reference.setParent(examData);
-//					
-//	reference.add( new QuestionPart( "101", "part 1", "test1", true, true));		
-//	reference.add( new QuestionPart( "102", "part 2", "test2", true, true));		
-//			
-	//******************************************************
 }
 

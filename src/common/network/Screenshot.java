@@ -55,7 +55,10 @@ public class Screenshot implements Serializable, Cloneable
 	{
 		img = new Robot().createScreenCapture( new Rectangle( Toolkit.getDefaultToolkit().getScreenSize()));
 
-		if ( scale <= 0 || scale > 1)
+		if ( scale == 0)
+			scale = 1;
+		
+		if ( scale < 0 || scale > 1)
 		{
 			throw new IllegalArgumentException( "The scale value should be in the range (0,1].");
 		}

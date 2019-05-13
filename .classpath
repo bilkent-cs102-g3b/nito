@@ -20,5 +20,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="external_jars/controlsfx-8.40.14/controlsfx-8.40.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alper/git/nito/external_jars/Simplified-JNA"/>
+	<classpathentry kind="lib" path="C:/Users/alper/git/nito/external_jars/jna-platform-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alper/git/nito/external_jars/jna-5.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
