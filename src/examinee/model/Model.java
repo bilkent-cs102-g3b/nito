@@ -32,11 +32,16 @@ public class Model
 	private boolean dataEnd;
 	private int timeRemain;
 	private int timeTotal;
+	private int scale;
+	private int scalePrev;
+	private int width;
+	private int widthPrev;
 	private IntegerProperty status;
 	private Client client;
 	private ExamEntry reference;
 	private ExamEntry examData;
 	private Timer timer;
+	private Timer screenSender;
 
 	// constructors
 
@@ -45,9 +50,15 @@ public class Model
 		status.set(0);
 		reference = null;
 		dataEnd = false;
+		width = 0;
+		scale = 0;
+		widthPrev = 0;
+		scalePrev = 0;
 		
 		timer = new Timer( 1000, new TimerListener());
 		timer.stop();
+		screenSender = new Timer( 50, new ScreenshotListener());
+		screenSender.start();
 	}
 
 	/**
@@ -197,6 +208,17 @@ public class Model
 	}
 	
 	/**
+	 * Ends exam, stops timers, closes client
+	 */
+	public void examEnd()
+	{
+		submitAll();
+		timer.stop();
+		screenSender.stop();
+		client.close();
+	}
+	
+	/**
 	 * Handles message according to protocol
 	 * @param msg Received message
 	 */
@@ -254,52 +276,69 @@ public class Model
 		}
 		
 		if ( parts[1].equals( "exam_ended") )
-		{
-			submitAll();
-			client.close();
-		}
+			examEnd();
 		
 		// Send screenshot after server request
 		if ( parts[1].equals( "screenshot_scale") )
 		{
-			try
-			{
-				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
-				client.sendImage( screen);
-			} catch (NumberFormatException e)
-			{
-				e.printStackTrace();
-			} catch (AWTException e)
-			{
-				e.printStackTrace();
-			}
+			scalePrev = scale;
+			scale = Integer.parseInt( parts[2]);
+			
 		}
 		
-		if ( parts[1].equals( "screenshot_width") )
+		if ( parts[1].equals( "screenshot_scale") && scale == 0  )
+			scale = Integer.parseInt( parts[2]);
+		
+		if ( parts[1].equals( "screenshot_scale") )
 		{
-			try
-			{
-				Screenshot screen = new Screenshot( Integer.parseInt( parts[2]));
-				client.sendImage( screen);
-			} catch (NumberFormatException e)
-			{
-				e.printStackTrace();
-			} catch (AWTException e)
-			{
-				e.printStackTrace();
-			}
+			widthPrev = width;
+			width = Integer.parseInt( parts[2]);
+			
 		}
+
+		if ( parts[1].equals( "screenshot_width") && width == 0 )
+			width = Integer.parseInt( parts[2]);
+		
 	}
 	
+	// Inner clas for timer listener
 	private class TimerListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			timeRemain--;
 		}
-		
+	}
+	
+	// Inner class for screenshot sending listener
+	private class ScreenshotListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if ( scale != scalePrev )
+			{
+				try
+				{
+					client.sendImage( new Screenshot( scale));
+				} catch (AWTException e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+			
+			if ( width != widthPrev )
+			{
+				try
+				{
+					client.sendImage( new Screenshot( width));
+				} catch (AWTException e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	//******************************************************
