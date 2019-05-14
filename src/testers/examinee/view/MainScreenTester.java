@@ -16,8 +16,7 @@ import javafx.stage.WindowEvent;
 
 /*
  * @author Javid Baghirov
- * 
- * @version 12/05/2019
+ * @version 14/05/2019
  */
 public class MainScreenTester extends Application
 {
@@ -28,6 +27,7 @@ public class MainScreenTester extends Application
 		{
 			SplitPane root;
 			String path;
+			
 			stage.initStyle( StageStyle.UNDECORATED);
 			stage.setFullScreenExitHint( "");
 			// stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);

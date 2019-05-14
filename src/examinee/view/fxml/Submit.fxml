@@ -29,7 +29,7 @@
 		<!-- Successful Submit -->
 		<fx:reference source="greenTick"/>
 		<!-- Submit Message -->
-		<Label wrapText="true" text="You have submitted your answers in time, thank you for
+		<Label wrapText="true" text="You have submitted your answers, thank you for
 your participation" MigPane.cc="span">				<font>
 				<Font size="25" />
 			</font>

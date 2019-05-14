@@ -16,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import me.coley.simplejna.hook.key.KeyHookManager;
@@ -38,6 +39,7 @@ public class Runner extends Application
 			Dialog<Pair<String, String>> loginDialog = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Login.fxml"));
 			((Stage) loginDialog.getDialogPane().getScene().getWindow()).getIcons().add( logo);
 			Optional<Pair<String, String>> result = loginDialog.showAndWait();
+			//Pane loading = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Loading.fxml"));
 			if ( result.isPresent())
 			{
 				success = Model.getInstance().login( result.get().getKey(), result.get().getValue());

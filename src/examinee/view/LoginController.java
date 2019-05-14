@@ -1,5 +1,7 @@
 package examinee.view;
 
+import java.net.MalformedURLException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
@@ -10,8 +12,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
- * 
- * @version 12/05/2019
+ * @version 14/05/2019
  */
 public class LoginController
 {
@@ -24,7 +25,9 @@ public class LoginController
 	@FXML
 	TextField ip;
 
-	// Setting up the view
+	/**
+	 * Sets up the view
+	 */
 	public void initialize()
 	{
 		// Adding the login button

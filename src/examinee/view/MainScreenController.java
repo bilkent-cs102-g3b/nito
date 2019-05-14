@@ -2,6 +2,7 @@ package examinee.view;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -38,9 +39,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /*
- * @author Javid Baghirov
- * 
- * @version 12/05/2019
+ * @author Javid Baghirov 
+ * @version 14/05/2019
  */
 public class MainScreenController
 {
@@ -64,22 +64,31 @@ public class MainScreenController
 	private TreeMap<TreeItem<String>, ExamEntry> map;
 
 	/**
-	 * 
+	 * Sets up the view
 	 */
 	public void initialize()
 	{
 		map = new TreeMap<TreeItem<String>, ExamEntry>();
 		openStatementEntries = new ArrayList<>();
 		openSolutionEntries = new ArrayList<>();
+		
 		Model.getInstance().getStatus().addListener( ( o, oldVal, newVal) -> {
 			if ( newVal.intValue() == Model.STATUS_START)
 			{
+				//Disabling the submit function and time before the exam starts
 				Model.getInstance().getTimeRemain().addListener( ( ob, oldValue, newValue) -> {
 					Platform.runLater( () -> {
 						setTime( newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
 					});
 				});
 				submit.setDisable( false);
+			}
+			else if ( newVal.intValue() == Model.STATUS_FINISHED)
+			{
+				//Forcing to submit if the exam is over
+				Platform.runLater( () -> {
+					endProgram();
+				});
 			}
 		});
 
@@ -128,6 +137,8 @@ public class MainScreenController
 
 	/**
 	 * Sets the time components
+	 * @param timeRemain the remaining time
+	 * @param timeTotal the total time
 	 */
 	private void setTime( int timeRemain, int timeTotal)
 	{
@@ -141,7 +152,7 @@ public class MainScreenController
 		time.setText( remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
 		if ( timeTotal != 0)
 		{
-			bar.setProgress( (timeTotal - timeRemain) / timeTotal);
+			bar.setProgress( ((double) timeTotal - timeRemain) / timeTotal);
 		}
 		else
 		{
@@ -151,7 +162,7 @@ public class MainScreenController
 
 	/**
 	 * Updates the tree hierarchy according to the data
-	 * @param item      the root item to create the tree on
+	 * @param item the root item to create the tree on
 	 * @param container the container to get the exam entries from
 	 */
 	@SuppressWarnings("unchecked")
@@ -200,8 +211,10 @@ public class MainScreenController
 		}
 
 		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
+		{
 			return;
-		if ( selected.getValue().equals( "Statement"))
+		}
+		if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 		{
 			if ( openStatementEntries.contains( entry))
 			{
@@ -221,14 +234,10 @@ public class MainScreenController
 			NumberedEditor editor = new NumberedEditor( entry.getContent());
 			fxPanel.setScene( new Scene( editor));
 
-			if ( selected.getValue().equals( "Statement"))
+			if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 			{
 				editor.disableEditor();
 				openStatementEntries.add( entry);
-			}
-			else if ( selected.getValue().equals( "Instructions"))
-			{
-				editor.disableEditor();
 			}
 			else
 			{
@@ -238,7 +247,7 @@ public class MainScreenController
 			SwingUtilities.invokeLater( () -> {
 				JInternalFrame jif = new JInternalFrame( entry.getTitle(), true, true, true, true);
 				jif.add( fxPanel);
-				jif.setSize( 600, 600);
+				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 10, desktopPane.getHeight() / 10);
 				jif.setVisible( true);
 				desktopPane.add( jif);
 
@@ -269,8 +278,12 @@ public class MainScreenController
 	@FXML
 	public void submit()
 	{
-		System.out.println( "Submit Pressed");
 		Model.getInstance().examEnd();
+		endProgram();
+	}
+	
+	private void endProgram() 
+	{
 		Stage stage = (Stage) splitPane.getScene().getWindow();
 
 		try
@@ -280,12 +293,10 @@ public class MainScreenController
 			Scene scene = new Scene( submit);
 			stage.setScene( scene);
 			stage.setFullScreen( false);
-			stage.setMinHeight( 400);
-			stage.setMinWidth( 500);
-			stage.setMaxHeight( 400);
-			stage.setMaxWidth( 500);
-			stage.setX( 800);
-			stage.setY( 600);
+			stage.setWidth( 500);
+			stage.setHeight( 400);
+			stage.setX( stage.getWidth());
+			stage.setY( stage.getHeight());
 			stage.setTitle( "Nito - Submitted");
 			stage.show();
 		}

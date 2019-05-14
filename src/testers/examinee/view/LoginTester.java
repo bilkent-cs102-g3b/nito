@@ -20,8 +20,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
- * 
- * @version 12/05/2019
+ * @version 14/05/2019
  */
 public class LoginTester extends Application
 {
@@ -37,6 +36,7 @@ public class LoginTester extends Application
 		while ( !success)
 		{
 			Dialog<Pair<String, String>> loginDialog = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Login.fxml"));
+			((Stage) loginDialog.getDialogPane().getScene().getWindow()).getIcons().add( logo);
 			Optional<Pair<String, String>> result = loginDialog.showAndWait();
 			if ( result.isPresent())
 			{

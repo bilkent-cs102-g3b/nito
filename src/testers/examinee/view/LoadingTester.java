@@ -15,7 +15,7 @@ import javafx.stage.WindowEvent;
  * @author Javid Baghirov
  * @version 14/05/2019
  */
-public class SubmitTester extends Application
+public class LoadingTester extends Application
 {
 	@Override
 	public void start( Stage stage)
@@ -25,7 +25,7 @@ public class SubmitTester extends Application
 			Pane root;
 			String path;
 
-			path = "src/examinee/view/fxml/Submit.fxml";
+			path = "src/examinee/view/fxml/Loading.fxml";
 			root = (Pane) FXMLLoader.load( new File( path).toURI().toURL());
 			Scene scene = new Scene( root, 1200, 675);
 			stage.setScene( scene);
@@ -41,9 +41,9 @@ public class SubmitTester extends Application
 
 			System.out.println( new File( "Resources/logo.png").toURI().toURL().toString());
 			stage.getIcons().add( new Image( new File( "Resources/logo.png").toURI().toURL().toString()));
-			stage.setTitle( "Sample frame");
-			stage.setMaxHeight( 400);
-			stage.setMaxWidth( 500);
+			stage.setTitle( "Loading");
+			stage.setMaxHeight( 300);
+			stage.setMaxWidth( 400);
 			stage.setResizable( false);
 			stage.show();
 		}
