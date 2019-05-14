@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_KAKIUHX2EemU-LNf4Tv9xw">
+  <modelElement href="nitoNetwork.uml#_KQ22wHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaIukHX2EemU-LNf4Tv9xw" targetItem="_KaLK2XX2EemU-LNf4Tv9xw" sourceItem="_KaIHgHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaIuknX2EemU-LNf4Tv9xw" targetItem="_KaLK5nX2EemU-LNf4Tv9xw" sourceItem="_KaIukXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaJVoXX2EemU-LNf4Tv9xw" targetItem="_KaLK73X2EemU-LNf4Tv9xw" sourceItem="_KaJVoHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaJVo3X2EemU-LNf4Tv9xw" targetItem="_KaLK8nX2EemU-LNf4Tv9xw" sourceItem="_KaJVonX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaJVpXX2EemU-LNf4Tv9xw" targetItem="_KaLK9XX2EemU-LNf4Tv9xw" sourceItem="_KaJVpHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaKjwHX2EemU-LNf4Tv9xw" source="_KaLK2XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU5CMXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KaKjwXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU5pQHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KaKjwnX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_KaKjw3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU5CMnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaKjxHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaKjxXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KaKjxnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUjrAnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaKjx3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaKjyHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaLK0HX2EemU-LNf4Tv9xw" source="_KaLK2XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU5pQXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KaLK0XX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU6QUHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KaLK0nX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_KaLK03X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU5pQnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaLK1HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaLK1XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KaLK1nX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="listenerThread" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUkSEXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaLK13X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaLK2HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaQqYXX2EemU-LNf4Tv9xw" targetItem="_KaR4knX2EemU-LNf4Tv9xw" sourceItem="_KaQqYHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaQqY3X2EemU-LNf4Tv9xw" targetItem="_KaR4n3X2EemU-LNf4Tv9xw" sourceItem="_KaQqYnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaRRcHX2EemU-LNf4Tv9xw" targetItem="_KaR4qHX2EemU-LNf4Tv9xw" sourceItem="_KaQqZHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaRRcnX2EemU-LNf4Tv9xw" targetItem="_KaR4rnX2EemU-LNf4Tv9xw" sourceItem="_KaRRcXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaRRdHX2EemU-LNf4Tv9xw" targetItem="_KaR4tHX2EemU-LNf4Tv9xw" sourceItem="_KaRRc3X2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaRRdnX2EemU-LNf4Tv9xw" targetItem="_KaR4t3X2EemU-LNf4Tv9xw" sourceItem="_KaRRdXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaR4gHX2EemU-LNf4Tv9xw" sourceAnchor="317.0,77.0" targetAnchor="464.0,104.0" target="_Ka0EAXX2EemU-LNf4Tv9xw" source="_KaR4knX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUxGYHX2EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_StDnAHX2EemU-LNf4Tv9xw" sourceX="334" targetX="810" targetY="356"/>
+    <bendpoints xmi:id="_StDnAXX2EemU-LNf4Tv9xw" sourceX="334" sourceY="-356" targetX="810"/>
+    <stereotypes xmi:id="_KaR4gXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KUxtcHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KaR4gnX2EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_K3MeAHX2EemU-LNf4Tv9xw" position="-42.0,115.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_KaR4g3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KUxGYXX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3LP4HX2EemU-LNf4Tv9xw" position="29.727272727272748,-56.5"/>
+      <visibility xmi:id="_KaR4hHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4hXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KaR4hnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="tcp" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUahEHX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3MeAXX2EemU-LNf4Tv9xw" position="71.09090909090901,-57.0"/>
+      <visibility xmi:id="_KaR4h3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaR4iHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaR4iXX2EemU-LNf4Tv9xw" sourceAnchor="215.0,0.0" targetAnchor="237.0,185.0" target="_KbD7oHX2EemU-LNf4Tv9xw" source="_KaR4knX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUyUgHX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KaR4inX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KUyUgnX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KaR4i3X2EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_K3NFEXX2EemU-LNf4Tv9xw" position="-8.0,6.333333333333343"/>
+    </nameVisual>
+    <sourceRole xmi:id="_KaR4jHX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KUyUgXX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3NFEHX2EemU-LNf4Tv9xw" position="41.0,-56.0"/>
+      <visibility xmi:id="_KaR4jXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4jnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KaR4j3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="udp" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUbIIXX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3O6QHX2EemU-LNf4Tv9xw" position="-44.0,3.666666666666657"/>
+      <visibility xmi:id="_KaR4kHX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaR4kXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaZNQHX2EemU-LNf4Tv9xw" sourceAnchor="477.0,0.0" targetAnchor="75.0,185.0" target="_KaLK2XX2EemU-LNf4Tv9xw" source="_Kac3qXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUzio3X2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KaZ0VXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU0JsHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KaZ0UnX2EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_K3QIYHX2EemU-LNf4Tv9xw" position="-87.0,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_KaZ0U3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KUzipHX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3PhUHX2EemU-LNf4Tv9xw" position="41.0,-43.0"/>
+      <visibility xmi:id="_KabpgXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KabpgHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KaZ0VHX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="udp" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUeLcnX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3QvcHX2EemU-LNf4Tv9xw" position="-6.0,7.0"/>
+      <visibility xmi:id="_Kabpg3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KabpgnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaZ0UXX2EemU-LNf4Tv9xw" targetItem="_Kac3qXX2EemU-LNf4Tv9xw" sourceItem="_KaZ0UHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaZ0V3X2EemU-LNf4Tv9xw" targetItem="_Kac3wnX2EemU-LNf4Tv9xw" sourceItem="_KaZ0VnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaZ0WXX2EemU-LNf4Tv9xw" targetItem="_Kac3yHX2EemU-LNf4Tv9xw" sourceItem="_KaZ0WHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaabYXX2EemU-LNf4Tv9xw" targetItem="_Kac3znX2EemU-LNf4Tv9xw" sourceItem="_KaabYHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaabY3X2EemU-LNf4Tv9xw" targetItem="_Kac313X2EemU-LNf4Tv9xw" sourceItem="_KaabYnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaabZXX2EemU-LNf4Tv9xw" targetItem="_Kac32nX2EemU-LNf4Tv9xw" sourceItem="_KaabZHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaabZ3X2EemU-LNf4Tv9xw" targetItem="_Kac34HX2EemU-LNf4Tv9xw" sourceItem="_KaabZnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaabaXX2EemU-LNf4Tv9xw" targetItem="_Kac35nX2EemU-LNf4Tv9xw" sourceItem="_KaabaHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KabCcXX2EemU-LNf4Tv9xw" targetItem="_Kac373X2EemU-LNf4Tv9xw" sourceItem="_KabCcHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KabCc3X2EemU-LNf4Tv9xw" targetItem="_Kac3-HX2EemU-LNf4Tv9xw" sourceItem="_KabCcnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Kac3oHX2EemU-LNf4Tv9xw" sourceAnchor="122.0,0.0" targetAnchor="199.0,392.0" target="_Ka7_0HX2EemU-LNf4Tv9xw" source="_Kac3qXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUzioHX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Kac3oXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KUzionX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Kac3onX2EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_K3RWgXX2EemU-LNf4Tv9xw" position="1.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_Kac3o3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KUzioXX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3RWgHX2EemU-LNf4Tv9xw" position="-19.0,-62.0"/>
+      <visibility xmi:id="_Kac3pHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3pXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Kac3pnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="tcp" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUeLcHX2EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_K3SkoHX2EemU-LNf4Tv9xw" position="-79.0,1.0"/>
+      <visibility xmi:id="_Kac3p3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kac3qHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KakMYXX2EemU-LNf4Tv9xw" targetItem="_Kapr-XX2EemU-LNf4Tv9xw" sourceItem="_KakMYHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KalagXX2EemU-LNf4Tv9xw" targetItem="_KapsDnX2EemU-LNf4Tv9xw" sourceItem="_KalagHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KamBkHX2EemU-LNf4Tv9xw" targetItem="_KapsF3X2EemU-LNf4Tv9xw" sourceItem="_KalagnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KamBknX2EemU-LNf4Tv9xw" targetItem="_KapsIHX2EemU-LNf4Tv9xw" sourceItem="_KamBkXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KamBlHX2EemU-LNf4Tv9xw" targetItem="_KapsJnX2EemU-LNf4Tv9xw" sourceItem="_KamBk3X2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KamooXX2EemU-LNf4Tv9xw" targetItem="_KapsLnX2EemU-LNf4Tv9xw" sourceItem="_KamooHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Kamoo3X2EemU-LNf4Tv9xw" targetItem="_KapsOnX2EemU-LNf4Tv9xw" sourceItem="_KamoonX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KamopXX2EemU-LNf4Tv9xw" targetItem="_KapsPXX2EemU-LNf4Tv9xw" sourceItem="_KamopHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Kamop3X2EemU-LNf4Tv9xw" targetItem="_KapsQHX2EemU-LNf4Tv9xw" sourceItem="_KamopnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KanPsXX2EemU-LNf4Tv9xw" targetItem="_KapsRnX2EemU-LNf4Tv9xw" sourceItem="_KanPsHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KanPs3X2EemU-LNf4Tv9xw" targetItem="_KapsT3X2EemU-LNf4Tv9xw" sourceItem="_KanPsnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Kan2wHX2EemU-LNf4Tv9xw" targetItem="_KapsVHX2EemU-LNf4Tv9xw" sourceItem="_KanPtHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Kan2wnX2EemU-LNf4Tv9xw" targetItem="_KapsWnX2EemU-LNf4Tv9xw" sourceItem="_Kan2wXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Kapr8HX2EemU-LNf4Tv9xw" source="_Kapr-XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUy7kHX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Kapr8XX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KUy7knX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Kapr8nX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Kapr83X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KUy7kXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kapr9HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kapr9XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Kapr9nX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="img" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUcWQnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kapr93X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kapr-HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaxnwXX2EemU-LNf4Tv9xw" targetItem="_Ka0EAXX2EemU-LNf4Tv9xw" sourceItem="_KaxnwHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KaxnwnX2EemU-LNf4Tv9xw" source="_Ka0EAXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU0JsXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Kay14nX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU0wwHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KayO13X2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Kay14HX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU0JsnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kay16HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kay153X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Kay14XX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUeygXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kay16nX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kay16XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Kaxnw3X2EemU-LNf4Tv9xw" source="_Ka0EAXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU0wwXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Kay15nX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU1X0HX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Kay143X2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Kay15HX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU0wwnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kay17XX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kay17HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Kay15XX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="msgListenerThread" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUfZkXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kazc8XX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kazc8HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KaxnxXX2EemU-LNf4Tv9xw" targetItem="_Ka0EDnX2EemU-LNf4Tv9xw" sourceItem="_KaxnxHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KayO0HX2EemU-LNf4Tv9xw" targetItem="_Ka0EGnX2EemU-LNf4Tv9xw" sourceItem="_KaxnxnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KayO0nX2EemU-LNf4Tv9xw" targetItem="_Ka0EIHX2EemU-LNf4Tv9xw" sourceItem="_KayO0XX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KayO1HX2EemU-LNf4Tv9xw" targetItem="_Ka0EJnX2EemU-LNf4Tv9xw" sourceItem="_KayO03X2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KayO1nX2EemU-LNf4Tv9xw" targetItem="_Ka0EKXX2EemU-LNf4Tv9xw" sourceItem="_KayO1XX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka3HUXX2EemU-LNf4Tv9xw" targetItem="_Ka7_0HX2EemU-LNf4Tv9xw" sourceItem="_Ka3HUHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ka3uYHX2EemU-LNf4Tv9xw" source="_Ka7_0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU3NAXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Ka5jk3X2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU30EHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ka5jkHX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Ka5jkXX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU3NAnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka6KoXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka6KoHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ka5jknX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="connectionListenerThread" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUh11HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka6Ko3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka6KonX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka3uYnX2EemU-LNf4Tv9xw" targetItem="_Ka7_7nX2EemU-LNf4Tv9xw" sourceItem="_Ka3uYXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka3uZHX2EemU-LNf4Tv9xw" targetItem="_Ka7_93X2EemU-LNf4Tv9xw" sourceItem="_Ka3uY3X2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka3uZnX2EemU-LNf4Tv9xw" targetItem="_Ka7_-nX2EemU-LNf4Tv9xw" sourceItem="_Ka3uZXX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka4VcXX2EemU-LNf4Tv9xw" targetItem="_Ka8AAHX2EemU-LNf4Tv9xw" sourceItem="_Ka4VcHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka4Vc3X2EemU-LNf4Tv9xw" targetItem="_Ka8ACXX2EemU-LNf4Tv9xw" sourceItem="_Ka4VcnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka4VdXX2EemU-LNf4Tv9xw" targetItem="_Ka8ADHX2EemU-LNf4Tv9xw" sourceItem="_Ka4VdHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka4Vd3X2EemU-LNf4Tv9xw" targetItem="_Ka8AEnX2EemU-LNf4Tv9xw" sourceItem="_Ka4VdnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka48gXX2EemU-LNf4Tv9xw" targetItem="_Ka8AGHX2EemU-LNf4Tv9xw" sourceItem="_Ka48gHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka48g3X2EemU-LNf4Tv9xw" targetItem="_Ka8AIXX2EemU-LNf4Tv9xw" sourceItem="_Ka48gnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Ka48hXX2EemU-LNf4Tv9xw" targetItem="_Ka8AJ3X2EemU-LNf4Tv9xw" sourceItem="_Ka48hHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ka6xsHX2EemU-LNf4Tv9xw" source="_Ka7_0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU1X0XX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Ka6xsXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU1-4HX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ka6xsnX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Ka6xs3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU1X0nX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka6xtHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka6xtXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ka6xtnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="server" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUfZk3X2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka6xt3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka6xuHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ka7YwHX2EemU-LNf4Tv9xw" source="_Ka7_0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU1-4XX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Ka7YwXX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU2l8HX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ka7YwnX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Ka7Yw3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU1-4nX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7YxHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka7YxXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ka7YxnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="sockets" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUgAoXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7Yx3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7YyHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ka7YyXX2EemU-LNf4Tv9xw" source="_Ka7_0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU2l8XX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_Ka7YynX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU3NAHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ka7Yy3X2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_Ka7YzHX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU2l8nX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7YzXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka7YznX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ka7Yz3X2EemU-LNf4Tv9xw" aggregationKind="NONE" name="msgListenerThreads" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUgnsXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7Y0HX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7Y0XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KbA4UXX2EemU-LNf4Tv9xw" targetItem="_KbD7oHX2EemU-LNf4Tv9xw" sourceItem="_KbA4UHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KbBfYHX2EemU-LNf4Tv9xw" source="_KbD7oHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU30EXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KbCtg3X2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU4bIHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KbCtgHX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_KbCtgXX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU30EnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbDUknX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KbDUkXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KbCtgnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="serverAddress" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUjD8HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbDUlHX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KbDUk3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KbBfYXX2EemU-LNf4Tv9xw" source="_KbD7oHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KU4bIXX2EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_KbDUkHX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KU5CMHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KbCthHX2EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_KbCthXX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nitoNetwork.uml#_KU4bInX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbDUl3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KbDUlnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KbCthnX2EemU-LNf4Tv9xw" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="nitoNetwork.uml#_KUjrAHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbDUmXX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KbDUmHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KbBfY3X2EemU-LNf4Tv9xw" targetItem="_KbD7snX2EemU-LNf4Tv9xw" sourceItem="_KbBfYnX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KbBfZXX2EemU-LNf4Tv9xw" targetItem="_KbD7vnX2EemU-LNf4Tv9xw" sourceItem="_KbBfZHX2EemU-LNf4Tv9xw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_KbCGcXX2EemU-LNf4Tv9xw" targetItem="_KbD7wXX2EemU-LNf4Tv9xw" sourceItem="_KbCGcHX2EemU-LNf4Tv9xw"/>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaIHgHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaIukHX2EemU-LNf4Tv9xw" text="Simple UDP Server for receiving images&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_KaLK2XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDGnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaIukXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaIuknX2EemU-LNf4Tv9xw" text="Opens a new socket for receiving UDP connections&#xD;&#xA;&#x9; * @param port The port to listen on&#xD;&#xA;&#x9; * @throws SocketException if the socket could not be opened, or the socket&#xD;&#xA;&#x9; *                         could not bind to the specified local port." item="_KaLK5nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDG3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaJVoHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaJVoXX2EemU-LNf4Tv9xw" text="Receives the screenshot sent to this server" item="_KaLK73X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuqIHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaJVonX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaJVo3X2EemU-LNf4Tv9xw" text="Closes the UDP server" item="_KaLK8nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuqIXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaJVpHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaJVpXX2EemU-LNf4Tv9xw" text="Handles the received Screenshot&#xD;&#xA;&#x9; * @param img    the Screenshot received via the packet&#xD;&#xA;&#x9; * @param packet The Datagram Packet" item="_KaLK9XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDHHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaQqYHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaQqYXX2EemU-LNf4Tv9xw" text="A client for TCP and UDP connection&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_KaR4knX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN4HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaQqYnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaQqY3X2EemU-LNf4Tv9xw" text="Connects the client to the specified server&#xD;&#xA;&#x9; * @param serverAddress The IP address of the server&#xD;&#xA;&#x9; * @throws IOException          if an I/O error occurs when creating the socket.&#xD;&#xA;&#x9; * @throws UnknownHostException if no IP address for the host could be found, or&#xD;&#xA;&#x9; *                              if a scope_id was specified for a global&#xD;&#xA;&#x9; *                              IPv6address" item="_KaR4n3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN4XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaQqZHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaRRcHX2EemU-LNf4Tv9xw" text="Processes the received message&#xD;&#xA;&#x9; * @param msg The contents of the message" item="_KaR4qHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN4nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaRRcXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaRRcnX2EemU-LNf4Tv9xw" text="Sends a message to the server&#xD;&#xA;&#x9; * @param msg The message to be sent" item="_KaR4rnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN43X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaRRc3X2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaRRdHX2EemU-LNf4Tv9xw" text="Closes the connection with the server" item="_KaR4tHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN5XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaRRdXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaRRdnX2EemU-LNf4Tv9xw" text="Sends a Screenshot to the server&#xD;&#xA;&#x9; * @param screenshot The Screenshot to be sent" item="_KaR4t3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN5HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaZ0UHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaZ0UXX2EemU-LNf4Tv9xw" text="A server containing TCP and UDP servers&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_Kac3qXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs093X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaZ0VnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaZ0V3X2EemU-LNf4Tv9xw" text="Starts a TCP and UDP server&#xD;&#xA;&#x9; * @throws IOException if an I/O error occurs when opening the socket, if the&#xD;&#xA;&#x9; *                     socket could not be opened, or the socket could not bind&#xD;&#xA;&#x9; *                     to the specified local port." item="_Kac3wnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0-HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaZ0WHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaZ0WXX2EemU-LNf4Tv9xw" text="Sends a message to all connected clients&#xD;&#xA;&#x9; * @param msg The message to be sent" item="_Kac3yHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0_XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaabYHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaabYXX2EemU-LNf4Tv9xw" text="Sends a message to the specified client&#xD;&#xA;&#x9; * @param msg     The message to be sent&#xD;&#xA;&#x9; * @param address The IP of the client&#xD;&#xA;&#x9; * @throws UnknownHostException if no IP address for the host could be found, or&#xD;&#xA;&#x9; *                              if a scope_id was specified for a global IPv6&#xD;&#xA;&#x9; *                              address" item="_Kac3znX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcAXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaabYnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaabY3X2EemU-LNf4Tv9xw" text="Closes the server" item="_Kac313X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcAnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaabZHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaabZXX2EemU-LNf4Tv9xw" text="Handles the new opened connection&#xD;&#xA;&#x9; * @param socket The new socket" item="_Kac32nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0-XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaabZnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaabZ3X2EemU-LNf4Tv9xw" text="Handles the closed connection&#xD;&#xA;&#x9; * @param socket the socket that has been closed" item="_Kac34HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0-nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaabaHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaabaXX2EemU-LNf4Tv9xw" text="Processes the received message&#xD;&#xA;&#x9; * @param msg    the contents of the message&#xD;&#xA;&#x9; * @param socket the connection that received the message from" item="_Kac35nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0-3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KabCcHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KabCcXX2EemU-LNf4Tv9xw" text="Processes the received Screenshot&#xD;&#xA;&#x9; * @param img    the received Screenshot via packet&#xD;&#xA;&#x9; * @param packet The Datagram Packet" item="_Kac373X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs0_HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KabCcnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KabCc3X2EemU-LNf4Tv9xw" text="Sends a message to the specified client&#xD;&#xA;&#x9; * @param msg     The message to be sent&#xD;&#xA;&#x9; * @param address The InetAddress of the client" item="_Kac3-HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcAHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KakMYHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KakMYXX2EemU-LNf4Tv9xw" text="A class for working with screenshots&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_Kapr-XX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN5nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KalagHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KalagXX2EemU-LNf4Tv9xw" text="Creates a screenshot for sending. The given width will be used to determine&#xD;&#xA;&#x9; * the scaling. The scale may be reduced if this scaling leads to a byte size&#xD;&#xA;&#x9; * bigger than {@value #MAX_SIZE}&#xD;&#xA;&#x9; * @param scale the intended scaling during sending&#xD;&#xA;&#x9; * @throws AWTException if the screen cannot be captured" item="_KapsDnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN53X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KalagnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KamBkHX2EemU-LNf4Tv9xw" text="Creates a screenshot for sending. The scale may be reduced if this scaling&#xD;&#xA;&#x9; * leads to a byte size bigger than {@value #MAX_SIZE}&#xD;&#xA;&#x9; * @param scale the intended scaling during sending&#xD;&#xA;&#x9; * @throws AWTException if the screen cannot be captured" item="_KapsF3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN6HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamBkXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KamBknX2EemU-LNf4Tv9xw" text="Serializes the Screenshot into byte array&#xD;&#xA;&#x9; * @return The byte array denoting this object" item="_KapsIHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN63X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamBk3X2EemU-LNf4Tv9xw" sourceConnectionVisual="_KamBlHX2EemU-LNf4Tv9xw" text="Deserializes the Screenshot from byte array&#xD;&#xA;&#x9; * @param data The byte array containing serialization of a Screenshot&#xD;&#xA;&#x9; * @return The deserialized screenshot" item="_KapsJnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs08HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamooHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KamooXX2EemU-LNf4Tv9xw" text="Returns the byte size of serialized current screenshot&#xD;&#xA;&#x9; * @return The byte size of serialized current screenshot" item="_KapsLnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs08XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamoonX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Kamoo3X2EemU-LNf4Tv9xw" text="Updates the value of scale to the biggest possible scaling that does not&#xD;&#xA;&#x9; * exceed UDP limits. This method uses Binary Search algorithm to work&#xD;&#xA;&#x9; * efficiently" item="_KapsOnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs08nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamopHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KamopXX2EemU-LNf4Tv9xw" text="Prepares the screenshot for sending over UDP. Scales the image to specified&#xD;&#xA;&#x9; * scale or the maximum possible scaling. The original screenshot will be lost&#xD;&#xA;&#x9; * and replaced with the scaled one&lt;br>&#xD;&#xA;&#x9; * &lt;strong>Note:&lt;/strong> Always call before sending" item="_KapsPXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs083X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KamopnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Kamop3X2EemU-LNf4Tv9xw" text="Scales the screenshot&#xD;&#xA;&#x9; * @param scale A double value that will be multiplied with the current&#xD;&#xA;&#x9; *              dimensions" item="_KapsQHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs09HX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KanPsHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KanPsXX2EemU-LNf4Tv9xw" text="Scales the screenshot&#xD;&#xA;&#x9; * @param newWidth  The width of the resulting screenshot&#xD;&#xA;&#x9; * @param newHeight The height of the resulting screenshot" item="_KapsRnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs09XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KanPsnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KanPs3X2EemU-LNf4Tv9xw" text="Returns the screenshot itself&#xD;&#xA;&#x9; * @return The screenshot itself" item="_KapsT3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUs09nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KanPtHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Kan2wHX2EemU-LNf4Tv9xw" text="Writes object to ObjectOutputStream during serialization&#xD;&#xA;&#x9; * @param out The output stream" item="_KapsVHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN6XX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Kan2wXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Kan2wnX2EemU-LNf4Tv9xw" text="Reads object from ObjectInputStream during deserialization&#xD;&#xA;&#x9; * @param in The input stream" item="_KapsWnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUsN6nX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaxnwHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaxnwXX2EemU-LNf4Tv9xw" text="Simple TCP client for sending and receiving messages&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_Ka0EAXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcA3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaxnxHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KaxnxXX2EemU-LNf4Tv9xw" text="Creates a TCP client and connects it to the specified server&#xD;&#xA;&#x9; * @param serverAddress The IP address of the server&#xD;&#xA;&#x9; * @param serverPort    The port that the server is listening&#xD;&#xA;&#x9; * @throws IOException          if an I/O error occurs when creating the socket.&#xD;&#xA;&#x9; * @throws UnknownHostException if no IP address for the host could be found, or&#xD;&#xA;&#x9; *                              if a scope_id was specified for a global IPv6&#xD;&#xA;&#x9; *                              address" item="_Ka0EDnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcBHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KaxnxnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KayO0HX2EemU-LNf4Tv9xw" text="Handles the received message&#xD;&#xA;&#x9; * @param msg The message received" item="_Ka0EGnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcBXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KayO0XX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KayO0nX2EemU-LNf4Tv9xw" text="Sends a message to the server&#xD;&#xA;&#x9; * @param msg The message to be sent" item="_Ka0EIHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcBnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KayO03X2EemU-LNf4Tv9xw" sourceConnectionVisual="_KayO1HX2EemU-LNf4Tv9xw" text="Continuously listens for any message on the socket. Calls received(message)&#xD;&#xA;&#x9; * once a message arrives. &lt;br>&#xD;&#xA;&#x9; * Warning: This method blocks until the socket is closed or some error occurs" item="_Ka0EJnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcB3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KayO1XX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KayO1nX2EemU-LNf4Tv9xw" text="Closes the TCP connection" item="_Ka0EKXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcCHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka3HUHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka3HUXX2EemU-LNf4Tv9xw" text="Simple TCP Server for sending and receiving messages&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_Ka7_0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcCXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka3uYXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka3uYnX2EemU-LNf4Tv9xw" text="Opens a new socket for receiving TCP connections&#xD;&#xA;&#x9; * @param port The port to listen on&#xD;&#xA;&#x9; * @throws IOException if an I/O error occurs when opening the socket." item="_Ka7_7nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcCnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka3uY3X2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka3uZHX2EemU-LNf4Tv9xw" text="Listens for connections and creates a new socket for them" item="_Ka7_93X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDEHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka3uZXX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka3uZnX2EemU-LNf4Tv9xw" text="Sends a message over all available connections&#xD;&#xA;&#x9; * @param msg The message to send" item="_Ka7_-nX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDEnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka4VcHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka4VcXX2EemU-LNf4Tv9xw" text="Send a message to the specified address&#xD;&#xA;&#x9; * @param msg     The message to send&#xD;&#xA;&#x9; * @param address The address of the intended receiver&#xD;&#xA;&#x9; * @throws UnknownHostException if no IP address for the host could be found, or&#xD;&#xA;&#x9; *                              if a scope_id was specified for a global IPv6&#xD;&#xA;&#x9; *                              address" item="_Ka8AAHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDFHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka4VcnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka4Vc3X2EemU-LNf4Tv9xw" text="Closes the TCP server" item="_Ka8ACXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDFXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka4VdHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka4VdXX2EemU-LNf4Tv9xw" text="Handles the new opened connection&#xD;&#xA;&#x9; * @param socket The new socket" item="_Ka8ADHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcC3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka4VdnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka4Vd3X2EemU-LNf4Tv9xw" text="Handles the closed connection&#xD;&#xA;&#x9; * @param socket The socket that was closed" item="_Ka8AEnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcDHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka48gHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka48gXX2EemU-LNf4Tv9xw" text="Processes the incoming message&#xD;&#xA;&#x9; * @param message The message received&#xD;&#xA;&#x9; * @param socket  The socket that the message received from" item="_Ka8AGHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUtcDXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka48gnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka48g3X2EemU-LNf4Tv9xw" text="Listens for incoming messages from the specified socket&#xD;&#xA;&#x9; * @param socket The socket to listen on" item="_Ka8AIXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDEXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ka48hHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_Ka48hXX2EemU-LNf4Tv9xw" text="Send a message to the specified address&#xD;&#xA;&#x9; * @param msg     The message to send&#xD;&#xA;&#x9; * @param address The address of the intended receiver" item="_Ka8AJ3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDE3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KbA4UHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KbA4UXX2EemU-LNf4Tv9xw" text="Simple UDP client for sending BufferedImages&#xD;&#xA;@author Ziya Mukhtarov&#xD;&#xA;@version 01/05/2019" item="_KbD7oHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDFnX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KbBfYnX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KbBfY3X2EemU-LNf4Tv9xw" text="Creates a UDP client and associates it with the specified server&#xD;&#xA;&#x9; * @param serverAddress The IP address of the server&#xD;&#xA;&#x9; * @param serverPort    The port that the server is listening&#xD;&#xA;&#x9; * @throws UnknownHostException if no IP address for the server could be found,&#xD;&#xA;&#x9; *                              or if a scope_id was specified for a global IPv6&#xD;&#xA;&#x9; *                              address&#xD;&#xA;&#x9; * @throws SocketException      if the socket could not be opened, or the socket&#xD;&#xA;&#x9; *                              could not bind to the specified local port." item="_KbD7snX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDF3X2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KbBfZHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KbBfZXX2EemU-LNf4Tv9xw" text="Closes the UDP socket" item="_KbD7vnX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDGXX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_KbCGcHX2EemU-LNf4Tv9xw" sourceConnectionVisual="_KbCGcXX2EemU-LNf4Tv9xw" text="Sends the Screenshot to the server&#xD;&#xA;&#x9; * @param screenshot The Screenshot to be sent" item="_KbD7wXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KUuDGHX2EemU-LNf4Tv9xw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ka7_0HX2EemU-LNf4Tv9xw" comments="_Ka3HUHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka3HUXX2EemU-LNf4Tv9xw" name="TcpServer" abstractClass="true" associationsIn="_Kac3oHX2EemU-LNf4Tv9xw" associationsOut="_Ka3uYHX2EemU-LNf4Tv9xw _Ka6xsHX2EemU-LNf4Tv9xw _Ka7YwHX2EemU-LNf4Tv9xw _Ka7YyXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KSo_cHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_Ka7_0XX2EemU-LNf4Tv9xw" position="-454.0,-177.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Ka7_0nX2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_Ka7_03X2EemU-LNf4Tv9xw" name="server">
+      <modelElement href="nitoNetwork.uml#_KUfZk3X2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka7_1HX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUgAoHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka7_1XX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_1nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka7_13X2EemU-LNf4Tv9xw" name="ServerSocket">
+        <modelElement href="nitoNetwork.uml#_KUG_EHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ka7_2HX2EemU-LNf4Tv9xw" name="sockets">
+      <modelElement href="nitoNetwork.uml#_KUgAoXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka7_2XX2EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nitoNetwork.uml#_KUgAonX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ka7_2nX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUgnsHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka7_23X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_3HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka7_3XX2EemU-LNf4Tv9xw" name="ArrayList">
+        <modelElement href="nitoNetwork.uml#_KUHmIHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ka7_3nX2EemU-LNf4Tv9xw" name="msgListenerThreads">
+      <modelElement href="nitoNetwork.uml#_KUgnsXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka7_33X2EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nitoNetwork.uml#_KUhOwHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Ka7_4HX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUhOwXX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka7_4XX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_4nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka7_43X2EemU-LNf4Tv9xw" name="ArrayList">
+        <modelElement href="nitoNetwork.uml#_KUHmIHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ka7_5HX2EemU-LNf4Tv9xw" name="isBlocked">
+      <modelElement href="nitoNetwork.uml#_KUh10HX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka7_5XX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUh103X2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka7_5nX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_53X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka7_6HX2EemU-LNf4Tv9xw" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ka7_6XX2EemU-LNf4Tv9xw" name="connectionListenerThread">
+      <modelElement href="nitoNetwork.uml#_KUh11HX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka7_6nX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUic4HX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka7_63X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_7HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka7_7XX2EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nitoNetwork.uml#_KUVokHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Ka7_7nX2EemU-LNf4Tv9xw" comments="_Ka3uYXX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka3uYnX2EemU-LNf4Tv9xw" name="TcpServer">
+      <modelElement href="nitoNetwork.uml#_KSq0oHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_Ka7_73X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_Ka7_8HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka7_8XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Ka7_8nX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSq0pHX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_Ka7_83X2EemU-LNf4Tv9xw" name="TcpServer">
+          <modelElement href="nitoNetwork.uml#_KSo_cHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ka7_9HX2EemU-LNf4Tv9xw" name="port">
+        <modelElement href="nitoNetwork.uml#_KSq0oXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka7_9XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka7_9nX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka7_93X2EemU-LNf4Tv9xw" comments="_Ka3uY3X2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka3uZHX2EemU-LNf4Tv9xw" name="listenForConnections">
+      <modelElement href="nitoNetwork.uml#_KSsCwHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7_-HX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka7_-XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_Ka7_-nX2EemU-LNf4Tv9xw" comments="_Ka3uZXX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka3uZnX2EemU-LNf4Tv9xw" name="sendMessageToAll">
+      <modelElement href="nitoNetwork.uml#_KStQ4HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka7_-3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka7__HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka7__XX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KStQ4XX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka7__nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka7__3X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8AAHX2EemU-LNf4Tv9xw" comments="_Ka4VcHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka4VcXX2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KSufAHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8AAXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8AAnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AA3X2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KSufAXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8ABHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8ABXX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ka8ABnX2EemU-LNf4Tv9xw" name="address">
+        <modelElement href="nitoNetwork.uml#_KSvGEHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AB3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8ACHX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8ACXX2EemU-LNf4Tv9xw" comments="_Ka4VcnX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka4Vc3X2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KSvGEXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8ACnX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8AC3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_Ka8ADHX2EemU-LNf4Tv9xw" comments="_Ka4VdHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka4VdXX2EemU-LNf4Tv9xw" abstractOperation="true" name="connectionEstablished">
+      <modelElement href="nitoNetwork.uml#_KUW2sHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8ADXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8ADnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AD3X2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUW2sXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AEHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AEXX2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8AEnX2EemU-LNf4Tv9xw" comments="_Ka4VdnX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka4Vd3X2EemU-LNf4Tv9xw" abstractOperation="true" name="connectionTerminated">
+      <modelElement href="nitoNetwork.uml#_KUW2snX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8AE3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8AFHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AFXX2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUW2s3X2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AFnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AF3X2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8AGHX2EemU-LNf4Tv9xw" comments="_Ka48gHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka48gXX2EemU-LNf4Tv9xw" abstractOperation="true" name="received">
+      <modelElement href="nitoNetwork.uml#_KUW2tHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8AGXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8AGnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AG3X2EemU-LNf4Tv9xw" name="message">
+        <modelElement href="nitoNetwork.uml#_KUW2tXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AHHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AHXX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ka8AHnX2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUW2tnX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AH3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AIHX2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8AIXX2EemU-LNf4Tv9xw" comments="_Ka48gnX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka48g3X2EemU-LNf4Tv9xw" name="listenForMessages">
+      <modelElement href="nitoNetwork.uml#_KUYE0HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8AInX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka8AI3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AJHX2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUYE0XX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AJXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AJnX2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka8AJ3X2EemU-LNf4Tv9xw" comments="_Ka48hHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Ka48hXX2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KUYE0nX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka8AKHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka8AKXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka8AKnX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KUYE03X2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8AK3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8ALHX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ka8ALXX2EemU-LNf4Tv9xw" name="address">
+        <modelElement href="nitoNetwork.uml#_KUYE1HX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka8ALnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka8AL3X2EemU-LNf4Tv9xw" name="InetAddress">
+          <modelElement href="nitoNetwork.uml#_KUDUsHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KaLK2XX2EemU-LNf4Tv9xw" comments="_KaIHgHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaIukHX2EemU-LNf4Tv9xw" name="UdpServer" abstractClass="true" associationsIn="_KaZNQHX2EemU-LNf4Tv9xw" associationsOut="_KaKjwHX2EemU-LNf4Tv9xw _KaLK0HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KS2a0HX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KaLK2nX2EemU-LNf4Tv9xw" position="25.0,55.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_KaLK23X2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_KaLK3HX2EemU-LNf4Tv9xw" name="socket">
+      <modelElement href="nitoNetwork.uml#_KUjrAnX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KaLK3XX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUkSEHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KaLK3nX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaLK33X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KaLK4HX2EemU-LNf4Tv9xw" name="DatagramSocket">
+        <modelElement href="nitoNetwork.uml#_KUI0QHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KaLK4XX2EemU-LNf4Tv9xw" name="listenerThread">
+      <modelElement href="nitoNetwork.uml#_KUkSEXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KaLK4nX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUkSEnX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KaLK43X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaLK5HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KaLK5XX2EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nitoNetwork.uml#_KUVokHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_KaLK5nX2EemU-LNf4Tv9xw" comments="_KaIukXX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaIuknX2EemU-LNf4Tv9xw" name="UdpServer">
+      <modelElement href="nitoNetwork.uml#_KS3B43X2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_KaLK53X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_KaLK6HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaLK6XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KaLK6nX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KS3o8nX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KaLK63X2EemU-LNf4Tv9xw" name="UdpServer">
+          <modelElement href="nitoNetwork.uml#_KS2a0HX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KaLK7HX2EemU-LNf4Tv9xw" name="port">
+        <modelElement href="nitoNetwork.uml#_KS3B5HX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaLK7XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaLK7nX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KaLK73X2EemU-LNf4Tv9xw" comments="_KaJVoHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaJVoXX2EemU-LNf4Tv9xw" name="readScreenshot">
+      <modelElement href="nitoNetwork.uml#_KS3o83X2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaLK8HX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaLK8XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KaLK8nX2EemU-LNf4Tv9xw" comments="_KaJVonX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaJVo3X2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KS4QAHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaLK83X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaLK9HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KaLK9XX2EemU-LNf4Tv9xw" comments="_KaJVpHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaJVpXX2EemU-LNf4Tv9xw" abstractOperation="true" name="screenshotReceived">
+      <modelElement href="nitoNetwork.uml#_KUZS8HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaLK9nX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaLK93X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KaLK-HX2EemU-LNf4Tv9xw" name="img">
+        <modelElement href="nitoNetwork.uml#_KUZS8XX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaLK-XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaLK-nX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_KaLK-3X2EemU-LNf4Tv9xw" name="packet">
+        <modelElement href="nitoNetwork.uml#_KUZS8nX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaLK_HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaLK_XX2EemU-LNf4Tv9xw" name="DatagramPacket">
+          <modelElement href="nitoNetwork.uml#_KUCGkHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Kac3qXX2EemU-LNf4Tv9xw" comments="_KaZ0UHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaZ0UXX2EemU-LNf4Tv9xw" name="Server" abstractClass="true" associationsOut="_KaZNQHX2EemU-LNf4Tv9xw _Kac3oHX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KSVdcHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_Kac3qnX2EemU-LNf4Tv9xw" position="-377.0,290.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Kac3q3X2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_Kac3rHX2EemU-LNf4Tv9xw" defaultValue="&quot;###&quot;" name="TERMINATION" staticAttribute="true">
+      <modelElement href="nitoNetwork.uml#_KUdkYHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3rXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3rnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kac3r3X2EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Kac3sHX2EemU-LNf4Tv9xw" defaultValue="4455" name="TCP_PORT" staticAttribute="true">
+      <modelElement href="nitoNetwork.uml#_KUdkYnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3sXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3snX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kac3s3X2EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Kac3tHX2EemU-LNf4Tv9xw" defaultValue="4456" name="UDP_PORT" staticAttribute="true">
+      <modelElement href="nitoNetwork.uml#_KUdkZHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3tXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3tnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kac3t3X2EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Kac3uHX2EemU-LNf4Tv9xw" name="tcp">
+      <modelElement href="nitoNetwork.uml#_KUeLcHX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Kac3uXX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUeLcXX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Kac3unX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kac3u3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kac3vHX2EemU-LNf4Tv9xw" name="TcpServer">
+        <modelElement href="nitoNetwork.uml#_KSo_cHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Kac3vXX2EemU-LNf4Tv9xw" name="udp">
+      <modelElement href="nitoNetwork.uml#_KUeLcnX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Kac3vnX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUeygHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Kac3v3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kac3wHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kac3wXX2EemU-LNf4Tv9xw" name="UdpServer">
+        <modelElement href="nitoNetwork.uml#_KS2a0HX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Kac3wnX2EemU-LNf4Tv9xw" comments="_KaZ0VnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaZ0V3X2EemU-LNf4Tv9xw" name="Server">
+      <modelElement href="nitoNetwork.uml#_KSX5sHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_Kac3w3X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_Kac3xHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3xXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Kac3xnX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSYgwnX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_Kac3x3X2EemU-LNf4Tv9xw" name="Server">
+          <modelElement href="nitoNetwork.uml#_KSVdcHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Kac3yHX2EemU-LNf4Tv9xw" comments="_KaZ0WHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaZ0WXX2EemU-LNf4Tv9xw" name="sendMessageToAll">
+      <modelElement href="nitoNetwork.uml#_KSaV8HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3yXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3ynX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac3y3X2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KSa9AHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac3zHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac3zXX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac3znX2EemU-LNf4Tv9xw" comments="_KaabYHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaabYXX2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KSbkEHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3z3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac30HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac30XX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KSbkEXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac30nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac303X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Kac31HX2EemU-LNf4Tv9xw" name="address">
+        <modelElement href="nitoNetwork.uml#_KScLIHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac31XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac31nX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac313X2EemU-LNf4Tv9xw" comments="_KaabYnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaabY3X2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KScyMHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac32HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac32XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_Kac32nX2EemU-LNf4Tv9xw" comments="_KaabZHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaabZXX2EemU-LNf4Tv9xw" abstractOperation="true" name="connectionEstablished">
+      <modelElement href="nitoNetwork.uml#_KUTMUHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac323X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac33HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac33XX2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUTMUXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac33nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac333X2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac34HX2EemU-LNf4Tv9xw" comments="_KaabZnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaabZ3X2EemU-LNf4Tv9xw" abstractOperation="true" name="connectionTerminated">
+      <modelElement href="nitoNetwork.uml#_KUTMUnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac34XX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac34nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac343X2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUTMU3X2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac35HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac35XX2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac35nX2EemU-LNf4Tv9xw" comments="_KaabaHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaabaXX2EemU-LNf4Tv9xw" abstractOperation="true" name="messageReceived">
+      <modelElement href="nitoNetwork.uml#_KUTzYHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac353X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac36HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac36XX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KUTzYXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac36nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac363X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Kac37HX2EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nitoNetwork.uml#_KUTzYnX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac37XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac37nX2EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac373X2EemU-LNf4Tv9xw" comments="_KabCcHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KabCcXX2EemU-LNf4Tv9xw" abstractOperation="true" name="screenshotReceived">
+      <modelElement href="nitoNetwork.uml#_KUTzY3X2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac38HX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac38XX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac38nX2EemU-LNf4Tv9xw" name="img">
+        <modelElement href="nitoNetwork.uml#_KUTzZHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac383X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac39HX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Kac39XX2EemU-LNf4Tv9xw" name="packet">
+        <modelElement href="nitoNetwork.uml#_KUTzZXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac39nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac393X2EemU-LNf4Tv9xw" name="DatagramPacket">
+          <modelElement href="nitoNetwork.uml#_KUCGkHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Kac3-HX2EemU-LNf4Tv9xw" comments="_KabCcnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KabCc3X2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KUUacHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kac3-XX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Kac3-nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Kac3-3X2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KUUacXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac3_HX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac3_XX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Kac3_nX2EemU-LNf4Tv9xw" name="address">
+        <modelElement href="nitoNetwork.uml#_KUUacnX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Kac3_3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Kac4AHX2EemU-LNf4Tv9xw" name="InetAddress">
+          <modelElement href="nitoNetwork.uml#_KUDUsHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Kapr-XX2EemU-LNf4Tv9xw" comments="_KakMYHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KakMYXX2EemU-LNf4Tv9xw" name="Screenshot" associationsOut="_Kapr8HX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_Kapr-nX2EemU-LNf4Tv9xw" position="217.0,333.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Kapr-3X2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_Kapr_HX2EemU-LNf4Tv9xw" defaultValue="-1789450675592222566L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nitoNetwork.uml#_KUbvMXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Kapr_XX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Kapr_nX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Kapr_3X2EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KapsAHX2EemU-LNf4Tv9xw" defaultValue="64000" name="MAX_SIZE" staticAttribute="true">
+      <modelElement href="nitoNetwork.uml#_KUcWQHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsAXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsAnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KapsA3X2EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KapsBHX2EemU-LNf4Tv9xw" name="img">
+      <modelElement href="nitoNetwork.uml#_KUcWQnX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KapsBXX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUcWRXX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KapsBnX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KapsB3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KapsCHX2EemU-LNf4Tv9xw" name="BufferedImage">
+        <modelElement href="nitoNetwork.uml#_KT8nA3X2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KapsCXX2EemU-LNf4Tv9xw" name="scale">
+      <modelElement href="nitoNetwork.uml#_KUc9UHX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KapsCnX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUc9UXX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KapsC3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KapsDHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KapsDXX2EemU-LNf4Tv9xw" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_KapsDnX2EemU-LNf4Tv9xw" comments="_KalagHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KalagXX2EemU-LNf4Tv9xw" name="Screenshot">
+      <modelElement href="nitoNetwork.uml#_KSDJkHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_KapsD3X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_KapsEHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsEXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsEnX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSDwo3X2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsE3X2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KapsFHX2EemU-LNf4Tv9xw" name="width">
+        <modelElement href="nitoNetwork.uml#_KSDwoHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsFXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsFnX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsF3X2EemU-LNf4Tv9xw" comments="_KalagnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KamBkHX2EemU-LNf4Tv9xw" name="Screenshot">
+      <modelElement href="nitoNetwork.uml#_KSEXsHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_KapsGHX2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_KapsGXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsGnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsG3X2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSFl03X2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsHHX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KapsHXX2EemU-LNf4Tv9xw" name="scale">
+        <modelElement href="nitoNetwork.uml#_KSFl0HX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsHnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsH3X2EemU-LNf4Tv9xw" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsIHX2EemU-LNf4Tv9xw" comments="_KamBkXX2EemU-LNf4Tv9xw" targetConnectionVisual="_KamBknX2EemU-LNf4Tv9xw" name="serialize">
+      <modelElement href="nitoNetwork.uml#_KSGz8HX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KapsIXX2EemU-LNf4Tv9xw" name="Array">
+        <modelElement href="nitoNetwork.uml#_KSHbAnX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KapsInX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsI3X2EemU-LNf4Tv9xw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_KapsJHX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSHbAHX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsJXX2EemU-LNf4Tv9xw" name="byte">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_KapsJnX2EemU-LNf4Tv9xw" comments="_KamBk3X2EemU-LNf4Tv9xw" targetConnectionVisual="_KamBlHX2EemU-LNf4Tv9xw" name="deserialize" staticOperation="true">
+      <modelElement href="nitoNetwork.uml#_KSICEHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsJ3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsKHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsKXX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KUA4cHX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsKnX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KapsK3X2EemU-LNf4Tv9xw" name="data">
+        <modelElement href="nitoNetwork.uml#_KSIpIHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsLHX2EemU-LNf4Tv9xw" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_KapsLXX2EemU-LNf4Tv9xw" name="byte">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsLnX2EemU-LNf4Tv9xw" comments="_KamooHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KamooXX2EemU-LNf4Tv9xw" name="getSize">
+      <modelElement href="nitoNetwork.uml#_KSJ3QHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsL3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsMHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsMXX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSKeUHX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsMnX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_KapsM3X2EemU-LNf4Tv9xw" name="clone">
+      <modelElement href="nitoNetwork.uml#_KSKeUXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KapsNHX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KSLFYHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_KapsNXX2EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nitoNetwork.uml#_KSLscHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KapsNnX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsN3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsOHX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KUSlQHX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsOXX2EemU-LNf4Tv9xw" name="Object">
+          <modelElement href="nitoNetwork.uml#_KURXI3X2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_KapsOnX2EemU-LNf4Tv9xw" comments="_KamoonX2EemU-LNf4Tv9xw" targetConnectionVisual="_Kamoo3X2EemU-LNf4Tv9xw" name="updateScale">
+      <modelElement href="nitoNetwork.uml#_KSMTgHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsO3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KapsPHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KapsPXX2EemU-LNf4Tv9xw" comments="_KamopHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KamopXX2EemU-LNf4Tv9xw" name="prepareForSending">
+      <modelElement href="nitoNetwork.uml#_KSM6kHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsPnX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsP3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KapsQHX2EemU-LNf4Tv9xw" comments="_KamopnX2EemU-LNf4Tv9xw" targetConnectionVisual="_Kamop3X2EemU-LNf4Tv9xw" name="scale">
+      <modelElement href="nitoNetwork.uml#_KSNhoHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsQXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsQnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KapsQ3X2EemU-LNf4Tv9xw" name="scale">
+        <modelElement href="nitoNetwork.uml#_KSNhoXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsRHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsRXX2EemU-LNf4Tv9xw" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsRnX2EemU-LNf4Tv9xw" comments="_KanPsHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KanPsXX2EemU-LNf4Tv9xw" name="scale">
+      <modelElement href="nitoNetwork.uml#_KSOIsHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsR3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsSHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KapsSXX2EemU-LNf4Tv9xw" name="newWidth">
+        <modelElement href="nitoNetwork.uml#_KSOvwHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsSnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsS3X2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_KapsTHX2EemU-LNf4Tv9xw" name="newHeight">
+        <modelElement href="nitoNetwork.uml#_KSOvwXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsTXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsTnX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsT3X2EemU-LNf4Tv9xw" comments="_KanPsnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KanPs3X2EemU-LNf4Tv9xw" name="getImage">
+      <modelElement href="nitoNetwork.uml#_KSP94HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsUHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KapsUXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KapsUnX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KUSlQXX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KapsU3X2EemU-LNf4Tv9xw" name="BufferedImage">
+          <modelElement href="nitoNetwork.uml#_KT8nA3X2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_KapsVHX2EemU-LNf4Tv9xw" comments="_KanPtHX2EemU-LNf4Tv9xw" targetConnectionVisual="_Kan2wHX2EemU-LNf4Tv9xw" name="writeObject">
+      <modelElement href="nitoNetwork.uml#_KUQwEnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsVXX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KapsVnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KapsV3X2EemU-LNf4Tv9xw" name="out">
+        <modelElement href="nitoNetwork.uml#_KURXIHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsWHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsWXX2EemU-LNf4Tv9xw" name="ObjectOutputStream">
+          <modelElement href="nitoNetwork.uml#_KT_DQXX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KapsWnX2EemU-LNf4Tv9xw" comments="_Kan2wXX2EemU-LNf4Tv9xw" targetConnectionVisual="_Kan2wnX2EemU-LNf4Tv9xw" name="readObject">
+      <modelElement href="nitoNetwork.uml#_KURXIXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KapsW3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KapsXHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KapsXXX2EemU-LNf4Tv9xw" name="in">
+        <modelElement href="nitoNetwork.uml#_KURXInX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KapsXnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KapsX3X2EemU-LNf4Tv9xw" name="ObjectInputStream">
+          <modelElement href="nitoNetwork.uml#_KT91I3X2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ka0EAXX2EemU-LNf4Tv9xw" comments="_KaxnwHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaxnwXX2EemU-LNf4Tv9xw" name="TcpClient" abstractClass="true" associationsIn="_KaR4gHX2EemU-LNf4Tv9xw" associationsOut="_KaxnwnX2EemU-LNf4Tv9xw _Kaxnw3X2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KSgckHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_Ka0EAnX2EemU-LNf4Tv9xw" position="24.0,-198.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Ka0EA3X2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_Ka0EBHX2EemU-LNf4Tv9xw" name="socket">
+      <modelElement href="nitoNetwork.uml#_KUeygXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka0EBXX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUfZkHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka0EBnX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka0EB3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka0ECHX2EemU-LNf4Tv9xw" name="Socket">
+        <modelElement href="nitoNetwork.uml#_KUDUsnX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ka0ECXX2EemU-LNf4Tv9xw" name="msgListenerThread">
+      <modelElement href="nitoNetwork.uml#_KUfZkXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_Ka0ECnX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUfZknX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_Ka0EC3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka0EDHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_Ka0EDXX2EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nitoNetwork.uml#_KUVokHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Ka0EDnX2EemU-LNf4Tv9xw" comments="_KaxnxHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaxnxXX2EemU-LNf4Tv9xw" name="TcpClient">
+      <modelElement href="nitoNetwork.uml#_KSjf4HX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_Ka0ED3X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_Ka0EEHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka0EEXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Ka0EEnX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSkuAnX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_Ka0EE3X2EemU-LNf4Tv9xw" name="TcpClient">
+          <modelElement href="nitoNetwork.uml#_KSgckHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ka0EFHX2EemU-LNf4Tv9xw" name="serverAddress">
+        <modelElement href="nitoNetwork.uml#_KSkG8HX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka0EFXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka0EFnX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Ka0EF3X2EemU-LNf4Tv9xw" name="serverPort">
+        <modelElement href="nitoNetwork.uml#_KSkG8XX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka0EGHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka0EGXX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka0EGnX2EemU-LNf4Tv9xw" comments="_KaxnxnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KayO0HX2EemU-LNf4Tv9xw" abstractOperation="true" name="received">
+      <modelElement href="nitoNetwork.uml#_KSlVEHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka0EG3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka0EHHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka0EHXX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KSl8IHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka0EHnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka0EH3X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka0EIHX2EemU-LNf4Tv9xw" comments="_KayO0XX2EemU-LNf4Tv9xw" targetConnectionVisual="_KayO0nX2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KSl8IXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka0EIXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka0EInX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_Ka0EI3X2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KSmjMHX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_Ka0EJHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_Ka0EJXX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ka0EJnX2EemU-LNf4Tv9xw" comments="_KayO03X2EemU-LNf4Tv9xw" targetConnectionVisual="_KayO1HX2EemU-LNf4Tv9xw" name="listenForMessages">
+      <modelElement href="nitoNetwork.uml#_KSmjMXX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka0EJ3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_Ka0EKHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_Ka0EKXX2EemU-LNf4Tv9xw" comments="_KayO1XX2EemU-LNf4Tv9xw" targetConnectionVisual="_KayO1nX2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KSmjMnX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_Ka0EKnX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_Ka0EK3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KbD7oHX2EemU-LNf4Tv9xw" comments="_KbA4UHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KbA4UXX2EemU-LNf4Tv9xw" name="UdpClient" associationsIn="_KaR4iXX2EemU-LNf4Tv9xw" associationsOut="_KbBfYHX2EemU-LNf4Tv9xw _KbBfYXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KSywcHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KbD7oXX2EemU-LNf4Tv9xw" position="625.0,-65.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_KbD7onX2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_KbD7o3X2EemU-LNf4Tv9xw" name="serverAddress">
+      <modelElement href="nitoNetwork.uml#_KUjD8HX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KbD7pHX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUjD8XX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KbD7pXX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KbD7pnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KbD7p3X2EemU-LNf4Tv9xw" name="InetAddress">
+        <modelElement href="nitoNetwork.uml#_KUDUsHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KbD7qHX2EemU-LNf4Tv9xw" name="serverPort">
+      <modelElement href="nitoNetwork.uml#_KUjD8nX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KbD7qXX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUjD83X2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KbD7qnX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KbD7q3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KbD7rHX2EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KbD7rXX2EemU-LNf4Tv9xw" name="socket">
+      <modelElement href="nitoNetwork.uml#_KUjrAHX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KbD7rnX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUjrAXX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KbD7r3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KbD7sHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KbD7sXX2EemU-LNf4Tv9xw" name="DatagramSocket">
+        <modelElement href="nitoNetwork.uml#_KUI0QHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_KbD7snX2EemU-LNf4Tv9xw" comments="_KbBfYnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KbBfY3X2EemU-LNf4Tv9xw" name="UdpClient">
+      <modelElement href="nitoNetwork.uml#_KSz-kHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_KbD7s3X2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_KbD7tHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KbD7tXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KbD7tnX2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KSz-lXX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KbD7t3X2EemU-LNf4Tv9xw" name="UdpClient">
+          <modelElement href="nitoNetwork.uml#_KSywcHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KbD7uHX2EemU-LNf4Tv9xw" name="serverAddress">
+        <modelElement href="nitoNetwork.uml#_KSz-kXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KbD7uXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KbD7unX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_KbD7u3X2EemU-LNf4Tv9xw" name="serverPort">
+        <modelElement href="nitoNetwork.uml#_KSz-knX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KbD7vHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KbD7vXX2EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KbD7vnX2EemU-LNf4Tv9xw" comments="_KbBfZHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KbBfZXX2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KS1MsHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbD7v3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KbD7wHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KbD7wXX2EemU-LNf4Tv9xw" comments="_KbCGcHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KbCGcXX2EemU-LNf4Tv9xw" name="sendScreenshot">
+      <modelElement href="nitoNetwork.uml#_KULQgHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KbD7wnX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KbD7w3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KbD7xHX2EemU-LNf4Tv9xw" name="screenshot">
+        <modelElement href="nitoNetwork.uml#_KULQgXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KbD7xXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KbD7xnX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KaR4knX2EemU-LNf4Tv9xw" comments="_KaQqYHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaQqYXX2EemU-LNf4Tv9xw" name="Client" abstractClass="true" associationsOut="_KaR4gHX2EemU-LNf4Tv9xw _KaR4iXX2EemU-LNf4Tv9xw">
+    <modelElement href="nitoNetwork.uml#_KR28UHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KaR4k3X2EemU-LNf4Tv9xw" position="647.0,185.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_KaR4lHX2EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_KaR4lXX2EemU-LNf4Tv9xw" name="tcp">
+      <modelElement href="nitoNetwork.uml#_KUahEHX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KaR4lnX2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUbIIHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KaR4l3X2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaR4mHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KaR4mXX2EemU-LNf4Tv9xw" name="TcpClient">
+        <modelElement href="nitoNetwork.uml#_KSgckHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KaR4mnX2EemU-LNf4Tv9xw" name="udp">
+      <modelElement href="nitoNetwork.uml#_KUbIIXX2EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_KaR4m3X2EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nitoNetwork.uml#_KUbvMHX2EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_KaR4nHX2EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_KaR4nXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_KaR4nnX2EemU-LNf4Tv9xw" name="UdpClient">
+        <modelElement href="nitoNetwork.uml#_KSywcHX2EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_KaR4n3X2EemU-LNf4Tv9xw" comments="_KaQqYnX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaQqY3X2EemU-LNf4Tv9xw" name="Client">
+      <modelElement href="nitoNetwork.uml#_KR7NwHX2EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_KaR4oHX2EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_KaR4oXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4onX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KaR4o3X2EemU-LNf4Tv9xw">
+        <modelElement href="nitoNetwork.uml#_KR700nX2EemU-LNf4Tv9xw"/>
+        <type xmi:id="_KaR4pHX2EemU-LNf4Tv9xw" name="Client">
+          <modelElement href="nitoNetwork.uml#_KR28UHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_KaR4pXX2EemU-LNf4Tv9xw" name="serverAddress">
+        <modelElement href="nitoNetwork.uml#_KR7NwXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaR4pnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaR4p3X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KaR4qHX2EemU-LNf4Tv9xw" comments="_KaQqZHX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaRRcHX2EemU-LNf4Tv9xw" abstractOperation="true" name="messageReceived">
+      <modelElement href="nitoNetwork.uml#_KR9C8HX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaR4qXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4qnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KaR4q3X2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KR9C8XX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaR4rHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaR4rXX2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KaR4rnX2EemU-LNf4Tv9xw" comments="_KaRRcXX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaRRcnX2EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nitoNetwork.uml#_KR9qAHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaR4r3X2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4sHX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KaR4sXX2EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nitoNetwork.uml#_KR9qAXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaR4snX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaR4s3X2EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_KaR4tHX2EemU-LNf4Tv9xw" comments="_KaRRc3X2EemU-LNf4Tv9xw" targetConnectionVisual="_KaRRdHX2EemU-LNf4Tv9xw" name="close">
+      <modelElement href="nitoNetwork.uml#_KR-4IHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaR4tXX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4tnX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_KaR4t3X2EemU-LNf4Tv9xw" comments="_KaRRdXX2EemU-LNf4Tv9xw" targetConnectionVisual="_KaRRdnX2EemU-LNf4Tv9xw" name="sendImage">
+      <modelElement href="nitoNetwork.uml#_KT5jsHX2EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_KaR4uHX2EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_KaR4uXX2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_KaR4unX2EemU-LNf4Tv9xw" name="screenshot">
+        <modelElement href="nitoNetwork.uml#_KT5jsXX2EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_KaR4u3X2EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_KaR4vHX2EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nitoNetwork.uml#_KSAGQHX2EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KaO1MHX2EemU-LNf4Tv9xw" name="SocketException">
+    <modelElement href="nitoNetwork.uml#_KUKCYXX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KaO1MXX2EemU-LNf4Tv9xw" position="578.0,-164.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KaO1MnX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KUKpcHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_KaO1M3X2EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KaX_IHX2EemU-LNf4Tv9xw" name="IOException">
+    <modelElement href="nitoNetwork.uml#_KT3ugHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KaX_IXX2EemU-LNf4Tv9xw" position="-2.0,669.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KaX_InX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KT4VkHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_KaX_I3X2EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KaWxAHX2EemU-LNf4Tv9xw" name="UnknownHostException">
+    <modelElement href="nitoNetwork.uml#_KT4VkXX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KaWxAXX2EemU-LNf4Tv9xw" position="-214.0,667.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KaWxAnX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KT48oHX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_KaWxA3X2EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KawZoHX2EemU-LNf4Tv9xw" name="AWTException">
+    <modelElement href="nitoNetwork.uml#_KT6KwHX2EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_KawZoXX2EemU-LNf4Tv9xw" position="-372.0,661.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KawZonX2EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nitoNetwork.uml#_KT6x0HX2EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_KawZo3X2EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

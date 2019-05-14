@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_J7viYHX2EemU-LNf4Tv9xw" name="nitoNetwork">
+    <eAnnotations xmi:id="_KG3NQHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_KG5pgHX2EemU-LNf4Tv9xw" source="codegen">
+        <details xmi:id="_KG5pgXX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/Resources"/>
+        <details xmi:id="_KYpg0HX2EemU-LNf4Tv9xw" key="AssociatedSourceCode" value="/nito/src/common/network/Client.java;2283089143/1;/nito/src/common/network/Screenshot.java;3388362897/1;/nito/src/common/network/Server.java;1696269924/1;/nito/src/common/network/TcpClient.java;277345830/1;/nito/src/common/network/TcpServer.java;3501362591/1;/nito/src/common/network/UdpClient.java;1203802193/1;/nito/src/common/network/UdpServer.java;1708441269/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_KR4xgHX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_KR4xgXX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5YkHX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5YkXX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5YknX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5_oHX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5_oXX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5_onX2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_KR5_o3X2EemU-LNf4Tv9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KQylUHX2EemU-LNf4Tv9xw" name="common">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KQ22wHX2EemU-LNf4Tv9xw" name="network">
+        <packagedElement xmi:type="uml:Class" xmi:id="_KR28UHX2EemU-LNf4Tv9xw" name="Client" isAbstract="true">
+          <eAnnotations xmi:id="_KR3jYHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KR3jYXX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KR3jYnX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUsN4HX2EemU-LNf4Tv9xw">
+            <body>A client for TCP and UDP connection&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUahEHX2EemU-LNf4Tv9xw" name="tcp" visibility="private" type="_KSgckHX2EemU-LNf4Tv9xw" association="_KUxGYHX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUbIIXX2EemU-LNf4Tv9xw" name="udp" visibility="private" type="_KSywcHX2EemU-LNf4Tv9xw" association="_KUyUgHX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUlgMHX2EemU-LNf4Tv9xw" name="Client" specification="_KR7NwHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUlgMXX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUlgMnX2EemU-LNf4Tv9xw" type="_KR28UHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>tcp = new TcpClient( serverAddress, Server.TCP_PORT) {&#xD;
+			public void received( String msg)&#xD;
+			{&#xD;
+				messageReceived( msg);&#xD;
+			}&#xD;
+		};&#xD;
+&#xD;
+		udp = new UdpClient( serverAddress, Server.UDP_PORT);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUlgM3X2EemU-LNf4Tv9xw" name="sendMessage" specification="_KR9qAHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUlgNHX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>tcp.sendMessage( msg);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUlgNXX2EemU-LNf4Tv9xw" name="sendImage" specification="_KT5jsHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUlgNnX2EemU-LNf4Tv9xw" name="screenshot" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>udp.sendScreenshot( screenshot);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUlgN3X2EemU-LNf4Tv9xw" name="close" specification="_KR-4IHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>udp.close();&#xD;
+		tcp.close();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KR7NwHX2EemU-LNf4Tv9xw" name="Client" method="_KUlgMHX2EemU-LNf4Tv9xw" raisedException="_KT4VkXX2EemU-LNf4Tv9xw _KT3ugHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KR700HX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KR700XX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUsN4XX2EemU-LNf4Tv9xw">
+              <body>Connects the client to the specified server&#xD;
+	 * @param serverAddress The IP address of the server&#xD;
+	 * @throws IOException          if an I/O error occurs when creating the socket.&#xD;
+	 * @throws UnknownHostException if no IP address for the host could be found, or&#xD;
+	 *                              if a scope_id was specified for a global&#xD;
+	 *                              IPv6address</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KR7NwXX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KR700nX2EemU-LNf4Tv9xw" type="_KR28UHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KR9C8HX2EemU-LNf4Tv9xw" name="messageReceived" isAbstract="true">
+            <ownedComment xmi:id="_KUsN4nX2EemU-LNf4Tv9xw">
+              <body>Processes the received message&#xD;
+	 * @param msg The contents of the message</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KR9C8XX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KR9qAHX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUlgM3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN43X2EemU-LNf4Tv9xw">
+              <body>Sends a message to the server&#xD;
+	 * @param msg The message to be sent</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KR9qAXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KR-4IHX2EemU-LNf4Tv9xw" name="close" method="_KUlgN3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN5XX2EemU-LNf4Tv9xw">
+              <body>Closes the connection with the server</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KT5jsHX2EemU-LNf4Tv9xw" name="sendImage" method="_KUlgNXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN5HX2EemU-LNf4Tv9xw">
+              <body>Sends a Screenshot to the server&#xD;
+	 * @param screenshot The Screenshot to be sent</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KT5jsXX2EemU-LNf4Tv9xw" name="screenshot" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KSAGQHX2EemU-LNf4Tv9xw" name="Screenshot">
+          <eAnnotations xmi:id="_KSB7cHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KSB7cXX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KSB7cnX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUsN5nX2EemU-LNf4Tv9xw">
+            <body>A class for working with screenshots&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUbvMXX2EemU-LNf4Tv9xw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_KUbvMnX2EemU-LNf4Tv9xw" value="-1789450675592222566L"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUcWQHX2EemU-LNf4Tv9xw" name="MAX_SIZE" isLeaf="true" isStatic="true" isReadOnly="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_KUcWQXX2EemU-LNf4Tv9xw" value="64000"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUcWQnX2EemU-LNf4Tv9xw" name="img" visibility="private" type="_KT8nA3X2EemU-LNf4Tv9xw" association="_KUy7kHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KUcWQ3X2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KUcWRHX2EemU-LNf4Tv9xw" key="transient"/>
+            </eAnnotations>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUc9UHX2EemU-LNf4Tv9xw" name="scale" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:id="_KUO64HX2EemU-LNf4Tv9xw" client="_KSAGQHX2EemU-LNf4Tv9xw" supplier="_KT_qUXX2EemU-LNf4Tv9xw" contract="_KT_qUXX2EemU-LNf4Tv9xw"/>
+          <interfaceRealization xmi:id="_KUQwEXX2EemU-LNf4Tv9xw" client="_KSAGQHX2EemU-LNf4Tv9xw" supplier="_KUQJAXX2EemU-LNf4Tv9xw" contract="_KUQJAXX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUmHQHX2EemU-LNf4Tv9xw" name="Screenshot" specification="_KSDJkHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUmHQXX2EemU-LNf4Tv9xw" name="width">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUmHQnX2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>this( Math.min( 1.0 * width / Toolkit.getDefaultToolkit().getScreenSize().width, 1.0));&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUmuUHX2EemU-LNf4Tv9xw" name="Screenshot" specification="_KSEXsHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUmuUXX2EemU-LNf4Tv9xw" name="scale">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUmuUnX2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>img = new Robot().createScreenCapture( new Rectangle( Toolkit.getDefaultToolkit().getScreenSize()));&#xD;
+&#xD;
+		if ( scale == 0)&#xD;
+			scale = 1;&#xD;
+		&#xD;
+		if ( scale &lt; 0 || scale > 1)&#xD;
+		{&#xD;
+			throw new IllegalArgumentException( &quot;The scale value should be in the range (0,1].&quot;);&#xD;
+		}&#xD;
+		this.scale = scale;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUmuU3X2EemU-LNf4Tv9xw" name="writeObject" specification="_KUQwEnX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUmuVHX2EemU-LNf4Tv9xw" name="out" type="_KT_DQXX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>try&#xD;
+		{&#xD;
+			out.defaultWriteObject();&#xD;
+			ImageIO.write( img, &quot;png&quot;, out);&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUmuVXX2EemU-LNf4Tv9xw" name="readObject" specification="_KURXIXX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUmuVnX2EemU-LNf4Tv9xw" name="in" type="_KT91I3X2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>try&#xD;
+		{&#xD;
+			in.defaultReadObject();&#xD;
+			img = ImageIO.read( in);&#xD;
+		}&#xD;
+		catch (IOException | ClassNotFoundException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUmuV3X2EemU-LNf4Tv9xw" name="serialize" specification="_KSGz8HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUmuWHX2EemU-LNf4Tv9xw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KUmuWXX2EemU-LNf4Tv9xw" value="*"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>byte[] result;&#xD;
+		ByteArrayOutputStream baos;&#xD;
+		ObjectOutputStream oos;&#xD;
+&#xD;
+		try&#xD;
+		{&#xD;
+			baos = new ByteArrayOutputStream();&#xD;
+			oos = new ObjectOutputStream( baos);&#xD;
+&#xD;
+			oos.writeObject( this);&#xD;
+			oos.flush();&#xD;
+			result = baos.toByteArray();&#xD;
+&#xD;
+			oos.close();&#xD;
+			baos.close();&#xD;
+&#xD;
+			return result;&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+			return null;&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVYHX2EemU-LNf4Tv9xw" name="deserialize" specification="_KSICEHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUnVYXX2EemU-LNf4Tv9xw" name="data">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KUnVYnX2EemU-LNf4Tv9xw" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUnVY3X2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>Screenshot result;&#xD;
+		ByteArrayInputStream bais;&#xD;
+		ObjectInputStream ois;&#xD;
+&#xD;
+		try&#xD;
+		{&#xD;
+			bais = new ByteArrayInputStream( data);&#xD;
+			ois = new ObjectInputStream( bais);&#xD;
+&#xD;
+			result = (Screenshot) ois.readObject();&#xD;
+&#xD;
+			ois.close();&#xD;
+			bais.close();&#xD;
+&#xD;
+			return result;&#xD;
+		}&#xD;
+		catch (IOException | ClassNotFoundException e)&#xD;
+		{&#xD;
+			return null;&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVZHX2EemU-LNf4Tv9xw" name="getSize" specification="_KSJ3QHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUnVZXX2EemU-LNf4Tv9xw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>return serialize().length;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVZnX2EemU-LNf4Tv9xw" name="clone" specification="_KSKeUXX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUnVZ3X2EemU-LNf4Tv9xw" type="_KURXI3X2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>try&#xD;
+		{&#xD;
+			Screenshot s;&#xD;
+			s = (Screenshot) super.clone();&#xD;
+&#xD;
+			ColorModel cm = img.getColorModel();&#xD;
+			s.img = new BufferedImage( cm, img.copyData( null), cm.isAlphaPremultiplied(), null);&#xD;
+&#xD;
+			return s;&#xD;
+		}&#xD;
+		catch (CloneNotSupportedException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+			return null;&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVaHX2EemU-LNf4Tv9xw" name="updateScale" specification="_KSMTgHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>double l, r, m;&#xD;
+		Screenshot tmp = (Screenshot) this.clone();&#xD;
+		tmp.scale( scale);&#xD;
+		if ( tmp.getSize() &lt;= MAX_SIZE)&#xD;
+		{&#xD;
+			return;&#xD;
+		}&#xD;
+&#xD;
+		l = 0;&#xD;
+		r = scale - 0.01;&#xD;
+		while ( r - l > 0.01)&#xD;
+		{&#xD;
+			m = (l + r) / 2;&#xD;
+			tmp = (Screenshot) this.clone();&#xD;
+			tmp.scale( m);&#xD;
+			if ( tmp.getSize() > MAX_SIZE)&#xD;
+				r = m;&#xD;
+			else&#xD;
+				l = m;&#xD;
+		}&#xD;
+		scale = l;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVaXX2EemU-LNf4Tv9xw" name="prepareForSending" specification="_KSM6kHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>updateScale();&#xD;
+		scale( scale);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUnVanX2EemU-LNf4Tv9xw" name="scale" specification="_KSNhoHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUnVa3X2EemU-LNf4Tv9xw" name="scale">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>int newWidth = (int) (img.getWidth() * scale);&#xD;
+		int newHeight = (int) (img.getHeight() * scale);&#xD;
+		scale( newWidth, newHeight);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUn8cHX2EemU-LNf4Tv9xw" name="scale" specification="_KSOIsHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUn8cXX2EemU-LNf4Tv9xw" name="newWidth">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUn8cnX2EemU-LNf4Tv9xw" name="newHeight">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>Image result = img.getScaledInstance( newWidth, newHeight, Image.SCALE_SMOOTH);&#xD;
+		img = new BufferedImage( newWidth, newHeight, BufferedImage.TYPE_3BYTE_BGR);&#xD;
+&#xD;
+		// Converting Image to BufferedImage&#xD;
+		Graphics2D g2d = img.createGraphics();&#xD;
+		g2d.drawImage( result, 0, 0, null);&#xD;
+		g2d.dispose();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUn8c3X2EemU-LNf4Tv9xw" name="getImage" specification="_KSP94HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUn8dHX2EemU-LNf4Tv9xw" type="_KT8nA3X2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>return img;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KSDJkHX2EemU-LNf4Tv9xw" name="Screenshot" method="_KUmHQHX2EemU-LNf4Tv9xw" raisedException="_KT6KwHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSDwoXX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSDwonX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUsN53X2EemU-LNf4Tv9xw">
+              <body>Creates a screenshot for sending. The given width will be used to determine&#xD;
+	 * the scaling. The scale may be reduced if this scaling leads to a byte size&#xD;
+	 * bigger than {@value #MAX_SIZE}&#xD;
+	 * @param scale the intended scaling during sending&#xD;
+	 * @throws AWTException if the screen cannot be captured</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSDwoHX2EemU-LNf4Tv9xw" name="width">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSDwo3X2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSEXsHX2EemU-LNf4Tv9xw" name="Screenshot" method="_KUmuUHX2EemU-LNf4Tv9xw" raisedException="_KT6KwHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSFl0XX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSFl0nX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUsN6HX2EemU-LNf4Tv9xw">
+              <body>Creates a screenshot for sending. The scale may be reduced if this scaling&#xD;
+	 * leads to a byte size bigger than {@value #MAX_SIZE}&#xD;
+	 * @param scale the intended scaling during sending&#xD;
+	 * @throws AWTException if the screen cannot be captured</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSFl0HX2EemU-LNf4Tv9xw" name="scale">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSFl03X2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSGz8HX2EemU-LNf4Tv9xw" name="serialize" method="_KUmuV3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN63X2EemU-LNf4Tv9xw">
+              <body>Serializes the Screenshot into byte array&#xD;
+	 * @return The byte array denoting this object</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSHbAHX2EemU-LNf4Tv9xw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KSHbAXX2EemU-LNf4Tv9xw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSICEHX2EemU-LNf4Tv9xw" name="deserialize" isStatic="true" method="_KUnVYHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs08HX2EemU-LNf4Tv9xw">
+              <body>Deserializes the Screenshot from byte array&#xD;
+	 * @param data The byte array containing serialization of a Screenshot&#xD;
+	 * @return The deserialized screenshot</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSIpIHX2EemU-LNf4Tv9xw" name="data">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KSIpIXX2EemU-LNf4Tv9xw" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUA4cHX2EemU-LNf4Tv9xw" type="_KSAGQHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSJ3QHX2EemU-LNf4Tv9xw" name="getSize" method="_KUnVZHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs08XX2EemU-LNf4Tv9xw">
+              <body>Returns the byte size of serialized current screenshot&#xD;
+	 * @return The byte size of serialized current screenshot</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSKeUHX2EemU-LNf4Tv9xw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSKeUXX2EemU-LNf4Tv9xw" name="clone" method="_KUnVZnX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUSlQHX2EemU-LNf4Tv9xw" type="_KURXI3X2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSMTgHX2EemU-LNf4Tv9xw" name="updateScale" visibility="private" method="_KUnVaHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs08nX2EemU-LNf4Tv9xw">
+              <body>Updates the value of scale to the biggest possible scaling that does not&#xD;
+	 * exceed UDP limits. This method uses Binary Search algorithm to work&#xD;
+	 * efficiently</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSM6kHX2EemU-LNf4Tv9xw" name="prepareForSending" method="_KUnVaXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs083X2EemU-LNf4Tv9xw">
+              <body>Prepares the screenshot for sending over UDP. Scales the image to specified&#xD;
+	 * scale or the maximum possible scaling. The original screenshot will be lost&#xD;
+	 * and replaced with the scaled one&lt;br>&#xD;
+	 * &lt;strong>Note:&lt;/strong> Always call before sending</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSNhoHX2EemU-LNf4Tv9xw" name="scale" method="_KUnVanX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs09HX2EemU-LNf4Tv9xw">
+              <body>Scales the screenshot&#xD;
+	 * @param scale A double value that will be multiplied with the current&#xD;
+	 *              dimensions</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSNhoXX2EemU-LNf4Tv9xw" name="scale">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSOIsHX2EemU-LNf4Tv9xw" name="scale" method="_KUn8cHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs09XX2EemU-LNf4Tv9xw">
+              <body>Scales the screenshot&#xD;
+	 * @param newWidth  The width of the resulting screenshot&#xD;
+	 * @param newHeight The height of the resulting screenshot</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSOvwHX2EemU-LNf4Tv9xw" name="newWidth">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSOvwXX2EemU-LNf4Tv9xw" name="newHeight">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSP94HX2EemU-LNf4Tv9xw" name="getImage" method="_KUn8c3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs09nX2EemU-LNf4Tv9xw">
+              <body>Returns the screenshot itself&#xD;
+	 * @return The screenshot itself</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUSlQXX2EemU-LNf4Tv9xw" type="_KT8nA3X2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUQwEnX2EemU-LNf4Tv9xw" name="writeObject" visibility="private" method="_KUmuU3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN6XX2EemU-LNf4Tv9xw">
+              <body>Writes object to ObjectOutputStream during serialization&#xD;
+	 * @param out The output stream</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KURXIHX2EemU-LNf4Tv9xw" name="out" type="_KT_DQXX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KURXIXX2EemU-LNf4Tv9xw" name="readObject" visibility="private" method="_KUmuVXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUsN6nX2EemU-LNf4Tv9xw">
+              <body>Reads object from ObjectInputStream during deserialization&#xD;
+	 * @param in The input stream</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KURXInX2EemU-LNf4Tv9xw" name="in" type="_KT91I3X2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KSVdcHX2EemU-LNf4Tv9xw" name="Server" isAbstract="true">
+          <eAnnotations xmi:id="_KSWrkHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KSWrkXX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KSWrknX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUs093X2EemU-LNf4Tv9xw">
+            <body>A server containing TCP and UDP servers&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUdkYHX2EemU-LNf4Tv9xw" name="TERMINATION" isLeaf="true" isStatic="true" isReadOnly="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_KUdkYXX2EemU-LNf4Tv9xw" value="&quot;###&quot;"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUdkYnX2EemU-LNf4Tv9xw" name="TCP_PORT" isLeaf="true" isStatic="true" isReadOnly="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_KUdkY3X2EemU-LNf4Tv9xw" value="4455"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUdkZHX2EemU-LNf4Tv9xw" name="UDP_PORT" isLeaf="true" isStatic="true" isReadOnly="true">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_KUdkZXX2EemU-LNf4Tv9xw" value="4456"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUeLcHX2EemU-LNf4Tv9xw" name="tcp" visibility="private" type="_KSo_cHX2EemU-LNf4Tv9xw" association="_KUzioHX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUeLcnX2EemU-LNf4Tv9xw" name="udp" visibility="private" type="_KS2a0HX2EemU-LNf4Tv9xw" association="_KUzio3X2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUn8dXX2EemU-LNf4Tv9xw" name="Server" specification="_KSX5sHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUn8dnX2EemU-LNf4Tv9xw" type="_KSVdcHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>Server ths = this;&#xD;
+&#xD;
+		tcp = new TcpServer( TCP_PORT) {&#xD;
+			@Override&#xD;
+			public void connectionEstablished( Socket socket)&#xD;
+			{&#xD;
+				ths.connectionEstablished( socket);&#xD;
+			}&#xD;
+&#xD;
+			@Override&#xD;
+			public void connectionTerminated( Socket socket)&#xD;
+			{&#xD;
+				ths.connectionTerminated( socket);&#xD;
+			}&#xD;
+&#xD;
+			@Override&#xD;
+			public void received( String message, Socket socket)&#xD;
+			{&#xD;
+				ths.messageReceived( message, socket);&#xD;
+			}&#xD;
+		};&#xD;
+&#xD;
+		udp = new UdpServer( UDP_PORT) {&#xD;
+			public void screenshotReceived( Screenshot img, DatagramPacket packet)&#xD;
+			{&#xD;
+				ths.screenshotReceived( img, packet);&#xD;
+			}&#xD;
+		};&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUojgHX2EemU-LNf4Tv9xw" name="sendMessageToAll" specification="_KSaV8HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUojgXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>msg += TERMINATION;&#xD;
+		tcp.sendMessageToAll( msg);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUojgnX2EemU-LNf4Tv9xw" name="sendMessage" specification="_KUUacHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUojg3X2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUojhHX2EemU-LNf4Tv9xw" name="address" type="_KUDUsHX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>msg += TERMINATION;&#xD;
+		tcp.sendMessage( msg, address);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUojhXX2EemU-LNf4Tv9xw" name="sendMessage" specification="_KSbkEHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUojhnX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUojh3X2EemU-LNf4Tv9xw" name="address">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>msg += TERMINATION;&#xD;
+		tcp.sendMessage( msg, address);&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUojiHX2EemU-LNf4Tv9xw" name="close" specification="_KScyMHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>udp.close();&#xD;
+		tcp.close();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KSX5sHX2EemU-LNf4Tv9xw" name="Server" method="_KUn8dXX2EemU-LNf4Tv9xw" raisedException="_KT3ugHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSYgwHX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSYgwXX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUs0-HX2EemU-LNf4Tv9xw">
+              <body>Starts a TCP and UDP server&#xD;
+	 * @throws IOException if an I/O error occurs when opening the socket, if the&#xD;
+	 *                     socket could not be opened, or the socket could not bind&#xD;
+	 *                     to the specified local port.</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSYgwnX2EemU-LNf4Tv9xw" type="_KSVdcHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSaV8HX2EemU-LNf4Tv9xw" name="sendMessageToAll" method="_KUojgHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUs0_XX2EemU-LNf4Tv9xw">
+              <body>Sends a message to all connected clients&#xD;
+	 * @param msg The message to be sent</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSa9AHX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSbkEHX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUojhXX2EemU-LNf4Tv9xw" raisedException="_KT4VkXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcAXX2EemU-LNf4Tv9xw">
+              <body>Sends a message to the specified client&#xD;
+	 * @param msg     The message to be sent&#xD;
+	 * @param address The IP of the client&#xD;
+	 * @throws UnknownHostException if no IP address for the host could be found, or&#xD;
+	 *                              if a scope_id was specified for a global IPv6&#xD;
+	 *                              address</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSbkEXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KScLIHX2EemU-LNf4Tv9xw" name="address">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KScyMHX2EemU-LNf4Tv9xw" name="close" method="_KUojiHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcAnX2EemU-LNf4Tv9xw">
+              <body>Closes the server</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUTMUHX2EemU-LNf4Tv9xw" name="connectionEstablished" isAbstract="true">
+            <ownedComment xmi:id="_KUs0-XX2EemU-LNf4Tv9xw">
+              <body>Handles the new opened connection&#xD;
+	 * @param socket The new socket</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUTMUXX2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUTMUnX2EemU-LNf4Tv9xw" name="connectionTerminated" isAbstract="true">
+            <ownedComment xmi:id="_KUs0-nX2EemU-LNf4Tv9xw">
+              <body>Handles the closed connection&#xD;
+	 * @param socket the socket that has been closed</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUTMU3X2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUTzYHX2EemU-LNf4Tv9xw" name="messageReceived" isAbstract="true">
+            <ownedComment xmi:id="_KUs0-3X2EemU-LNf4Tv9xw">
+              <body>Processes the received message&#xD;
+	 * @param msg    the contents of the message&#xD;
+	 * @param socket the connection that received the message from</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUTzYXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUTzYnX2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUTzY3X2EemU-LNf4Tv9xw" name="screenshotReceived" isAbstract="true">
+            <ownedComment xmi:id="_KUs0_HX2EemU-LNf4Tv9xw">
+              <body>Processes the received Screenshot&#xD;
+	 * @param img    the received Screenshot via packet&#xD;
+	 * @param packet The Datagram Packet</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUTzZHX2EemU-LNf4Tv9xw" name="img" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+            <ownedParameter xmi:id="_KUTzZXX2EemU-LNf4Tv9xw" name="packet" type="_KUCGkHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUUacHX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUojgnX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcAHX2EemU-LNf4Tv9xw">
+              <body>Sends a message to the specified client&#xD;
+	 * @param msg     The message to be sent&#xD;
+	 * @param address The InetAddress of the client</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUUacXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUUacnX2EemU-LNf4Tv9xw" name="address" type="_KUDUsHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KSgckHX2EemU-LNf4Tv9xw" name="TcpClient" isAbstract="true">
+          <eAnnotations xmi:id="_KSiRwHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KSiRwXX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KSiRwnX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUtcA3X2EemU-LNf4Tv9xw">
+            <body>Simple TCP client for sending and receiving messages&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUeygXX2EemU-LNf4Tv9xw" name="socket" visibility="private" type="_KUDUsnX2EemU-LNf4Tv9xw" association="_KU0JsXX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUfZkXX2EemU-LNf4Tv9xw" name="msgListenerThread" visibility="private" type="_KUVokHX2EemU-LNf4Tv9xw" association="_KU0wwXX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpKkHX2EemU-LNf4Tv9xw" name="TcpClient" specification="_KSjf4HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUpKkXX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUpKknX2EemU-LNf4Tv9xw" name="serverPort">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUpKk3X2EemU-LNf4Tv9xw" type="_KSgckHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>socket = new Socket( serverAddress, serverPort);&#xD;
+		msgListenerThread = new Thread( new Runnable() {&#xD;
+			public void run()&#xD;
+			{&#xD;
+				listenForMessages();&#xD;
+			}&#xD;
+		});&#xD;
+		msgListenerThread.start();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpKlHX2EemU-LNf4Tv9xw" name="sendMessage" specification="_KSl8IXX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUpKlXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>msg += Server.TERMINATION;&#xD;
+		byte[] data = msg.getBytes();&#xD;
+		try&#xD;
+		{&#xD;
+			socket.getOutputStream().write( data);&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpxoHX2EemU-LNf4Tv9xw" name="listenForMessages" specification="_KSmjMXX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>String msg;&#xD;
+		InputStream stream;&#xD;
+&#xD;
+		try&#xD;
+		{&#xD;
+			stream = socket.getInputStream();&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			return;&#xD;
+		}&#xD;
+&#xD;
+		while ( true)&#xD;
+		{&#xD;
+			msg = &quot;&quot;;&#xD;
+			while ( !msg.contains( Server.TERMINATION))&#xD;
+			{&#xD;
+				try&#xD;
+				{&#xD;
+					msg += (char) stream.read();&#xD;
+				}&#xD;
+				catch (IOException e)&#xD;
+				{&#xD;
+					return;&#xD;
+				}&#xD;
+			}&#xD;
+&#xD;
+			received( msg.substring( 0, msg.length() - 3));&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpxoXX2EemU-LNf4Tv9xw" name="close" specification="_KSmjMnX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>msgListenerThread.interrupt();&#xD;
+		try&#xD;
+		{&#xD;
+			socket.close();&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KSjf4HX2EemU-LNf4Tv9xw" name="TcpClient" method="_KUpKkHX2EemU-LNf4Tv9xw" raisedException="_KT4VkXX2EemU-LNf4Tv9xw _KT3ugHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSkuAHX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSkuAXX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUtcBHX2EemU-LNf4Tv9xw">
+              <body>Creates a TCP client and connects it to the specified server&#xD;
+	 * @param serverAddress The IP address of the server&#xD;
+	 * @param serverPort    The port that the server is listening&#xD;
+	 * @throws IOException          if an I/O error occurs when creating the socket.&#xD;
+	 * @throws UnknownHostException if no IP address for the host could be found, or&#xD;
+	 *                              if a scope_id was specified for a global IPv6&#xD;
+	 *                              address</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSkG8HX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSkG8XX2EemU-LNf4Tv9xw" name="serverPort">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSkuAnX2EemU-LNf4Tv9xw" type="_KSgckHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSlVEHX2EemU-LNf4Tv9xw" name="received" isAbstract="true">
+            <ownedComment xmi:id="_KUtcBXX2EemU-LNf4Tv9xw">
+              <body>Handles the received message&#xD;
+	 * @param msg The message received</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSl8IHX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSl8IXX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUpKlHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcBnX2EemU-LNf4Tv9xw">
+              <body>Sends a message to the server&#xD;
+	 * @param msg The message to be sent</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSmjMHX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSmjMXX2EemU-LNf4Tv9xw" name="listenForMessages" visibility="private" method="_KUpxoHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcB3X2EemU-LNf4Tv9xw">
+              <body>Continuously listens for any message on the socket. Calls received(message)&#xD;
+	 * once a message arrives. &lt;br>&#xD;
+	 * Warning: This method blocks until the socket is closed or some error occurs</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSmjMnX2EemU-LNf4Tv9xw" name="close" method="_KUpxoXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUtcCHX2EemU-LNf4Tv9xw">
+              <body>Closes the TCP connection</body>
+            </ownedComment>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KSo_cHX2EemU-LNf4Tv9xw" name="TcpServer" isAbstract="true">
+          <eAnnotations xmi:id="_KSo_cXX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KSo_cnX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KSo_c3X2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUtcCXX2EemU-LNf4Tv9xw">
+            <body>Simple TCP Server for sending and receiving messages&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUfZk3X2EemU-LNf4Tv9xw" name="server" visibility="private" type="_KUG_EHX2EemU-LNf4Tv9xw" association="_KU1X0XX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUgAoXX2EemU-LNf4Tv9xw" name="sockets" visibility="private" type="_KUHmIHX2EemU-LNf4Tv9xw" association="_KU1-4XX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUgnsXX2EemU-LNf4Tv9xw" name="msgListenerThreads" visibility="private" type="_KUHmIHX2EemU-LNf4Tv9xw" association="_KU2l8XX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUh10HX2EemU-LNf4Tv9xw" name="isBlocked" visibility="private">
+            <eAnnotations xmi:id="_KUh10XX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KUh10nX2EemU-LNf4Tv9xw" key="volatile"/>
+            </eAnnotations>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUh11HX2EemU-LNf4Tv9xw" name="connectionListenerThread" visibility="private" type="_KUVokHX2EemU-LNf4Tv9xw" association="_KU3NAXX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpxonX2EemU-LNf4Tv9xw" name="TcpServer" specification="_KSq0oHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUpxo3X2EemU-LNf4Tv9xw" name="port">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUpxpHX2EemU-LNf4Tv9xw" type="_KSo_cHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>isBlocked = false;&#xD;
+		sockets = new ArrayList&lt;>();&#xD;
+		msgListenerThreads = new ArrayList&lt;>();&#xD;
+		server = new ServerSocket( port);&#xD;
+		// Listens for connections&#xD;
+		connectionListenerThread = new Thread( new Runnable() {&#xD;
+			@Override&#xD;
+			public void run()&#xD;
+			{&#xD;
+				listenForConnections();&#xD;
+			}&#xD;
+		});&#xD;
+		connectionListenerThread.start();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpxpXX2EemU-LNf4Tv9xw" name="listenForConnections" specification="_KSsCwHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>while ( true)&#xD;
+		{&#xD;
+			Socket socket;&#xD;
+			try&#xD;
+			{&#xD;
+				socket = server.accept();&#xD;
+			}&#xD;
+			catch (IOException e)&#xD;
+			{&#xD;
+				break;&#xD;
+			}&#xD;
+&#xD;
+			// Wait until the work on sockets finishes&#xD;
+			while ( isBlocked)&#xD;
+			{&#xD;
+				try&#xD;
+				{&#xD;
+					Thread.sleep( 100);&#xD;
+				}&#xD;
+				catch (InterruptedException e)&#xD;
+				{&#xD;
+					e.printStackTrace();&#xD;
+					Thread.currentThread().interrupt();&#xD;
+				}&#xD;
+			}&#xD;
+			isBlocked = true;&#xD;
+			sockets.add( socket);&#xD;
+			isBlocked = false;&#xD;
+			connectionEstablished( socket);&#xD;
+&#xD;
+			// Listens for messages&#xD;
+			msgListenerThreads.add( new Thread( new Runnable() {&#xD;
+				public void run()&#xD;
+				{&#xD;
+					listenForMessages( socket);&#xD;
+				}&#xD;
+			}));&#xD;
+			msgListenerThreads.get( msgListenerThreads.size() - 1).start();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUpxpnX2EemU-LNf4Tv9xw" name="listenForMessages" specification="_KUYE0HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUpxp3X2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>String message = &quot;&quot;;&#xD;
+		boolean isAlive = true;&#xD;
+&#xD;
+		while ( isAlive)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				message += (char) socket.getInputStream().read();&#xD;
+			}&#xD;
+			catch (IOException e)&#xD;
+			{&#xD;
+				isAlive = false;&#xD;
+			}&#xD;
+&#xD;
+			if ( message.contains( Server.TERMINATION))&#xD;
+			{&#xD;
+				received( message.substring( 0, message.length() - 3), socket);&#xD;
+				message = &quot;&quot;;&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		connectionTerminated( socket);&#xD;
+		while ( isBlocked)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				Thread.sleep( 100);&#xD;
+			}&#xD;
+			catch (InterruptedException e)&#xD;
+			{&#xD;
+				e.printStackTrace();&#xD;
+				Thread.currentThread().interrupt();&#xD;
+			}&#xD;
+		}&#xD;
+		isBlocked = true;&#xD;
+		sockets.remove( socket);&#xD;
+		isBlocked = false;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUqYsHX2EemU-LNf4Tv9xw" name="sendMessageToAll" specification="_KStQ4HX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUqYsXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>ArrayList&lt;Socket> erase = new ArrayList&lt;>();&#xD;
+&#xD;
+		byte[] data = msg.getBytes();&#xD;
+		for ( Socket socket : sockets)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				socket.getOutputStream().write( data);&#xD;
+			}&#xD;
+			catch (IOException e)&#xD;
+			{&#xD;
+				connectionTerminated( socket);&#xD;
+				erase.add( socket);&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		while ( isBlocked)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				Thread.sleep( 100);&#xD;
+			}&#xD;
+			catch (InterruptedException e)&#xD;
+			{&#xD;
+				e.printStackTrace();&#xD;
+				Thread.currentThread().interrupt();&#xD;
+			}&#xD;
+		}&#xD;
+		isBlocked = true;&#xD;
+		sockets.removeAll( erase);&#xD;
+		isBlocked = false;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUqYsnX2EemU-LNf4Tv9xw" name="sendMessage" specification="_KUYE0nX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUqYs3X2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUqYtHX2EemU-LNf4Tv9xw" name="address" type="_KUDUsHX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>ArrayList&lt;Socket> erase = new ArrayList&lt;>();&#xD;
+&#xD;
+		byte[] data = msg.getBytes();&#xD;
+		for ( Socket socket : sockets)&#xD;
+		{&#xD;
+			if ( address.equals( socket.getInetAddress()))&#xD;
+			{&#xD;
+				try&#xD;
+				{&#xD;
+					socket.getOutputStream().write( data);&#xD;
+				}&#xD;
+				catch (IOException e)&#xD;
+				{&#xD;
+					e.printStackTrace();&#xD;
+					connectionTerminated( socket);&#xD;
+					erase.add( socket);&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		while ( isBlocked)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				Thread.sleep( 100);&#xD;
+			}&#xD;
+			catch (InterruptedException e)&#xD;
+			{&#xD;
+				e.printStackTrace();&#xD;
+				Thread.currentThread().interrupt();&#xD;
+			}&#xD;
+		}&#xD;
+		isBlocked = true;&#xD;
+		sockets.removeAll( erase);&#xD;
+		isBlocked = false;&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUqYtXX2EemU-LNf4Tv9xw" name="sendMessage" specification="_KSufAHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUqYtnX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUqYt3X2EemU-LNf4Tv9xw" name="address">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <language>java</language>
+            <body>sendMessage( msg, InetAddress.getByName( address));&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUqYuHX2EemU-LNf4Tv9xw" name="close" specification="_KSvGEXX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>// Closing listeners&#xD;
+		for ( Thread msgListenerThread : msgListenerThreads)&#xD;
+		{&#xD;
+			msgListenerThread.interrupt();&#xD;
+		}&#xD;
+		connectionListenerThread.interrupt();&#xD;
+&#xD;
+		// Closing connections&#xD;
+		for ( Socket socket : sockets)&#xD;
+		{&#xD;
+			try&#xD;
+			{&#xD;
+				socket.close();&#xD;
+			}&#xD;
+			catch (IOException e)&#xD;
+			{&#xD;
+				e.printStackTrace();&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		// Closing the server&#xD;
+		try&#xD;
+		{&#xD;
+			server.close();&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KSq0oHX2EemU-LNf4Tv9xw" name="TcpServer" method="_KUpxonX2EemU-LNf4Tv9xw" raisedException="_KT3ugHX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSq0onX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSq0o3X2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUtcCnX2EemU-LNf4Tv9xw">
+              <body>Opens a new socket for receiving TCP connections&#xD;
+	 * @param port The port to listen on&#xD;
+	 * @throws IOException if an I/O error occurs when opening the socket.</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSq0oXX2EemU-LNf4Tv9xw" name="port">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSq0pHX2EemU-LNf4Tv9xw" type="_KSo_cHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSsCwHX2EemU-LNf4Tv9xw" name="listenForConnections" visibility="private" method="_KUpxpXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDEHX2EemU-LNf4Tv9xw">
+              <body>Listens for connections and creates a new socket for them</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KStQ4HX2EemU-LNf4Tv9xw" name="sendMessageToAll" method="_KUqYsHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDEnX2EemU-LNf4Tv9xw">
+              <body>Sends a message over all available connections&#xD;
+	 * @param msg The message to send</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KStQ4XX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSufAHX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUqYtXX2EemU-LNf4Tv9xw" raisedException="_KT4VkXX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDFHX2EemU-LNf4Tv9xw">
+              <body>Send a message to the specified address&#xD;
+	 * @param msg     The message to send&#xD;
+	 * @param address The address of the intended receiver&#xD;
+	 * @throws UnknownHostException if no IP address for the host could be found, or&#xD;
+	 *                              if a scope_id was specified for a global IPv6&#xD;
+	 *                              address</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSufAXX2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSvGEHX2EemU-LNf4Tv9xw" name="address">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KSvGEXX2EemU-LNf4Tv9xw" name="close" method="_KUqYuHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDFXX2EemU-LNf4Tv9xw">
+              <body>Closes the TCP server</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUW2sHX2EemU-LNf4Tv9xw" name="connectionEstablished" isAbstract="true">
+            <ownedComment xmi:id="_KUtcC3X2EemU-LNf4Tv9xw">
+              <body>Handles the new opened connection&#xD;
+	 * @param socket The new socket</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUW2sXX2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUW2snX2EemU-LNf4Tv9xw" name="connectionTerminated" isAbstract="true">
+            <ownedComment xmi:id="_KUtcDHX2EemU-LNf4Tv9xw">
+              <body>Handles the closed connection&#xD;
+	 * @param socket The socket that was closed</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUW2s3X2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUW2tHX2EemU-LNf4Tv9xw" name="received" isAbstract="true">
+            <ownedComment xmi:id="_KUtcDXX2EemU-LNf4Tv9xw">
+              <body>Processes the incoming message&#xD;
+	 * @param message The message received&#xD;
+	 * @param socket  The socket that the message received from</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUW2tXX2EemU-LNf4Tv9xw" name="message">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUW2tnX2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUYE0HX2EemU-LNf4Tv9xw" name="listenForMessages" visibility="private" method="_KUpxpnX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDEXX2EemU-LNf4Tv9xw">
+              <body>Listens for incoming messages from the specified socket&#xD;
+	 * @param socket The socket to listen on</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUYE0XX2EemU-LNf4Tv9xw" name="socket" type="_KUDUsnX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUYE0nX2EemU-LNf4Tv9xw" name="sendMessage" method="_KUqYsnX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDE3X2EemU-LNf4Tv9xw">
+              <body>Send a message to the specified address&#xD;
+	 * @param msg     The message to send&#xD;
+	 * @param address The address of the intended receiver</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUYE03X2EemU-LNf4Tv9xw" name="msg">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUYE1HX2EemU-LNf4Tv9xw" name="address" type="_KUDUsHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KSywcHX2EemU-LNf4Tv9xw" name="UdpClient">
+          <eAnnotations xmi:id="_KSzXgHX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KSzXgXX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KSzXgnX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUuDFnX2EemU-LNf4Tv9xw">
+            <body>Simple UDP client for sending BufferedImages&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUjD8HX2EemU-LNf4Tv9xw" name="serverAddress" visibility="private" type="_KUDUsHX2EemU-LNf4Tv9xw" association="_KU30EXX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUjD8nX2EemU-LNf4Tv9xw" name="serverPort" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_KUjrAHX2EemU-LNf4Tv9xw" name="socket" visibility="private" type="_KUI0QHX2EemU-LNf4Tv9xw" association="_KU4bIXX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_wHX2EemU-LNf4Tv9xw" name="UdpClient" specification="_KSz-kHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUq_wXX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUq_wnX2EemU-LNf4Tv9xw" name="serverPort">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUq_w3X2EemU-LNf4Tv9xw" type="_KSywcHX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>this.serverPort = serverPort;&#xD;
+		this.serverAddress = InetAddress.getByName( serverAddress);&#xD;
+		socket = new DatagramSocket();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_xHX2EemU-LNf4Tv9xw" name="sendScreenshot" specification="_KULQgHX2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUq_xXX2EemU-LNf4Tv9xw" name="screenshot" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+            <language>java</language>
+            <body>screenshot.prepareForSending();&#xD;
+		byte[] data = screenshot.serialize();&#xD;
+&#xD;
+		DatagramPacket packet = new DatagramPacket( data, data.length, serverAddress, serverPort);&#xD;
+		try&#xD;
+		{&#xD;
+			socket.send( packet);&#xD;
+		}&#xD;
+		catch (IOException e)&#xD;
+		{&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_xnX2EemU-LNf4Tv9xw" name="close" specification="_KS1MsHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>socket.close();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KSz-kHX2EemU-LNf4Tv9xw" name="UdpClient" method="_KUq_wHX2EemU-LNf4Tv9xw" raisedException="_KUKCYXX2EemU-LNf4Tv9xw _KT4VkXX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KSz-k3X2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KSz-lHX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUuDF3X2EemU-LNf4Tv9xw">
+              <body>Creates a UDP client and associates it with the specified server&#xD;
+	 * @param serverAddress The IP address of the server&#xD;
+	 * @param serverPort    The port that the server is listening&#xD;
+	 * @throws UnknownHostException if no IP address for the server could be found,&#xD;
+	 *                              or if a scope_id was specified for a global IPv6&#xD;
+	 *                              address&#xD;
+	 * @throws SocketException      if the socket could not be opened, or the socket&#xD;
+	 *                              could not bind to the specified local port.</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KSz-kXX2EemU-LNf4Tv9xw" name="serverAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSz-knX2EemU-LNf4Tv9xw" name="serverPort">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KSz-lXX2EemU-LNf4Tv9xw" type="_KSywcHX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KS1MsHX2EemU-LNf4Tv9xw" name="close" method="_KUq_xnX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDGXX2EemU-LNf4Tv9xw">
+              <body>Closes the UDP socket</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KULQgHX2EemU-LNf4Tv9xw" name="sendScreenshot" method="_KUq_xHX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuDGHX2EemU-LNf4Tv9xw">
+              <body>Sends the Screenshot to the server&#xD;
+	 * @param screenshot The Screenshot to be sent</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KULQgXX2EemU-LNf4Tv9xw" name="screenshot" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KS2a0HX2EemU-LNf4Tv9xw" name="UdpServer" isAbstract="true">
+          <eAnnotations xmi:id="_KS3B4HX2EemU-LNf4Tv9xw" source="http://ns.yatta.de/umllab">
+            <contents xmi:type="ecore:EAnnotation" xmi:id="_KS3B4XX2EemU-LNf4Tv9xw" source="codegen">
+              <details xmi:id="_KS3B4nX2EemU-LNf4Tv9xw" key="codegenDirectory" value="/nito/src"/>
+            </contents>
+          </eAnnotations>
+          <ownedComment xmi:id="_KUuDGnX2EemU-LNf4Tv9xw">
+            <body>Simple UDP Server for receiving images&#xD;
+@author Ziya Mukhtarov&#xD;
+@version 01/05/2019</body>
+          </ownedComment>
+          <ownedAttribute xmi:id="_KUjrAnX2EemU-LNf4Tv9xw" name="socket" visibility="private" type="_KUI0QHX2EemU-LNf4Tv9xw" association="_KU5CMXX2EemU-LNf4Tv9xw"/>
+          <ownedAttribute xmi:id="_KUkSEXX2EemU-LNf4Tv9xw" name="listenerThread" visibility="private" type="_KUVokHX2EemU-LNf4Tv9xw" association="_KU5pQXX2EemU-LNf4Tv9xw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_x3X2EemU-LNf4Tv9xw" name="UdpServer" specification="_KS3B43X2EemU-LNf4Tv9xw">
+            <ownedParameter xmi:id="_KUq_yHX2EemU-LNf4Tv9xw" name="port">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KUq_yXX2EemU-LNf4Tv9xw" type="_KS2a0HX2EemU-LNf4Tv9xw" direction="return"/>
+            <language>java</language>
+            <body>socket = new DatagramSocket( port);&#xD;
+&#xD;
+		listenerThread = new Thread( new Runnable() {&#xD;
+			public void run()&#xD;
+			{&#xD;
+				readScreenshot();&#xD;
+			}&#xD;
+		});&#xD;
+		listenerThread.start();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_ynX2EemU-LNf4Tv9xw" name="readScreenshot" specification="_KS3o83X2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>while ( true)&#xD;
+		{&#xD;
+			byte[] buf = new byte[Screenshot.MAX_SIZE + 1];&#xD;
+			DatagramPacket packet = new DatagramPacket( buf, buf.length);&#xD;
+			try&#xD;
+			{&#xD;
+				socket.receive( packet);&#xD;
+			}&#xD;
+			catch (IOException e)&#xD;
+			{&#xD;
+				break;&#xD;
+			}&#xD;
+&#xD;
+			screenshotReceived( Screenshot.deserialize( packet.getData()), packet);&#xD;
+		}&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUq_y3X2EemU-LNf4Tv9xw" name="close" specification="_KS4QAHX2EemU-LNf4Tv9xw">
+            <language>java</language>
+            <body>listenerThread.interrupt();&#xD;
+		socket.close();&#xD;
+	</body>
+          </ownedBehavior>
+          <ownedOperation xmi:id="_KS3B43X2EemU-LNf4Tv9xw" name="UdpServer" method="_KUq_x3X2EemU-LNf4Tv9xw" raisedException="_KUKCYXX2EemU-LNf4Tv9xw">
+            <eAnnotations xmi:id="_KS3o8HX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_KS3o8XX2EemU-LNf4Tv9xw" key="create"/>
+            </eAnnotations>
+            <ownedComment xmi:id="_KUuDG3X2EemU-LNf4Tv9xw">
+              <body>Opens a new socket for receiving UDP connections&#xD;
+	 * @param port The port to listen on&#xD;
+	 * @throws SocketException if the socket could not be opened, or the socket&#xD;
+	 *                         could not bind to the specified local port.</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KS3B5HX2EemU-LNf4Tv9xw" name="port">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_KS3o8nX2EemU-LNf4Tv9xw" type="_KS2a0HX2EemU-LNf4Tv9xw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KS3o83X2EemU-LNf4Tv9xw" name="readScreenshot" visibility="private" method="_KUq_ynX2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuqIHX2EemU-LNf4Tv9xw">
+              <body>Receives the screenshot sent to this server</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KS4QAHX2EemU-LNf4Tv9xw" name="close" method="_KUq_y3X2EemU-LNf4Tv9xw">
+            <ownedComment xmi:id="_KUuqIXX2EemU-LNf4Tv9xw">
+              <body>Closes the UDP server</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_KUZS8HX2EemU-LNf4Tv9xw" name="screenshotReceived" isAbstract="true">
+            <ownedComment xmi:id="_KUuDHHX2EemU-LNf4Tv9xw">
+              <body>Handles the received Screenshot&#xD;
+	 * @param img    the Screenshot received via the packet&#xD;
+	 * @param packet The Datagram Packet</body>
+            </ownedComment>
+            <ownedParameter xmi:id="_KUZS8XX2EemU-LNf4Tv9xw" name="img" type="_KSAGQHX2EemU-LNf4Tv9xw"/>
+            <ownedParameter xmi:id="_KUZS8nX2EemU-LNf4Tv9xw" name="packet" type="_KUCGkHX2EemU-LNf4Tv9xw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KUxGYHX2EemU-LNf4Tv9xw" name="" memberEnd="_KUxGYXX2EemU-LNf4Tv9xw _KUahEHX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KUxGYXX2EemU-LNf4Tv9xw" name="" type="_KR28UHX2EemU-LNf4Tv9xw" association="_KUxGYHX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KUyUgHX2EemU-LNf4Tv9xw" name="" memberEnd="_KUyUgXX2EemU-LNf4Tv9xw _KUbIIXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KUyUgXX2EemU-LNf4Tv9xw" name="" type="_KR28UHX2EemU-LNf4Tv9xw" association="_KUyUgHX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KUy7kHX2EemU-LNf4Tv9xw" name="" memberEnd="_KUy7kXX2EemU-LNf4Tv9xw _KUcWQnX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KUy7kXX2EemU-LNf4Tv9xw" name="" type="_KSAGQHX2EemU-LNf4Tv9xw" association="_KUy7kHX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KUzioHX2EemU-LNf4Tv9xw" name="" memberEnd="_KUzioXX2EemU-LNf4Tv9xw _KUeLcHX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KUzioXX2EemU-LNf4Tv9xw" name="" type="_KSVdcHX2EemU-LNf4Tv9xw" association="_KUzioHX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KUzio3X2EemU-LNf4Tv9xw" name="" memberEnd="_KUzipHX2EemU-LNf4Tv9xw _KUeLcnX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KUzipHX2EemU-LNf4Tv9xw" name="" type="_KSVdcHX2EemU-LNf4Tv9xw" association="_KUzio3X2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU0JsXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU0JsnX2EemU-LNf4Tv9xw _KUeygXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU0JsnX2EemU-LNf4Tv9xw" name="" type="_KSgckHX2EemU-LNf4Tv9xw" association="_KU0JsXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU0wwXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU0wwnX2EemU-LNf4Tv9xw _KUfZkXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU0wwnX2EemU-LNf4Tv9xw" name="" type="_KSgckHX2EemU-LNf4Tv9xw" association="_KU0wwXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU1X0XX2EemU-LNf4Tv9xw" name="" memberEnd="_KU1X0nX2EemU-LNf4Tv9xw _KUfZk3X2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU1X0nX2EemU-LNf4Tv9xw" name="" type="_KSo_cHX2EemU-LNf4Tv9xw" association="_KU1X0XX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU1-4XX2EemU-LNf4Tv9xw" name="" memberEnd="_KU1-4nX2EemU-LNf4Tv9xw _KUgAoXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU1-4nX2EemU-LNf4Tv9xw" name="" type="_KSo_cHX2EemU-LNf4Tv9xw" association="_KU1-4XX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU2l8XX2EemU-LNf4Tv9xw" name="" memberEnd="_KU2l8nX2EemU-LNf4Tv9xw _KUgnsXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU2l8nX2EemU-LNf4Tv9xw" name="" type="_KSo_cHX2EemU-LNf4Tv9xw" association="_KU2l8XX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU3NAXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU3NAnX2EemU-LNf4Tv9xw _KUh11HX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU3NAnX2EemU-LNf4Tv9xw" name="" type="_KSo_cHX2EemU-LNf4Tv9xw" association="_KU3NAXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU30EXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU30EnX2EemU-LNf4Tv9xw _KUjD8HX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU30EnX2EemU-LNf4Tv9xw" name="" type="_KSywcHX2EemU-LNf4Tv9xw" association="_KU30EXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU4bIXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU4bInX2EemU-LNf4Tv9xw _KUjrAHX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU4bInX2EemU-LNf4Tv9xw" name="" type="_KSywcHX2EemU-LNf4Tv9xw" association="_KU4bIXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU5CMXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU5CMnX2EemU-LNf4Tv9xw _KUjrAnX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU5CMnX2EemU-LNf4Tv9xw" name="" type="_KS2a0HX2EemU-LNf4Tv9xw" association="_KU5CMXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_KU5pQXX2EemU-LNf4Tv9xw" name="" memberEnd="_KU5pQnX2EemU-LNf4Tv9xw _KUkSEXX2EemU-LNf4Tv9xw">
+          <ownedEnd xmi:id="_KU5pQnX2EemU-LNf4Tv9xw" name="" type="_KS2a0HX2EemU-LNf4Tv9xw" association="_KU5pQXX2EemU-LNf4Tv9xw"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KQ0agHX2EemU-LNf4Tv9xw" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KQ0agXX2EemU-LNf4Tv9xw" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT3ugHX2EemU-LNf4Tv9xw" name="IOException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT9OE3X2EemU-LNf4Tv9xw" name="ByteArrayInputStream"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT91IXX2EemU-LNf4Tv9xw" name="ByteArrayOutputStream"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT91I3X2EemU-LNf4Tv9xw" name="ObjectInputStream"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT_DQXX2EemU-LNf4Tv9xw" name="ObjectOutputStream"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_KT_qUXX2EemU-LNf4Tv9xw" name="Serializable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUD7wXX2EemU-LNf4Tv9xw" name="InputStream"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_KQ1BkHX2EemU-LNf4Tv9xw" name="net">
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT4VkXX2EemU-LNf4Tv9xw" name="UnknownHostException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUCGkHX2EemU-LNf4Tv9xw" name="DatagramPacket"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUDUsHX2EemU-LNf4Tv9xw" name="InetAddress"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUDUsnX2EemU-LNf4Tv9xw" name="Socket"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUG_EHX2EemU-LNf4Tv9xw" name="ServerSocket"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUI0QHX2EemU-LNf4Tv9xw" name="DatagramSocket"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUKCYXX2EemU-LNf4Tv9xw" name="SocketException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_KQ4E4HX2EemU-LNf4Tv9xw" name="awt">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KQ5TAHX2EemU-LNf4Tv9xw" name="image">
+          <packagedElement xmi:type="uml:Class" xmi:id="_KT8nA3X2EemU-LNf4Tv9xw" name="BufferedImage"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KT9OEXX2EemU-LNf4Tv9xw" name="ColorModel"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT6KwHX2EemU-LNf4Tv9xw" name="AWTException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT7Y4HX2EemU-LNf4Tv9xw" name="Graphics2D"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT7Y4nX2EemU-LNf4Tv9xw" name="Image"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT7_8XX2EemU-LNf4Tv9xw" name="Rectangle"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT7_83X2EemU-LNf4Tv9xw" name="Robot"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT8nAXX2EemU-LNf4Tv9xw" name="Toolkit"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_KROqMHX2EemU-LNf4Tv9xw" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUHmIHX2EemU-LNf4Tv9xw" name="ArrayList"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_KUQJAHX2EemU-LNf4Tv9xw" name="lang">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_KUQJAXX2EemU-LNf4Tv9xw" name="Cloneable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KURXI3X2EemU-LNf4Tv9xw" name="Object"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_KUVokHX2EemU-LNf4Tv9xw" name="Thread"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KQ56EHX2EemU-LNf4Tv9xw" name="javax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KQ56EXX2EemU-LNf4Tv9xw" name="imageio">
+        <packagedElement xmi:type="uml:Class" xmi:id="_KT_qU3X2EemU-LNf4Tv9xw" name="ImageIO"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_KG5pgnX2EemU-LNf4Tv9xw">
+      <eAnnotations xmi:id="_KG6QkHX2EemU-LNf4Tv9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_KG6QkXX2EemU-LNf4Tv9xw" base_Package="_J7viYHX2EemU-LNf4Tv9xw">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Array xmi:id="_KSHbAnX2EemU-LNf4Tv9xw" base_Element="_KSGz8HX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KSLFYHX2EemU-LNf4Tv9xw" base_Element="_KSKeUXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_KSLscHX2EemU-LNf4Tv9xw" base_Element="_KSKeUXX2EemU-LNf4Tv9xw">
+    <annotations xmi:id="_KSLscXX2EemU-LNf4Tv9xw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_KT4VkHX2EemU-LNf4Tv9xw" base_Element="_KT3ugHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT48oHX2EemU-LNf4Tv9xw" base_Element="_KT4VkXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT6x0HX2EemU-LNf4Tv9xw" base_Element="_KT6KwHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT7Y4XX2EemU-LNf4Tv9xw" base_Element="_KT7Y4HX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT7_8HX2EemU-LNf4Tv9xw" base_Element="_KT7Y4nX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT7_8nX2EemU-LNf4Tv9xw" base_Element="_KT7_8XX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT8nAHX2EemU-LNf4Tv9xw" base_Element="_KT7_83X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT8nAnX2EemU-LNf4Tv9xw" base_Element="_KT8nAXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT9OEHX2EemU-LNf4Tv9xw" base_Element="_KT8nA3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT9OEnX2EemU-LNf4Tv9xw" base_Element="_KT9OEXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT91IHX2EemU-LNf4Tv9xw" base_Element="_KT9OE3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT91InX2EemU-LNf4Tv9xw" base_Element="_KT91IXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT_DQHX2EemU-LNf4Tv9xw" base_Element="_KT91I3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT_qUHX2EemU-LNf4Tv9xw" base_Element="_KT_DQXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KT_qUnX2EemU-LNf4Tv9xw" base_Element="_KT_qUXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUARYHX2EemU-LNf4Tv9xw" base_Element="_KT_qU3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUCGkXX2EemU-LNf4Tv9xw" base_Element="_KUCGkHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUDUsXX2EemU-LNf4Tv9xw" base_Element="_KUDUsHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUD7wHX2EemU-LNf4Tv9xw" base_Element="_KUDUsnX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUD7wnX2EemU-LNf4Tv9xw" base_Element="_KUD7wXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUG_EXX2EemU-LNf4Tv9xw" base_Element="_KUG_EHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUHmIXX2EemU-LNf4Tv9xw" base_Element="_KUHmIHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUKCYHX2EemU-LNf4Tv9xw" base_Element="_KUI0QHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUKpcHX2EemU-LNf4Tv9xw" base_Element="_KUKCYXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUQwEHX2EemU-LNf4Tv9xw" base_Element="_KUQJAXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUR-MHX2EemU-LNf4Tv9xw" base_Element="_KURXI3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUVokXX2EemU-LNf4Tv9xw" base_Element="_KUVokHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUbIIHX2EemU-LNf4Tv9xw" base_Element="_KUahEHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUbvMHX2EemU-LNf4Tv9xw" base_Element="_KUbIIXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUcWRXX2EemU-LNf4Tv9xw" base_Element="_KUcWQnX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUc9UXX2EemU-LNf4Tv9xw" base_Element="_KUc9UHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUeLcXX2EemU-LNf4Tv9xw" base_Element="_KUeLcHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUeygHX2EemU-LNf4Tv9xw" base_Element="_KUeLcnX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUfZkHX2EemU-LNf4Tv9xw" base_Element="_KUeygXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUfZknX2EemU-LNf4Tv9xw" base_Element="_KUfZkXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUgAoHX2EemU-LNf4Tv9xw" base_Element="_KUfZk3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Generics xmi:id="_KUgAonX2EemU-LNf4Tv9xw" genericsValue="Socket" base_Element="_KUgAoXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUgnsHX2EemU-LNf4Tv9xw" base_Element="_KUgAoXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Generics xmi:id="_KUhOwHX2EemU-LNf4Tv9xw" genericsValue="Thread" base_Element="_KUgnsXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUhOwXX2EemU-LNf4Tv9xw" base_Element="_KUgnsXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUh103X2EemU-LNf4Tv9xw" base_Element="_KUh10HX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUic4HX2EemU-LNf4Tv9xw" base_Element="_KUh11HX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUjD8XX2EemU-LNf4Tv9xw" base_Element="_KUjD8HX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUjD83X2EemU-LNf4Tv9xw" base_Element="_KUjD8nX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUjrAXX2EemU-LNf4Tv9xw" base_Element="_KUjrAHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUkSEHX2EemU-LNf4Tv9xw" base_Element="_KUjrAnX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_KUkSEnX2EemU-LNf4Tv9xw" base_Element="_KUkSEXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUxtcHX2EemU-LNf4Tv9xw" base_Element="_KUxGYHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUyUgnX2EemU-LNf4Tv9xw" base_Element="_KUyUgHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUy7knX2EemU-LNf4Tv9xw" base_Element="_KUy7kHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KUzionX2EemU-LNf4Tv9xw" base_Element="_KUzioHX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU0JsHX2EemU-LNf4Tv9xw" base_Element="_KUzio3X2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU0wwHX2EemU-LNf4Tv9xw" base_Element="_KU0JsXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU1X0HX2EemU-LNf4Tv9xw" base_Element="_KU0wwXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU1-4HX2EemU-LNf4Tv9xw" base_Element="_KU1X0XX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU2l8HX2EemU-LNf4Tv9xw" base_Element="_KU1-4XX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU3NAHX2EemU-LNf4Tv9xw" base_Element="_KU2l8XX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU30EHX2EemU-LNf4Tv9xw" base_Element="_KU3NAXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU4bIHX2EemU-LNf4Tv9xw" base_Element="_KU30EXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU5CMHX2EemU-LNf4Tv9xw" base_Element="_KU4bIXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU5pQHX2EemU-LNf4Tv9xw" base_Element="_KU5CMXX2EemU-LNf4Tv9xw"/>
+  <UMLLabProfile:Reference xmi:id="_KU6QUHX2EemU-LNf4Tv9xw" base_Element="_KU5pQXX2EemU-LNf4Tv9xw"/>
+</xmi:XMI>

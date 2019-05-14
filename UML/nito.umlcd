@@ -1,0 +1,2713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_ao2DwHX0EemU-LNf4Tv9xw">
+  <modelElement href="nito.uml#_bAhj8HX0EemU-LNf4Tv9xw"/>
+  <visualProperties xmi:id="_uKTRMHX0EemU-LNf4Tv9xw" backgroundColor="0,0,0" lineColor="0,0,0" gradientToColor="255,255,255"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNTbsHX0EemU-LNf4Tv9xw" sourceAnchor="180.0,0.0" targetAnchor="0.0,77.0" target="_bNVQ5HX0EemU-LNf4Tv9xw" source="_bNVQ5HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHOo4XX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguzUnX0EemU-LNf4Tv9xw" sourceY="-127" targetX="180" targetY="-207"/>
+    <bendpoints xmi:id="_lguzU3X0EemU-LNf4Tv9xw" sourceX="-296" sourceY="-128" targetX="-116" targetY="-208"/>
+    <bendpoints xmi:id="_lguzVHX0EemU-LNf4Tv9xw" sourceX="-291" sourceY="80" targetX="-111"/>
+    <stereotypes xmi:id="_bNUp03X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHP3AHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNUp0HX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bf8q4HX0EemU-LNf4Tv9xw" position="236.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNUp0XX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHOo4nX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf8D13X0EemU-LNf4Tv9xw" position="-21.0,-60.0"/>
+      <visibility xmi:id="_bNVQ4XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ4HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNUp0nX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="DEFAULT" navigable="true">
+      <modelElement href="nito.uml#_bGea8nX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf8q4XX0EemU-LNf4Tv9xw" position="-80.0,10.999999999999886"/>
+      <visibility xmi:id="_bNVQ43X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ4nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNY7QHX0EemU-LNf4Tv9xw" sourceAnchor="207.0,0.0" targetAnchor="0.0,103.0" target="_bNaweXX0EemU-LNf4Tv9xw" source="_bNaweXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHP3AXX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lgs-IHX0EemU-LNf4Tv9xw" sourceY="-117" targetX="210" targetY="-221"/>
+    <bendpoints xmi:id="_lgtlMHX0EemU-LNf4Tv9xw" sourceX="-324" sourceY="-117" targetX="-114" targetY="-221"/>
+    <bendpoints xmi:id="_lgtlMXX0EemU-LNf4Tv9xw" sourceX="-320" sourceY="104" targetX="-110"/>
+    <stereotypes xmi:id="_bNZiV3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHRFIHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNZiVHX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bf9R8XX0EemU-LNf4Tv9xw" position="262.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNZiVXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHP3AnX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf9R8HX0EemU-LNf4Tv9xw" position="-22.0,-60.0"/>
+      <visibility xmi:id="_bNaJYXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNaJYHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNZiVnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="instance" navigable="true">
+      <modelElement href="nito.uml#_bGfCBXX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf9R8nX0EemU-LNf4Tv9xw" position="-76.0,11.0"/>
+      <visibility xmi:id="_bNaJY3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNaJYnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNawcHX0EemU-LNf4Tv9xw" source="_bNaweXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHRFIXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNawcXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHRsMHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNawcnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNawc3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHRFInX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawdHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawdXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNawdnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="map" navigable="true">
+      <modelElement href="nito.uml#_bGfpEnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawd3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNaweHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNea0HX0EemU-LNf4Tv9xw" sourceAnchor="187.0,0.0" targetAnchor="0.0,182.0" target="_bNisSHX0EemU-LNf4Tv9xw" source="_bNisSHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHUIcHX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lgtlMnX0EemU-LNf4Tv9xw" sourceY="-128" targetX="190" targetY="-312"/>
+    <bendpoints xmi:id="_lgtlM3X0EemU-LNf4Tv9xw" sourceX="-310" sourceY="-128" targetX="-120" targetY="-312"/>
+    <bendpoints xmi:id="_lgtlNHX0EemU-LNf4Tv9xw" sourceX="-307" sourceY="184" targetX="-117"/>
+    <stereotypes xmi:id="_bNgQBnX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHUvgHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNgQA3X0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bf95AXX0EemU-LNf4Tv9xw" position="249.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNgQBHX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHUIcXX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf95AHX0EemU-LNf4Tv9xw" position="-21.0,-60.0"/>
+      <visibility xmi:id="_bNheIHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNg3EHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNgQBXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="instance" navigable="true">
+      <modelElement href="nito.uml#_bGiFU3X0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf95AnX0EemU-LNf4Tv9xw" position="-76.0,12.0"/>
+      <visibility xmi:id="_bNheInX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNheIXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNiFMHX0EemU-LNf4Tv9xw" source="_bNisSHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHS6UXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNiFMXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHThYHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNiFMnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNiFM3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHS6UnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNiFNHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNiFNXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNiFNnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="workspace" navigable="true">
+      <modelElement href="nito.uml#_bGiFUXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNiFN3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNiFOHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNiFOXX0EemU-LNf4Tv9xw" source="_bNisSHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHUvgXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNisQHX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHVWkHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNisQXX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNisQnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHUvgnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisQ3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisRHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNisRXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="autoSave" navigable="true">
+      <modelElement href="nito.uml#_bGisY3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisRnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisR3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNm9sHX0EemU-LNf4Tv9xw" sourceAnchor="284.0,0.0" targetAnchor="0.0,338.0" target="_bNyj6XX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHWksXX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lgtlNXX0EemU-LNf4Tv9xw" sourceY="-122" targetX="287" targetY="-462"/>
+    <bendpoints xmi:id="_lgtlNnX0EemU-LNf4Tv9xw" sourceX="-402" sourceY="-126" targetX="-115" targetY="-466"/>
+    <bendpoints xmi:id="_lgtlN3X0EemU-LNf4Tv9xw" sourceX="-399" sourceY="340" targetX="-112"/>
+    <stereotypes xmi:id="_bNr2M3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHXLwHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNr2MHX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bf-gEXX0EemU-LNf4Tv9xw" position="340.0,-12.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNr2MXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHWksnX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf-gEHX0EemU-LNf4Tv9xw" position="-22.0,-60.0"/>
+      <visibility xmi:id="_bNtrYXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNtrYHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNr2MnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="instance" navigable="true">
+      <modelElement href="nito.uml#_bGm903X0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf_HIHX0EemU-LNf4Tv9xw" position="-76.0,10.999999999999943"/>
+      <visibility xmi:id="_bNtrY3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNtrYnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNnkwnX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHbdMXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNsdQ3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHcEQHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNsdQHX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNsdQXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHbdMnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNuScXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNuScHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNsdQnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="examEndCheckerThread" navigable="true">
+      <modelElement href="nito.uml#_bGozBHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNuSc3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNuScnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNoL0HX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHcEQXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNsdR3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHcEQ3X0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNsdRHX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNsdRXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHcEQnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNuSdnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNuSdXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNsdRnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="timeSynchronizerThread" navigable="true">
+      <modelElement href="nito.uml#_bGpaEXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNuSeHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNuSd3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNwHoHX0EemU-LNf4Tv9xw" sourceAnchor="0.0,308.0" targetAnchor="446.0,100.0" target="_bOK-YHX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHXLwXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNwHoXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHXy0HX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNwHonX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bf_uMHX0EemU-LNf4Tv9xw" position="-12.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNwHo3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHXLwnX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf_HIXX0EemU-LNf4Tv9xw" position="-69.0,-27.99999999999997"/>
+      <visibility xmi:id="_bNwHpHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNwHpXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNwHpnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="examinees" navigable="true">
+      <modelElement href="nito.uml#_bGnk5XX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bf_uMXX0EemU-LNf4Tv9xw" position="-8.0,-96.0"/>
+      <visibility xmi:id="_bNwHp3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNwHqHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNwHqXX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHXy0XX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNwHqnX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHZA8HX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNwHq3X0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNwHrHX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHXy0nX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNwHrXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNwHrnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNwHr3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="server" navigable="true">
+      <modelElement href="nito.uml#_bGoL8HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNwHsHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNwHsXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNwusHX0EemU-LNf4Tv9xw" sourceAnchor="0.0,18.0" targetAnchor="382.0,149.0" target="_bO7MWXX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHZoAHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNwusXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHaPEHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNwusnX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bgMigHX0EemU-LNf4Tv9xw" position="-20.0,-24.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNwus3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHZoAXX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgAVQHX0EemU-LNf4Tv9xw" position="-31.0,2.0"/>
+      <visibility xmi:id="_bNwutHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNwutXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNwutnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="entries" navigable="true">
+      <modelElement href="nito.uml#_bGoL9HX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgMigXX0EemU-LNf4Tv9xw" position="60.0,2.0"/>
+      <visibility xmi:id="_bNwut3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNwuuHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNxVwHX0EemU-LNf4Tv9xw" sourceAnchor="184.0,0.0" targetAnchor="191.0,324.0" target="_bO1FsHX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHa2IHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNxVwXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHa2InX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNxVwnX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bgNwoHX0EemU-LNf4Tv9xw" position="40.0,11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNxVw3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHa2IXX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgNJkHX0EemU-LNf4Tv9xw" position="1.0,-60.0"/>
+      <visibility xmi:id="_bNxVxHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNxVxXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNxVxnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="lastExam" navigable="true">
+      <modelElement href="nito.uml#_bGoL9XX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgNwoXX0EemU-LNf4Tv9xw" position="-117.0,1.0"/>
+      <visibility xmi:id="_bNxVx3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNxVyHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNx80HX0EemU-LNf4Tv9xw" sourceAnchor="214.0,0.0" targetAnchor="221.0,324.0" target="_bO1FsHX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHa2I3X0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNx80XX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHbdMHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNx80nX0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bgOXsXX0EemU-LNf4Tv9xw" position="1.0,-22.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bNx803X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHa2JHX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgOXsHX0EemU-LNf4Tv9xw" position="-58.0,-56.0"/>
+      <visibility xmi:id="_bNx81HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNx81XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNx81nX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="currentExam" navigable="true">
+      <modelElement href="nito.uml#_bGozAHX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgO-wHX0EemU-LNf4Tv9xw" position="45.0,6.0"/>
+      <visibility xmi:id="_bNx813X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNx82HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bNyj4HX0EemU-LNf4Tv9xw" source="_bNyj6XX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHcrUHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bNyj4XX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHcrUnX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bNyj4nX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bNyj43X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHcrUXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj5HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNyj5XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bNyj5nX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="logs" navigable="true">
+      <modelElement href="nito.uml#_bGpaFXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj53X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNyj6HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bN_YMXX0EemU-LNf4Tv9xw" subClass="_bOAmUHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bGPxcnX0EemU-LNf4Tv9xw"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOGF4nX0EemU-LNf4Tv9xw" source="_bOK-YHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHMzsHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bOIiInX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHNawHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bOH7EnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bOIiIHX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHMzsXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOJJMXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOJJMHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bOIiIXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="socketMap" navigable="true">
+      <modelElement href="nito.uml#_bGbXonX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOJwQXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOJwQHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOGF43X0EemU-LNf4Tv9xw" source="_bOK-YHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHNawXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bOIiJnX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHOo4HX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bOIiI3X0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bOIiJHX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHNawnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOJwRXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOJwRHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bOIiJXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="examinees" navigable="true">
+      <modelElement href="nito.uml#_bGdM0XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOJwR3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOJwRnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOPP0HX0EemU-LNf4Tv9xw" source="_bOVWeXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHcrU3X0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bORsE3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHdSYHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bORsEHX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bORsEXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHcrVHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOSTIXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOSTIHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bORsEnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="nito.uml#_bGsdZHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOS6MXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOS6MHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOPP0XX0EemU-LNf4Tv9xw" source="_bOVWeXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHdSYXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bORsF3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHd5cHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bORsFHX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bORsFXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHdSYnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOS6M3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOS6MnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bORsFnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="screen" navigable="true">
+      <modelElement href="nito.uml#_bGsdZ3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOS6NXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOS6NHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOPP0nX0EemU-LNf4Tv9xw" source="_bOVWeXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHegg3X0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bORsG3X0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHfHkHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bORsGHX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bORsGXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHeghHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOS6OHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOS6N3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bORsGnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="solutions" navigable="true">
+      <modelElement href="nito.uml#_bGuSknX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOS6OnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOS6OXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOUvYHX0EemU-LNf4Tv9xw" source="_bOVWeXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHd5cXX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bOUvYXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHd5c3X0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bOUvYnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bOUvY3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHd5cnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOUvZHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOUvZXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bOUvZnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="screenImageProperty" navigable="true">
+      <modelElement href="nito.uml#_bGsda3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOUvZ3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOUvaHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOVWcHX0EemU-LNf4Tv9xw" source="_bOVWeXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHeggHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bOVWcXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHeggnX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bOVWcnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bOVWc3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHeggXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWdHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWdXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bOVWdnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="status" navigable="true">
+      <modelElement href="nito.uml#_bGtEdHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWd3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWeHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOcrMnX0EemU-LNf4Tv9xw" sourceAnchor="395.0,0.0" targetAnchor="188.0,346.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bOo4cHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFuNAHX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguzVXX0EemU-LNf4Tv9xw" sourceY="-390" targetX="337" targetY="75"/>
+    <bendpoints xmi:id="_lguzVnX0EemU-LNf4Tv9xw" sourceX="-337" sourceY="-390" targetY="75"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOegYnX0EemU-LNf4Tv9xw" sourceAnchor="381.0,81.0" targetAnchor="188.0,346.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bOxbUHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bE_NMnX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguzV3X0EemU-LNf4Tv9xw" sourceX="233" targetX="556" targetY="811"/>
+    <bendpoints xmi:id="_lguzWHX0EemU-LNf4Tv9xw" sourceX="233" sourceY="-736" targetX="556" targetY="75"/>
+    <bendpoints xmi:id="_lguzWXX0EemU-LNf4Tv9xw" sourceX="-323" sourceY="-736" targetY="75"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOegY3X0EemU-LNf4Tv9xw" sourceAnchor="188.0,0.0" targetAnchor="188.0,346.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bOrUsHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFF64nX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguzUHX0EemU-LNf4Tv9xw" sourceY="-30" targetX="130" targetY="75"/>
+    <bendpoints xmi:id="_lguzUXX0EemU-LNf4Tv9xw" sourceX="-130" sourceY="-30" targetY="75"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOegZHX0EemU-LNf4Tv9xw" sourceAnchor="381.0,158.0" targetAnchor="0.0,167.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bO1FsHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFT9UnX0EemU-LNf4Tv9xw"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOfHcHX0EemU-LNf4Tv9xw" sourceAnchor="375.0,58.0" targetAnchor="188.0,346.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bOzQgHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFvbI3X0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguzWnX0EemU-LNf4Tv9xw" sourceX="45" targetX="-763" targetY="636"/>
+    <bendpoints xmi:id="_lguzW3X0EemU-LNf4Tv9xw" sourceX="45" sourceY="279" targetX="-763" targetY="915"/>
+    <bendpoints xmi:id="_lguzXHX0EemU-LNf4Tv9xw" sourceX="1394" sourceY="279" targetX="586" targetY="915"/>
+    <bendpoints xmi:id="_lguzXXX0EemU-LNf4Tv9xw" sourceX="1394" sourceY="-561" targetX="586" targetY="75"/>
+    <bendpoints xmi:id="_lguzXnX0EemU-LNf4Tv9xw" sourceX="808" sourceY="-561" targetY="75"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bOfHcXX0EemU-LNf4Tv9xw" sourceAnchor="185.0,0.0" targetAnchor="186.0,0.0" target="_bO7MWXX0EemU-LNf4Tv9xw" source="_bOtJ4HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHVWkXX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguMQHX0EemU-LNf4Tv9xw" sourceY="-15" targetX="1070" targetY="-285"/>
+    <bendpoints xmi:id="_lguMQXX0EemU-LNf4Tv9xw" sourceX="-1070" sourceY="-13" targetY="-283"/>
+    <stereotypes xmi:id="_bOg8onX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHWksHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bOgVk3X0EemU-LNf4Tv9xw" text="">
+      <visualProperties xmi:id="_bgQM4HX0EemU-LNf4Tv9xw" position="-68.0,-24.000000000000114"/>
+    </nameVisual>
+    <sourceRole xmi:id="_bOg8oHX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHVWknX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgPl0HX0EemU-LNf4Tv9xw" position="-209.0,-12.999999999999886"/>
+      <visibility xmi:id="_bOjY4XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOjY4HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bOg8oXX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="parent" navigable="true">
+      <modelElement href="nito.uml#_bGj6hXX0EemU-LNf4Tv9xw"/>
+      <visualProperties xmi:id="_bgQM4XX0EemU-LNf4Tv9xw" position="1.0,-94.00000000000011"/>
+      <visibility xmi:id="_bOjY43X0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bOjY4nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bOfHcnX0EemU-LNf4Tv9xw" sourceAnchor="215.0,0.0" targetAnchor="156.0,0.0" superClass="_bO7MWXX0EemU-LNf4Tv9xw" subClass="_bOtJ4HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFRhEHX0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lguMQnX0EemU-LNf4Tv9xw" sourceY="-45" targetX="1130" targetY="-315"/>
+    <bendpoints xmi:id="_lguMQ3X0EemU-LNf4Tv9xw" sourceX="-1130" sourceY="-43" targetY="-313"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_bO7MUHX0EemU-LNf4Tv9xw" source="_bO7MWXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bHSTQHX0EemU-LNf4Tv9xw"/>
+    <stereotypes xmi:id="_bO7MUXX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bHS6UHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_bO7MUnX0EemU-LNf4Tv9xw" text=""/>
+    <sourceRole xmi:id="_bO7MU3X0EemU-LNf4Tv9xw" aggregationKind="NONE" name="">
+      <modelElement href="nito.uml#_bHSTQXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MVHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MVXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_bO7MVnX0EemU-LNf4Tv9xw" aggregationKind="NONE" name="children" navigable="true">
+      <modelElement href="nito.uml#_bGg3NXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MV3X0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bO7MWHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_bPBS8HX0EemU-LNf4Tv9xw" sourceAnchor="188.0,93.0" targetAnchor="188.0,346.0" superClass="_bOtJ4HX0EemU-LNf4Tv9xw" subClass="_bPDIIHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bFF643X0EemU-LNf4Tv9xw"/>
+    <bendpoints xmi:id="_lgvaYHX0EemU-LNf4Tv9xw" sourceY="110" targetX="-990" targetY="969"/>
+    <bendpoints xmi:id="_lgvaYXX0EemU-LNf4Tv9xw" sourceX="1606" sourceY="110" targetX="616" targetY="969"/>
+    <bendpoints xmi:id="_lgvaYnX0EemU-LNf4Tv9xw" sourceX="1606" sourceY="-784" targetX="616" targetY="75"/>
+    <bendpoints xmi:id="_lgvaY3X0EemU-LNf4Tv9xw" sourceX="990" sourceY="-784" targetY="75"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3rIuQHX0EemU-LNf4Tv9xw" subClass="_bNVQ5HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bF4lEHX0EemU-LNf4Tv9xw"/>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bNyj6XX0EemU-LNf4Tv9xw" name="Model" associationsIn="_bNm9sHX0EemU-LNf4Tv9xw" associationsOut="_bNm9sHX0EemU-LNf4Tv9xw _bNnkwnX0EemU-LNf4Tv9xw _bNoL0HX0EemU-LNf4Tv9xw _bNwHoHX0EemU-LNf4Tv9xw _bNwHqXX0EemU-LNf4Tv9xw _bNwusHX0EemU-LNf4Tv9xw _bNxVwHX0EemU-LNf4Tv9xw _bNx80HX0EemU-LNf4Tv9xw _bNyj4HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bNyj6nX0EemU-LNf4Tv9xw" position="-2084.0,-438.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bNyj63X0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bNyj7HX0EemU-LNf4Tv9xw" defaultValue="-1363093326221065966L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGmWwHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj7XX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNyj7nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNyj73X0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNyj8HX0EemU-LNf4Tv9xw" defaultValue="&quot;24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09&quot;" name="secret" staticAttribute="true">
+      <modelElement href="nito.uml#_bGmWwnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj8XX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNyj8nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNyj83X0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNyj9HX0EemU-LNf4Tv9xw" defaultValue="&quot;:::&quot;" name="MESSAGE_SEPERATOR" staticAttribute="true">
+      <modelElement href="nito.uml#_bGm90XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj9XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNyj9nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNyj93X0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNyj-HX0EemU-LNf4Tv9xw" name="instance" staticAttribute="true">
+      <modelElement href="nito.uml#_bGm903X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNyj-XX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGm91HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNyj-nX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNyj-3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNyj_HX0EemU-LNf4Tv9xw" name="Model">
+        <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNyj_XX0EemU-LNf4Tv9xw" name="status">
+      <modelElement href="nito.uml#_bGnk4nX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNyj_nX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNyj_3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykAHX0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykAXX0EemU-LNf4Tv9xw" name="examinees">
+      <modelElement href="nito.uml#_bGnk5XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNykAnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNykA3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykBHX0EemU-LNf4Tv9xw" name="Examinees">
+        <modelElement href="nito.uml#_bBmiAHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykBXX0EemU-LNf4Tv9xw" name="server">
+      <modelElement href="nito.uml#_bGoL8HX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNykBnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGoL83X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNykB3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykCHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykCXX0EemU-LNf4Tv9xw" name="Server">
+        <modelElement href="nito.uml#_bFXnsXX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykCnX0EemU-LNf4Tv9xw" name="entries">
+      <modelElement href="nito.uml#_bGoL9HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNykC3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNykDHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykDXX0EemU-LNf4Tv9xw" name="Container">
+        <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykDnX0EemU-LNf4Tv9xw" name="lastExam">
+      <modelElement href="nito.uml#_bGoL9XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNykD3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNykEHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykEXX0EemU-LNf4Tv9xw" name="Exam">
+        <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykEnX0EemU-LNf4Tv9xw" name="currentExam">
+      <modelElement href="nito.uml#_bGozAHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNykE3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGozA3X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNykFHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykFXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykFnX0EemU-LNf4Tv9xw" name="Exam">
+        <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykF3X0EemU-LNf4Tv9xw" name="examEndCheckerThread">
+      <modelElement href="nito.uml#_bGozBHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNykGHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGpaEHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNykGXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykGnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykG3X0EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nito.uml#_bGBH8HX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykHHX0EemU-LNf4Tv9xw" name="timeSynchronizerThread">
+      <modelElement href="nito.uml#_bGpaEXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNykHXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGpaFHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNykHnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykH3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykIHX0EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nito.uml#_bGBH8HX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNykIXX0EemU-LNf4Tv9xw" name="logs">
+      <modelElement href="nito.uml#_bGpaFXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNykInX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGqBIXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNykI3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNykJHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNykJXX0EemU-LNf4Tv9xw" name="ObservableList">
+        <modelElement href="nito.uml#_bFBpcHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bNykJnX0EemU-LNf4Tv9xw" name="Model">
+      <modelElement href="nito.uml#_bCFDIHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bNykJ3X0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bNykKHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykKXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNykKnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCFDI3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNykK3X0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNykLHX0EemU-LNf4Tv9xw" name="initialize">
+      <modelElement href="nito.uml#_bCFqMHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNykLXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNykLnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNykL3X0EemU-LNf4Tv9xw" name="createExam">
+      <modelElement href="nito.uml#_bCFqMXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNykMHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNykMXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNykMnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFaD8HX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNykM3X0EemU-LNf4Tv9xw" name="Exam">
+          <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNykNHX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bCFqMnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNykNXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNykNnX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNykN3X0EemU-LNf4Tv9xw" name="length">
+        <modelElement href="nito.uml#_bCFqM3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNykOHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNykOXX0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNykOnX0EemU-LNf4Tv9xw" name="startExam">
+      <modelElement href="nito.uml#_bCG4UHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzK8HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzK8XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNzK8nX0EemU-LNf4Tv9xw" name="setScreenshotWidth">
+      <modelElement href="nito.uml#_bCHfYHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzK83X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzK9HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzK9XX0EemU-LNf4Tv9xw" name="width">
+        <modelElement href="nito.uml#_bCHfYXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzK9nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzK93X0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzK-HX0EemU-LNf4Tv9xw" name="endCurrentExam">
+      <modelElement href="nito.uml#_bCHfYnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzK-XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzK-nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNzK-3X0EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nito.uml#_bCIGcHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzK_HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzK_XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzK_nX0EemU-LNf4Tv9xw" name="type">
+        <modelElement href="nito.uml#_bCIGcXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzK_3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLAHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLAXX0EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nito.uml#_bCIGcnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLAnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLA3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLBHX0EemU-LNf4Tv9xw" name="log">
+      <modelElement href="nito.uml#_bCItgHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLBXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLBnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLB3X0EemU-LNf4Tv9xw" name="message">
+        <modelElement href="nito.uml#_bCItgXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLCHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLCXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLCnX0EemU-LNf4Tv9xw" name="createQuestion">
+      <modelElement href="nito.uml#_bFarAHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLC3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLDHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNzLDXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFarA3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNzLDnX0EemU-LNf4Tv9xw" name="Question">
+          <modelElement href="nito.uml#_bBjesHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNzLD3X0EemU-LNf4Tv9xw" name="parent">
+        <modelElement href="nito.uml#_bFarAXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLEHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLEXX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLEnX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bFarAnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLE3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLFHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLFXX0EemU-LNf4Tv9xw" name="createQuestionPart">
+      <modelElement href="nito.uml#_bFbSEHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLFnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLF3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNzLGHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFbSFHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNzLGXX0EemU-LNf4Tv9xw" name="QuestionPart">
+          <modelElement href="nito.uml#_bCWv8HX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNzLGnX0EemU-LNf4Tv9xw" name="parent">
+        <modelElement href="nito.uml#_bFbSEXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLG3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLHHX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLHXX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bFbSEnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLHnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLH3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLIHX0EemU-LNf4Tv9xw" name="maxPoints">
+        <modelElement href="nito.uml#_bFbSE3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLIXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLInX0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLI3X0EemU-LNf4Tv9xw" name="createTemplate">
+      <modelElement href="nito.uml#_bFb5IHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLJHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLJXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNzLJnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFb5InX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNzLJ3X0EemU-LNf4Tv9xw" name="Template">
+          <modelElement href="nito.uml#_bCZMMHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNzLKHX0EemU-LNf4Tv9xw" name="parent">
+        <modelElement href="nito.uml#_bFb5IXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLKXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLKnX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLK3X0EemU-LNf4Tv9xw" name="createInstruction">
+      <modelElement href="nito.uml#_bFb5I3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLLHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLLXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNzLLnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFcgMHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNzLL3X0EemU-LNf4Tv9xw" name="Instruction">
+          <modelElement href="nito.uml#_bBwTAHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNzLMHX0EemU-LNf4Tv9xw" name="parent">
+        <modelElement href="nito.uml#_bFb5JHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLMXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLMnX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLM3X0EemU-LNf4Tv9xw" name="setContentOfEntry">
+      <modelElement href="nito.uml#_bFcgMXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLNHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLNXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLNnX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFcgMnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLN3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLOHX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLOXX0EemU-LNf4Tv9xw" name="content">
+        <modelElement href="nito.uml#_bFcgM3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLOnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLO3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLPHX0EemU-LNf4Tv9xw" name="deleteEntry">
+      <modelElement href="nito.uml#_bFdHQHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLPXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLPnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLP3X0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFdHQXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLQHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLQXX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLQnX0EemU-LNf4Tv9xw" name="startSendingExam">
+      <modelElement href="nito.uml#_bFdHQnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLQ3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLRHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLRXX0EemU-LNf4Tv9xw" name="exam">
+        <modelElement href="nito.uml#_bFdHQ3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLRnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLR3X0EemU-LNf4Tv9xw" name="Exam">
+          <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLSHX0EemU-LNf4Tv9xw" name="solutionReceived">
+      <modelElement href="nito.uml#_bFduUHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLSXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNzLSnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLS3X0EemU-LNf4Tv9xw" name="content">
+        <modelElement href="nito.uml#_bFduUXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLTHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLTXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLTnX0EemU-LNf4Tv9xw" name="id">
+        <modelElement href="nito.uml#_bFduUnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLT3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLUHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLUXX0EemU-LNf4Tv9xw" name="from">
+        <modelElement href="nito.uml#_bFduU3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLUnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLU3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLVHX0EemU-LNf4Tv9xw" name="sendMessage">
+      <modelElement href="nito.uml#_bFeVYHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLVXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLVnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLV3X0EemU-LNf4Tv9xw" name="type">
+        <modelElement href="nito.uml#_bFeVYXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLWHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLWXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLWnX0EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nito.uml#_bFe8cHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLW3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLXHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLXXX0EemU-LNf4Tv9xw" name="examinee">
+        <modelElement href="nito.uml#_bFe8cXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLXnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLX3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLYHX0EemU-LNf4Tv9xw" name="setWorkspaceFolder">
+      <modelElement href="nito.uml#_bGJDwHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLYXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNzLYnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLY3X0EemU-LNf4Tv9xw" name="folder">
+        <modelElement href="nito.uml#_bGJDwXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLZHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLZXX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLZnX0EemU-LNf4Tv9xw" name="handleMessage">
+      <modelElement href="nito.uml#_bGJq0HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLZ3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNzLaHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLaXX0EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nito.uml#_bGJq0XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLanX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLa3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLbHX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGJq0nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLbXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLbnX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLb3X0EemU-LNf4Tv9xw" name="createExaminee">
+      <modelElement href="nito.uml#_bGKR4HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLcHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNzLcXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNzLcnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGK48HX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNzLc3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNzLdHX0EemU-LNf4Tv9xw" name="name">
+        <modelElement href="nito.uml#_bGKR4XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLdXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLdnX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNzLd3X0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGKR4nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLeHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLeXX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNzLenX0EemU-LNf4Tv9xw" name="readObject">
+      <modelElement href="nito.uml#_bGQYgnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNzLe3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNzLfHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNzLfXX0EemU-LNf4Tv9xw" name="ois">
+        <modelElement href="nito.uml#_bGQYg3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNzLfnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNzLf3X0EemU-LNf4Tv9xw" name="ObjectInputStream">
+          <modelElement href="nito.uml#_bFMBgXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOEQsHX0EemU-LNf4Tv9xw" name="IOException">
+    <modelElement href="nito.uml#_bFLacXX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOEQsXX0EemU-LNf4Tv9xw" position="-2231.0,409.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <stereotypes xmi:id="_bOEQsnX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bFMBgHX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_bOEQs3X0EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOK-YHX0EemU-LNf4Tv9xw" name="Examinees" associationsIn="_bNwHoHX0EemU-LNf4Tv9xw" associationsOut="_bOGF4nX0EemU-LNf4Tv9xw _bOGF43X0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBmiAHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOK-YXX0EemU-LNf4Tv9xw" position="-2600.0,-230.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOK-YnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOK-Y3X0EemU-LNf4Tv9xw" defaultValue="-772277559421890526L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGbXoHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOK-ZHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOK-ZXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOK-ZnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOK-Z3X0EemU-LNf4Tv9xw" name="socketMap">
+      <modelElement href="nito.uml#_bGbXonX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOK-aHX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGb-sHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOK-aXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGdM0HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOK-anX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOK-a3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOK-bHX0EemU-LNf4Tv9xw" name="TreeMap">
+        <modelElement href="nito.uml#_bFAbU3X0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOK-bXX0EemU-LNf4Tv9xw" name="examinees">
+      <modelElement href="nito.uml#_bGdM0XX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOK-bnX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGdz4HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOK-b3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGdz4XX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOK-cHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOK-cXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOK-cnX0EemU-LNf4Tv9xw" name="ObservableList">
+        <modelElement href="nito.uml#_bFBpcHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOK-c3X0EemU-LNf4Tv9xw" name="Examinees">
+      <modelElement href="nito.uml#_bBnJEHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOK-dHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOK-dXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-dnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOK-d3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBnJE3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-eHX0EemU-LNf4Tv9xw" name="Examinees">
+          <modelElement href="nito.uml#_bBmiAHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOK-eXX0EemU-LNf4Tv9xw" name="getByIP">
+      <modelElement href="nito.uml#_bBnJFHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOK-enX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-e3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOK-fHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFBpcnX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-fXX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOK-fnX0EemU-LNf4Tv9xw" name="ip">
+        <modelElement href="nito.uml#_bBnwIHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOK-f3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOK-gHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOK-gXX0EemU-LNf4Tv9xw" name="search">
+      <modelElement href="nito.uml#_bBoXMHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOK-gnX0EemU-LNf4Tv9xw" name="Array">
+        <modelElement href="nito.uml#_bBoXNHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOK-g3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-hHX0EemU-LNf4Tv9xw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_bOK-hXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBoXMnX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-hnX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOK-h3X0EemU-LNf4Tv9xw" name="text">
+        <modelElement href="nito.uml#_bBoXMXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOK-iHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOK-iXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOK-inX0EemU-LNf4Tv9xw" name="getAll">
+      <modelElement href="nito.uml#_bBo-QHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOK-i3X0EemU-LNf4Tv9xw" keyword="generic_container"/>
+      <visibility xmi:id="_bOK-jHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-jXX0EemU-LNf4Tv9xw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_bOK-jnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBo-QXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-j3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOK-kHX0EemU-LNf4Tv9xw" name="getAllAsObservable">
+      <modelElement href="nito.uml#_bBo-RXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOK-kXX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bBplUHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOK-knX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-k3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOK-lHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF3W8XX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-lXX0EemU-LNf4Tv9xw" name="ObservableList">
+          <modelElement href="nito.uml#_bFBpcHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOK-lnX0EemU-LNf4Tv9xw" name="newExaminee">
+      <modelElement href="nito.uml#_bF2v4HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOK-l3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOK-mHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOK-mXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF3W8HX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOK-mnX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOK-m3X0EemU-LNf4Tv9xw" name="name">
+        <modelElement href="nito.uml#_bF2v4XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOK-nHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOK-nXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOK-nnX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bF2v4nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOK-n3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOK-oHX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bO7MWXX0EemU-LNf4Tv9xw" name="Container" associationsIn="_bOfHcXX0EemU-LNf4Tv9xw _bNwusHX0EemU-LNf4Tv9xw" associationsOut="_bO7MUHX0EemU-LNf4Tv9xw" subclassedBy="_bOfHcnX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bO7MWnX0EemU-LNf4Tv9xw" position="-2616.0,-569.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bO7MW3X0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bO7MXHX0EemU-LNf4Tv9xw" defaultValue="-5805193951111349516L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGg3M3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MXXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bO7MXnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO7MX3X0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO7MYHX0EemU-LNf4Tv9xw" name="children">
+      <modelElement href="nito.uml#_bGg3NXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO7MYXX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGheQHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bO7MYnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGheQXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO7MY3X0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bO7MZHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO7MZXX0EemU-LNf4Tv9xw" name="ArrayList">
+        <modelElement href="nito.uml#_bFDeoHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO7MZnX0EemU-LNf4Tv9xw" name="id">
+      <modelElement href="nito.uml#_bGheQnX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO7MZ3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGiFUHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO7MaHX0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bO7MaXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO7ManX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bO7Ma3X0EemU-LNf4Tv9xw" name="Container">
+      <modelElement href="nito.uml#_bBzWUHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bO7MbHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bO7MbXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MbnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO7Mb3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBzWU3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO7McHX0EemU-LNf4Tv9xw" name="Container">
+          <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bO7McXX0EemU-LNf4Tv9xw" name="getAll">
+      <modelElement href="nito.uml#_bBz9YHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO7McnX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bB0kcHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO7Mc3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MdHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO7MdXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF8PcHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO7MdnX0EemU-LNf4Tv9xw" name="ArrayList">
+          <modelElement href="nito.uml#_bFDeoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bO7Md3X0EemU-LNf4Tv9xw" name="getId">
+      <modelElement href="nito.uml#_bB1LgHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MeHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MeXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO7MenX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB1LgXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO7Me3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bO7MfHX0EemU-LNf4Tv9xw" name="add">
+      <modelElement href="nito.uml#_bFHJAHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MfXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MfnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bO7Mf3X0EemU-LNf4Tv9xw" name="entry">
+        <modelElement href="nito.uml#_bFHJAXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7MgHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7MgXX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO7MgnX0EemU-LNf4Tv9xw" name="remove">
+      <modelElement href="nito.uml#_bFHwEHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7Mg3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MhHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bO7MhXX0EemU-LNf4Tv9xw" name="entry">
+        <modelElement href="nito.uml#_bFHwEXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7MhnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7Mh3X0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO7MiHX0EemU-LNf4Tv9xw" name="sendAll">
+      <modelElement href="nito.uml#_bFHwEnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO7MiXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MinX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bO7Mi3X0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFHwE3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7MjHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7MjXX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bO7MjnX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFHwFHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7Mj3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7MkHX0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO7MkXX0EemU-LNf4Tv9xw" name="findAll">
+      <modelElement href="nito.uml#_bF9dkHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO7MknX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bF-EoHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO7Mk3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MlHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO7MlXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF-EoXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO7MlnX0EemU-LNf4Tv9xw" name="ArrayList">
+          <modelElement href="nito.uml#_bFDeoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bO7Ml3X0EemU-LNf4Tv9xw" name="type">
+        <modelElement href="nito.uml#_bF9dkXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7MmHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7MmXX0EemU-LNf4Tv9xw" name="Class">
+          <modelElement href="nito.uml#_bF82gHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO7MmnX0EemU-LNf4Tv9xw" name="equals">
+      <modelElement href="nito.uml#_bF_SwHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO7Mm3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bF_Sw3X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bO7MnHX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bF_50HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO7MnXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO7MnnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO7Mn3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF_SwnX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO7MoHX0EemU-LNf4Tv9xw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bO7MoXX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bF_SwXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO7MonX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO7Mo3X0EemU-LNf4Tv9xw" name="Object">
+          <modelElement href="nito.uml#_bF5zMXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bO1FsHX0EemU-LNf4Tv9xw" name="Exam" associationsIn="_bNxVwHX0EemU-LNf4Tv9xw _bNx80HX0EemU-LNf4Tv9xw" generalizations="_bOegZHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bO1FsXX0EemU-LNf4Tv9xw" position="-2091.0,-828.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bO1FsnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bO1Fs3X0EemU-LNf4Tv9xw" defaultValue="-6393169094783192139L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGkhkXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1FtHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bO1FtXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO1FtnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO1Ft3X0EemU-LNf4Tv9xw" name="length">
+      <modelElement href="nito.uml#_bGlIoHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO1FuHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGlIoXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO1FuXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bO1FunX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO1Fu3X0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO1FvHX0EemU-LNf4Tv9xw" name="timeLeft">
+      <modelElement href="nito.uml#_bGlIonX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1FvXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1FvnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO1Fv3X0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO1FwHX0EemU-LNf4Tv9xw" name="hasInstructions">
+      <modelElement href="nito.uml#_bGlIpXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO1FwXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGlvsHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO1FwnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bO1Fw3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO1FxHX0EemU-LNf4Tv9xw" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bO1FxXX0EemU-LNf4Tv9xw" defaultValue="false" name="running">
+      <modelElement href="nito.uml#_bGlvsXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1FxnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1Fx3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bO1FyHX0EemU-LNf4Tv9xw" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bO1FyXX0EemU-LNf4Tv9xw" name="Exam">
+      <modelElement href="nito.uml#_bCBYwHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bO1FynX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bO1Fy3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1FzHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO1FzXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCBYxXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO1FznX0EemU-LNf4Tv9xw" name="Exam">
+          <modelElement href="nito.uml#_bCAKoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bO1Fz3X0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bCBYwXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO1F0HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO1F0XX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bO1F0nX0EemU-LNf4Tv9xw" name="length">
+        <modelElement href="nito.uml#_bCBYwnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO1F03X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO1F1HX0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO1F1XX0EemU-LNf4Tv9xw" name="start">
+      <modelElement href="nito.uml#_bCBYxnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1F1nX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F13X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bO1F2HX0EemU-LNf4Tv9xw" name="stop">
+      <modelElement href="nito.uml#_bCB_0HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1F2XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F2nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bO1F23X0EemU-LNf4Tv9xw" name="hasInstructions">
+      <modelElement href="nito.uml#_bCB_0XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1F3HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F3XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO1F3nX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCB_0nX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO1F33X0EemU-LNf4Tv9xw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bO1F4HX0EemU-LNf4Tv9xw" name="getTimeElapsed">
+      <modelElement href="nito.uml#_bCB_03X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bO1F4XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F4nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bO1F43X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCCm4HX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bO1F5HX0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bO1F5XX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bFSIIHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO1F5nX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFSvMXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bO1F53X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFSvMnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO1F6HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F6XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bO1F6nX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFSIIXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO1F63X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO1F7HX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bO1F7XX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFSvMHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO1F7nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO1F73X0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bO1F8HX0EemU-LNf4Tv9xw" name="add">
+      <modelElement href="nito.uml#_bFTWQXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bO1F8XX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFTWQ3X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bO1F8nX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFT9UHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bO1F83X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bO1F9HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bO1F9XX0EemU-LNf4Tv9xw" name="entry">
+        <modelElement href="nito.uml#_bFTWQnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bO1F9nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bO1F93X0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOtJ4HX0EemU-LNf4Tv9xw" name="Entry" associationsOut="_bOfHcXX0EemU-LNf4Tv9xw" generalizations="_bOfHcnX0EemU-LNf4Tv9xw" subclassedBy="_bOcrMnX0EemU-LNf4Tv9xw _bOegYnX0EemU-LNf4Tv9xw _bOegY3X0EemU-LNf4Tv9xw _bOegZHX0EemU-LNf4Tv9xw _bOfHcHX0EemU-LNf4Tv9xw _bPBS8HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOtJ4XX0EemU-LNf4Tv9xw" position="-1545.0,-837.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOtJ4nX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOtJ43X0EemU-LNf4Tv9xw" defaultValue="6649922102661498183L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGjTcnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtJ5HX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOtJ5XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOtJ5nX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOtJ53X0EemU-LNf4Tv9xw" name="title">
+      <modelElement href="nito.uml#_bGj6gXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOtJ6HX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGj6gnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOtJ6XX0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bOtJ6nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOtJ63X0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOtJ7HX0EemU-LNf4Tv9xw" name="content">
+      <modelElement href="nito.uml#_bGj6g3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOtJ7XX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGj6hHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOtJ7nX0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bOtJ73X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOtJ8HX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOtJ8XX0EemU-LNf4Tv9xw" name="parent">
+      <modelElement href="nito.uml#_bGj6hXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOtJ8nX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGkhkHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOtJ83X0EemU-LNf4Tv9xw" label="#"/>
+      <cardinality xmi:id="_bOtJ9HX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOtJ9XX0EemU-LNf4Tv9xw" name="Container">
+        <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOtJ9nX0EemU-LNf4Tv9xw" name="Entry">
+      <modelElement href="nito.uml#_bB8gQHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOtJ93X0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOtJ-HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtJ-XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtJ-nX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB8gRHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtJ-3X0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOtJ_HX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bB8gQXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtJ_XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtJ_nX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOtJ_3X0EemU-LNf4Tv9xw" name="getTitle">
+      <modelElement href="nito.uml#_bB9HUHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKAHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKAXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtKAnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB9HUXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtKA3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOtKBHX0EemU-LNf4Tv9xw" name="setTitle">
+      <modelElement href="nito.uml#_bB9HUnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKBXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKBnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOtKB3X0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bB9HU3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKCHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKCXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOtKCnX0EemU-LNf4Tv9xw" name="getContent">
+      <modelElement href="nito.uml#_bB9uYHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKC3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKDHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtKDXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB9uYXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtKDnX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOtKD3X0EemU-LNf4Tv9xw" name="setContent">
+      <modelElement href="nito.uml#_bB9uYnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKEHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKEXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOtKEnX0EemU-LNf4Tv9xw" name="content">
+        <modelElement href="nito.uml#_bB9uY3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKE3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKFHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOtKFXX0EemU-LNf4Tv9xw" name="toString">
+      <modelElement href="nito.uml#_bB-VcHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOtKFnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bB-VcnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOtKF3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bB-8gHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOtKGHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKGXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtKGnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB-VcXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtKG3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOtKHHX0EemU-LNf4Tv9xw" name="getParent">
+      <modelElement href="nito.uml#_bB-8gnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKHXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKHnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtKH3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bFQ6AXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtKIHX0EemU-LNf4Tv9xw" name="Container">
+          <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOtKIXX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bFQS8HX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOtKInX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFQ6AHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOtKI3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKJHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOtKJXX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFQS8XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKJnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKJ3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOtKKHX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFQS8nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKKXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKKnX0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOtKK3X0EemU-LNf4Tv9xw" name="setParent">
+      <modelElement href="nito.uml#_bFQ6AnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKLHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKLXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOtKLnX0EemU-LNf4Tv9xw" name="parent">
+        <modelElement href="nito.uml#_bFQ6A3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKL3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKMHX0EemU-LNf4Tv9xw" name="Container">
+          <modelElement href="nito.uml#_bByvQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOtKMXX0EemU-LNf4Tv9xw" name="findFirstAncestor">
+      <modelElement href="nito.uml#_bGFZYHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOtKMnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOtKM3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOtKNHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGFZYnX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOtKNXX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOtKNnX0EemU-LNf4Tv9xw" name="type">
+        <modelElement href="nito.uml#_bGFZYXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOtKN3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOtKOHX0EemU-LNf4Tv9xw" name="Class">
+          <modelElement href="nito.uml#_bF82gHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOrUsHX0EemU-LNf4Tv9xw" name="Instruction" generalizations="_bOegY3X0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBwTAHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOrUsXX0EemU-LNf4Tv9xw" position="-1415.0,-386.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOrUsnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOrUs3X0EemU-LNf4Tv9xw" defaultValue="6619354670367450793L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGgQInX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOrUtHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOrUtXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOrUtnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOrUt3X0EemU-LNf4Tv9xw" name="Instruction">
+      <modelElement href="nito.uml#_bBw6EnX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOrUuHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOrUuXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOrUunX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOrUu3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBw6FXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOrUvHX0EemU-LNf4Tv9xw" name="Instruction">
+          <modelElement href="nito.uml#_bBwTAHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOrUvXX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bFFT0HX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOrUvnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFFT03X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOrUv3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFF64HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOrUwHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOrUwXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOrUwnX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFFT0XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOrUw3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOrUxHX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOrUxXX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFFT0nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOrUxnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOrUx3X0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bNVQ5HX0EemU-LNf4Tv9xw" name="Group" associationsIn="_bNTbsHX0EemU-LNf4Tv9xw" associationsOut="_bNTbsHX0EemU-LNf4Tv9xw" generalizations="_3rIuQHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBragHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bNVQ5XX0EemU-LNf4Tv9xw" position="-1410.0,-227.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bNVQ5nX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bNVQ53X0EemU-LNf4Tv9xw" defaultValue="3723395721432132991L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGea8HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNVQ6HX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNVQ6XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNVQ6nX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNVQ63X0EemU-LNf4Tv9xw" defaultValue="new Group( &quot;Default&quot;)" name="DEFAULT" staticAttribute="true">
+      <modelElement href="nito.uml#_bGea8nX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNVQ7HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ7XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNVQ7nX0EemU-LNf4Tv9xw" name="Group">
+        <modelElement href="nito.uml#_bBragHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNVQ73X0EemU-LNf4Tv9xw" name="id">
+      <modelElement href="nito.uml#_bGea9HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNVQ8HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ8XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNVQ8nX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNVQ83X0EemU-LNf4Tv9xw" name="title">
+      <modelElement href="nito.uml#_bGfCAHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNVQ9HX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ9XX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNVQ9nX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bNVQ93X0EemU-LNf4Tv9xw" name="Group">
+      <modelElement href="nito.uml#_bBsBkHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bNVQ-HX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bNVQ-XX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVQ-nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNVQ-3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBsoonX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNVQ_HX0EemU-LNf4Tv9xw" name="Group">
+          <modelElement href="nito.uml#_bBragHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNVQ_XX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bBsBkXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNVQ_nX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNVQ_3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNVRAHX0EemU-LNf4Tv9xw" name="toString">
+      <modelElement href="nito.uml#_bBsoo3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNVRAXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bBsopXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bNVRAnX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bBtPsHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNVRA3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNVRBHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNVRBXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBsopHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNVRBnX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOo4cHX0EemU-LNf4Tv9xw" name="QuestionPart" generalizations="_bOcrMnX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCWv8HX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOo4cXX0EemU-LNf4Tv9xw" position="-1415.0,-26.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOo4cnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOo4c3X0EemU-LNf4Tv9xw" defaultValue="-7659809221309413824L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGvgsHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOo4dHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOo4dXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOo4dnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOo4d3X0EemU-LNf4Tv9xw" name="maxPoints">
+      <modelElement href="nito.uml#_bGvgsnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOo4eHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOo4eXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOo4enX0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOo4e3X0EemU-LNf4Tv9xw" name="hasTemplate">
+      <modelElement href="nito.uml#_bGwHwHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOo4fHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGwu0HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOo4fXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOo4fnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOo4f3X0EemU-LNf4Tv9xw" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOo4gHX0EemU-LNf4Tv9xw" name="QuestionPart">
+      <modelElement href="nito.uml#_bCXXA3X0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOo4gXX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOo4gnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOo4g3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOo4hHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCX-E3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOo4hXX0EemU-LNf4Tv9xw" name="QuestionPart">
+          <modelElement href="nito.uml#_bCWv8HX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOo4hnX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bCXXBHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOo4h3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOo4iHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOo4iXX0EemU-LNf4Tv9xw" name="maxPoints">
+        <modelElement href="nito.uml#_bCX-EHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOo4inX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOo4i3X0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOo4jHX0EemU-LNf4Tv9xw" name="hasTemplate">
+      <modelElement href="nito.uml#_bCX-FHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOo4jXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOo4jnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOo4j3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCX-FXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOo4kHX0EemU-LNf4Tv9xw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOo4kXX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bFsX0HX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOo4knX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFs-4HX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOo4k3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFs-4XX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOo4lHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOo4lXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOo4lnX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFsX0XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOo4l3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOo4mHX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOo4mXX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFsX0nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOo4mnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOo4m3X0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOo4nHX0EemU-LNf4Tv9xw" name="add">
+      <modelElement href="nito.uml#_bFtl8HX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOo4nXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFtl8nX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOo4nnX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFtl83X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOo4n3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOo4oHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOo4oXX0EemU-LNf4Tv9xw" name="entry">
+        <modelElement href="nito.uml#_bFtl8XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOo4onX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOo4o3X0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOxbUHX0EemU-LNf4Tv9xw" name="Question" generalizations="_bOegYnX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBjesHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOxbUXX0EemU-LNf4Tv9xw" position="-1415.0,239.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOxbUnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOxbU3X0EemU-LNf4Tv9xw" defaultValue="-2378536027988908676L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGawkHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOxbVHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOxbVXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOxbVnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOxbV3X0EemU-LNf4Tv9xw" name="maxPoints">
+      <modelElement href="nito.uml#_bGawknX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOxbWHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOxbWXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOxbWnX0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOxbW3X0EemU-LNf4Tv9xw" name="Question">
+      <modelElement href="nito.uml#_bBlT4XX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOxbXHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOxbXXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOxbXnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOxbX3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBlT5XX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOxbYHX0EemU-LNf4Tv9xw" name="Question">
+          <modelElement href="nito.uml#_bBjesHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOxbYXX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bBlT4nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOxbYnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOxbY3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOxbZHX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bE9YAHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOxbZXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bE9_EnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOxbZnX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bE-mIHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOxbZ3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOxbaHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOxbaXX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bE9_EHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOxbanX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOxba3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOxbbHX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bE9_EXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOxbbXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOxbbnX0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOxbb3X0EemU-LNf4Tv9xw" name="add">
+      <modelElement href="nito.uml#_bE-mInX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOxbcHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bE-mJHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOxbcXX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bE_NMHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOxbcnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOxbc3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOxbdHX0EemU-LNf4Tv9xw" name="entry">
+        <modelElement href="nito.uml#_bE-mI3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOxbdXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOxbdnX0EemU-LNf4Tv9xw" name="Entry">
+          <modelElement href="nito.uml#_bB7SIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOzQgHX0EemU-LNf4Tv9xw" name="Template" generalizations="_bOfHcHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCZMMHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOzQgXX0EemU-LNf4Tv9xw" position="-2540.0,87.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOzQgnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOzQg3X0EemU-LNf4Tv9xw" defaultValue="4189715828760784690L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGwu0XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOzQhHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOzQhXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOzQhnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOzQh3X0EemU-LNf4Tv9xw" name="Template">
+      <modelElement href="nito.uml#_bCZzQXX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOzQiHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOzQiXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOzQinX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOzQi3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCZzRXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOzQjHX0EemU-LNf4Tv9xw" name="Template">
+          <modelElement href="nito.uml#_bCZMMHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOzQjXX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bCZzQnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOzQjnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOzQj3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOzQkHX0EemU-LNf4Tv9xw" name="send">
+      <modelElement href="nito.uml#_bFu0EHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOzQkXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bFvbIHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOzQknX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bFvbIXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOzQk3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOzQlHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOzQlXX0EemU-LNf4Tv9xw" name="e">
+        <modelElement href="nito.uml#_bFu0EXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOzQlnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOzQl3X0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOzQmHX0EemU-LNf4Tv9xw" name="m">
+        <modelElement href="nito.uml#_bFu0EnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOzQmXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOzQmnX0EemU-LNf4Tv9xw" name="Model">
+          <modelElement href="nito.uml#_bCD1AHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bPDIIHX0EemU-LNf4Tv9xw" name="Criteria" generalizations="_bPBS8HX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBxhIHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bPDIIXX0EemU-LNf4Tv9xw" position="-2535.0,275.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bPDIInX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bPDII3X0EemU-LNf4Tv9xw" defaultValue="6767459756448074933L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGg3MXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bPDIJHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bPDIJXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bPDIJnX0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bPDIJ3X0EemU-LNf4Tv9xw" name="Criteria">
+      <modelElement href="nito.uml#_bByIM3X0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bPDIKHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bPDIKXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bPDIKnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bPDIK3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bByIN3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bPDILHX0EemU-LNf4Tv9xw" name="Criteria">
+          <modelElement href="nito.uml#_bBxhIHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bPDILXX0EemU-LNf4Tv9xw" name="title">
+        <modelElement href="nito.uml#_bByINHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bPDILnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bPDIL3X0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bNisSHX0EemU-LNf4Tv9xw" name="Workspace" associationsIn="_bNea0HX0EemU-LNf4Tv9xw" associationsOut="_bNea0HX0EemU-LNf4Tv9xw _bNiFMHX0EemU-LNf4Tv9xw _bNiFOXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bB3AsHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bNisSXX0EemU-LNf4Tv9xw" position="-1974.0,311.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bNisSnX0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bNisS3X0EemU-LNf4Tv9xw" name="workspace">
+      <modelElement href="nito.uml#_bGiFUXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNisTHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGiFUnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNisTXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisTnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNisT3X0EemU-LNf4Tv9xw" name="File">
+        <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNisUHX0EemU-LNf4Tv9xw" name="instance" staticAttribute="true">
+      <modelElement href="nito.uml#_bGiFU3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNisUXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGisYHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNisUnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisU3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNisVHX0EemU-LNf4Tv9xw" name="Workspace">
+        <modelElement href="nito.uml#_bB3AsHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNisVXX0EemU-LNf4Tv9xw" name="autoSave">
+      <modelElement href="nito.uml#_bGisY3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNisVnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGisZHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNisV3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisWHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNisWXX0EemU-LNf4Tv9xw" name="Thread">
+        <modelElement href="nito.uml#_bGBH8HX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNisWnX0EemU-LNf4Tv9xw" name="autoSaveStarted">
+      <modelElement href="nito.uml#_bGjTcHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNisW3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGjTcXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNisXHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisXXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNisXnX0EemU-LNf4Tv9xw" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bNisX3X0EemU-LNf4Tv9xw" name="Workspace">
+      <modelElement href="nito.uml#_bB3nwnX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bNisYHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bNisYXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisYnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNisY3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bB4O0nX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNisZHX0EemU-LNf4Tv9xw" name="Workspace">
+          <modelElement href="nito.uml#_bB3AsHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNisZXX0EemU-LNf4Tv9xw" name="save">
+      <modelElement href="nito.uml#_bB4O03X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisZnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisZ3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNisaHX0EemU-LNf4Tv9xw" name="load">
+      <modelElement href="nito.uml#_bB414HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisaXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisanX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNisa3X0EemU-LNf4Tv9xw" name="get">
+      <modelElement href="nito.uml#_bB414XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisbHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisbXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNisbnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGELQHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNisb3X0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNiscHX0EemU-LNf4Tv9xw" name="getExamEntriesFolder">
+      <modelElement href="nito.uml#_bB414nX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNiscXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNiscnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNisc3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGELQXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNisdHX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNisdXX0EemU-LNf4Tv9xw" name="getModelFile">
+      <modelElement href="nito.uml#_bB5c8HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisdnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisd3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNiseHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGELQnX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNiseXX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNisenX0EemU-LNf4Tv9xw" name="stopAutoSave">
+      <modelElement href="nito.uml#_bB5c8XX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNise3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisfHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_bNisfXX0EemU-LNf4Tv9xw" name="set">
+      <modelElement href="nito.uml#_bGBvAXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisfnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNisf3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNisgHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGCWEHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNisgXX0EemU-LNf4Tv9xw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNisgnX0EemU-LNf4Tv9xw" name="newWorkspace">
+        <modelElement href="nito.uml#_bGBvAnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNisg3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNishHX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNishXX0EemU-LNf4Tv9xw" name="moveContents">
+      <modelElement href="nito.uml#_bGCWEXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNishnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNish3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNisiHX0EemU-LNf4Tv9xw" name="newWorkspace">
+        <modelElement href="nito.uml#_bGCWEnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNisiXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNisinX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNisi3X0EemU-LNf4Tv9xw" name="getByRelativePath" staticOperation="true">
+      <modelElement href="nito.uml#_bGC9IHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisjHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNisjXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNisjnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGC9I3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNisj3X0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNiskHX0EemU-LNf4Tv9xw" name="path">
+        <modelElement href="nito.uml#_bGC9IXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNiskXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNisknX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bNisk3X0EemU-LNf4Tv9xw" name="root">
+        <modelElement href="nito.uml#_bGC9InX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNislHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNislXX0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNislnX0EemU-LNf4Tv9xw" name="deleteDirectory">
+      <modelElement href="nito.uml#_bGDkMHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNisl3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNismHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bNismXX0EemU-LNf4Tv9xw" name="folder">
+        <modelElement href="nito.uml#_bGDkMXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNismnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNism3X0EemU-LNf4Tv9xw" name="File">
+          <modelElement href="nito.uml#_bFJlQHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOAmUHX0EemU-LNf4Tv9xw" name="ServerForExam" generalizations="_bN_YMXX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCItgnX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOAmUXX0EemU-LNf4Tv9xw" position="-2621.0,530.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOAmUnX0EemU-LNf4Tv9xw" label="-"/>
+    <operations xmi:id="_bOAmU3X0EemU-LNf4Tv9xw" name="ServerForExam">
+      <modelElement href="nito.uml#_bCJUkHX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOAmVHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOAmVXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOAmVnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOAmV3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCJUk3X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOAmWHX0EemU-LNf4Tv9xw" name="ServerForExam">
+          <modelElement href="nito.uml#_bCItgnX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOAmWXX0EemU-LNf4Tv9xw" name="connectionEstablished">
+      <modelElement href="nito.uml#_bGLgAHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOAmWnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGLgAnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOAmW3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bGMHEHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOAmXHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOAmXXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOAmXnX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGLgAXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmX3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAmYHX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOAmYXX0EemU-LNf4Tv9xw" name="connectionTerminated">
+      <modelElement href="nito.uml#_bGMHEnX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOAmYnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGMuIHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOAmY3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bGMuIXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOAmZHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOAmZXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOAmZnX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGMHE3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmZ3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAmaHX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOAmaXX0EemU-LNf4Tv9xw" name="messageReceived">
+      <modelElement href="nito.uml#_bGNVMHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOAmanX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGN8QHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOAma3X0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bGOjUHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOAmbHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOAmbXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOAmbnX0EemU-LNf4Tv9xw" name="msg">
+        <modelElement href="nito.uml#_bGNVMXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmb3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAmcHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOAmcXX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGNVMnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmcnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAmc3X0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOAmdHX0EemU-LNf4Tv9xw" name="screenshotReceived">
+      <modelElement href="nito.uml#_bGOjUnX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOAmdXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGPKYXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOAmdnX0EemU-LNf4Tv9xw" name="Annotations">
+        <modelElement href="nito.uml#_bGPxcHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOAmd3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOAmeHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOAmeXX0EemU-LNf4Tv9xw" name="img">
+        <modelElement href="nito.uml#_bGOjU3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmenX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAme3X0EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nito.uml#_bFXAoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOAmfHX0EemU-LNf4Tv9xw" name="packet">
+        <modelElement href="nito.uml#_bGPKYHX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOAmfXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOAmfnX0EemU-LNf4Tv9xw" name="DatagramPacket">
+          <modelElement href="nito.uml#_bFVLcHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bNaweXX0EemU-LNf4Tv9xw" name="IDHandler" associationsIn="_bNY7QHX0EemU-LNf4Tv9xw" associationsOut="_bNY7QHX0EemU-LNf4Tv9xw _bNawcHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bBt2wHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bNawenX0EemU-LNf4Tv9xw" position="-1507.0,467.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bNawe3X0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bNawfHX0EemU-LNf4Tv9xw" defaultValue="&quot;abcdefghijklmnopqrstuvwxyz&quot; + &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot; + &quot;0123456789&quot;" name="ALLOWED_CHARS" staticAttribute="true">
+      <modelElement href="nito.uml#_bGfCAXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawfXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawfnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNawf3X0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNawgHX0EemU-LNf4Tv9xw" defaultValue="10" name="LENGTH" staticAttribute="true">
+      <modelElement href="nito.uml#_bGfCA3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawgXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawgnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNawg3X0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNawhHX0EemU-LNf4Tv9xw" name="instance" staticAttribute="true">
+      <modelElement href="nito.uml#_bGfCBXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNawhXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGfCBnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNawhnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawh3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNawiHX0EemU-LNf4Tv9xw" name="IDHandler">
+        <modelElement href="nito.uml#_bBt2wHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bNawiXX0EemU-LNf4Tv9xw" name="map">
+      <modelElement href="nito.uml#_bGfpEnX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bNawinX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGgQIHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bNawi3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGgQIXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bNawjHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNawjXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bNawjnX0EemU-LNf4Tv9xw" name="TreeMap">
+        <modelElement href="nito.uml#_bFAbU3X0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bNawj3X0EemU-LNf4Tv9xw" name="IDHandler">
+      <modelElement href="nito.uml#_bBud0HX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bNawkHX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bNawkXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNawknX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNawk3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBud03X0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNawlHX0EemU-LNf4Tv9xw" name="IDHandler">
+          <modelElement href="nito.uml#_bBt2wHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bNawlXX0EemU-LNf4Tv9xw" name="randomGenerate">
+      <modelElement href="nito.uml#_bBvE4HX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawlnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bNawl3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNawmHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bBvE4nX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNawmXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNawmnX0EemU-LNf4Tv9xw" name="className">
+        <modelElement href="nito.uml#_bBvE4XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNawm3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNawnHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNawnXX0EemU-LNf4Tv9xw" name="getByID">
+      <modelElement href="nito.uml#_bBvE43X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawnnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawn3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNawoHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF7BUXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNawoXX0EemU-LNf4Tv9xw" name="Object">
+          <modelElement href="nito.uml#_bF5zMXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNawonX0EemU-LNf4Tv9xw" name="id">
+        <modelElement href="nito.uml#_bBvE5HX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNawo3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNawpHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bNawpXX0EemU-LNf4Tv9xw" name="generate">
+      <modelElement href="nito.uml#_bF6aQXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bNawpnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bNawp3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bNawqHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bF7BUHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bNawqXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bNawqnX0EemU-LNf4Tv9xw" name="o">
+        <modelElement href="nito.uml#_bF6aQnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bNawq3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bNawrHX0EemU-LNf4Tv9xw" name="Object">
+          <modelElement href="nito.uml#_bF5zMXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOVWeXX0EemU-LNf4Tv9xw" name="Examinee" associationsOut="_bOPP0HX0EemU-LNf4Tv9xw _bOPP0XX0EemU-LNf4Tv9xw _bOPP0nX0EemU-LNf4Tv9xw _bOUvYHX0EemU-LNf4Tv9xw _bOVWcHX0EemU-LNf4Tv9xw">
+    <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOVWenX0EemU-LNf4Tv9xw" position="-919.0,257.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <visibility xmi:id="_bOVWe3X0EemU-LNf4Tv9xw" label="+"/>
+    <attributes xmi:id="_bOVWfHX0EemU-LNf4Tv9xw" defaultValue="663825998181836230L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="nito.uml#_bGr2UHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWfXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWfnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWf3X0EemU-LNf4Tv9xw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWgHX0EemU-LNf4Tv9xw" defaultValue="1" name="STATUS_DISCONNECTED" staticAttribute="true">
+      <modelElement href="nito.uml#_bGr2UnX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWgXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGsdYHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWgnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWg3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWhHX0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWhXX0EemU-LNf4Tv9xw" defaultValue="2" name="STATUS_CONNECTED" staticAttribute="true">
+      <modelElement href="nito.uml#_bGsdYXX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWhnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGsdY3X0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWh3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWiHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWiXX0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWinX0EemU-LNf4Tv9xw" name="socket">
+      <modelElement href="nito.uml#_bGsdZHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWi3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWjHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWjXX0EemU-LNf4Tv9xw" name="Socket">
+        <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWjnX0EemU-LNf4Tv9xw" name="screen">
+      <modelElement href="nito.uml#_bGsdZ3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWj3X0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGsdanX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWkHX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWkXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWknX0EemU-LNf4Tv9xw" name="Screenshot">
+        <modelElement href="nito.uml#_bFXAoHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWk3X0EemU-LNf4Tv9xw" name="screenImageProperty">
+      <modelElement href="nito.uml#_bGsda3X0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWlHX0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGtEcHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWlXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWlnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWl3X0EemU-LNf4Tv9xw" name="SimpleObjectProperty">
+        <modelElement href="nito.uml#_bFmRMXX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWmHX0EemU-LNf4Tv9xw" name="screenWidth">
+      <modelElement href="nito.uml#_bGtEcXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWmXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWmnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWm3X0EemU-LNf4Tv9xw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWnHX0EemU-LNf4Tv9xw" name="status">
+      <modelElement href="nito.uml#_bGtEdHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWnXX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGtrgnX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWnnX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWn3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWoHX0EemU-LNf4Tv9xw" name="IntegerProperty">
+        <modelElement href="nito.uml#_bFlDEHX0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWoXX0EemU-LNf4Tv9xw" name="id">
+      <modelElement href="nito.uml#_bGtrg3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWonX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWo3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWpHX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWpXX0EemU-LNf4Tv9xw" name="name">
+      <modelElement href="nito.uml#_bGtrhHX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWpnX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGuSkHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWp3X0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWqHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWqXX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWqnX0EemU-LNf4Tv9xw" name="notes">
+      <modelElement href="nito.uml#_bGuSkXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWq3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWrHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWrXX0EemU-LNf4Tv9xw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bOVWrnX0EemU-LNf4Tv9xw" name="solutions">
+      <modelElement href="nito.uml#_bGuSknX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOVWr3X0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bGu5oHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_bOVWsHX0EemU-LNf4Tv9xw" name="LegacyStyledElement">
+        <modelElement href="nito.uml#_bGu5oXX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOVWsXX0EemU-LNf4Tv9xw" label="-"/>
+      <cardinality xmi:id="_bOVWsnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <type xmi:id="_bOVWs3X0EemU-LNf4Tv9xw" name="TreeMap">
+        <modelElement href="nito.uml#_bFAbU3X0EemU-LNf4Tv9xw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_bOVWtHX0EemU-LNf4Tv9xw" name="getName">
+      <modelElement href="nito.uml#_bCSegHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWtXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWtnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOVWt3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCSegXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOVWuHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOVWuXX0EemU-LNf4Tv9xw" name="setName">
+      <modelElement href="nito.uml#_bCSegnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOVWunX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOVWu3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOVWvHX0EemU-LNf4Tv9xw" name="name">
+        <modelElement href="nito.uml#_bCSeg3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOVWvXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9gHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOV9gXX0EemU-LNf4Tv9xw" name="statusProperty">
+      <modelElement href="nito.uml#_bCTFkHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9gnX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9g3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOV9hHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGVRAHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOV9hXX0EemU-LNf4Tv9xw" name="IntegerProperty">
+          <modelElement href="nito.uml#_bFlDEHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOV9hnX0EemU-LNf4Tv9xw" name="setStatus">
+      <modelElement href="nito.uml#_bCTFkXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9h3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9iHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOV9iXX0EemU-LNf4Tv9xw" name="status">
+        <modelElement href="nito.uml#_bCTFknX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9inX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9i3X0EemU-LNf4Tv9xw" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOV9jHX0EemU-LNf4Tv9xw" name="getStringForSearch">
+      <modelElement href="nito.uml#_bCTFk3X0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9jXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9jnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOV9j3X0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bCTsoHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOV9kHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOV9kXX0EemU-LNf4Tv9xw" name="getScreen">
+      <modelElement href="nito.uml#_bCTsoXX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9knX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9k3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOV9lHX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGVRAXX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOV9lXX0EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nito.uml#_bFXAoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOV9lnX0EemU-LNf4Tv9xw" name="getSolutions">
+      <modelElement href="nito.uml#_bCTsonX0EemU-LNf4Tv9xw"/>
+      <stereotypes xmi:id="_bOV9l3X0EemU-LNf4Tv9xw" name="Generics">
+        <modelElement href="nito.uml#_bCUTsHX0EemU-LNf4Tv9xw"/>
+      </stereotypes>
+      <visibility xmi:id="_bOV9mHX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9mXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOV9mnX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGV4EHX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOV9m3X0EemU-LNf4Tv9xw" name="TreeMap">
+          <modelElement href="nito.uml#_bFAbU3X0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_bOV9nHX0EemU-LNf4Tv9xw" name="addSolution">
+      <modelElement href="nito.uml#_bFotcHX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9nXX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9nnX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOV9n3X0EemU-LNf4Tv9xw" name="part">
+        <modelElement href="nito.uml#_bFotcXX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9oHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9oXX0EemU-LNf4Tv9xw" name="QuestionPart">
+          <modelElement href="nito.uml#_bCWv8HX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOV9onX0EemU-LNf4Tv9xw" name="solution">
+        <modelElement href="nito.uml#_bFotcnX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9o3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9pHX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOV9pXX0EemU-LNf4Tv9xw" name="Examinee">
+      <modelElement href="nito.uml#_bGUp8HX0EemU-LNf4Tv9xw"/>
+      <keywords xmi:id="_bOV9pnX0EemU-LNf4Tv9xw" keyword="create"/>
+      <visibility xmi:id="_bOV9p3X0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9qHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_bOV9qXX0EemU-LNf4Tv9xw">
+        <modelElement href="nito.uml#_bGUp9XX0EemU-LNf4Tv9xw"/>
+        <type xmi:id="_bOV9qnX0EemU-LNf4Tv9xw" name="Examinee">
+          <modelElement href="nito.uml#_bCQpUHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_bOV9q3X0EemU-LNf4Tv9xw" name="name">
+        <modelElement href="nito.uml#_bGUp8XX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9rHX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9rXX0EemU-LNf4Tv9xw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_bOV9rnX0EemU-LNf4Tv9xw" name="socket">
+        <modelElement href="nito.uml#_bGUp8nX0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9r3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9sHX0EemU-LNf4Tv9xw" name="Socket">
+          <modelElement href="nito.uml#_bE_0QXX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_bOV9sXX0EemU-LNf4Tv9xw" name="setScreen">
+      <modelElement href="nito.uml#_bGVRAnX0EemU-LNf4Tv9xw"/>
+      <visibility xmi:id="_bOV9snX0EemU-LNf4Tv9xw" label="+"/>
+      <cardinality xmi:id="_bOV9s3X0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_bOV9tHX0EemU-LNf4Tv9xw" name="screen">
+        <modelElement href="nito.uml#_bGVRA3X0EemU-LNf4Tv9xw"/>
+        <cardinality xmi:id="_bOV9tXX0EemU-LNf4Tv9xw" label="1" max="1" min="1"/>
+        <type xmi:id="_bOV9tnX0EemU-LNf4Tv9xw" name="Screenshot">
+          <modelElement href="nito.uml#_bFXAoHX0EemU-LNf4Tv9xw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_bOE3wHX0EemU-LNf4Tv9xw" name="Exception">
+    <modelElement href="nito.uml#_bGQYgHX0EemU-LNf4Tv9xw"/>
+    <visualProperties xmi:id="_bOE3wXX0EemU-LNf4Tv9xw" position="-2408.0,421.0" size="-1.0,-1.0" lineColor="0,0,0"/>
+    <stereotypes xmi:id="_bOE3wnX0EemU-LNf4Tv9xw" name="Reference">
+      <modelElement href="nito.uml#_bGQYgXX0EemU-LNf4Tv9xw"/>
+    </stereotypes>
+    <visibility xmi:id="_bOE3w3X0EemU-LNf4Tv9xw" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
