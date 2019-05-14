@@ -183,7 +183,7 @@ public class Workspace
 		{
 			FileOutputStream fos = new FileOutputStream( getIDHandlerFile());
 			ObjectOutputStream oos = new ObjectOutputStream( fos);
-			oos.writeObject( Model.getInstance());
+			oos.writeObject( IDHandler.getInstance());
 			oos.close();
 			fos.close();
 		}
@@ -232,8 +232,6 @@ public class Workspace
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		// TODO load other data
 	}
 
 	/**

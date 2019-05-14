@@ -6,13 +6,18 @@ import java.util.ArrayList;
 import admin.model.Examinee;
 import admin.model.Model;
 import javafx.application.Platform;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Pair;
@@ -24,26 +29,52 @@ public class MonitoringViewController
 	@FXML
 	SplitPane splitPane;
 	@FXML
+	ScrollPane logScroller;
+	@FXML
 	private ListView<String> logActionList;
 	@FXML
 	private ListView<String> logTimeList;
 	@FXML
 	private Label placeHolder;
 	@FXML
-	private Pane screenPane;
+	ScrollPane scrollPane;
+	@FXML
+	private FlowPane screenPane;
 	@FXML
 	private Slider zoomSlider;
 
 	private ArrayList<ExamineeScreenController> controllers;
 
+	private ObjectProperty<ScrollBar> logActionListScroll;
+	private ObjectProperty<ScrollBar> logTimeListScroll;
+	
 	public MonitoringViewController()
 	{
+		logActionListScroll = new SimpleObjectProperty<>();
+		logTimeListScroll = new SimpleObjectProperty<>();
+
+		logActionListScroll.addListener( (o, oldVal, newVal) -> {
+			if ( logTimeListScroll.get() != null)
+			{
+				logActionListScroll.get().valueProperty().bindBidirectional( logTimeListScroll.get().valueProperty());
+			}
+		});
+		logTimeListScroll.addListener( (o, oldVal, newVal) -> {
+			if ( logActionListScroll.get() != null)
+			{
+				logActionListScroll.get().valueProperty().bindBidirectional( logTimeListScroll.get().valueProperty());
+			}
+		});
+		
 		controllers = new ArrayList<ExamineeScreenController>();
 	}
 
 	public void initialize()
 	{
-		screenPane.setMinWidth( Double.MAX_VALUE);
+		scrollPane.viewportBoundsProperty().addListener( (o,oldVal, newVal) -> {
+			screenPane.setPrefWidth( newVal.getWidth());
+		});
+		
 		Model.getInstance().getLogs().addListener( ( ListChangeListener.Change<? extends Pair<String, Integer>> c) -> {
 			while ( c.next())
 			{
@@ -78,6 +109,37 @@ public class MonitoringViewController
 				controller.setWidth( newVal.intValue());
 			});
 		});
+
+//		logActionList.getSelectionModel().getSelectedIndices().addListener( (ListChangeListener.Change<? extends Integer> c) -> {
+//			while (c.next())
+//			{
+//				if ( c.)
+//			}
+//		});
+		
+		new Thread( () -> {
+			while (true)
+			{
+				ScrollBar sb = (ScrollBar) logActionList.lookup( ".scroll-bar:vertical");
+				if (sb != null)
+				{
+					sb.setStyle( "-fx-opacity: 0");
+					logActionListScroll.set( sb);
+					break;
+				}
+			}
+		}).start();
+		new Thread( () -> {
+			while (true)
+			{
+				ScrollBar sb = (ScrollBar) logTimeList.lookup( ".scroll-bar:vertical");
+				if (sb != null)
+				{
+					logTimeListScroll.set( sb);
+					break;
+				}
+			}
+		}).start();
 	}
 
 	public void addExaminee( Examinee e)

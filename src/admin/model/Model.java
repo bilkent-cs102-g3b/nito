@@ -351,7 +351,6 @@ public class Model implements Serializable
 	 */
 	public void sendMessage( String type, String msg, Examinee examinee)
 	{
-		System.out.println( msg);
 		server.sendMessage( secret + MESSAGE_SEPERATOR + type + MESSAGE_SEPERATOR + msg, examinee.getSocket().getInetAddress());
 	}
 
@@ -372,7 +371,7 @@ public class Model implements Serializable
 	 */
 	public void log( String message)
 	{
-		logs.add( new Pair<String, Integer>( message, currentExam.getTimeElapsed()));
+		logs.add( new Pair<String, Integer>( message, lastExam.getTimeElapsed()));
 	}
 
 	/**
@@ -427,7 +426,6 @@ public class Model implements Serializable
 		@Override
 		public void messageReceived( String msg, Socket socket)
 		{
-			System.out.println( msg);
 			handleMessage( msg, socket);
 		}
 

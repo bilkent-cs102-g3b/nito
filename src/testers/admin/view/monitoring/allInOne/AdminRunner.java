@@ -42,7 +42,7 @@ public class AdminRunner extends Application
 
 		Exam e = Model.getInstance().createExam( "Test", 60);
 		System.out.println( e);
-		Model.getInstance().startExam( e);
+		Model.getInstance().startSendingExam( e);
 		System.out.println( "Ready");
 
 		new Thread( new Runnable() {

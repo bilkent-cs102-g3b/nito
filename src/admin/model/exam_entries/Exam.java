@@ -34,7 +34,7 @@ public class Exam extends Entry
 		running = false;
 		hasInstructions = false;
 		this.length = length;
-		timeLeft = 0;
+		timeLeft = length;
 	}
 
 	// methods
