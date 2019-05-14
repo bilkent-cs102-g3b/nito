@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<Tab fx:id="questionPart" xmlns:fx="http://javafx.com/fxml/1">
+<Tab fx:id="questionPart" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.grading.QuestionPartTabController">
 
 		<SplitPane VBox.vgrow="ALWAYS">
 			<NumberedEditor fx:id="editor"/>

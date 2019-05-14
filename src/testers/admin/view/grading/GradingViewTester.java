@@ -11,7 +11,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-
 public class GradingViewTester extends Application
 {
 
@@ -42,7 +41,5 @@ public class GradingViewTester extends Application
 	{
 		launch( args);
 	}
-	
-	
 
 }

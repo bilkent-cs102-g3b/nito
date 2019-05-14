@@ -56,7 +56,7 @@ public class Screenshot implements Serializable, Cloneable
 
 		if ( scale == 0)
 			scale = 1;
-		
+
 		if ( scale < 0 || scale > 1)
 		{
 			throw new IllegalArgumentException( "The scale value should be in the range (0,1].");

@@ -1,6 +1,5 @@
 package testers.admin.view.monitoring;
 
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import javafx.application.Application;
@@ -23,7 +22,6 @@ public class ExamineeScreenTester extends Application
 		root = FXMLLoader.load( getClass().getResource( resource));
 		Scene scene = new Scene( root, 1200, 675);
 		stage.setScene( scene);
-		
 
 		stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
 			@Override

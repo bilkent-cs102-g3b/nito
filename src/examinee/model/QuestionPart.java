@@ -15,14 +15,14 @@ public class QuestionPart extends ExamEntry implements Submitable
 	public QuestionPart( String id, String title, String content, String statement, boolean markable, boolean editable)
 	{
 		super( id, title, content, markable, editable);
-		this.setStatement(statement);
+		this.setStatement( statement);
 	}
-	
+
 	// Alternative constructor for creating a QuestionPart with added template
 	public QuestionPart( String id, String title, String content, String statement, boolean markable, boolean editable, String answerTemplate)
 	{
 		super( id, title, content, markable, editable);
-		this.setStatement(statement);
+		this.setStatement( statement);
 		this.content = answerTemplate;
 	}
 
@@ -34,13 +34,13 @@ public class QuestionPart extends ExamEntry implements Submitable
 	{
 		this.content = s;
 	}
-	
+
 	public String getStatement()
 	{
 		return statement;
 	}
 
-	public void setStatement(String statement)
+	public void setStatement( String statement)
 	{
 		this.statement = statement;
 	}

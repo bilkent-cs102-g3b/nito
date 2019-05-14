@@ -179,6 +179,20 @@ public class Workspace
 			e.printStackTrace();
 		}
 
+		try
+		{
+			FileOutputStream fos = new FileOutputStream( getIDHandlerFile());
+			ObjectOutputStream oos = new ObjectOutputStream( fos);
+			oos.writeObject( Model.getInstance());
+			oos.close();
+			fos.close();
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		// TODO save other data
 	}
 
@@ -194,6 +208,20 @@ public class Workspace
 		try
 		{
 			FileInputStream fis = new FileInputStream( getModelFile());
+			ObjectInputStream ois = new ObjectInputStream( fis);
+			ois.readObject();
+			ois.close();
+			fis.close();
+		}
+		catch (IOException | ClassNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try
+		{
+			FileInputStream fis = new FileInputStream( getIDHandlerFile());
 			ObjectInputStream ois = new ObjectInputStream( fis);
 			ois.readObject();
 			ois.close();
@@ -251,6 +279,11 @@ public class Workspace
 	public File getModelFile()
 	{
 		return new File( getExamEntriesFolder() + File.separator + "model");
+	}
+
+	private File getIDHandlerFile()
+	{
+		return new File( getExamEntriesFolder() + File.separator + "id_handler");
 	}
 
 	public void stopAutoSave()

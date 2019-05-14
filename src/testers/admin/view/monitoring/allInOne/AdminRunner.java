@@ -55,7 +55,7 @@ public class AdminRunner extends Application
 					Examinee[] es = Model.getInstance().getExaminees().search( "");
 					if ( es.length > 0)
 					{
-						System.out.println(es[0]);
+						System.out.println( es[0]);
 						Platform.runLater( () -> ((MonitoringViewController) loader.getController()).addExaminee( es[0]));
 						break;
 					}
@@ -73,7 +73,7 @@ public class AdminRunner extends Application
 					Examinee[] es = Model.getInstance().getExaminees().search( "");
 					if ( es.length > 1)
 					{
-						System.out.println(es[0]);
+						System.out.println( es[0]);
 						Platform.runLater( () -> ((MonitoringViewController) loader.getController()).addExaminee( es[0]));
 						break;
 					}

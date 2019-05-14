@@ -20,6 +20,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 12/05/2019
  */
 public class LoginTester extends Application
@@ -28,8 +29,10 @@ public class LoginTester extends Application
 	public void start( Stage stage) throws IOException
 	{
 		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
-		
-		/******************************** LOGIN DIALOG ****************************************/
+
+		/********************************
+		 * LOGIN DIALOG
+		 ****************************************/
 		boolean success = false;
 		while ( !success)
 		{
@@ -41,19 +44,17 @@ public class LoginTester extends Application
 			}
 			else
 			{
-				System.exit(0);
+				System.exit( 0);
 			}
-			
-			if (!success)
+
+			if ( !success)
 			{
 				Alert alert = new Alert( AlertType.ERROR, "Some error occured. Please try again!");
 				alert.showAndWait();
 			}
 		}
 	}
-		
-		
-			
+
 	public static void main( String[] args)
 	{
 		launch( args);

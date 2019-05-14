@@ -332,7 +332,7 @@ public class MainEditorController
 	{
 		if ( e instanceof Exam)
 			return;
-		
+
 		NumberedEditor editor = new NumberedEditor( e.getContent());
 		editor.addListenerToText( new ChangeListener<String>() {
 			@Override

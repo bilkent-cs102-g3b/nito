@@ -36,7 +36,7 @@ public class NewExamDialogController
 		title.textProperty().addListener( listener);
 		hours.textProperty().addListener( listener);
 		mins.textProperty().addListener( listener);
-		
+
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{

@@ -39,6 +39,7 @@ import javafx.stage.Stage;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 12/05/2019
  */
 public class MainScreenController
@@ -70,15 +71,12 @@ public class MainScreenController
 		map = new TreeMap<TreeItem<String>, ExamEntry>();
 		openStatementEntries = new ArrayList<>();
 		openSolutionEntries = new ArrayList<>();
-		Model.getInstance().getStatus().addListener((o, oldVal, newVal) ->
-		{
+		Model.getInstance().getStatus().addListener( ( o, oldVal, newVal) -> {
 			if ( newVal.intValue() == Model.STATUS_START)
 			{
-				Model.getInstance().getTimeRemain().addListener((ob, oldValue, newValue) ->
-				{
-					Platform.runLater(() ->
-					{
-						setTime(newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
+				Model.getInstance().getTimeRemain().addListener( ( ob, oldValue, newValue) -> {
+					Platform.runLater( () -> {
+						setTime( newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
 					});
 				});
 				submit.setDisable( false);
@@ -86,27 +84,24 @@ public class MainScreenController
 		});
 
 		// Initializing the tree
-		rootItem = new CheckBoxTreeItem<String>(Model.getInstance().getExamData().getTitle());
-		checkTreeView.setRoot(rootItem);
-		updateTreeView(rootItem, Model.getInstance().getExamData());
+		rootItem = new CheckBoxTreeItem<String>( Model.getInstance().getExamData().getTitle());
+		checkTreeView.setRoot( rootItem);
+		updateTreeView( rootItem, Model.getInstance().getExamData());
 
 		// The listener for tree items
-		checkTreeView.setOnMouseClicked(new EventHandler<MouseEvent>()
-		{
+		checkTreeView.setOnMouseClicked( new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(MouseEvent mouseEvent)
+			public void handle( MouseEvent mouseEvent)
 			{
-				CheckBoxTreeItem<String> intermediate = (CheckBoxTreeItem<String>) checkTreeView.getSelectionModel()
-						.getSelectedItem();
-				if (intermediate == null)
+				CheckBoxTreeItem<String> intermediate = (CheckBoxTreeItem<String>) checkTreeView.getSelectionModel().getSelectedItem();
+				if ( intermediate == null)
 				{
 					return;
 				}
-				if (mouseEvent.getClickCount() == 2 && intermediate != rootItem && intermediate.isLeaf())
+				if ( mouseEvent.getClickCount() == 2 && intermediate != rootItem && intermediate.isLeaf())
 				{
-					SwingUtilities.invokeLater(() ->
-					{
-						System.out.println("Clicked on " + intermediate.getValue());
+					SwingUtilities.invokeLater( () -> {
+						System.out.println( "Clicked on " + intermediate.getValue());
 						openTab();
 					});
 				}
@@ -114,19 +109,17 @@ public class MainScreenController
 		});
 
 		// Swing components
-		SwingUtilities.invokeLater(new Runnable()
-		{
+		SwingUtilities.invokeLater( new Runnable() {
 			@Override
 			public void run()
 			{
-				desktopPane.setBackground(Color.LIGHT_GRAY);
-				desktopPane.setVisible(true);
-				Platform.runLater(new Runnable()
-				{
+				desktopPane.setBackground( Color.LIGHT_GRAY);
+				desktopPane.setVisible( true);
+				Platform.runLater( new Runnable() {
 					@Override
 					public void run()
 					{
-						splitPane.setDividerPositions(0.2);
+						splitPane.setDividerPositions( 0.2);
 					}
 				});
 			}
@@ -136,55 +129,56 @@ public class MainScreenController
 	/**
 	 * Sets the time components
 	 */
-	private void setTime(int timeRemain, int timeTotal)
+	private void setTime( int timeRemain, int timeTotal)
 	{
 		System.out.println( timeRemain);
 		int remainTimeInMinutes = timeRemain / 60;
 		int remainTimeInSeconds = timeRemain % 60;
-		
+
 		int totalTimeInMinutes = timeTotal / 60;
 		int totalTimeInSeconds = timeTotal % 60;
-		
-		time.setText(remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
-		if (timeTotal != 0)
+
+		time.setText( remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
+		if ( timeTotal != 0)
 		{
 			bar.setProgress( (timeTotal - timeRemain) / timeTotal);
-		} else
+		}
+		else
 		{
-			bar.setProgress(0);
+			bar.setProgress( 0);
 		}
 	}
 
 	/**
 	 * Updates the tree hierarchy according to the data
-	 * @param item the root item to create the tree on
+	 * @param item      the root item to create the tree on
 	 * @param container the container to get the exam entries from
 	 */
 	@SuppressWarnings("unchecked")
-	public void updateTreeView(TreeItem<String> item, ExamContainer container)
+	public void updateTreeView( TreeItem<String> item, ExamContainer container)
 	{
-		container.getAll().forEach(e ->
-		{
-			CheckBoxTreeItem<String> nextItem = new ComparableTreeItem(e.getTitle());
-			if (e instanceof Question)
+		container.getAll().forEach( e -> {
+			CheckBoxTreeItem<String> nextItem = new ComparableTreeItem( e.getTitle());
+			if ( e instanceof Question)
 			{
-				ComparableTreeItem cti = new ComparableTreeItem("Statement");
-				nextItem.getChildren().add(cti);
-				map.put(cti, e);
-			} else if (e instanceof QuestionPart)
-			{
-				ComparableTreeItem cti1 = new ComparableTreeItem("Statement");
-				ComparableTreeItem cti2 = new ComparableTreeItem("Solution");
-				nextItem.getChildren().addAll(cti1, cti2);
-				map.put(cti1, e);
-				map.put(cti2, e);
+				ComparableTreeItem cti = new ComparableTreeItem( "Statement");
+				nextItem.getChildren().add( cti);
+				map.put( cti, e);
 			}
-			else if (e instanceof Instruction)
+			else if ( e instanceof QuestionPart)
 			{
-				map.put(nextItem, e);
+				ComparableTreeItem cti1 = new ComparableTreeItem( "Statement");
+				ComparableTreeItem cti2 = new ComparableTreeItem( "Solution");
+				nextItem.getChildren().addAll( cti1, cti2);
+				map.put( cti1, e);
+				map.put( cti2, e);
 			}
-			item.getChildren().add(nextItem);
-			updateTreeView(nextItem, e);
+			else if ( e instanceof Instruction)
+			{
+				map.put( nextItem, e);
+			}
+			item.getChildren().add( nextItem);
+			updateTreeView( nextItem, e);
 		});
 	}
 
@@ -194,63 +188,65 @@ public class MainScreenController
 	public void openTab()
 	{
 		CheckBoxTreeItem<String> selected = (CheckBoxTreeItem<String>) checkTreeView.getSelectionModel().getSelectedItem();
-		if (selected == null)
+		if ( selected == null)
 		{
 			return;
 		}
 
-		ExamEntry entry = map.get(selected);
-		if (entry == null)
+		ExamEntry entry = map.get( selected);
+		if ( entry == null)
 		{
 			return;
 		}
-		
+
 		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
 			return;
-		if (selected.getValue().equals("Statement"))
+		if ( selected.getValue().equals( "Statement"))
 		{
-			if (openStatementEntries.contains( entry))
+			if ( openStatementEntries.contains( entry))
 			{
 				return;
 			}
 		}
 		else
 		{
-			if (openSolutionEntries.contains( entry))
+			if ( openSolutionEntries.contains( entry))
 			{
 				return;
 			}
 		}
 
-		
-		Platform.runLater(() -> {
+		Platform.runLater( () -> {
 			JFXPanel fxPanel = new JFXPanel();
-			NumberedEditor editor = new NumberedEditor(entry.getContent());
-			fxPanel.setScene(new Scene(editor));
+			NumberedEditor editor = new NumberedEditor( entry.getContent());
+			fxPanel.setScene( new Scene( editor));
 
-			if (selected.getValue().equals("Statement"))
+			if ( selected.getValue().equals( "Statement"))
 			{
 				editor.disableEditor();
 				openStatementEntries.add( entry);
+			}
+			else if ( selected.getValue().equals( "Instructions"))
+			{
+				editor.disableEditor();
 			}
 			else
 			{
 				openSolutionEntries.add( entry);
 			}
 
-			SwingUtilities.invokeLater(() -> {
+			SwingUtilities.invokeLater( () -> {
 				JInternalFrame jif = new JInternalFrame( entry.getTitle(), true, true, true, true);
-				jif.add(fxPanel);
-				jif.setSize(600, 600);
-				jif.setVisible(true);
-				desktopPane.add(jif);
-				
-				jif.addInternalFrameListener(new InternalFrameAdapter()
-				{
+				jif.add( fxPanel);
+				jif.setSize( 600, 600);
+				jif.setVisible( true);
+				desktopPane.add( jif);
+
+				jif.addInternalFrameListener( new InternalFrameAdapter() {
 					@Override
-					public void internalFrameClosing(InternalFrameEvent e)
+					public void internalFrameClosing( InternalFrameEvent e)
 					{
-						if (selected.getValue().equals("Statement"))
+						if ( selected.getValue().equals( "Statement"))
 						{
 							openStatementEntries.remove( entry);
 						}
@@ -261,8 +257,8 @@ public class MainScreenController
 					}
 				});
 			});
-			editor.addListenerToText((o, oldVal, newVal) -> {
-				((QuestionPart) entry).updateSolution(newVal);
+			editor.addListenerToText( ( o, oldVal, newVal) -> {
+				((QuestionPart) entry).updateSolution( newVal);
 			});
 		});
 	}
@@ -273,10 +269,10 @@ public class MainScreenController
 	@FXML
 	public void submit()
 	{
-		System.out.println("Submit Pressed");
+		System.out.println( "Submit Pressed");
 		Model.getInstance().examEnd();
 		Stage stage = (Stage) splitPane.getScene().getWindow();
-		
+
 		try
 		{
 			Pane submit;
@@ -292,7 +288,8 @@ public class MainScreenController
 			stage.setY( 600);
 			stage.setTitle( "Nito - Submitted");
 			stage.show();
-		} catch (IOException e)
+		}
+		catch (IOException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -301,15 +298,15 @@ public class MainScreenController
 
 	class ComparableTreeItem extends CheckBoxTreeItem<String> implements Comparable<TreeItem<String>>
 	{
-		public ComparableTreeItem(String s)
+		public ComparableTreeItem( String s)
 		{
-			super(s);
+			super( s);
 		}
 
 		@Override
-		public int compareTo(TreeItem<String> o)
+		public int compareTo( TreeItem<String> o)
 		{
-			return ((Integer) hashCode()).compareTo(o.hashCode());
+			return ((Integer) hashCode()).compareTo( o.hashCode());
 		}
 	}
 }

@@ -23,31 +23,31 @@ public class ExamineeScreenController
 	TitledPane titlePane;
 	@FXML
 	private ImageView screen;
-	
+
 	public void setExaminee( Examinee e)
 	{
 		examinee = e;
 		screen.imageProperty().bindBidirectional( e.getScreenImageProperty());
-		titlePane.setText(e.getName());
+		titlePane.setText( e.getName());
 	}
-	
+
 	@FXML
 	public void openNotes()
-	{	
+	{
 		Dialog<String> noteDialog = new Dialog<String>();
-		noteDialog.setHeaderText("Notes");
+		noteDialog.setHeaderText( "Notes");
 		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.APPLY);
 		noteDialog.getDialogPane().getButtonTypes().add( ButtonType.CANCEL);
-		
+
 		MigPane content = new MigPane();
-		Label note = new Label("Note: ");
+		Label note = new Label( "Note: ");
 		TextArea text = new TextArea( examinee.getNotes());
-		
-		content.add(note, "left");
-		content.add(text, "grow, span");
-		
-		noteDialog.getDialogPane().setContent(content);
-		
+
+		content.add( note, "left");
+		content.add( text, "grow, span");
+
+		noteDialog.getDialogPane().setContent( content);
+
 		noteDialog.setResultConverter( button -> {
 			if ( button == ButtonType.APPLY)
 			{
@@ -55,14 +55,14 @@ public class ExamineeScreenController
 			}
 			return null;
 		});
-		
+
 		Optional<String> result = noteDialog.showAndWait();
 		result.ifPresent( c -> examinee.setNotes( result.get()));
 	}
 
-	public void setWidth(int width)
+	public void setWidth( int width)
 	{
-		if (examinee != null)
+		if ( examinee != null)
 		{
 			titlePane.setPrefWidth( width);
 			examinee.setScreenWidth( width);

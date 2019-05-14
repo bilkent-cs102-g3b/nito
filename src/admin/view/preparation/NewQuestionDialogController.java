@@ -36,7 +36,7 @@ public class NewQuestionDialogController
 		Entry lastExam = Model.getInstance().getLastExam();
 		examsBox.getItems().setAll( Model.getInstance().getEntries().findAll( Exam.class));
 		examsBox.getItems().remove( lastExam);
-		
+
 		root.setOnShown( e -> {
 			Object userData = root.getDialogPane().getUserData();
 			if ( userData != null && userData instanceof Entry)
@@ -49,7 +49,7 @@ public class NewQuestionDialogController
 				}
 			}
 		});
-		
+
 		ChangeListener<? super Object> listener = ( ObservableValue<?> o, Object oldVal, Object newVal) -> nextButton.setDisable( !isValid());
 		examsBox.valueProperty().addListener( listener);
 		titleField.textProperty().addListener( listener);
@@ -58,15 +58,15 @@ public class NewQuestionDialogController
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.NEXT)
 			{
-				return new Pair<Entry, Pair<String, Integer>>(examsBox.getValue(), new Pair<String, Integer>(titleField.getText(), Integer.parseInt( numOfPartsField.getText())));
+				return new Pair<Entry, Pair<String, Integer>>( examsBox.getValue(), new Pair<String, Integer>( titleField.getText(), Integer.parseInt( numOfPartsField.getText())));
 			}
 			return null;
 		});
 	}
-	
+
 	public void openQuestionParts()
 	{
-		
+
 	}
 
 	private boolean isValid()

@@ -3,6 +3,7 @@ package admin.view;
 import java.io.IOException;
 
 import admin.model.Model;
+import admin.view.grading.GradingViewController;
 import admin.view.monitoring.MonitoringViewController;
 import admin.view.preparation.MainEditorController;
 import javafx.fxml.FXML;
@@ -36,11 +37,11 @@ public class MainController
 
 	private MainEditorController preparationController;
 	private MonitoringViewController monitoringController;
-	// TODO gradingControl
+	private GradingViewController gradingController;
 
 	private Node preparation;
 	private Node monitoring;
-	private Pane grading;
+	private Node grading;
 
 	public static final int STAGE_PREPARATION = 1;
 	public static final int STAGE_MONITORING = 2;
@@ -51,8 +52,7 @@ public class MainController
 	{
 		preparationLoader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/preparation/MainEditor.fxml"));
 		monitoringLoader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/monitoring/MonitoringView.fxml"));
-		// TODO gradingLoader = new FXMLLoader( getClass().getResource(
-		// "/admin/view/fxml/grading/MainEditor.fxml"));
+		gradingLoader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/grading/GradingView.fxml"));
 
 		preparation = preparationLoader.load();
 		preparationController = preparationLoader.getController();
@@ -60,10 +60,10 @@ public class MainController
 		monitoring = monitoringLoader.load();
 		monitoringController = monitoringLoader.getController();
 
-		// TODO load grading
+		grading = gradingLoader.load();
+		gradingController = gradingLoader.getController();
 
 		((MainEditorController) preparationLoader.getController()).setMainController( this);
-
 		currentStage = STAGE_PREPARATION;
 		root.getChildren().add( preparation);
 	}
@@ -174,6 +174,7 @@ public class MainController
 			gradingButton.getStyleClass().remove( "navButton");
 
 			toolBar.getChildren().clear();
+			gradingController.init();
 		}
 	}
 }

@@ -34,25 +34,36 @@ public class GradingViewController
 
 	public void initialize()
 	{
-		examineeList.getItems().addAll( Model.getInstance().getExaminees().getAll());
-		examineeList.getSelectionModel().selectedItemProperty().addListener( (o, oldVal, newVal) -> {
-			openTabs(newVal);
+		init();
+		examineeList.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> {
+			openTabs( newVal);
 		});
 	}
+
+	public void init()
+	{
+		examineeList.getItems().clear();
+		examineeList.getItems().addAll( Model.getInstance().getExaminees().getAll());
+	}
+
 	private void openTabs( Examinee e)
 	{
 		questionTabs.getTabs().clear();
-		e.getSolutions().forEach((part, solution) -> {
-			try {
+		System.out.println( e);
+		System.out.println( e.getSolutions());
+		e.getSolutions().forEach( ( part, solution) -> {
+			try
+			{
 				FXMLLoader loader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/grading/QuestionPartTab.fxml"));
 				Tab tab = loader.load();
-				((QuestionPartTabController) loader.getController()).setExamineeAndPart(e, part);
-				questionTabs.getTabs().add(tab);
-			} catch (IOException e1) {
+				((QuestionPartTabController) loader.getController()).setExamineeAndPart( e, part);
+				questionTabs.getTabs().add( tab);
+			}
+			catch (IOException e1)
+			{
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-//			tab.setContent( );
 		});
 	}
 }

@@ -16,7 +16,7 @@ import javafx.stage.WindowEvent;
 
 public class MainTester extends Application
 {
-	
+
 	Exam e, e2;
 	Question q, q2, q3, q4;
 
@@ -30,23 +30,22 @@ public class MainTester extends Application
 
 		q = Model.getInstance().createQuestion( e, "Question1");
 		q2 = Model.getInstance().createQuestion( e, "Question2");
-		
+
 		q3 = Model.getInstance().createQuestion( e2, "Question1");
 		q4 = Model.getInstance().createQuestion( e2, "Question2");
 
-
 		Model.getInstance().createQuestionPart( q, "Part1", 50);
 		Model.getInstance().createQuestionPart( q, "Part2", 50);
-		
+
 		Model.getInstance().createQuestionPart( q2, "Part1", 50);
 		Model.getInstance().createQuestionPart( q2, "Part2", 50);
-		
+
 		Model.getInstance().createQuestionPart( q3, "Part1", 50);
 		Model.getInstance().createQuestionPart( q3, "Part2", 50);
-		
+
 		Model.getInstance().createQuestionPart( q4, "Part1", 50);
 		Model.getInstance().createQuestionPart( q4, "Part2", 50);
-		
+
 		Pane root;
 		String resource;
 

@@ -1,15 +1,19 @@
 package admin.model;
 
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.TreeMap;
 
 /**
  * This class handles object IDs for Nito. It takes care for unique IDs. It uses
  * singleton pattern
  * @author Ziya Mukhtarov
- * @version 04/05/2019
+ * @version 14/05/2019
  */
-public class IDHandler
+public class IDHandler implements Serializable
 {
+	private static final long serialVersionUID = 1404894489076444232L;
+
 	public static final String ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789";
 	public static final int LENGTH = 10;
 
@@ -82,5 +86,14 @@ public class IDHandler
 	public Object getByID( String id)
 	{
 		return map.get( id);
+	}
+
+	/**
+	 * Deserialization method
+	 */
+	private void readObject( ObjectInputStream ois) throws Exception
+	{
+		ois.defaultReadObject();
+		instance = this;
 	}
 }

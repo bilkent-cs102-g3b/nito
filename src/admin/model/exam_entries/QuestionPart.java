@@ -7,7 +7,7 @@ import admin.model.Model;
  * @author Ziya Mukhtarov
  * @version 08/05/2019
  */
-public class QuestionPart extends Entry
+public class QuestionPart extends Entry implements Comparable<QuestionPart>
 {
 	private static final long serialVersionUID = -7659809221309413824L;
 
@@ -48,12 +48,12 @@ public class QuestionPart extends Entry
 		else
 			super.add( entry);
 	}
-	
+
 	public boolean hasTemplate()
 	{
 		return hasTemplate;
 	}
-	
+
 	/**
 	 * @return The maxPoints
 	 */
@@ -68,5 +68,11 @@ public class QuestionPart extends Entry
 	public void setMaxPoints( int maxPoints)
 	{
 		this.maxPoints = maxPoints;
+	}
+
+	@Override
+	public int compareTo( QuestionPart o)
+	{
+		return id.compareTo( o.id);
 	}
 }

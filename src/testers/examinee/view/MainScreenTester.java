@@ -16,6 +16,7 @@ import javafx.stage.WindowEvent;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 12/05/2019
  */
 public class MainScreenTester extends Application
@@ -28,12 +29,12 @@ public class MainScreenTester extends Application
 			SplitPane root;
 			String path;
 			stage.initStyle( StageStyle.UNDECORATED);
-			stage.setFullScreenExitHint("");
-//			stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
+			stage.setFullScreenExitHint( "");
+			// stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
 			stage.setFullScreen( true);
 			path = "src/examinee/view/fxml/MainScreen.fxml";
 			root = (SplitPane) FXMLLoader.load( new File( path).toURI().toURL());
-			Scene scene = new Scene(root);
+			Scene scene = new Scene( root);
 			stage.setScene( scene);
 
 			// TODO Delete this?

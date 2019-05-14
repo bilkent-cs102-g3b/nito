@@ -10,12 +10,12 @@ import java.util.ArrayList;
 public class ExamContainer
 {
 	ArrayList<ExamEntry> children;
-	
+
 	public ExamContainer()
 	{
 		children = new ArrayList<ExamEntry>();
 	}
-	
+
 	/**
 	 * Add ExamEntry object to container
 	 * @param e Entry to add

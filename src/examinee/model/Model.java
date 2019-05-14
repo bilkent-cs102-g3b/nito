@@ -43,7 +43,7 @@ public class Model
 	private Model()
 	{
 		status = new SimpleIntegerProperty();
-		status.set(0);
+		status.set( 0);
 		reference = null;
 		dataEnd = false;
 		examStart = false;
@@ -51,15 +51,16 @@ public class Model
 		timeTotal = new SimpleIntegerProperty();
 		timeRemain = new SimpleIntegerProperty();
 		examTimer = new Thread( () -> {
-			while (true)
+			while ( true)
 			{
 				try
 				{
 					Thread.sleep( 1000);
-				} catch (InterruptedException e)
+				}
+				catch (InterruptedException e)
 				{
-					e.printStackTrace();
 					Thread.currentThread().interrupt();
+					break;
 				}
 				timeRemain.set( timeRemain.intValue() - 1);
 			}
@@ -80,19 +81,17 @@ public class Model
 	/**
 	 * Send message to server using client instance
 	 * @param protocol - Protocol when sending message
-	 * @param msg - Message to send
+	 * @param msg      - Message to send
 	 */
 	public void sendMessage( String protocol, String msg)
 	{
 		client.sendMessage( SECRET + ":::" + protocol + ":::" + msg);
 	}
-	
-	
-	
+
 	/**
 	 * Create client with network package and connect to admin ip
 	 * @param name Name of user
-	 * @param ip Admin ip to connect to
+	 * @param ip   Admin ip to connect to
 	 * @return true if connection successful
 	 */
 	public boolean login( String name, String ip)
@@ -113,59 +112,59 @@ public class Model
 			};
 
 			sendMessage( "name", username);
-			status.set(STATUS_CONNECTED);
-			
+			status.set( STATUS_CONNECTED);
+
 			// Send screenshots
 			new Thread( () -> {
-				while( true)
+				while ( true)
 				{
 					try
 					{
 						client.sendImage( new Screenshot( width));
-					} catch (AWTException e)
+					}
+					catch (AWTException e)
 					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
 			}).start();
-			
+
 			return true;
 		}
-		catch (IOException e )
+		catch (IOException e)
 		{
-			//Login failed
+			// Login failed
 			return false;
 		}
 
 	}
-	
+
 	/**
 	 * Submits all question part entries
 	 */
 	public void submitAll()
 	{
 		ArrayList<ExamEntry> list = examData.getAll();
-		for( int i = 0; i < list.size(); i++)
+		for ( int i = 0; i < list.size(); i++)
 		{
-			if ( list.get(i) instanceof Question )
+			if ( list.get( i) instanceof Question)
 			{
 				QuestionPart part = null;
-				ArrayList<ExamEntry> partList = list.get(i).getAll();
-				for( int k = 0; k < partList.size(); k++)
+				ArrayList<ExamEntry> partList = list.get( i).getAll();
+				for ( int k = 0; k < partList.size(); k++)
 				{
-					if ( partList.get(k) instanceof QuestionPart)
+					if ( partList.get( k) instanceof QuestionPart)
 					{
-						part = (QuestionPart) partList.get(k);
+						part = (QuestionPart) partList.get( k);
 						part.submit( client);
 					}
 				}
 			}
 		}
-		status.set(STATUS_FINISHED);
+		status.set( STATUS_FINISHED);
 	}
-	
-	
+
 	/**
 	 * Get total exam time
 	 * @return Total time
@@ -174,7 +173,7 @@ public class Model
 	{
 		return timeTotal;
 	}
-	
+
 	/**
 	 * Get remaining exam time
 	 * @return Remaining time
@@ -183,7 +182,7 @@ public class Model
 	{
 		return timeRemain;
 	}
-	
+
 	/**
 	 * Get status as integer property
 	 * @return status
@@ -192,7 +191,7 @@ public class Model
 	{
 		return status;
 	}
-	
+
 	/**
 	 * Get ExamEntry instance containing all other entries
 	 * @return examData
@@ -201,7 +200,7 @@ public class Model
 	{
 		return examData;
 	}
-	
+
 	/**
 	 * Returns true if examData has been completely filled
 	 * @return dataEnd
@@ -210,14 +209,15 @@ public class Model
 	{
 		return dataEnd;
 	}
-	
-//	if ( examStart )
-//	{
-//		screenThread = new Thread();
-//	}
-	
+
+	// if ( examStart )
+	// {
+	// screenThread = new Thread();
+	// }
+
 	/**
-	 * Searches the existing exam data for a given id !!Use only when searching parent id!!
+	 * Searches the existing exam data for a given id !!Use only when searching
+	 * parent id!!
 	 * @param id ID to search for
 	 * @return Found entry
 	 */
@@ -225,9 +225,9 @@ public class Model
 	{
 		if ( e.getId().equals( id))
 			return e;
-		
+
 		ExamEntry result = null;
-		for( ExamEntry entry : e.getAll())
+		for ( ExamEntry entry : e.getAll())
 		{
 			result = searchId( id, entry);
 			if ( result != null)
@@ -235,7 +235,7 @@ public class Model
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Ends exam, stops timers, closes client
 	 */
@@ -243,10 +243,10 @@ public class Model
 	{
 		submitAll();
 		examTimer.interrupt();
-		status.set(STATUS_FINISHED);
+		status.set( STATUS_FINISHED);
 		client.close();
 	}
-	
+
 	/**
 	 * Handles message according to protocol
 	 * @param msg Received message
@@ -260,68 +260,67 @@ public class Model
 		{
 			reference = new Instruction( parts[2], parts[3], (parts.length >= 5 ? parts[4] : ""), false, false);
 			ExamEntry parent = examData;
-			parent.add(reference);
+			parent.add( reference);
 			reference.setParent( parent);
 		}
-		
+
 		// Create a Question, goes into exam
-		if ( parts[1].equals( "question") )
+		if ( parts[1].equals( "question"))
 		{
 			reference = new Question( parts[2], parts[3], parts[4], true, false);
 			ExamEntry parent = searchId( parts[5], examData);
-			parent.add(reference);
+			parent.add( reference);
 			reference.setParent( parent);
 		}
-		
+
 		// Create part, goes into Question
-		if ( parts[1].equals( "part") )
+		if ( parts[1].equals( "part"))
 		{
 			reference = new QuestionPart( parts[2], parts[3], "", parts[4], true, true);
 			ExamEntry parent = searchId( parts[5], examData);
-			parent.add(reference);
+			parent.add( reference);
 			reference.setParent( parent);
 		}
-		
+
 		// Add template solution to question part
-		if ( parts[1].equals( "template") )
+		if ( parts[1].equals( "template"))
 		{
 			QuestionPart part = (QuestionPart) searchId( parts[4], examData);
 			part.updateSolution( parts[3]);
 		}
-		
+
 		// Create an exam, everything else is placed within this container
-		if ( parts[1].equals( "exam") && reference == null )
+		if ( parts[1].equals( "exam") && reference == null)
 		{
 			examData = new ExamEntry( parts[2], parts[3], "", false, false);
-			timeTotal.set( Integer.parseInt(parts[4])); // Time in seconds
-			timeRemain.set(timeTotal.getValue());
+			timeTotal.set( Integer.parseInt( parts[4])); // Time in seconds
+			timeRemain.set( timeTotal.getValue());
 		}
-		
+
 		// Start exam
-		if ( parts[1].equals( "start") )
+		if ( parts[1].equals( "start"))
 		{
-			status.set(STATUS_START);
+			status.set( STATUS_START);
 			examTimer.start();
 		}
-		
+
 		// Check if data transfer ended
-		if ( parts[1].equals( "data_end") )
+		if ( parts[1].equals( "data_end"))
 		{
 			dataEnd = !dataEnd;
 		}
-		
+
 		// Check if exam is finished
-		if ( parts[1].equals( "exam_ended") )
+		if ( parts[1].equals( "exam_ended"))
 			examEnd();
-		
-//		if ( parts[1].equals( "time_remain") )
-//			timeRemain.set( Integer.parseInt( parts[2]));
-		
+
+		// if ( parts[1].equals( "time_remain") )
+		// timeRemain.set( Integer.parseInt( parts[2]));
+
 		// Get Screenshot specification
-		if ( parts[1].equals( "screenshot_width") )
+		if ( parts[1].equals( "screenshot_width"))
 		{
 			width = Integer.parseInt( parts[2]);
 		}
 	}
 }
-

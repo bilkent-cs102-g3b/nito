@@ -20,7 +20,7 @@ import javafx.scene.image.Image;
 public class Examinee implements Serializable
 {
 	private static final long serialVersionUID = 663825998181836230L;
-	
+
 	public static int STATUS_DISCONNECTED = 1;
 	public static int STATUS_CONNECTED = 2;
 
@@ -28,7 +28,7 @@ public class Examinee implements Serializable
 	private transient Screenshot screen;
 	private transient SimpleObjectProperty<Image> screenImageProperty;
 	private transient int screenWidth;
-	
+
 	private transient IntegerProperty status;
 
 	private String id;
@@ -51,17 +51,17 @@ public class Examinee implements Serializable
 		this.socket = socket;
 		status = new SimpleIntegerProperty( STATUS_CONNECTED);
 	}
-	
+
 	/**
 	 * Saves the submitted solution
-	 * @param part The question part that this solution belongs to
+	 * @param part     The question part that this solution belongs to
 	 * @param solution The submitted solution
 	 */
 	public void addSolution( QuestionPart part, String solution)
 	{
 		solutions.put( part, solution);
 	}
-	
+
 	/**
 	 * @return the screenWidth
 	 */
@@ -73,7 +73,7 @@ public class Examinee implements Serializable
 	/**
 	 * @param screenWidth the screenWidth to set
 	 */
-	public void setScreenWidth(int screenWidth)
+	public void setScreenWidth( int screenWidth)
 	{
 		this.screenWidth = screenWidth;
 	}
@@ -100,6 +100,12 @@ public class Examinee implements Serializable
 	public String getId()
 	{
 		return id;
+	}
+
+	@Override
+	public String toString()
+	{
+		return name;
 	}
 
 	/**
@@ -146,7 +152,7 @@ public class Examinee implements Serializable
 	 */
 	public void setScreen( Screenshot screen)
 	{
-		if (screenWidth != -1)
+		if ( screenWidth != -1)
 			screen.scale( 1.0 * screenWidth / screen.getImage().getWidth());
 		this.screen = screen;
 		screenImageProperty.set( SwingFXUtils.toFXImage( screen.getImage(), null));
@@ -175,7 +181,7 @@ public class Examinee implements Serializable
 	{
 		this.notes = notes;
 	}
-	
+
 	/**
 	 * @return The solutions
 	 */

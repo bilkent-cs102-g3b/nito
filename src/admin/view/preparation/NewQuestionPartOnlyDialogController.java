@@ -39,16 +39,16 @@ public class NewQuestionPartOnlyDialogController
 		Entry lastExam = Model.getInstance().getLastExam();
 		exams.getItems().addAll( Model.getInstance().getEntries().findAll( Exam.class));
 		exams.getItems().remove( lastExam);
-		
+
 		questions.setDisable( true);
-		
+
 		ChangeListener<? super Object> listener = ( ObservableValue<?> o, Object oldVal, Object newVal) -> okButton.setDisable( !isValid());
 		exams.valueProperty().addListener( listener);
 		questions.valueProperty().addListener( listener);
 		title.textProperty().addListener( listener);
 		points.textProperty().addListener( listener);
 		exams.getSelectionModel().selectedItemProperty().addListener( ( o, oldVal, newVal) -> examSelected( newVal));
-		
+
 		root.setOnShown( e -> {
 			Object userData = root.getDialogPane().getUserData();
 			if ( userData != null && userData instanceof Entry)
@@ -59,7 +59,7 @@ public class NewQuestionPartOnlyDialogController
 				{
 					exams.getSelectionModel().select( selectedExam);
 				}
-				
+
 				Entry selectedQuestion = entryUserData.findFirstAncestor( Question.class);
 				if ( selectedQuestion != null)
 				{
@@ -67,12 +67,12 @@ public class NewQuestionPartOnlyDialogController
 				}
 			}
 		});
-		
+
 		root.setResultConverter( button -> {
 			if ( button == ButtonType.OK)
 			{
-				Pair<String, Integer> intermediate =  new Pair<>(title.getText(), Integer.parseInt(points.getText()));
-				return new Pair<>((Question)questions.getValue(), intermediate);
+				Pair<String, Integer> intermediate = new Pair<>( title.getText(), Integer.parseInt( points.getText()));
+				return new Pair<>( (Question) questions.getValue(), intermediate);
 			}
 			return null;
 		});
@@ -81,7 +81,7 @@ public class NewQuestionPartOnlyDialogController
 	private void examSelected( Entry exam)
 	{
 		questions.getItems().setAll( exam.findAll( Question.class));
-		if(!exam.findAll( Question.class).isEmpty())
+		if ( !exam.findAll( Question.class).isEmpty())
 		{
 			questions.setPromptText( "Select a question");
 			questions.setDisable( false);
@@ -91,7 +91,7 @@ public class NewQuestionPartOnlyDialogController
 			questions.setPromptText( "Exam has no questions");
 		}
 	}
-	
+
 	private boolean isValid()
 	{
 		try

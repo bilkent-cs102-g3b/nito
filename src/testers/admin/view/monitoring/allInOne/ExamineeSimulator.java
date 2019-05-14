@@ -14,7 +14,7 @@ import common.network.Screenshot;
 public class ExamineeSimulator
 {
 	static int width = 100;
-		
+
 	public static void main( String[] args) throws UnknownHostException, IOException, AWTException
 	{
 		Client c = new Client( "localhost") {
@@ -23,17 +23,17 @@ public class ExamineeSimulator
 			{
 				try
 				{
-					width = Integer.parseInt( msg.split(":::")[2]);
+					width = Integer.parseInt( msg.split( ":::")[2]);
 				}
-				catch ( Exception e)
+				catch (Exception e)
 				{
 				}
 			}
 		};
-		
+
 		c.sendMessage( "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09:::name:::Mokhlaroyim Raupova");
-		
-		while (true)
+
+		while ( true)
 		{
 			Screenshot s = new Screenshot( width);
 			c.sendImage( s);

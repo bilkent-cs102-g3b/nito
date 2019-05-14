@@ -22,14 +22,16 @@ import me.coley.simplejna.hook.key.KeyHookManager;
 
 public class Runner extends Application
 {
-	
+
 	@Override
-	public void start(Stage stage) throws IOException
+	public void start( Stage stage) throws IOException
 	{
-		//Creating the Nito logo
+		// Creating the Nito logo
 		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
-		
-		/******************************** LOGIN DIALOG ****************************************/
+
+		/********************************
+		 * LOGIN DIALOG
+		 ****************************************/
 		boolean success = false;
 		while ( !success)
 		{
@@ -42,39 +44,39 @@ public class Runner extends Application
 			}
 			else
 			{
-				System.exit(0);
+				System.exit( 0);
 			}
-			
-			if (!success)
+
+			if ( !success)
 			{
 				Alert alert = new Alert( AlertType.ERROR, "Some error occured. Please try again!");
 				alert.showAndWait();
 			}
 		}
-		
+
 		/*************************** MAIN ************************************/
-		System.out.println("Success!");
+		System.out.println( "Success!");
 		if ( success)
 		{
 			SplitPane mainScreen = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/MainScreen.fxml"));
 			Scene scene = new Scene( mainScreen);
 			stage.setScene( scene);
-//			stage.initStyle( StageStyle.UNDECORATED);
-//			stage.setFullScreenExitHint("");
-//			stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
-//			stage.setFullScreen( true);
+			// stage.initStyle( StageStyle.UNDECORATED);
+			// stage.setFullScreenExitHint("");
+			// stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
+			// stage.setFullScreen( true);
 			stage.setTitle( "Nito - Examinee");
 			stage.show();
 		}
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
+	public static void main( String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
 	{
-		//Blocking possible shortcuts
+		// Blocking possible shortcuts
 		KeyHookManager khm = new KeyHookManager();
 		khm.hook( new KeyListener( khm));
-		
+
 		UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName());
-		launch(args);
+		launch( args);
 	}
 }

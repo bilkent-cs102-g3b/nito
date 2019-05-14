@@ -9,7 +9,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class QuestionPartTabController 
+public class QuestionPartTabController
 {
 	private Examinee examinee;
 	@FXML
@@ -22,23 +22,19 @@ public class QuestionPartTabController
 	private TextField grade;
 	@FXML
 	private TextArea notes;
-	
+
 	public void initialize()
 	{
-		notes.textProperty().addListener((o, oldVal, newVal) -> {
-			examinee.setNotes(newVal);
+		notes.textProperty().addListener( ( o, oldVal, newVal) -> {
+			examinee.setNotes( newVal);
 		});
 	}
-	
+
 	public void setExamineeAndPart( Examinee e, QuestionPart part)
 	{
 		examinee = e;
-		notes.setText(e.getNotes());
+		notes.setText( e.getNotes());
 		maxPointLabel = new Label( part.getMaxPoints() + "points");
-		editor.setText(e.getSolutions().get( part));
+		editor.setText( e.getSolutions().get( part));
 	}
-	
-	
-	
-
 }

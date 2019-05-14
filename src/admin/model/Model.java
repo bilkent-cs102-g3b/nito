@@ -230,7 +230,7 @@ public class Model implements Serializable
 			endCurrentExam();
 		});
 		examEndCheckerThread.start();
-		
+
 		timeSynchronizerThread = new Thread( () -> {
 			while ( true)
 			{
@@ -317,11 +317,14 @@ public class Model implements Serializable
 	private void solutionReceived( String content, String id, Examinee from)
 	{
 		Object object = IDHandler.getInstance().getByID( id);
+		System.out.println( "DEBUG: " + object);
 		if ( !(object instanceof QuestionPart))
 		{
 			// Not a solution to some question part. Ignore
 			return;
 		}
+
+		System.out.println( "DEBUG: " + content + " " + from);
 
 		QuestionPart part = (QuestionPart) object;
 		from.addSolution( part, content);
@@ -348,6 +351,7 @@ public class Model implements Serializable
 	 */
 	public void sendMessage( String type, String msg, Examinee examinee)
 	{
+		System.out.println( msg);
 		server.sendMessage( secret + MESSAGE_SEPERATOR + type + MESSAGE_SEPERATOR + msg, examinee.getSocket().getInetAddress());
 	}
 
@@ -423,7 +427,7 @@ public class Model implements Serializable
 		@Override
 		public void messageReceived( String msg, Socket socket)
 		{
-			System.out.println(msg);
+			System.out.println( msg);
 			handleMessage( msg, socket);
 		}
 
@@ -443,9 +447,6 @@ public class Model implements Serializable
 			}
 		}
 	}
-
-	/****************************** GRADING ******************************/
-	// TODO
 
 	/****************************** GENERAL ******************************/
 	/**

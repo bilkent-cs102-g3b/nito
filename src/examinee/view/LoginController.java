@@ -10,6 +10,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 12/05/2019
  */
 public class LoginController
@@ -23,16 +24,16 @@ public class LoginController
 	@FXML
 	TextField ip;
 
-	//Setting up the view
+	// Setting up the view
 	public void initialize()
 	{
-		//Adding the login button
+		// Adding the login button
 		ButtonType loginButton = new ButtonType( "Login", ButtonData.APPLY);
 		root.getDialogPane().getButtonTypes().add( loginButton);
-		
-		//The listener for the button
+
+		// The listener for the button
 		root.setResultConverter( button -> {
-			if (button == loginButton)
+			if ( button == loginButton)
 			{
 				return new Pair<String, String>( name.getText(), ip.getText());
 			}

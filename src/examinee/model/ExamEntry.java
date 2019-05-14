@@ -45,7 +45,7 @@ public class ExamEntry extends ExamContainer
 	{
 		return done;
 	}
-	
+
 	// TODO Crate get and set methods for all properties
 
 	/**
@@ -55,7 +55,7 @@ public class ExamEntry extends ExamContainer
 	{
 		return id;
 	}
-	
+
 	/**
 	 * @return title
 	 */
@@ -63,7 +63,7 @@ public class ExamEntry extends ExamContainer
 	{
 		return title;
 	}
-	
+
 	/**
 	 * @return content
 	 */
@@ -71,7 +71,7 @@ public class ExamEntry extends ExamContainer
 	{
 		return content;
 	}
-	
+
 	/**
 	 * @return markable
 	 */
@@ -79,7 +79,7 @@ public class ExamEntry extends ExamContainer
 	{
 		return markable;
 	}
-	
+
 	/**
 	 * @return editable
 	 */
@@ -87,9 +87,10 @@ public class ExamEntry extends ExamContainer
 	{
 		return editable;
 	}
-	
+
 	/**
-	 * Set parent property to another container and add this object to said container
+	 * Set parent property to another container and add this object to said
+	 * container
 	 * @param examContainer - container to add object to
 	 */
 	public void setParent( ExamContainer examContainer)
@@ -105,10 +106,10 @@ public class ExamEntry extends ExamContainer
 	{
 		return parent;
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return title;	
+		return title;
 	}
 }
