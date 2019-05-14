@@ -63,6 +63,9 @@ public class ExamineeScreenController
 	public void setWidth(int width)
 	{
 		if (examinee != null)
+		{
+			titlePane.setPrefWidth( width);
 			examinee.setScreenWidth( width);
+		}
 	}
 }

@@ -6,6 +6,8 @@ import java.util.TreeMap;
 
 import admin.model.exam_entries.QuestionPart;
 import common.network.Screenshot;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
@@ -19,21 +21,18 @@ public class Examinee implements Serializable
 {
 	private static final long serialVersionUID = 663825998181836230L;
 	
-	// TODO
 	public static int STATUS_DISCONNECTED = 1;
 	public static int STATUS_CONNECTED = 2;
-	public static int STATUS_BANNED = 3;
-	public static int STATUS_SUSPENDED = 4;
-	public static int STATUS_DONE = 5;
 
 	private transient Socket socket;
 	private transient Screenshot screen;
 	private transient SimpleObjectProperty<Image> screenImageProperty;
 	private transient int screenWidth;
+	
+	private transient IntegerProperty status;
 
 	private String id;
 	private String name;
-	private int status;
 	private String notes;
 	private TreeMap<QuestionPart, String> solutions;
 
@@ -50,6 +49,7 @@ public class Examinee implements Serializable
 		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);
 		this.socket = socket;
+		status = new SimpleIntegerProperty( STATUS_CONNECTED);
 	}
 	
 	/**
@@ -103,17 +103,16 @@ public class Examinee implements Serializable
 	}
 
 	/**
-	 * @return The status
+	 * @return The status property
 	 */
-	public int getStatus()
+	public IntegerProperty statusProperty()
 	{
 		return status;
 	}
 
-	@Override
-	public String toString()
+	public void setStatus( int status)
 	{
-		return "Examinee [id=" + id + ", name=" + name + ", status=" + status + "]";
+		this.status.set( status);
 	}
 
 	/**

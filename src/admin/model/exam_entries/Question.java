@@ -30,7 +30,7 @@ public class Question extends Entry
 	@Override
 	public void send( Examinee e, Model m)
 	{
-		m.sendMessage( "question", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + parent.id, e);
+		m.sendMessage( "question", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content + Model.MESSAGE_SEPERATOR + parent.id, e);
 		sendAll( e, m);
 	}
 

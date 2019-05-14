@@ -56,7 +56,7 @@ public abstract class UdpServer
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
+				break;
 			}
 
 			screenshotReceived( Screenshot.deserialize( packet.getData()), packet);

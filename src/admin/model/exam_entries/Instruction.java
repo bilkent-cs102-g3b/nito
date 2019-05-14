@@ -21,6 +21,6 @@ public class Instruction extends Entry
 	@Override
 	public void send( Examinee e, Model m)
 	{
-		m.sendMessage( "instruction", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content + Model.MESSAGE_SEPERATOR + parent.id, e);
+		m.sendMessage( "instruction", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + content, e);
 	}
 }

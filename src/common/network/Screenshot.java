@@ -42,7 +42,6 @@ public class Screenshot implements Serializable, Cloneable
 	public Screenshot( int width) throws AWTException
 	{
 		this( Math.min( 1.0 * width / Toolkit.getDefaultToolkit().getScreenSize().width, 1.0));
-		System.out.println( Toolkit.getDefaultToolkit().getScreenSize().width);
 	}
 
 	/**
@@ -155,7 +154,6 @@ public class Screenshot implements Serializable, Cloneable
 		}
 		catch (IOException | ClassNotFoundException e)
 		{
-			e.printStackTrace();
 			return null;
 		}
 	}

@@ -75,8 +75,7 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
-				continue;
+				break;
 			}
 
 			// Wait until the work on sockets finishes
@@ -125,7 +124,6 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
 				isAlive = false;
 			}
 
@@ -171,7 +169,6 @@ public abstract class TcpServer
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
 				connectionTerminated( socket);
 				erase.add( socket);
 			}

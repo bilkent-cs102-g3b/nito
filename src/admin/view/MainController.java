@@ -2,6 +2,7 @@ package admin.view;
 
 import java.io.IOException;
 
+import admin.model.Model;
 import admin.view.monitoring.MonitoringViewController;
 import admin.view.preparation.MainEditorController;
 import javafx.fxml.FXML;
@@ -18,6 +19,8 @@ import javafx.scene.layout.VBox;
  */
 public class MainController
 {
+	@FXML
+	Pane toolBar;
 	@FXML
 	VBox root;
 	@FXML
@@ -60,7 +63,7 @@ public class MainController
 		// TODO load grading
 
 		((MainEditorController) preparationLoader.getController()).setMainController( this);
-		
+
 		currentStage = STAGE_PREPARATION;
 		root.getChildren().add( preparation);
 	}
@@ -112,6 +115,8 @@ public class MainController
 			preparationButton.getStyleClass().remove( "navButton");
 			monitoringButton.getStyleClass().remove( "selectedNavButton");
 			gradingButton.getStyleClass().remove( "selectedNavButton");
+
+			toolBar.getChildren().clear();
 		}
 	}
 
@@ -131,6 +136,23 @@ public class MainController
 			preparationButton.getStyleClass().remove( "selectedNavButton");
 			monitoringButton.getStyleClass().remove( "navButton");
 			gradingButton.getStyleClass().remove( "selectedNavButton");
+
+			Button examControl = new Button();
+			if ( Model.getInstance().getLastExam().isRunning())
+			{
+				examControl.setText( "End this exam");
+				examControl.setOnAction( e -> {
+					Model.getInstance().startExam();
+				});
+			}
+			else
+			{
+				examControl.setText( "Start exam");
+				examControl.setOnAction( e -> {
+					Model.getInstance().startExam();
+				});
+			}
+			toolBar.getChildren().add( examControl);
 		}
 	}
 
@@ -150,6 +172,8 @@ public class MainController
 			preparationButton.getStyleClass().remove( "selectedNavButton");
 			monitoringButton.getStyleClass().remove( "selectedNavButton");
 			gradingButton.getStyleClass().remove( "navButton");
+
+			toolBar.getChildren().clear();
 		}
 	}
 }

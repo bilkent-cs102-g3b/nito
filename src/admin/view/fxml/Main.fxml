@@ -54,9 +54,9 @@
 	
 	<!-- TOOLBAR -->
 	<ToolBar>
-<!-- 		<Pane/> -->
+		<Pane fx:id="toolBar"/>
 		
-<!-- 		<Separator /> -->
+		<Separator />
 		<Pane HBox.hgrow="ALWAYS" />
 	
 <!-- 		<BreadCrumbBar fx:id="breadCrumb"/> -->

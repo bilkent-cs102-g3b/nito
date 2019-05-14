@@ -7,7 +7,7 @@ import admin.model.Model;
  * This class is for Exam
  * @author Adeem Adil Khatri<br>
  *         Ziya Mukhtarov
- * @version 07/05/2019
+ * @version 14/05/2019
  */
 public class Exam extends Entry
 {
@@ -18,8 +18,9 @@ public class Exam extends Entry
 	 * Duration of the exam in seconds
 	 */
 	private int length;
-	private int timeLeft;
+	private transient int timeLeft;
 	private boolean hasInstructions;
+	private transient boolean running = false;
 
 	// constructors
 	/**
@@ -30,6 +31,7 @@ public class Exam extends Entry
 	public Exam( String title, int length)
 	{
 		super( title);
+		running = false;
 		hasInstructions = false;
 		this.length = length;
 		timeLeft = 0;
@@ -42,6 +44,7 @@ public class Exam extends Entry
 	{
 		m.sendMessage( "exam", id + Model.MESSAGE_SEPERATOR + title + Model.MESSAGE_SEPERATOR + length, e);
 		sendAll( e, m);
+		m.sendMessage( "data_end", "", e);
 	}
 
 	/**
@@ -50,6 +53,7 @@ public class Exam extends Entry
 	public void start()
 	{
 		timeLeft = length;
+		running = true;
 		new Thread( new Runnable() {
 			@Override
 			public void run()
@@ -67,6 +71,8 @@ public class Exam extends Entry
 						Thread.currentThread().interrupt();
 					}
 				}
+				running = false;
+				Model.getInstance().endCurrentExam();
 			}
 		}).start();
 	}
@@ -86,15 +92,16 @@ public class Exam extends Entry
 			super.add( entry);
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
+	public void stop()
+	{
+		running = false;
+	}
+
 	public boolean hasInstructions()
 	{
 		return hasInstructions;
 	}
-	
+
 	/**
 	 * @return The time left until the end of this exam in seconds.
 	 */
@@ -109,5 +116,13 @@ public class Exam extends Entry
 	public int getTimeElapsed()
 	{
 		return length - timeLeft;
+	}
+
+	/**
+	 * @return true if the exam is running now
+	 */
+	public boolean isRunning()
+	{
+		return running;
 	}
 }

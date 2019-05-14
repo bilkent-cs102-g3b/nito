@@ -43,6 +43,7 @@ public class MonitoringViewController
 
 	public void initialize()
 	{
+		screenPane.setMinWidth( Double.MAX_VALUE);
 		Model.getInstance().getLogs().addListener( ( ListChangeListener.Change<? extends Pair<String, Integer>> c) -> {
 			while ( c.next())
 			{
@@ -71,10 +72,6 @@ public class MonitoringViewController
 			zoomSlider.setMajorTickUnit( (int) (zoomSlider.getMax() - zoomSlider.getMin()) / 10);
 		});
 
-		// root.heightProperty().addListener( (o, oldVal, newVal) -> {
-		// splitPane.setMaxHeight( newVal.doubleValue() - zoomSlider.getHeight());
-		// });
-
 		zoomSlider.valueProperty().addListener( ( o, oldVal, newVal) -> {
 			Model.getInstance().setScreenshotWidth( newVal.intValue());
 			controllers.forEach( controller -> {
@@ -93,6 +90,16 @@ public class MonitoringViewController
 			controllers.add( loader.getController());
 			screenPane.getChildren().remove( placeHolder);
 			screenPane.getChildren().add( p);
+
+			e.statusProperty().addListener( ( o, oldVal, newVal) -> {
+				if ( newVal.intValue() == Examinee.STATUS_DISCONNECTED)
+				{
+					Platform.runLater( () -> {
+						controllers.remove( loader.getController());
+						screenPane.getChildren().remove( p);
+					});
+				}
+			});
 		}
 		catch (IOException ex)
 		{

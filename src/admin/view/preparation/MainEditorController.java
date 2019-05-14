@@ -95,7 +95,7 @@ public class MainEditorController
 		Optional<ButtonType> result = confirmation.showAndWait();
 		if ( result.isPresent() && result.get() == ButtonType.OK)
 		{
-			Model.getInstance().startExam( e);
+			Model.getInstance().startSendingExam( e);
 
 			// TODO open tabs! disable
 			mainController.changeToMonitoring();

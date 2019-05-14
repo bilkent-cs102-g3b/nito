@@ -23,7 +23,7 @@ import javafx.util.Pair;
 /**
  * The main model class for admin interface
  * @author Ziya Mukhtarov
- * @version 08/05/2019
+ * @version 14/05/2019
  */
 public class Model implements Serializable
 {
@@ -41,6 +41,7 @@ public class Model implements Serializable
 	private Exam lastExam;
 	private transient Exam currentExam;
 	private transient Thread examEndCheckerThread;
+	private transient Thread timeSynchronizerThread;
 	private transient ObservableList<Pair<String, Integer>> logs;
 
 	/**
@@ -186,7 +187,7 @@ public class Model implements Serializable
 	 * Start the specified exam
 	 * @param exam the exam to start
 	 */
-	public void startExam( Exam exam)
+	public void startSendingExam( Exam exam)
 	{
 		currentExam = exam;
 		lastExam = exam;
@@ -204,29 +205,48 @@ public class Model implements Serializable
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
 
-		exam.start();
-		examEndCheckerThread = new Thread( new Runnable() {
+	public void startExam()
+	{
+		if ( currentExam == null)
+			return;
 
-			@Override
-			public void run()
+		sendMessage( "start", "");
+		currentExam.start();
+		examEndCheckerThread = new Thread( () -> {
+			while ( currentExam.getTimeLeft() > 0)
 			{
-				while ( exam.getTimeLeft() > 0)
+				try
 				{
-					try
-					{
-						Thread.sleep( 1000);
-					}
-					catch (InterruptedException e)
-					{
-						e.printStackTrace();
-						Thread.currentThread().interrupt();
-					}
+					Thread.sleep( 1000);
 				}
-				endCurrentExam();
+				catch (InterruptedException e)
+				{
+					Thread.currentThread().interrupt();
+					break;
+				}
 			}
+			endCurrentExam();
 		});
 		examEndCheckerThread.start();
+		
+		timeSynchronizerThread = new Thread( () -> {
+			while ( true)
+			{
+				try
+				{
+					Thread.sleep( 10000);
+				}
+				catch (InterruptedException e)
+				{
+					Thread.currentThread().interrupt();
+					break;
+				}
+				sendMessage( "time_remain", currentExam.getTimeLeft() + "");
+			}
+		});
+		timeSynchronizerThread.start();
 	}
 
 	public void setScreenshotWidth( int width)
@@ -245,6 +265,8 @@ public class Model implements Serializable
 		}
 		sendMessage( "exam_ended", "");
 		examEndCheckerThread.interrupt();
+		timeSynchronizerThread.interrupt();
+		currentExam.stop();
 		currentExam = null;
 	}
 
@@ -281,7 +303,7 @@ public class Model implements Serializable
 				log( from.getName() + " is connected");
 				break;
 			case "solution":
-				solutionReceived( parts[3], parts[2], from);
+				solutionReceived( (parts.length >= 4 ? parts[3] : ""), parts[2], from);
 				break;
 		}
 	}
@@ -392,18 +414,24 @@ public class Model implements Serializable
 		{
 			Examinee e = examinees.getByIP( socket.getInetAddress().getHostAddress());
 			if ( e != null)
+			{
 				log( e.getName() + " is disconnected");
+				e.setStatus( Examinee.STATUS_DISCONNECTED);
+			}
 		}
 
 		@Override
 		public void messageReceived( String msg, Socket socket)
 		{
+			System.out.println(msg);
 			handleMessage( msg, socket);
 		}
 
 		@Override
 		public void screenshotReceived( Screenshot img, DatagramPacket packet)
 		{
+			if ( packet == null || packet.getAddress() == null)
+				return;
 			Examinee e = examinees.getByIP( packet.getAddress().getHostAddress());
 			if ( e != null)
 			{
