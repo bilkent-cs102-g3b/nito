@@ -16,6 +16,7 @@ import org.controlsfx.control.CheckTreeView;
 import common.NumberedEditor;
 import examinee.model.ExamContainer;
 import examinee.model.ExamEntry;
+import examinee.model.Instruction;
 import examinee.model.Model;
 import examinee.model.Question;
 import examinee.model.QuestionPart;
@@ -61,18 +62,27 @@ public class MainScreenController
 	private ArrayList<ExamEntry> openStatementEntries;
 	private TreeMap<TreeItem<String>, ExamEntry> map;
 
-	// Setting up the view
+	/**
+	 * 
+	 */
 	public void initialize()
 	{
 		map = new TreeMap<TreeItem<String>, ExamEntry>();
 		openStatementEntries = new ArrayList<>();
 		openSolutionEntries = new ArrayList<>();
-		Model.getInstance().getTimeRemain().addListener((o, oldVal, newVal) ->
+		Model.getInstance().getStatus().addListener((o, oldVal, newVal) ->
 		{
-			Platform.runLater(() ->
+			if ( newVal.intValue() == Model.STATUS_START)
 			{
-				setTime(newVal.intValue(), Model.getInstance().getTimeTotal().intValue());
-			});
+				Model.getInstance().getTimeRemain().addListener((ob, oldValue, newValue) ->
+				{
+					Platform.runLater(() ->
+					{
+						setTime(newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
+					});
+				});
+				submit.setDisable( false);
+			}
 		});
 
 		// Initializing the tree
@@ -128,21 +138,26 @@ public class MainScreenController
 	 */
 	private void setTime(int timeRemain, int timeTotal)
 	{
-		time.setText(timeRemain + " / " + timeTotal);
+		System.out.println( timeRemain);
+		int remainTimeInMinutes = timeRemain / 60;
+		int remainTimeInSeconds = timeRemain % 60;
+		
+		int totalTimeInMinutes = timeTotal / 60;
+		int totalTimeInSeconds = timeTotal % 60;
+		
+		time.setText(remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
 		if (timeTotal != 0)
 		{
-			bar.setProgress(timeRemain / timeTotal);
+			bar.setProgress( (timeTotal - timeRemain) / timeTotal);
 		} else
 		{
 			bar.setProgress(0);
 		}
 	}
 
-	/*
+	/**
 	 * Updates the tree hierarchy according to the data
-	 * 
 	 * @param item the root item to create the tree on
-	 * 
 	 * @param container the container to get the exam entries from
 	 */
 	@SuppressWarnings("unchecked")
@@ -150,7 +165,7 @@ public class MainScreenController
 	{
 		container.getAll().forEach(e ->
 		{
-			CheckBoxTreeItem<String> nextItem = new CheckBoxTreeItem<>(e.getTitle());
+			CheckBoxTreeItem<String> nextItem = new ComparableTreeItem(e.getTitle());
 			if (e instanceof Question)
 			{
 				ComparableTreeItem cti = new ComparableTreeItem("Statement");
@@ -164,15 +179,17 @@ public class MainScreenController
 				map.put(cti1, e);
 				map.put(cti2, e);
 			}
+			else if (e instanceof Instruction)
+			{
+				map.put(nextItem, e);
+			}
 			item.getChildren().add(nextItem);
 			updateTreeView(nextItem, e);
 		});
 	}
 
-	/*
+	/**
 	 * Opens a new tab according to the data
-	 * 
-	 * @param entry the exam entry to open the tab with
 	 */
 	public void openTab()
 	{
@@ -188,6 +205,8 @@ public class MainScreenController
 			return;
 		}
 		
+		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
+			return;
 		if (selected.getValue().equals("Statement"))
 		{
 			if (openStatementEntries.contains( entry))
@@ -265,8 +284,12 @@ public class MainScreenController
 			Scene scene = new Scene( submit);
 			stage.setScene( scene);
 			stage.setFullScreen( false);
+			stage.setMinHeight( 400);
+			stage.setMinWidth( 500);
 			stage.setMaxHeight( 400);
 			stage.setMaxWidth( 500);
+			stage.setX( 800);
+			stage.setY( 600);
 			stage.setTitle( "Nito - Submitted");
 			stage.show();
 		} catch (IOException e)

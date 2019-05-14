@@ -3,9 +3,9 @@ package examinee.model;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.Timer;
 
-import common.network.*;
+import common.network.Client;
+import common.network.Screenshot;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
@@ -19,9 +19,9 @@ public class Model
 	// properties
 
 	private static final String SECRET = "24DdwVJljT28m6MSOfvMnj7iZbL8bNMmo7xnLKsZSyurflOLg2JFtq0hsY09";
-	public final int STATUS_CONNECTED = 1;
-	public final int STATUS_START = 2;
-	public final int STATUS_FINISHED = 3;
+	public static final int STATUS_CONNECTED = 1;
+	public static final int STATUS_START = 2;
+	public static final int STATUS_FINISHED = 3;
 
 	private static Model instance;
 
@@ -36,7 +36,7 @@ public class Model
 	private Client client;
 	private ExamEntry reference;
 	private ExamEntry examData;
-	private Timer timer;
+	private Thread examTimer;
 
 	// constructors
 
@@ -50,8 +50,20 @@ public class Model
 		width = 0;
 		timeTotal = new SimpleIntegerProperty();
 		timeRemain = new SimpleIntegerProperty();
-
-		timer = new Timer( 1000, l -> timeRemain.set(timeRemain.getValue() - 1));
+		examTimer = new Thread( () -> {
+			while (true)
+			{
+				try
+				{
+					Thread.sleep( 1000);
+				} catch (InterruptedException e)
+				{
+					e.printStackTrace();
+					Thread.currentThread().interrupt();
+				}
+				timeRemain.set( timeRemain.intValue() - 1);
+			}
+		});
 	}
 
 	/**
@@ -230,7 +242,7 @@ public class Model
 	public void examEnd()
 	{
 		submitAll();
-		timer.stop();
+		examTimer.interrupt();
 		status.set(STATUS_FINISHED);
 		client.close();
 	}
@@ -246,7 +258,7 @@ public class Model
 		// Create an Instruction, goes into exam
 		if ( parts[1].equals( "instruction"))
 		{
-			reference = new Instruction( parts[2], parts[3], parts[4], false, false);
+			reference = new Instruction( parts[2], parts[3], (parts.length >= 5 ? parts[4] : ""), false, false);
 			ExamEntry parent = examData;
 			parent.add(reference);
 			reference.setParent( parent);
@@ -289,22 +301,21 @@ public class Model
 		if ( parts[1].equals( "start") )
 		{
 			status.set(STATUS_START);
-			timer.start();
+			examTimer.start();
 		}
 		
 		// Check if data transfer ended
 		if ( parts[1].equals( "data_end") )
 		{
 			dataEnd = !dataEnd;
-			timer.start();
 		}
 		
 		// Check if exam is finished
 		if ( parts[1].equals( "exam_ended") )
 			examEnd();
 		
-		if ( parts[1].equals( "time_remain") )
-			timeRemain.set( Integer.parseInt( parts[2]));
+//		if ( parts[1].equals( "time_remain") )
+//			timeRemain.set( Integer.parseInt( parts[2]));
 		
 		// Get Screenshot specification
 		if ( parts[1].equals( "screenshot_width") )

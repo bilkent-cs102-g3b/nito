@@ -26,6 +26,7 @@ public class Runner extends Application
 	@Override
 	public void start(Stage stage) throws IOException
 	{
+		//Creating the Nito logo
 		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
 		
 		/******************************** LOGIN DIALOG ****************************************/
@@ -33,6 +34,7 @@ public class Runner extends Application
 		while ( !success)
 		{
 			Dialog<Pair<String, String>> loginDialog = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Login.fxml"));
+			((Stage) loginDialog.getDialogPane().getScene().getWindow()).getIcons().add( logo);
 			Optional<Pair<String, String>> result = loginDialog.showAndWait();
 			if ( result.isPresent())
 			{
@@ -68,6 +70,7 @@ public class Runner extends Application
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException
 	{
+		//Blocking possible shortcuts
 		KeyHookManager khm = new KeyHookManager();
 		khm.hook( new KeyListener( khm));
 		

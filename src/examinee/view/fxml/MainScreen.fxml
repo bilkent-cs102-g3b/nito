@@ -30,10 +30,10 @@
 
 		<MigPane layout="wrap" rows="2mm:push[]2mm:push[]2mm:push" cols="push[center]push">
 			<!-- TIME -->
-			<Label styleClass="bigFont" MigPane.cc="center" fx:id="time"/>
-			<ProgressBar style="-fx-accent: green;" styleClass="timeProgressBar" fx:id="bar" />
+			<Label text="NOT STARTED YET" styleClass="bigFont" MigPane.cc="center" fx:id="time"/>
+			<ProgressBar progress="-1.0" style="-fx-accent: green;" styleClass="timeProgressBar" fx:id="bar" />
 			<!-- SUBMIT ALL WORK -->
-			<Button text="Submit All Work" style="-fx-background-color: MediumSeaGreen" styleClass="bigFont" fx:id="submit" onAction="#submit" />
+			<Button disable="true" text="Submit All Work" style="-fx-background-color: MediumSeaGreen" styleClass="bigFont" fx:id="submit" onAction="#submit" />
 		</MigPane>
 	</VBox>
 	
