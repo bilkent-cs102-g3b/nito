@@ -39,6 +39,7 @@ import javafx.scene.input.MouseEvent;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 14/05/2019
  */
 public class MainScreenController
@@ -73,7 +74,7 @@ public class MainScreenController
 		Model.getInstance().getStatus().addListener( ( o, oldVal, newVal) -> {
 			if ( newVal.intValue() == Model.STATUS_START)
 			{
-				//Disabling the submit function and the time before the exam starts
+				// Disabling the submit function and the time before the exam starts
 				Model.getInstance().getTimeRemain().addListener( ( ob, oldValue, newValue) -> {
 					Platform.runLater( () -> {
 						setTime( newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
@@ -83,7 +84,7 @@ public class MainScreenController
 			}
 			else if ( newVal.intValue() == Model.STATUS_FINISHED)
 			{
-				//forcing to submit if the exam is over
+				// forcing to submit if the exam is over
 				Platform.runLater( () -> {
 					endProgram();
 				});
@@ -93,7 +94,7 @@ public class MainScreenController
 		// Initializing the tree
 		if ( Model.getInstance().examReadyProperty().get() == true)
 			buildTree();
-		Model.getInstance().examReadyProperty().addListener((o, oldVal, newVal) -> {
+		Model.getInstance().examReadyProperty().addListener( ( o, oldVal, newVal) -> {
 			buildTree();
 		});
 
@@ -133,7 +134,7 @@ public class MainScreenController
 			}
 		});
 	}
-	
+
 	/**
 	 * Sets up the tree view by using the data from administrator
 	 */
@@ -145,11 +146,11 @@ public class MainScreenController
 			updateTreeView( rootItem, Model.getInstance().getExamData());
 		});
 	}
-	
+
 	/**
 	 * Sets the time components
 	 * @param timeRemain the remaining time
-	 * @param timeTotal the total time
+	 * @param timeTotal  the total time
 	 */
 	private void setTime( int timeRemain, int timeTotal)
 	{
@@ -162,7 +163,7 @@ public class MainScreenController
 		time.setText( remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
 		if ( timeTotal != 0)
 		{
-			bar.setProgress( ( (double) timeTotal - timeRemain) / timeTotal);
+			bar.setProgress( ((double) timeTotal - timeRemain) / timeTotal);
 		}
 		else
 		{
@@ -172,7 +173,7 @@ public class MainScreenController
 
 	/**
 	 * Updates the tree hierarchy according to the data
-	 * @param item the root item to create the tree on
+	 * @param item      the root item to create the tree on
 	 * @param container the container to get the exam entries from
 	 */
 	@SuppressWarnings("unchecked")
@@ -241,14 +242,14 @@ public class MainScreenController
 		Platform.runLater( () -> {
 			JFXPanel fxPanel = new JFXPanel();
 			NumberedEditor editor;
-			
+
 			if ( entry instanceof QuestionPart && selected.getValue().equals( "Statement"))
 				editor = new NumberedEditor( ((QuestionPart) entry).getStatement());
 			else
 				editor = new NumberedEditor( entry.getContent());
-			
+
 			fxPanel.setScene( new Scene( editor));
-			
+
 			if ( Model.getInstance().getStatus().intValue() == Model.STATUS_FINISHED)
 			{
 				editor.setEditorNonEditable();
@@ -264,11 +265,11 @@ public class MainScreenController
 			}
 
 			SwingUtilities.invokeLater( () -> {
-				JInternalFrame jif = new JInternalFrame( entry.getTitle() + " : " + entry.getClass().getName(), true, true, true, true);
+				JInternalFrame jif = new JInternalFrame( entry.getTitle(), true, true, true, true);
 				jif.add( fxPanel);
-				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 3, desktopPane.getHeight() / 3); 
+				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 3, desktopPane.getHeight() / 3);
 				jif.setVisible( true);
-				
+
 				desktopPane.add( jif);
 				jif.requestFocusInWindow();
 				jif.moveToFront();
@@ -293,13 +294,13 @@ public class MainScreenController
 			});
 		});
 	}
-	
+
 	@FXML
 	public void submit()
 	{
 		Model.getInstance().examEnd();
 	}
-	
+
 	/*
 	 * Submits all the work by sending to the administrator
 	 */
@@ -308,16 +309,17 @@ public class MainScreenController
 		openSolutionEntries.clear();
 		openStatementEntries.clear();
 		submit.setDisable( true);
-		
+
 		JInternalFrame frames[] = desktopPane.getAllFrames();
 		DesktopManager dm = desktopPane.getDesktopManager();
-		for (int i = 0 ; i < frames.length ; i ++)
+		for ( int i = 0; i < frames.length; i++)
 		{
-			dm.closeFrame(frames[i]);
+			dm.closeFrame( frames[i]);
 			try
 			{
-				frames[i].setClosed(false);
-			} catch (PropertyVetoException e)
+				frames[i].setClosed( false);
+			}
+			catch (PropertyVetoException e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -326,8 +328,7 @@ public class MainScreenController
 		Platform.runLater( () -> {
 			splitPane.setDividerPositions( 0.2);
 		});
-		
-		
+
 		Alert alert = new Alert( AlertType.INFORMATION, "The exam is finished. You can now see your solutions. Thank you for your participation");
 		alert.showAndWait();
 	}
