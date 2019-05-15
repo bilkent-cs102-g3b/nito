@@ -43,6 +43,8 @@ public class Model implements Serializable
 	private transient Thread examEndCheckerThread;
 	private transient Thread timeSynchronizerThread;
 	private transient ObservableList<Pair<String, Integer>> logs;
+	private transient int lastSetWidth = -1;
+	private transient boolean isConnectionBlocked = false;
 
 	/**
 	 * Creates new Model for Nito admin interface
@@ -189,6 +191,8 @@ public class Model implements Serializable
 	 */
 	public void startSendingExam( Exam exam)
 	{
+		isConnectionBlocked = false;
+		
 		currentExam = exam;
 		lastExam = exam;
 
@@ -251,6 +255,7 @@ public class Model implements Serializable
 
 	public void setScreenshotWidth( int width)
 	{
+		lastSetWidth = width;
 		sendMessage( "screenshot_width", width + "");
 	}
 
@@ -266,6 +271,8 @@ public class Model implements Serializable
 		sendMessage( "exam_ended", "");
 		examEndCheckerThread.interrupt();
 		timeSynchronizerThread.interrupt();
+		
+		// TODO NullPointer?
 		currentExam.stop();
 		currentExam = null;
 	}
@@ -278,6 +285,14 @@ public class Model implements Serializable
 		return lastExam;
 	}
 
+	/**
+	 * Blocks future examinee connections
+	 */
+	public void blockConnection()
+	{
+		isConnectionBlocked = true;
+	}
+	
 	/**
 	 * Handles the message coming from to the server
 	 * @param msg    The message content
@@ -298,8 +313,12 @@ public class Model implements Serializable
 		{
 			case "name":
 				// Connection request
+				if ( isConnectionBlocked)
+					break;
 				from = createExaminee( parts[2], socket);
 				currentExam.send( from, this);
+				if ( lastSetWidth != -1)
+					setScreenshotWidth( lastSetWidth);
 				log( from.getName() + " is connected");
 				break;
 			case "solution":

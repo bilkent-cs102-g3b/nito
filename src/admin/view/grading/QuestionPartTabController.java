@@ -34,7 +34,7 @@ public class QuestionPartTabController
 	public void setExamineeAndPart( Examinee e, QuestionPart part)
 	{
 		examinee = e;
-		notes.setText( e.getNotes());
+		notes.textProperty().bindBidirectional( e.notesProperty());
 		maxPointLabel.setText("Maximum points: " + part.getMaxPoints() + " points");
 		editor.setText( e.getSolutions().get( part));
 		questionPart.setText(part.getTitle());

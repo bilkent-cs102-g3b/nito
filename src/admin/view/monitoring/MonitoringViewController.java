@@ -49,34 +49,34 @@ public class MonitoringViewController
 
 	private ObjectProperty<ScrollBar> logActionListScroll;
 	private ObjectProperty<ScrollBar> logTimeListScroll;
-	
+
 	public MonitoringViewController()
 	{
 		logActionListScroll = new SimpleObjectProperty<>();
 		logTimeListScroll = new SimpleObjectProperty<>();
 
-		logActionListScroll.addListener( (o, oldVal, newVal) -> {
+		logActionListScroll.addListener( ( o, oldVal, newVal) -> {
 			if ( logTimeListScroll.get() != null)
 			{
 				logActionListScroll.get().valueProperty().bindBidirectional( logTimeListScroll.get().valueProperty());
 			}
 		});
-		logTimeListScroll.addListener( (o, oldVal, newVal) -> {
+		logTimeListScroll.addListener( ( o, oldVal, newVal) -> {
 			if ( logActionListScroll.get() != null)
 			{
 				logActionListScroll.get().valueProperty().bindBidirectional( logTimeListScroll.get().valueProperty());
 			}
 		});
-		
+
 		controllers = new ArrayList<ExamineeScreenController>();
 	}
 
 	public void initialize()
 	{
-		scrollPane.viewportBoundsProperty().addListener( (o,oldVal, newVal) -> {
+		scrollPane.viewportBoundsProperty().addListener( ( o, oldVal, newVal) -> {
 			screenPane.setPrefWidth( newVal.getWidth());
 		});
-		
+
 		Model.getInstance().getLogs().addListener( ( ListChangeListener.Change<? extends Pair<String, Integer>> c) -> {
 			while ( c.next())
 			{
@@ -99,9 +99,9 @@ public class MonitoringViewController
 				});
 			}
 		});
-		
+
 		setTimeRemaining();
-		Model.getInstance().getLastExam().timeLeftProperty().addListener((o, oldVal, newVal) -> setTimeRemaining());
+		Model.getInstance().getLastExam().timeLeftProperty().addListener( ( o, oldVal, newVal) -> setTimeRemaining());
 
 		root.widthProperty().addListener( ( o, oldVal, newVal) -> {
 			zoomSlider.setMax( (int) Math.max( newVal.doubleValue() - 100, 300));
@@ -115,18 +115,11 @@ public class MonitoringViewController
 			});
 		});
 
-//		logActionList.getSelectionModel().getSelectedIndices().addListener( (ListChangeListener.Change<? extends Integer> c) -> {
-//			while (c.next())
-//			{
-//				if ( c.)
-//			}
-//		});
-		
 		new Thread( () -> {
-			while (true)
+			while ( true)
 			{
 				ScrollBar sb = (ScrollBar) logActionList.lookup( ".scroll-bar:vertical");
-				if (sb != null)
+				if ( sb != null)
 				{
 					sb.setStyle( "-fx-opacity: 0");
 					logActionListScroll.set( sb);
@@ -135,10 +128,10 @@ public class MonitoringViewController
 			}
 		}).start();
 		new Thread( () -> {
-			while (true)
+			while ( true)
 			{
 				ScrollBar sb = (ScrollBar) logTimeList.lookup( ".scroll-bar:vertical");
-				if (sb != null)
+				if ( sb != null)
 				{
 					logTimeListScroll.set( sb);
 					break;
@@ -151,10 +144,10 @@ public class MonitoringViewController
 	{
 		Platform.runLater( () -> {
 			int seconds = Model.getInstance().getLastExam().getTimeLeft();
-			timeRemaining.setText("Time Remaining: " + (seconds / 3600) + ":" + (seconds % 3600 / 60) + ":" + (seconds % 60));
+			timeRemaining.setText( "Time Remaining: " + (seconds / 3600) + ":" + (seconds % 3600 / 60) + ":" + (seconds % 60));
 		});
 	}
-	
+
 	public void addExaminee( Examinee e)
 	{
 		try
