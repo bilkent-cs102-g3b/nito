@@ -1,5 +1,6 @@
 package admin.model;
 
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.TreeMap;
@@ -9,6 +10,8 @@ import common.network.Screenshot;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
@@ -30,6 +33,7 @@ public class Examinee implements Serializable
 	private transient int screenWidth;
 
 	private transient IntegerProperty status;
+	private transient StringProperty notesProperty;
 
 	private String id;
 	private String name;
@@ -174,12 +178,18 @@ public class Examinee implements Serializable
 		return notes;
 	}
 
+	public StringProperty notesProperty()
+	{
+		return notesProperty;
+	}
+	
 	/**
 	 * @param notes The notes to set
 	 */
 	public void setNotes( String notes)
 	{
 		this.notes = notes;
+		notesProperty.set( notes);
 	}
 
 	/**
@@ -188,5 +198,14 @@ public class Examinee implements Serializable
 	public TreeMap<QuestionPart, String> getSolutions()
 	{
 		return solutions;
+	}
+	
+	/**
+	 * Deserialization method
+	 */
+	private void readObject( ObjectInputStream ois) throws Exception
+	{
+		ois.defaultReadObject();
+		notesProperty = new SimpleStringProperty( notes);
 	}
 }

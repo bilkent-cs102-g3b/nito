@@ -2,7 +2,6 @@ package examinee.view;
 
 import java.awt.Color;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
