@@ -31,6 +31,10 @@
 			<ListView fx:id="logTimeList"/>
 	 	</HBox>
 	</SplitPane>
-	<Slider min="200" value="200" maxWidth="300" showTickLabels="true" showTickMarks="true" minorTickCount="5" fx:id="zoomSlider"/>
+	<HBox>
+		<Label fx:id="timeRemaining" text="Time Remaining:"/>
+		<Pane HBox.hgrow="ALWAYS" />
+		<Slider min="200" value="200" maxWidth="300" showTickLabels="true" showTickMarks="true" minorTickCount="5" fx:id="zoomSlider"/>
+	</HBox>
 </VBox>
 

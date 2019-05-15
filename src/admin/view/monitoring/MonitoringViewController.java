@@ -42,6 +42,8 @@ public class MonitoringViewController
 	private FlowPane screenPane;
 	@FXML
 	private Slider zoomSlider;
+	@FXML
+	private Label timeRemaining;
 
 	private ArrayList<ExamineeScreenController> controllers;
 
@@ -97,6 +99,9 @@ public class MonitoringViewController
 				});
 			}
 		});
+		
+		setTimeRemaining();
+		Model.getInstance().getLastExam().timeLeftProperty().addListener((o, oldVal, newVal) -> setTimeRemaining());
 
 		root.widthProperty().addListener( ( o, oldVal, newVal) -> {
 			zoomSlider.setMax( (int) Math.max( newVal.doubleValue() - 100, 300));
@@ -142,6 +147,14 @@ public class MonitoringViewController
 		}).start();
 	}
 
+	public void setTimeRemaining()
+	{
+		Platform.runLater( () -> {
+			int seconds = Model.getInstance().getLastExam().getTimeLeft();
+			timeRemaining.setText("Time Remaining: " + (seconds / 3600) + ":" + (seconds % 3600 / 60) + ":" + (seconds % 60));
+		});
+	}
+	
 	public void addExaminee( Examinee e)
 	{
 		try

@@ -1,5 +1,7 @@
 package admin.model.exam_entries;
 
+import java.io.ObjectInputStream;
+
 import admin.model.Examinee;
 import admin.model.Model;
 import javafx.beans.property.IntegerProperty;
@@ -134,5 +136,15 @@ public class Exam extends Entry
 	public boolean isRunning()
 	{
 		return running;
+	}
+	
+	/**
+	 * Deserialization method
+	 */
+	private void readObject( ObjectInputStream ois) throws Exception
+	{
+		ois.defaultReadObject();
+		timeLeft = new SimpleIntegerProperty( length);
+		running = false;
 	}
 }
