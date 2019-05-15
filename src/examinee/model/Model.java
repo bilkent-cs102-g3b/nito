@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import common.network.Client;
 import common.network.Screenshot;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 /**
@@ -27,7 +29,7 @@ public class Model
 
 	private String username;
 	private String adminIP;
-	private boolean dataEnd;
+	private BooleanProperty dataEnd;
 	private boolean examStart;
 	private IntegerProperty timeRemain;
 	private IntegerProperty timeTotal;
@@ -45,7 +47,7 @@ public class Model
 		status = new SimpleIntegerProperty();
 		status.set( 0);
 		reference = null;
-		dataEnd = false;
+		dataEnd = new SimpleBooleanProperty(false);
 		examStart = false;
 		width = 0;
 		timeTotal = new SimpleIntegerProperty();
@@ -201,19 +203,10 @@ public class Model
 		return examData;
 	}
 
-	/**
-	 * Returns true if examData has been completely filled
-	 * @return dataEnd
-	 */
-	public boolean isExamReady()
+	public BooleanProperty examReadyProperty()
 	{
 		return dataEnd;
 	}
-
-	// if ( examStart )
-	// {
-	// screenThread = new Thread();
-	// }
 
 	/**
 	 * Searches the existing exam data for a given id !!Use only when searching
@@ -307,7 +300,7 @@ public class Model
 		// Check if data transfer ended
 		if ( parts[1].equals( "data_end"))
 		{
-			dataEnd = !dataEnd;
+			dataEnd.set( !dataEnd.get());
 		}
 
 		// Check if exam is finished
