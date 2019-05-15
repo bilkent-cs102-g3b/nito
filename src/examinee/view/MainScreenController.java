@@ -215,6 +215,7 @@ public class MainScreenController
 		}
 
 		ExamEntry entry = map.get( selected);
+		System.out.println( selected.getValue() + " " + entry);
 		if ( entry == null)
 		{
 			return;
@@ -244,7 +245,7 @@ public class MainScreenController
 			if ( entry instanceof QuestionPart && selected.getValue().equals( "Statement"))
 				editor = new NumberedEditor( ((QuestionPart) entry).getStatement());
 			else
-				editor = new NumberedEditor( ((QuestionPart) entry).getContent());
+				editor = new NumberedEditor( entry.getContent());
 			
 			fxPanel.setScene( new Scene( editor));
 			
