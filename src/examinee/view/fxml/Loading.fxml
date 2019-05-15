@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.ProgressIndicator?>
 
-<MigPane rows="2mm:push[center]2mm:push" cols="[grow 25, center][grow 20]" xmlns:fx="http://javafx.com/fxml/1" >
+<MigPane rows="2mm:push[center]2mm:push" cols="[grow 25, center][grow 20]" xmlns:fx="http://javafx.com/fxml/1">
 		<!-- Loading Message -->
 		<Label wrapText="true" text="Please wait...">			
 		<font>

@@ -28,7 +28,7 @@ public class LoadingTester extends Application
 			path = "src/examinee/view/fxml/Loading.fxml";
 			root = (Pane) FXMLLoader.load( new File( path).toURI().toURL());
 			Scene scene = new Scene( root, 1200, 675);
-			stage.setScene( scene);
+			stage.setScene( scene); 
 
 			// TODO Delete this?
 			stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
