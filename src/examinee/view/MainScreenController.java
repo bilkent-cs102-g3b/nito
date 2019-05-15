@@ -250,11 +250,11 @@ public class MainScreenController
 			
 			if ( Model.getInstance().getStatus().intValue() == Model.STATUS_FINISHED)
 			{
-				editor.disableEditor();
+				editor.setEditorNonEditable();
 			}
 			if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 			{
-				editor.disableEditor();
+				editor.setEditorNonEditable();
 				openStatementEntries.add( entry);
 			}
 			else

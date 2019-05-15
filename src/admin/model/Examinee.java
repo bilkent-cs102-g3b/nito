@@ -50,6 +50,7 @@ public class Examinee implements Serializable
 	{
 		screenWidth = -1;
 		solutions = new TreeMap<QuestionPart, String>();
+		grades = new TreeMap<QuestionPart, String>();
 		screenImageProperty = new SimpleObjectProperty<>();
 		id = IDHandler.getInstance().generate( getClass().getName());
 		setName( name);

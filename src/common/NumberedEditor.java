@@ -203,4 +203,11 @@ public class NumberedEditor extends HBox
 		editor.getStyleClass().add( "disabledEditor");
 		editor.setDisable( true);
 	}
+
+	public void setEditorNonEditable()
+	{
+		editor.setEditable( false);
+		editor.setMouseTransparent( true);
+		editor.setFocusTraversable( false);
+	}
 }
