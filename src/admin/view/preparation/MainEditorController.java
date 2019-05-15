@@ -84,7 +84,7 @@ public class MainEditorController
 	}
 
 	@FXML
-	public void startExam()
+	public void startExam() throws IOException
 	{
 		Entry selected = getSelectedEntry();
 		if ( selected == null)

@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 
 /**
  * @author Ziya Mukhtarov
- * @version 12/05/2019
+ * @version 16/05/2019
  */
 public class MainController
 {
@@ -54,20 +54,30 @@ public class MainController
 		monitoringLoader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/monitoring/MonitoringView.fxml"));
 		gradingLoader = new FXMLLoader( getClass().getResource( "/admin/view/fxml/grading/GradingView.fxml"));
 
-		preparation = preparationLoader.load();
-		preparationController = preparationLoader.getController();
-
-		monitoring = monitoringLoader.load();
-		monitoringController = monitoringLoader.getController();
-
-		grading = gradingLoader.load();
-		gradingController = gradingLoader.getController();
-
-		((MainEditorController) preparationLoader.getController()).setMainController( this);
+		initPreparation();
 		currentStage = STAGE_PREPARATION;
 		root.getChildren().add( preparation);
 	}
 
+	private void initPreparation() throws IOException
+	{
+		preparation = preparationLoader.load();
+		preparationController = preparationLoader.getController();
+		preparationController.setMainController( this);
+	}
+
+	private void initMonitoring() throws IOException
+	{
+		monitoring = monitoringLoader.load();
+		monitoringController = monitoringLoader.getController();
+	}
+
+	private void initGrading() throws IOException
+	{
+		grading = gradingLoader.load();
+		gradingController = gradingLoader.getController();
+	}
+	
 	@FXML
 	public void addExam()
 	{
@@ -121,10 +131,13 @@ public class MainController
 	}
 
 	@FXML
-	public void changeToMonitoring()
+	public void changeToMonitoring() throws IOException
 	{
-		if ( currentStage != STAGE_MONITORING)
+		if ( currentStage != STAGE_MONITORING && Model.getInstance().getLastExam() != null)
 		{
+			if ( monitoring == null)
+				initMonitoring();
+			
 			currentStage = STAGE_MONITORING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( monitoring);
@@ -180,10 +193,13 @@ public class MainController
 	}
 
 	@FXML
-	public void changeToGrading()
+	public void changeToGrading() throws IOException
 	{
 		if ( currentStage != STAGE_GRADING)
 		{
+			if ( grading == null)
+				initGrading();
+			
 			currentStage = STAGE_GRADING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( grading);
