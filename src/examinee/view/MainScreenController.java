@@ -239,7 +239,13 @@ public class MainScreenController
 
 		Platform.runLater( () -> {
 			JFXPanel fxPanel = new JFXPanel();
-			NumberedEditor editor = new NumberedEditor( entry.getContent());
+			NumberedEditor editor;
+			
+			if ( entry instanceof QuestionPart && selected.getValue().equals( "Statement"))
+				editor = new NumberedEditor( ((QuestionPart) entry).getStatement());
+			else
+				editor = new NumberedEditor( ((QuestionPart) entry).getContent());
+			
 			fxPanel.setScene( new Scene( editor));
 			
 			if ( Model.getInstance().getStatus().intValue() == Model.STATUS_FINISHED)
@@ -257,7 +263,7 @@ public class MainScreenController
 			}
 
 			SwingUtilities.invokeLater( () -> {
-				JInternalFrame jif = new JInternalFrame( entry.getTitle(), true, true, true, true);
+				JInternalFrame jif = new JInternalFrame( entry.getTitle() + " : " + entry.getClass().getName(), true, true, true, true);
 				jif.add( fxPanel);
 				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 3, desktopPane.getHeight() / 3); 
 				jif.setVisible( true);
