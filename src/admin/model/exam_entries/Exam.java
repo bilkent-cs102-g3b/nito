@@ -2,6 +2,8 @@ package admin.model.exam_entries;
 
 import admin.model.Examinee;
 import admin.model.Model;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 /**
  * This class is for Exam
@@ -18,7 +20,7 @@ public class Exam extends Entry
 	 * Duration of the exam in seconds
 	 */
 	private int length;
-	private transient int timeLeft;
+	private transient IntegerProperty timeLeft;
 	private boolean hasInstructions;
 	private transient boolean running = false;
 
@@ -34,7 +36,7 @@ public class Exam extends Entry
 		running = false;
 		hasInstructions = false;
 		this.length = length;
-		timeLeft = length;
+		timeLeft = new SimpleIntegerProperty( length);
 	}
 
 	// methods
@@ -52,18 +54,18 @@ public class Exam extends Entry
 	 */
 	public void start()
 	{
-		timeLeft = length;
+		timeLeft.set( length);
 		running = true;
 		new Thread( new Runnable() {
 			@Override
 			public void run()
 			{
-				while ( timeLeft > 0)
+				while ( timeLeft.get() > 0)
 				{
 					try
 					{
 						Thread.sleep( 1000);
-						timeLeft -= 1;
+						timeLeft.set( timeLeft.get() - 1);
 					}
 					catch (InterruptedException e)
 					{
@@ -107,6 +109,14 @@ public class Exam extends Entry
 	 */
 	public int getTimeLeft()
 	{
+		return timeLeft.get();
+	}
+
+	/**
+	 * @return The time left until the end of this exam in seconds.
+	 */
+	public IntegerProperty timeLeftProperty()
+	{
 		return timeLeft;
 	}
 
@@ -115,7 +125,7 @@ public class Exam extends Entry
 	 */
 	public int getTimeElapsed()
 	{
-		return length - timeLeft;
+		return length - timeLeft.get();
 	}
 
 	/**
