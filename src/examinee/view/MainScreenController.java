@@ -1,10 +1,11 @@
 package examinee.view;
 
 import java.awt.Color;
-import java.io.IOException;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+import javax.swing.DesktopManager;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
@@ -25,18 +26,16 @@ import javafx.embed.swing.JFXPanel;
 import javafx.embed.swing.SwingNode;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeItem;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 /*
  * @author Javid Baghirov
@@ -111,7 +110,6 @@ public class MainScreenController
 				if ( mouseEvent.getClickCount() == 2 && intermediate != rootItem && intermediate.isLeaf())
 				{
 					SwingUtilities.invokeLater( () -> {
-						System.out.println( "Clicked on " + intermediate.getValue());
 						openTab();
 					});
 				}
@@ -141,9 +139,11 @@ public class MainScreenController
 	 */
 	private void buildTree()
 	{
-		rootItem = new CheckBoxTreeItem<String>( Model.getInstance().getExamData().getTitle());
-		checkTreeView.setRoot( rootItem);
-		updateTreeView( rootItem, Model.getInstance().getExamData());
+		Platform.runLater( () -> {
+			rootItem = new CheckBoxTreeItem<String>( Model.getInstance().getExamData().getTitle());
+			checkTreeView.setRoot( rootItem);
+			updateTreeView( rootItem, Model.getInstance().getExamData());
+		});
 	}
 	
 	/**
@@ -153,7 +153,6 @@ public class MainScreenController
 	 */
 	private void setTime( int timeRemain, int timeTotal)
 	{
-		System.out.println( timeRemain);
 		int remainTimeInMinutes = timeRemain / 60;
 		int remainTimeInSeconds = timeRemain % 60;
 
@@ -221,7 +220,7 @@ public class MainScreenController
 			return;
 		}
 
-		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
+		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() == Model.STATUS_CONNECTED)
 			return;
 		if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 		{
@@ -242,7 +241,11 @@ public class MainScreenController
 			JFXPanel fxPanel = new JFXPanel();
 			NumberedEditor editor = new NumberedEditor( entry.getContent());
 			fxPanel.setScene( new Scene( editor));
-
+			
+			if ( Model.getInstance().getStatus().intValue() == Model.STATUS_FINISHED)
+			{
+				editor.disableEditor();
+			}
 			if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 			{
 				editor.disableEditor();
@@ -267,7 +270,7 @@ public class MainScreenController
 					@Override
 					public void internalFrameClosing( InternalFrameEvent e)
 					{
-						if ( selected.getValue().equals( "Statement"))
+						if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 						{
 							openStatementEntries.remove( entry);
 						}
@@ -288,7 +291,6 @@ public class MainScreenController
 	public void submit()
 	{
 		Model.getInstance().examEnd();
-		endProgram();
 	}
 	
 	/*
@@ -296,36 +298,31 @@ public class MainScreenController
 	 */
 	private void endProgram()
 	{
-		Stage stage = (Stage) splitPane.getScene().getWindow();
-
-		try
+		openSolutionEntries.clear();
+		openStatementEntries.clear();
+		submit.setDisable( true);
+		
+		JInternalFrame frames[] = desktopPane.getAllFrames();
+		DesktopManager dm = desktopPane.getDesktopManager();
+		for (int i = 0 ; i < frames.length ; i ++)
 		{
-			Pane submit;
-			submit = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Submit.fxml"));
-			Scene scene = new Scene( submit);
-			stage.setScene( scene);
-			stage.setFullScreen( false);
-			stage.setWidth( 500);
-			stage.setHeight( 400);
-			stage.setX( stage.getWidth());
-			stage.setY( stage.getHeight());
-			stage.setTitle( "Nito - Submitted");
-			stage.show();
-			
-			//Listener for frame close
-			stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
-				@Override
-				public void handle( WindowEvent event)
-				{
-					System.exit(0);
-				}
-			});
+			dm.closeFrame(frames[i]);
+			try
+			{
+				frames[i].setClosed(false);
+			} catch (PropertyVetoException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Platform.runLater( () -> {
+			splitPane.setDividerPositions( 0.2);
+		});
+		
+		
+		Alert alert = new Alert( AlertType.INFORMATION, "The exam is finished. You can now see your solutions. Thank you for your participation");
+		alert.showAndWait();
 	}
 
 	class ComparableTreeItem extends CheckBoxTreeItem<String> implements Comparable<TreeItem<String>>
