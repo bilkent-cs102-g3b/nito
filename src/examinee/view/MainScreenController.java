@@ -2,7 +2,6 @@ package examinee.view;
 
 import java.awt.Color;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -37,9 +36,10 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /*
- * @author Javid Baghirov 
+ * @author Javid Baghirov
  * @version 14/05/2019
  */
 public class MainScreenController
@@ -71,11 +71,9 @@ public class MainScreenController
 		map = new TreeMap<TreeItem<String>, ExamEntry>();
 		openStatementEntries = new ArrayList<>();
 		openSolutionEntries = new ArrayList<>();
-		
 		Model.getInstance().getStatus().addListener( ( o, oldVal, newVal) -> {
 			if ( newVal.intValue() == Model.STATUS_START)
 			{
-				//Disabling the submit function and time before the exam starts
 				Model.getInstance().getTimeRemain().addListener( ( ob, oldValue, newValue) -> {
 					Platform.runLater( () -> {
 						setTime( newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
@@ -83,19 +81,14 @@ public class MainScreenController
 				});
 				submit.setDisable( false);
 			}
-			else if ( newVal.intValue() == Model.STATUS_FINISHED)
-			{
-				//Forcing to submit if the exam is over
-				Platform.runLater( () -> {
-					endProgram();
-				});
-			}
 		});
 
 		// Initializing the tree
-		rootItem = new CheckBoxTreeItem<String>( Model.getInstance().getExamData().getTitle());
-		checkTreeView.setRoot( rootItem);
-		updateTreeView( rootItem, Model.getInstance().getExamData());
+		if ( Model.getInstance().examReadyProperty().get() == true)
+			buildTree();
+		Model.getInstance().examReadyProperty().addListener((o, oldVal, newVal) -> {
+			buildTree();
+		});
 
 		// The listener for tree items
 		checkTreeView.setOnMouseClicked( new EventHandler<MouseEvent>() {
@@ -134,7 +127,17 @@ public class MainScreenController
 			}
 		});
 	}
-
+	
+	/**
+	 * Sets up the tree view by using the data from administrator
+	 */
+	private void buildTree()
+	{
+		rootItem = new CheckBoxTreeItem<String>( Model.getInstance().getExamData().getTitle());
+		checkTreeView.setRoot( rootItem);
+		updateTreeView( rootItem, Model.getInstance().getExamData());
+	}
+	
 	/**
 	 * Sets the time components
 	 * @param timeRemain the remaining time
@@ -152,7 +155,7 @@ public class MainScreenController
 		time.setText( remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
 		if ( timeTotal != 0)
 		{
-			bar.setProgress( ((double) timeTotal - timeRemain) / timeTotal);
+			bar.setProgress( (timeTotal - timeRemain) / timeTotal);
 		}
 		else
 		{
@@ -211,10 +214,8 @@ public class MainScreenController
 		}
 
 		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
-		{
 			return;
-		}
-		if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
+		if ( selected.getValue().equals( "Statement"))
 		{
 			if ( openStatementEntries.contains( entry))
 			{
@@ -234,10 +235,15 @@ public class MainScreenController
 			NumberedEditor editor = new NumberedEditor( entry.getContent());
 			fxPanel.setScene( new Scene( editor));
 
-			if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
+			if ( selected.getValue().equals( "Statement"))
 			{
 				editor.disableEditor();
+				editor.setStyle("-fx-opacity: 1.0;");
 				openStatementEntries.add( entry);
+			}
+			else if ( selected.getValue().equals( "Instructions"))
+			{
+				editor.disableEditor();
 			}
 			else
 			{
@@ -247,9 +253,12 @@ public class MainScreenController
 			SwingUtilities.invokeLater( () -> {
 				JInternalFrame jif = new JInternalFrame( entry.getTitle(), true, true, true, true);
 				jif.add( fxPanel);
-				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 10, desktopPane.getHeight() / 10);
+				jif.setBounds( (desktopPane.getAllFrames().length * 10) % desktopPane.getWidth(), (desktopPane.getAllFrames().length * 10) % desktopPane.getHeight(), desktopPane.getWidth() / 3, desktopPane.getHeight() / 3); 
 				jif.setVisible( true);
+				
 				desktopPane.add( jif);
+				jif.requestFocusInWindow();
+				jif.moveToFront();
 
 				jif.addInternalFrameListener( new InternalFrameAdapter() {
 					@Override
@@ -278,12 +287,8 @@ public class MainScreenController
 	@FXML
 	public void submit()
 	{
+		System.out.println( "Submit Pressed");
 		Model.getInstance().examEnd();
-		endProgram();
-	}
-	
-	private void endProgram() 
-	{
 		Stage stage = (Stage) splitPane.getScene().getWindow();
 
 		try
@@ -299,6 +304,15 @@ public class MainScreenController
 			stage.setY( stage.getHeight());
 			stage.setTitle( "Nito - Submitted");
 			stage.show();
+			
+			//Listener for frame close
+			stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
+				@Override
+				public void handle( WindowEvent event)
+				{
+					System.exit(0);
+				}
+			});
 		}
 		catch (IOException e)
 		{

@@ -77,7 +77,6 @@ public class Screenshot implements Serializable, Cloneable
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
 		}
 	}
 
