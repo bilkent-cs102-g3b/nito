@@ -74,12 +74,20 @@ public class MainScreenController
 		Model.getInstance().getStatus().addListener( ( o, oldVal, newVal) -> {
 			if ( newVal.intValue() == Model.STATUS_START)
 			{
+				//Disabling the submit function and the time before the exam starts
 				Model.getInstance().getTimeRemain().addListener( ( ob, oldValue, newValue) -> {
 					Platform.runLater( () -> {
 						setTime( newValue.intValue(), Model.getInstance().getTimeTotal().intValue());
 					});
 				});
 				submit.setDisable( false);
+			}
+			else if ( newVal.intValue() == Model.STATUS_FINISHED)
+			{
+				//forcing to submit if the exam is over
+				Platform.runLater( () -> {
+					endProgram();
+				});
 			}
 		});
 
@@ -155,7 +163,7 @@ public class MainScreenController
 		time.setText( remainTimeInMinutes + ":" + remainTimeInSeconds + " / " + totalTimeInMinutes + ":" + totalTimeInSeconds);
 		if ( timeTotal != 0)
 		{
-			bar.setProgress( (timeTotal - timeRemain) / timeTotal);
+			bar.setProgress( ( (double) timeTotal - timeRemain) / timeTotal);
 		}
 		else
 		{
@@ -215,7 +223,7 @@ public class MainScreenController
 
 		if ( !(entry instanceof Instruction) && Model.getInstance().getStatus().intValue() != Model.STATUS_START)
 			return;
-		if ( selected.getValue().equals( "Statement"))
+		if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 		{
 			if ( openStatementEntries.contains( entry))
 			{
@@ -235,15 +243,10 @@ public class MainScreenController
 			NumberedEditor editor = new NumberedEditor( entry.getContent());
 			fxPanel.setScene( new Scene( editor));
 
-			if ( selected.getValue().equals( "Statement"))
+			if ( selected.getValue().equals( "Statement") || entry instanceof Instruction)
 			{
 				editor.disableEditor();
-				editor.setStyle("-fx-opacity: 1.0;");
 				openStatementEntries.add( entry);
-			}
-			else if ( selected.getValue().equals( "Instructions"))
-			{
-				editor.disableEditor();
 			}
 			else
 			{
@@ -280,15 +283,19 @@ public class MainScreenController
 			});
 		});
 	}
-
-	/*
-	 * Submits all the work by sending to the administrator
-	 */
+	
 	@FXML
 	public void submit()
 	{
-		System.out.println( "Submit Pressed");
 		Model.getInstance().examEnd();
+		endProgram();
+	}
+	
+	/*
+	 * Submits all the work by sending to the administrator
+	 */
+	private void endProgram()
+	{
 		Stage stage = (Stage) splitPane.getScene().getWindow();
 
 		try
