@@ -12,10 +12,12 @@ import javafx.scene.control.TextField;
 public class QuestionPartTabController
 {
 	private Examinee examinee;
+	private QuestionPart questionPart;
+	
 	@FXML
 	private Label maxPointLabel;
 	@FXML
-	private Tab questionPart;
+	private Tab root;
 	@FXML
 	private NumberedEditor editor;
 	@FXML
@@ -28,15 +30,23 @@ public class QuestionPartTabController
 		notes.textProperty().addListener( ( o, oldVal, newVal) -> {
 			examinee.setNotes( newVal);
 		});
+		
+		grade.textProperty().addListener( (o, oldVal, newVal) -> {
+			examinee.setGrade( questionPart, newVal);
+		});
+		
 		editor.disableEditor();
 	}
 
 	public void setExamineeAndPart( Examinee e, QuestionPart part)
 	{
 		examinee = e;
+		questionPart = part;
+
 		notes.textProperty().bindBidirectional( e.notesProperty());
 		maxPointLabel.setText("Maximum points: " + part.getMaxPoints() + " points");
 		editor.setText( e.getSolutions().get( part));
-		questionPart.setText(part.getTitle());
+		root.setText( part.getTitle());
+		grade.setText( (e.getGrade( part) == null ? "" : e.getGrade( part)));
 	}
 }

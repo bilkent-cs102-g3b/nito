@@ -48,9 +48,9 @@ public class GradingViewController
 
 	private void openTabs( Examinee e)
 	{
+		if (e == null)
+			return;
 		questionTabs.getTabs().clear();
-		System.out.println( e);
-		System.out.println( e.getSolutions());
 		e.getSolutions().forEach( ( part, solution) -> {
 			try
 			{

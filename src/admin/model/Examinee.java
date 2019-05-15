@@ -39,6 +39,7 @@ public class Examinee implements Serializable
 	private String name;
 	private String notes;
 	private TreeMap<QuestionPart, String> solutions;
+	private TreeMap<QuestionPart, String> grades;
 
 	/**
 	 * Creates a new examinee with the specified name
@@ -68,6 +69,16 @@ public class Examinee implements Serializable
 		solutions.put( part, solution);
 	}
 
+	public void setGrade( QuestionPart part, String grade)
+	{
+		grades.put( part, grade);
+	}
+
+	public String getGrade( QuestionPart part)
+	{
+		return grades.get( part);
+	}
+	
 	/**
 	 * @return the screenWidth
 	 */
