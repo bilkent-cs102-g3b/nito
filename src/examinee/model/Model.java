@@ -65,6 +65,9 @@ public class Model
 					break;
 				}
 				timeRemain.set( timeRemain.intValue() - 1);
+				
+				if ( timeRemain.intValue() <= 0 )
+					examEnd();
 			}
 		});
 	}
