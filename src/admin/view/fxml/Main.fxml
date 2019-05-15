@@ -54,7 +54,7 @@
 	
 	<!-- TOOLBAR -->
 	<ToolBar>
-		<Pane fx:id="toolBar"/>
+		<FlowPane fx:id="toolBar"/>
 		
 		<Separator />
 		<Pane HBox.hgrow="ALWAYS" />

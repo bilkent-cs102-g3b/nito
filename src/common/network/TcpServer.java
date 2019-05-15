@@ -19,6 +19,7 @@ public abstract class TcpServer
 	private ArrayList<Thread> msgListenerThreads;
 	private volatile boolean isBlocked;
 	private Thread connectionListenerThread;
+	private boolean stopListening;
 
 	/**
 	 * Opens a new socket for receiving TCP connections
@@ -27,6 +28,7 @@ public abstract class TcpServer
 	 */
 	public TcpServer( int port) throws IOException
 	{
+		stopListening = false;
 		isBlocked = false;
 		sockets = new ArrayList<>();
 		msgListenerThreads = new ArrayList<>();
@@ -66,7 +68,7 @@ public abstract class TcpServer
 	 */
 	private void listenForConnections()
 	{
-		while ( true)
+		while ( !stopListening)
 		{
 			Socket socket;
 			try
@@ -78,6 +80,8 @@ public abstract class TcpServer
 				break;
 			}
 
+			if (stopListening)
+				return;
 			// Wait until the work on sockets finishes
 			while ( isBlocked)
 			{
@@ -87,7 +91,6 @@ public abstract class TcpServer
 				}
 				catch (InterruptedException e)
 				{
-					e.printStackTrace();
 					Thread.currentThread().interrupt();
 				}
 			}
@@ -282,5 +285,15 @@ public abstract class TcpServer
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Stops listening on TCP port
+	 * Note: problematic
+	 */
+	public void stopListeningForConnections()
+	{
+		stopListening = true;
+		connectionListenerThread.interrupt();
 	}
 }

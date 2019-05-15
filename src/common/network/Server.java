@@ -127,4 +127,12 @@ public abstract class Server
 		udp.close();
 		tcp.close();
 	}
+	
+	/**
+	 * Stops listening on TCP port
+	 */
+	public void stopListeningForConnections()
+	{
+		tcp.stopListeningForConnections();
+	}
 }

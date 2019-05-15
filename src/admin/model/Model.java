@@ -291,6 +291,7 @@ public class Model implements Serializable
 	public void blockConnection()
 	{
 		isConnectionBlocked = true;
+		server.stopListeningForConnections();
 	}
 
 	/**
@@ -313,8 +314,6 @@ public class Model implements Serializable
 		{
 			case "name":
 				// Connection request
-				if ( isConnectionBlocked)
-					break;
 				from = createExaminee( parts[2], socket);
 				currentExam.send( from, this);
 				if ( lastSetWidth != -1)
@@ -462,10 +461,6 @@ public class Model implements Serializable
 			if ( e != null)
 			{
 				e.setScreen( img);
-			}
-			else
-			{
-				System.err.println( "Received screenshot, but examinee not initialized! From IP: " + packet.getAddress().getHostAddress());
 			}
 		}
 	}

@@ -166,15 +166,19 @@ public class MainController
 				examControl.setText( "Start exam");
 				examControl.setOnAction( e -> {
 					Model.getInstance().startExam();
-					
 					blockConnection.setDisable(false);
+					
+					examControl.setText( "End this exam");
+					examControl.setOnAction( v -> {
+						Model.getInstance().endCurrentExam();
+						examControl.setDisable(true);
+						blockConnection.setDisable(true);
+					});
 				});
 			}
 		}
 	}
 
-	private 
-	
 	@FXML
 	public void changeToGrading()
 	{
