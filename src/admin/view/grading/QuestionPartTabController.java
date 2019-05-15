@@ -28,13 +28,15 @@ public class QuestionPartTabController
 		notes.textProperty().addListener( ( o, oldVal, newVal) -> {
 			examinee.setNotes( newVal);
 		});
+		editor.disableEditor();
 	}
 
 	public void setExamineeAndPart( Examinee e, QuestionPart part)
 	{
 		examinee = e;
 		notes.setText( e.getNotes());
-		maxPointLabel = new Label( part.getMaxPoints() + "points");
+		maxPointLabel.setText("Maximum points: " + part.getMaxPoints() + " points");
 		editor.setText( e.getSolutions().get( part));
+		questionPart.setText(part.getTitle());
 	}
 }
