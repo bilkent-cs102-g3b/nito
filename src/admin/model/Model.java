@@ -192,7 +192,7 @@ public class Model implements Serializable
 	public void startSendingExam( Exam exam)
 	{
 		isConnectionBlocked = false;
-		
+
 		currentExam = exam;
 		lastExam = exam;
 
@@ -271,7 +271,7 @@ public class Model implements Serializable
 		sendMessage( "exam_ended", "");
 		examEndCheckerThread.interrupt();
 		timeSynchronizerThread.interrupt();
-		
+
 		// TODO NullPointer?
 		currentExam.stop();
 		currentExam = null;
@@ -292,7 +292,7 @@ public class Model implements Serializable
 	{
 		isConnectionBlocked = true;
 	}
-	
+
 	/**
 	 * Handles the message coming from to the server
 	 * @param msg    The message content
@@ -399,6 +399,11 @@ public class Model implements Serializable
 	public Examinees getExaminees()
 	{
 		return examinees;
+	}
+	
+	public boolean isConnectionBlocked()
+	{
+		return isConnectionBlocked;
 	}
 
 	/**

@@ -54,6 +54,8 @@ public class Examinee implements Serializable
 		setName( name);
 		this.socket = socket;
 		status = new SimpleIntegerProperty( STATUS_CONNECTED);
+		notes = "";
+		notesProperty = new SimpleStringProperty( notes);
 	}
 
 	/**
@@ -182,7 +184,7 @@ public class Examinee implements Serializable
 	{
 		return notesProperty;
 	}
-	
+
 	/**
 	 * @param notes The notes to set
 	 */
@@ -199,7 +201,7 @@ public class Examinee implements Serializable
 	{
 		return solutions;
 	}
-	
+
 	/**
 	 * Deserialization method
 	 */
