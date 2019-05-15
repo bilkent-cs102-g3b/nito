@@ -137,25 +137,44 @@ public class MainController
 			monitoringButton.getStyleClass().remove( "navButton");
 			gradingButton.getStyleClass().remove( "selectedNavButton");
 
+			/***** TOOLBAR *****/
 			Button examControl = new Button();
+			toolBar.getChildren().add( examControl);
+			
+			Button blockConnection = new Button("Block Connections");
+			blockConnection.setDisable(true);
+			blockConnection.setOnAction(b -> {
+				Model.getInstance().blockConnection();
+				blockConnection.setDisable(true);
+			});
+			toolBar.getChildren().add( blockConnection);
+			
 			if ( Model.getInstance().getLastExam().isRunning())
 			{
 				examControl.setText( "End this exam");
 				examControl.setOnAction( e -> {
-					Model.getInstance().startExam();
+					Model.getInstance().endCurrentExam();
+					examControl.setDisable(true);
+					blockConnection.setDisable(true);
 				});
+				
+				if (!Model.getInstance().isConnectionBlocked())
+					blockConnection.setDisable(false);
 			}
 			else
 			{
 				examControl.setText( "Start exam");
 				examControl.setOnAction( e -> {
 					Model.getInstance().startExam();
+					
+					blockConnection.setDisable(false);
 				});
 			}
-			toolBar.getChildren().add( examControl);
 		}
 	}
 
+	private 
+	
 	@FXML
 	public void changeToGrading()
 	{
