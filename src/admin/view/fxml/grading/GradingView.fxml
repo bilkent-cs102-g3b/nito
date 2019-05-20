@@ -23,10 +23,8 @@
 <?import javafx.scene.control.Label?>
 
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.grading.GradingViewController">
-<!-- MAIN -->
 	<SplitPane dividerPositions="0.25f" VBox.vgrow="ALWAYS">
-		<!-- EXAMINEE LIST -->
-		<ListView fx:id="examineeList"/>
+		<ListView fx:id="examineeList" />
 		<TabPane fx:id="questionTabs" minWidth="500" />
 	</SplitPane>
 </VBox>

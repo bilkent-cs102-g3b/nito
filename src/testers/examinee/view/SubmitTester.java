@@ -13,6 +13,7 @@ import javafx.stage.WindowEvent;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 14/05/2019
  */
 public class SubmitTester extends Application

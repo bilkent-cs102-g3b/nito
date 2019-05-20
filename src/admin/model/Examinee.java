@@ -79,7 +79,7 @@ public class Examinee implements Serializable
 	{
 		return grades.get( part);
 	}
-	
+
 	/**
 	 * @return the screenWidth
 	 */

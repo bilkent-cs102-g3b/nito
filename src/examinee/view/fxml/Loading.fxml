@@ -8,14 +8,14 @@
 <?import javafx.scene.control.ProgressIndicator?>
 
 <MigPane rows="2mm:push[center]2mm:push" cols="[grow 25, center][grow 20]" xmlns:fx="http://javafx.com/fxml/1">
-		<!-- Loading Message -->
-		<Label wrapText="true" text="Please wait...">			
+	<!-- Loading Message -->
+	<Label wrapText="true" text="Please wait...">
 		<font>
 			<Font size="25" />
 		</font>
-		</Label>
-		
-		<!-- Loading Indicator -->
-		<ProgressIndicator />
+	</Label>
+
+	<!-- Loading Indicator -->
+	<ProgressIndicator />
 </MigPane>
 

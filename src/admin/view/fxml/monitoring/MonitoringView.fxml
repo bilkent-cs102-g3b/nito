@@ -11,7 +11,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
 
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
@@ -20,21 +19,21 @@
 <?import javafx.scene.control.Slider?>
 
 <VBox alignment="TOP_RIGHT" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.monitoring.MonitoringViewController" fx:id="root">
-	<SplitPane orientation="VERTICAL" dividerPositions="0.8f" VBox.vgrow = "ALWAYS" fx:id="splitPane">
-	    <ScrollPane fx:id="scrollPane">
-	    	<FlowPane fx:id="screenPane">
-	    		<Label text="Waiting for examinees..." style="-fx-font-size: 30mm;" fx:id="placeHolder"/>
-	    	</FlowPane>
-	    </ScrollPane>
-	 	<HBox>
-	 		<ListView fx:id="logActionList" HBox.hgrow="ALWAYS"/>
-			<ListView fx:id="logTimeList"/>
-	 	</HBox>
+	<SplitPane orientation="VERTICAL" dividerPositions="0.8f" VBox.vgrow="ALWAYS" fx:id="splitPane">
+		<ScrollPane fx:id="scrollPane">
+			<FlowPane fx:id="screenPane">
+				<Label text="Waiting for examinees..." style="-fx-font-size: 30mm;" fx:id="placeHolder" />
+			</FlowPane>
+		</ScrollPane>
+		<HBox>
+			<ListView fx:id="logActionList" HBox.hgrow="ALWAYS" />
+			<ListView fx:id="logTimeList" />
+		</HBox>
 	</SplitPane>
 	<HBox>
-		<Label fx:id="timeRemaining" text="Time Remaining:"/>
+		<Label fx:id="timeRemaining" text="Time Remaining:" />
 		<Pane HBox.hgrow="ALWAYS" />
-		<Slider min="200" value="200" maxWidth="300" showTickLabels="true" showTickMarks="true" minorTickCount="5" fx:id="zoomSlider"/>
+		<Slider min="200" value="200" maxWidth="300" showTickLabels="true" showTickMarks="true" minorTickCount="5" fx:id="zoomSlider" />
 	</HBox>
 </VBox>
 

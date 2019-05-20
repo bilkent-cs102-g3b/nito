@@ -77,7 +77,7 @@ public class MainController
 		grading = gradingLoader.load();
 		gradingController = gradingLoader.getController();
 	}
-	
+
 	@FXML
 	public void addExam()
 	{
@@ -137,7 +137,7 @@ public class MainController
 		{
 			if ( monitoring == null)
 				initMonitoring();
-			
+
 			currentStage = STAGE_MONITORING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( monitoring);
@@ -153,39 +153,39 @@ public class MainController
 			/***** TOOLBAR *****/
 			Button examControl = new Button();
 			toolBar.getChildren().add( examControl);
-			
-			Button blockConnection = new Button("Block Connections");
-			blockConnection.setDisable(true);
-			blockConnection.setOnAction(b -> {
+
+			Button blockConnection = new Button( "Block Connections");
+			blockConnection.setDisable( true);
+			blockConnection.setOnAction( b -> {
 				Model.getInstance().blockConnection();
-				blockConnection.setDisable(true);
+				blockConnection.setDisable( true);
 			});
 			toolBar.getChildren().add( blockConnection);
-			
+
 			if ( Model.getInstance().getLastExam().isRunning())
 			{
 				examControl.setText( "End this exam");
 				examControl.setOnAction( e -> {
 					Model.getInstance().endCurrentExam();
-					examControl.setDisable(true);
-					blockConnection.setDisable(true);
+					examControl.setDisable( true);
+					blockConnection.setDisable( true);
 				});
-				
-				if (!Model.getInstance().isConnectionBlocked())
-					blockConnection.setDisable(false);
+
+				if ( !Model.getInstance().isConnectionBlocked())
+					blockConnection.setDisable( false);
 			}
 			else
 			{
 				examControl.setText( "Start exam");
 				examControl.setOnAction( e -> {
 					Model.getInstance().startExam();
-					blockConnection.setDisable(false);
-					
+					blockConnection.setDisable( false);
+
 					examControl.setText( "End this exam");
 					examControl.setOnAction( v -> {
 						Model.getInstance().endCurrentExam();
-						examControl.setDisable(true);
-						blockConnection.setDisable(true);
+						examControl.setDisable( true);
+						blockConnection.setDisable( true);
 					});
 				});
 			}
@@ -199,7 +199,7 @@ public class MainController
 		{
 			if ( grading == null)
 				initGrading();
-			
+
 			currentStage = STAGE_GRADING;
 			root.getChildren().remove( root.getChildren().size() - 1);
 			root.getChildren().add( grading);

@@ -5,40 +5,44 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
 
+<?import admin.Runner?>
 <?import java.net.URL?>
+<?import common.*?>
 
 <VBox minWidth="400" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.MainController" fx:id="root">
-<stylesheets>
-	<URL value="@../../../common/stylesheet.css" />
-</stylesheets>
+	<stylesheets>
+		<Resources fx:constant="stylesheet" />
+	</stylesheets>
 
-<fx:define>
-	<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_home">
-	<image>
-		<Image url="/icon_home.PNG"/>
-	</image>
-	</ImageView>
-	<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_listView">
-	<image>
-		<Image url="/icon_listView.PNG"/>
-	</image>
-	</ImageView>
-	<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_otherView">
-	<image>
-		<Image url="/icon_otherView.png"/>
-	</image>
-	</ImageView>
-</fx:define>
+	<fx:define>
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_home">
+			<image>
+				<Resources fx:constant="home" />
+			</image>
+		</ImageView>
+
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_listView">
+			<image>
+				<Resources fx:constant="checklist_eye" />
+			</image>
+		</ImageView>
+
+		<ImageView fitHeight="28.0" preserveRatio="true" fx:id="icon_otherView">
+			<image>
+				<Resources fx:constant="table_pencil" />
+			</image>
+		</ImageView>
+	</fx:define>
 
 	<!-- MENU -->
 	<MenuBar useSystemMenuBar="true">
 		<Menu text="File">
-			<Menu text="New"  styleClass="menu-item">
-				<MenuItem text="Exam" onAction="#addExam"/>
-				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
-				<MenuItem text="Question" onAction="#addQuestion"/>
-				<MenuItem text="Question Part" onAction="#addPart"/>
-				<MenuItem text="Question Part Template" onAction="#addTemplate"/>
+			<Menu text="New" styleClass="menu-item">
+				<MenuItem text="Exam" onAction="#addExam" />
+				<MenuItem text="Exam Instructions" onAction="#addInstructions" />
+				<MenuItem text="Question" onAction="#addQuestion" />
+				<MenuItem text="Question Part" onAction="#addPart" />
+				<MenuItem text="Question Part Template" onAction="#addTemplate" />
 			</Menu>
 		</Menu>
 		<Menu text="Edit">
@@ -51,21 +55,21 @@
 			<MenuItem text="..." />
 		</Menu>
 	</MenuBar>
-	
+
 	<!-- TOOLBAR -->
 	<ToolBar>
-		<FlowPane fx:id="toolBar"/>
-		
+		<FlowPane fx:id="toolBar" />
+
 		<Separator />
 		<Pane HBox.hgrow="ALWAYS" />
-	
-<!-- 		<BreadCrumbBar fx:id="breadCrumb"/> -->
-		
+
+		<!-- <BreadCrumbBar fx:id="breadCrumb"/> -->
+
 		<Pane HBox.hgrow="ALWAYS" />
 		<Separator />
-			
-		<Button graphic="$icon_home" styleClass="selectedNavButton" onAction="#changeToPreparation" fx:id="preparationButton"/>
-		<Button graphic="$icon_listView" styleClass="navButton" onAction="#changeToMonitoring" fx:id="monitoringButton"/>
-		<Button graphic="$icon_otherView" styleClass="navButton" onAction="#changeToGrading" fx:id="gradingButton"/>
+
+		<Button graphic="$icon_home" styleClass="selectedNavButton" onAction="#changeToPreparation" fx:id="preparationButton" />
+		<Button graphic="$icon_listView" styleClass="navButton" onAction="#changeToMonitoring" fx:id="monitoringButton" />
+		<Button graphic="$icon_otherView" styleClass="navButton" onAction="#changeToGrading" fx:id="gradingButton" />
 	</ToolBar>
 </VBox>

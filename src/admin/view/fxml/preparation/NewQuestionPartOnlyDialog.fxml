@@ -8,13 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import common.*?>
 
 <Dialog headerText="Create a new part for a question" title="Add New Part to a Question" fx:controller="admin.view.preparation.NewQuestionPartOnlyDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_plus.PNG"/>
+				<Resources fx:constant="plus" />
 			</image>
 		</ImageView>
 	</fx:define>
@@ -22,23 +23,23 @@
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
-		    <content>
-			    <MigPane layout="wrap" cols="2mm[22mm:22mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push[]10:push">
+			<content>
+				<MigPane layout="wrap" cols="2mm[22mm:22mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push[]10:push">
 
-					<Label text="Exam:" MigPane.cc="left"/>
-					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow"/>
+					<Label text="Exam:" MigPane.cc="left" />
+					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow" />
 
-					<Label text="Question:" MigPane.cc="left"/>
-					<ComboBox promptText="Select an exam to continue" fx:id="questions" MigPane.cc="grow"/>
+					<Label text="Question:" MigPane.cc="left" />
+					<ComboBox promptText="Select an exam to continue" fx:id="questions" MigPane.cc="grow" />
 
-					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow" fx:id="title"/>
-				        
-					<Label text="Maximum points:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow" fx:id="points"/>
+					<Label text="Title:" MigPane.cc="left" />
+					<TextField MigPane.cc="grow" fx:id="title" />
+
+					<Label text="Maximum points:" MigPane.cc="left" />
+					<TextField MigPane.cc="grow" fx:id="points" />
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
 				<ButtonType fx:constant="OK" />

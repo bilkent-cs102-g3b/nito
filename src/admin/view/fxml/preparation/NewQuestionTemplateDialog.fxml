@@ -8,13 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import common.*?>
 
 <Dialog headerText="Create a new template for a question part" title="New Solution Template" fx:controller="admin.view.preparation.NewQuestionTemplateDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_plus.PNG"/>
+				<Resources fx:constant="plus" />
 			</image>
 		</ImageView>
 	</fx:define>
@@ -22,24 +23,24 @@
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
-		    <content>
-			    <MigPane layout="wrap" cols="2mm[13mm:13mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
+			<content>
+				<MigPane layout="wrap" cols="2mm[13mm:13mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
 
-					<Label text="Exam:" MigPane.cc="left"/>
-					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow"/>
+					<Label text="Exam:" MigPane.cc="left" />
+					<ComboBox promptText="Select an exam" fx:id="exams" MigPane.cc="span, grow" />
 
 					<Label text="Question:" MigPane.cc="left">
-					<minWidth>
-							<Region fx:constant="USE_PREF_SIZE"/>
+						<minWidth>
+							<Region fx:constant="USE_PREF_SIZE" />
 						</minWidth>
 					</Label>
-					<ComboBox promptText="Select an exam to continue" fx:id="questions" MigPane.cc="grow"/>
+					<ComboBox promptText="Select an exam to continue" fx:id="questions" MigPane.cc="grow" />
 
-					<Label text="Part:" MigPane.cc="left"/>
-					<ComboBox promptText="Select a question to continue" fx:id="parts" MigPane.cc="grow"/>
+					<Label text="Part:" MigPane.cc="left" />
+					<ComboBox promptText="Select a question to continue" fx:id="parts" MigPane.cc="grow" />
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
 				<ButtonType fx:constant="OK" />

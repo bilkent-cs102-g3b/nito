@@ -20,6 +20,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 14/05/2019
  */
 public class LoginTester extends Application

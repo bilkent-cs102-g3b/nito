@@ -1,7 +1,5 @@
 package examinee.view;
 
-import java.net.MalformedURLException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
@@ -12,6 +10,7 @@ import javafx.util.Pair;
 
 /*
  * @author Javid Baghirov
+ * 
  * @version 14/05/2019
  */
 public class LoginController

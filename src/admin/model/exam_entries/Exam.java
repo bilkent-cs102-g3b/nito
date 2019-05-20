@@ -137,7 +137,7 @@ public class Exam extends Entry
 	{
 		return running;
 	}
-	
+
 	/**
 	 * Deserialization method
 	 */

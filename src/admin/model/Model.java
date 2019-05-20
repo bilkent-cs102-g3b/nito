@@ -399,7 +399,7 @@ public class Model implements Serializable
 	{
 		return examinees;
 	}
-	
+
 	public boolean isConnectionBlocked()
 	{
 		return isConnectionBlocked;

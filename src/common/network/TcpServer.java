@@ -80,7 +80,7 @@ public abstract class TcpServer
 				break;
 			}
 
-			if (stopListening)
+			if ( stopListening)
 				return;
 			// Wait until the work on sockets finishes
 			while ( isBlocked)
@@ -286,10 +286,9 @@ public abstract class TcpServer
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * Stops listening on TCP port
-	 * Note: problematic
+	 * Stops listening on TCP port Note: problematic
 	 */
 	public void stopListeningForConnections()
 	{

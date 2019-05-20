@@ -8,34 +8,35 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import common.*?>
 
 <Dialog headerText="Create new instruction for the exams" title="New Exam Instruction" fx:controller="admin.view.preparation.NewExamInstructionDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
-<fx:define>
+	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_plus.PNG"/>
+				<Resources fx:constant="plus" />
 			</image>
 		</ImageView>
-</fx:define>
+	</fx:define>
 
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog icon -->
-	 	   <!-- Dialog content -->
-		    <content>
-			    <MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push">
-					
+			<!-- Dialog content -->
+			<content>
+				<MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push">
+
 					<Label text="Exam:" MigPane.cc="left">
-					<minWidth>
-							<Region fx:constant="USE_PREF_SIZE"/>
+						<minWidth>
+							<Region fx:constant="USE_PREF_SIZE" />
 						</minWidth>
 					</Label>
-					<ComboBox MigPane.cc="grow" fx:id="exams"/>
-					
+					<ComboBox MigPane.cc="grow" fx:id="exams" />
+
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
 				<ButtonType fx:constant="OK" />

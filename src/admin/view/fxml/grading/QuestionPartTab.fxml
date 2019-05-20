@@ -6,19 +6,17 @@
 <?import javafx.scene.layout.HBox?>
 
 <Tab fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.view.grading.QuestionPartTabController">
-
-		<SplitPane VBox.vgrow="ALWAYS">
-			<NumberedEditor fx:id="editor"/>
-			<VBox>
-					<Label text="GRADING " style="-fx-font-size: 7mm"/>
-					<Separator/>
-					<Label fx:id="maxPointLabel"/>
-					<TextField fx:id="grade" VBox.vgrow="ALWAYS"/>
-					<Separator/>
-					<Label text="NOTES" style="-fx-font-size: 7mm"/>
-					<TextArea fx:id="notes" VBox.vgrow="ALWAYS"/>
-				
-			</VBox>
-		</SplitPane>
+	<SplitPane VBox.vgrow="ALWAYS">
+		<NumberedEditor fx:id="editor" />
+		<VBox>
+			<Label text="GRADING" style="-fx-font-size: 7mm" />
+			<Separator />
+			<Label fx:id="maxPointLabel" />
+			<TextField fx:id="grade" VBox.vgrow="ALWAYS" />
+			<Separator />
+			<Label text="NOTES" style="-fx-font-size: 7mm" />
+			<TextArea fx:id="notes" VBox.vgrow="ALWAYS" />
+		</VBox>
+	</SplitPane>
 </Tab>
 

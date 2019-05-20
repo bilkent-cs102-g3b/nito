@@ -7,13 +7,13 @@ import java.net.URISyntaxException;
 import java.util.Optional;
 
 import admin.model.Workspace;
+import common.Resources;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Dialog;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -24,14 +24,12 @@ public class Runner extends Application
 	@Override
 	public void start( Stage stage) throws MalformedURLException, IOException, URISyntaxException
 	{
-		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
-
 		/*********************** WORKSPACE SELECTOR ****************************/
 		while ( true)
 		{
 			@SuppressWarnings("unchecked")
 			Dialog<Pair<File, Boolean>> d = (Dialog<Pair<File, Boolean>>) FXMLLoader.load( getClass().getResource( "/admin/view/fxml/preparation/WorkspaceDialog.fxml").toURI().toURL());
-			((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( logo);
+			((Stage) d.getDialogPane().getScene().getWindow()).getIcons().add( Resources.logo);
 			Optional<Pair<File, Boolean>> result = d.showAndWait();
 			if ( !result.isPresent())
 			{
@@ -54,7 +52,7 @@ public class Runner extends Application
 
 		stage.setScene( scene);
 		stage.setTitle( "Sample frame");
-		stage.getIcons().add( logo);
+		stage.getIcons().add( Resources.logo);
 		stage.setOnCloseRequest( e -> {
 			Workspace.getInstance().stopAutoSave();
 			Workspace.getInstance().save();

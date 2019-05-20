@@ -9,20 +9,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
+<?import common.*?>
 
 <Pane fx:id="root" fx:controller="admin.view.monitoring.ExamineeScreenController" xmlns:fx="http://javafx.com/fxml/1">
-	<TitledPane fx:id="titlePane" >
+	<TitledPane fx:id="titlePane">
 		<MigPane layout="wrap" rows="[][]" cols="[center]">
-			<ImageView fx:id="screen"/>
-		
-			 <Button onAction="#openNotes">
-			 	<graphic>
-			 		<ImageView fitWidth="30.0" preserveRatio="true">
-			 			<Image url= "/note.png" />
-			 		</ImageView>
-			 	</graphic>
-			 </Button>
+			<ImageView fx:id="screen" />
+			<Button onAction="#openNotes">
+				<graphic>
+					<ImageView fitWidth="30.0" preserveRatio="true">
+						<Resources fx:constant="note" />
+					</ImageView>
+				</graphic>
+			</Button>
 		</MigPane>
 	</TitledPane>
 </Pane>
-

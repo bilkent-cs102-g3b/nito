@@ -47,7 +47,7 @@ public class Model
 		status = new SimpleIntegerProperty();
 		status.set( 0);
 		reference = null;
-		dataEnd = new SimpleBooleanProperty(false);
+		dataEnd = new SimpleBooleanProperty( false);
 		examStart = false;
 		width = 0;
 		timeTotal = new SimpleIntegerProperty();
@@ -65,8 +65,8 @@ public class Model
 					break;
 				}
 				timeRemain.set( timeRemain.intValue() - 1);
-				
-				if ( timeRemain.intValue() <= 0 )
+
+				if ( timeRemain.intValue() <= 0)
 					examEnd();
 			}
 		});

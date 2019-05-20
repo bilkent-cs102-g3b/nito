@@ -13,7 +13,7 @@ public class QuestionPartTabController
 {
 	private Examinee examinee;
 	private QuestionPart questionPart;
-	
+
 	@FXML
 	private Label maxPointLabel;
 	@FXML
@@ -30,11 +30,11 @@ public class QuestionPartTabController
 		notes.textProperty().addListener( ( o, oldVal, newVal) -> {
 			examinee.setNotes( newVal);
 		});
-		
-		grade.textProperty().addListener( (o, oldVal, newVal) -> {
+
+		grade.textProperty().addListener( ( o, oldVal, newVal) -> {
 			examinee.setGrade( questionPart, newVal);
 		});
-		
+
 		editor.disableEditor();
 	}
 
@@ -44,7 +44,7 @@ public class QuestionPartTabController
 		questionPart = part;
 
 		notes.textProperty().bindBidirectional( e.notesProperty());
-		maxPointLabel.setText("Maximum points: " + part.getMaxPoints() + " points");
+		maxPointLabel.setText( "Maximum points: " + part.getMaxPoints() + " points");
 		editor.setText( e.getSolutions().get( part));
 		root.setText( part.getTitle());
 		grade.setText( (e.getGrade( part) == null ? "" : e.getGrade( part)));

@@ -8,13 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import common.*?>
 
 <Dialog headerText="Create a new exam" title="New Exam" fx:controller="admin.view.preparation.NewExamDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_plus.PNG"/>
+				<Resources fx:constant="plus" />
 			</image>
 		</ImageView>
 	</fx:define>
@@ -22,22 +23,22 @@
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
-		    <content>
-			    <MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push">
-					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow, span" fx:id="title"/>
-					
-					<Label text="Length:" MigPane.cc="left"/>
-					<TextField alignment="CENTER_RIGHT" text="2" MigPane.cc="grow" fx:id="hours"/>
+			<content>
+				<MigPane layout="wrap" cols="2mm[10mm:10mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push">
+					<Label text="Title:" MigPane.cc="left" />
+					<TextField MigPane.cc="grow, span" fx:id="title" />
+
+					<Label text="Length:" MigPane.cc="left" />
+					<TextField alignment="CENTER_RIGHT" text="2" MigPane.cc="grow" fx:id="hours" />
 					<Label text="hour(s)" />
-					<TextField alignment="CENTER_RIGHT" text="0" MigPane.cc="grow, skip 1" fx:id="mins"/>
+					<TextField alignment="CENTER_RIGHT" text="0" MigPane.cc="grow, skip 1" fx:id="mins" />
 					<Label text="minute(s)" />
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
-				<ButtonType fx:constant="OK"/>
+				<ButtonType fx:constant="OK" />
 				<ButtonType fx:constant="CANCEL" />
 			</buttonTypes>
 		</DialogPane>

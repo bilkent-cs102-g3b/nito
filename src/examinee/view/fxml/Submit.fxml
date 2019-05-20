@@ -7,44 +7,44 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import common.*?>
 
-
-<MigPane rows="push[]push[]push[]" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="examinee.view.SubmitController" >
+<MigPane rows="push[]push[]push[]" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="examinee.view.SubmitController">
 	<fx:define>
 		<!-- Success Icon -->
-  		<ImageView fitWidth="120" preserveRatio="true" fx:id="greenTick">
+		<ImageView fitWidth="120" preserveRatio="true" fx:id="greenTick">
 			<image>
-				<Image url="/tick_green.png"/>
+				<Resources fx:constant="green_tick" />
 			</image>
 		</ImageView>
 		<!-- Button Icon -->
 		<ImageView fitWidth="80" pickOnBounds="true" preserveRatio="true" fx:id="quitIcon">
-       		<image>
-				<Image url="/Quit.png" />
-    		</image>
-      	</ImageView>
+			<image>
+				<Resources fx:constant="quit" />
+			</image>
+		</ImageView>
 	</fx:define>
-		
+
 	<children>
 		<!-- Successful Submit -->
-		<fx:reference source="greenTick"/>
+		<fx:reference source="greenTick" />
 		<!-- Submit Message -->
-		<Label wrapText="true" text="You have submitted your answers, thank you for
-your participation" MigPane.cc="span">				<font>
+		<Label wrapText="true" text="You have submitted your answers, thank you for your participation" MigPane.cc="span">
+			<font>
 				<Font size="25" />
 			</font>
 		</Label>
-		
+
 		<!-- Quit Button -->
 		<HBox alignment="BOTTOM_CENTER" MigPane.cc="span, growx">
-            <children>
-                <Button mnemonicParsing="false" fx:id="quit" >
-     				<graphic>
-        				<fx:reference source="quitIcon"/>
-     			    </graphic>
-                </Button>
-      		</children>
-        </HBox>
+			<children>
+				<Button mnemonicParsing="false" fx:id="quit">
+					<graphic>
+						<fx:reference source="quitIcon" />
+					</graphic>
+				</Button>
+			</children>
+		</HBox>
 	</children>
 </MigPane>
 

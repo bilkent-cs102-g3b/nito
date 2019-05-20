@@ -13,21 +13,21 @@
 <SplitPane dividerPositions="0.20f" VBox.vgrow="ALWAYS" fx:id="root" fx:controller="admin.view.preparation.MainEditorController" xmlns:fx="http://javafx.com/fxml/1">
 	<!-- EXAMS TREE -->
 	<TreeView minWidth="100" fx:id="examTreeView">
-	<contextMenu>
-		<ContextMenu>
-		<items>
-			<Menu text="New"  styleClass="menu-item">
-				<MenuItem text="Exam" onAction="#addExam"/>
-				<MenuItem text="Exam Instructions" onAction="#addInstructions"/>
-				<MenuItem text="Question" onAction="#addQuestion"/>
-				<MenuItem text="Question Part" onAction="#addPart"/>
-				<MenuItem text="Question Part Template" onAction="#addTemplate"/>
-			</Menu>
-			<MenuItem text="Start this exam" onAction="#startExam"/>
-			<MenuItem text="Delete" onAction="#delete"/>
-		</items>
-		</ContextMenu>
-	</contextMenu>
+		<contextMenu>
+			<ContextMenu>
+				<items>
+					<Menu text="New" styleClass="menu-item">
+						<MenuItem text="Exam" onAction="#addExam" />
+						<MenuItem text="Exam Instructions" onAction="#addInstructions" />
+						<MenuItem text="Question" onAction="#addQuestion" />
+						<MenuItem text="Question Part" onAction="#addPart" />
+						<MenuItem text="Question Part Template" onAction="#addTemplate" />
+					</Menu>
+					<MenuItem text="Start this exam" onAction="#startExam" />
+					<MenuItem text="Delete" onAction="#delete" />
+				</items>
+			</ContextMenu>
+		</contextMenu>
 	</TreeView>
 
 	<!-- EDITOR -->

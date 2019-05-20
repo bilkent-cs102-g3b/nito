@@ -17,12 +17,13 @@
 <?import javafx.scene.text.Font?>
 <?import java.net.URL?>
 <?import org.controlsfx.control.CheckTreeView?>
+<?import common.*?>
 
 <SplitPane xmlns:fx="http://javafx.com/fxml/1" fx:id="splitPane" fx:controller="examinee.view.MainScreenController">
 
-<stylesheets>
-	<URL value="@../../../common/stylesheet.css" />
-</stylesheets>
+	<stylesheets>
+		<Resources fx:constant="stylesheet" />
+	</stylesheets>
 
 	<VBox minWidth="100" alignment="TOP_CENTER">
 		<!-- QUESTIONS TREE -->
@@ -30,13 +31,13 @@
 
 		<MigPane layout="wrap" rows="2mm:push[]2mm:push[]2mm:push" cols="push[center]push">
 			<!-- TIME -->
-			<Label text="NOT STARTED YET" styleClass="bigFont" MigPane.cc="center" fx:id="time"/>
+			<Label text="NOT STARTED YET" styleClass="bigFont" MigPane.cc="center" fx:id="time" />
 			<ProgressBar progress="-1.0" style="-fx-accent: green;" styleClass="timeProgressBar" fx:id="bar" />
 			<!-- SUBMIT ALL WORK -->
 			<Button disable="true" text="Submit All Work" style="-fx-background-color: MediumSeaGreen" styleClass="bigFont" fx:id="submit" onAction="#submit" />
 		</MigPane>
 	</VBox>
-	
+
 	<!-- WORKING FRAMES -->
 	<SwingNode fx:id="swingNode">
 		<content>

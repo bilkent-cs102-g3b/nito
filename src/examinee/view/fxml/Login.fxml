@@ -9,55 +9,56 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 <?import javafx.scene.text.Font?>
+<?import common.*?>
 
 <Dialog title="Nito - Login" resizable="true" fx:controller="examinee.view.LoginController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
-<fx:define>
-	<Double fx:value="100.0" fx:id="logoSize" />
-	
-	<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
-	<image>
-		<Image url="/logo_nito.png" />
-	</image>
-	</ImageView>
+	<fx:define>
+		<Double fx:value="100.0" fx:id="logoSize" />
 
-	<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoBilkent">
-	<image>
-		<Image url="/logo_bilkent.png" />
-	</image>
-	</ImageView>
-</fx:define>
+		<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoNito">
+			<image>
+				<Resources fx:constant="logo" />
+			</image>
+		</ImageView>
 
-<dialogPane>
-	<DialogPane>
-		<content>
-		<MigPane layout="wrap" cols="2mm[30mm:30mm:]2mm[grow, :65mm:]2mm" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push[]2mm:push">
-			<MigPane cols="push[]push[]push[]push[]push[]push" MigPane.cc="spanx 2, center, width 100%" >
-				<fx:reference source="logoNito" />
-				<Pane/>
-				<Label text="Nito" >
-				<font>
-					<Font size="40" />
-				</font>
-				</Label>
-				<Pane/>
-				<fx:reference source="logoBilkent"/>
-			</MigPane>
-			
-			<Label text="Name:">
-			<font>
-				<Font size="20" />
-			</font>
-			</Label>
-			<TextField MigPane.cc="span, growx" fx:id="name" />
-	
-			<Label text="Admin IP address:">
-			<font>
-				<Font size="20" />
-			</font>
-			</Label>
-			<TextField MigPane.cc="span, growx" fx:id="ip" />
-		</MigPane>
-		</content>
-	</DialogPane>
-</dialogPane>
+		<ImageView fitWidth="$logoSize" preserveRatio="true" fx:id="logoBilkent">
+			<image>
+				<Resources fx:constant="bilkent" />
+			</image>
+		</ImageView>
+	</fx:define>
+
+	<dialogPane>
+		<DialogPane>
+			<content>
+				<MigPane layout="wrap" cols="2mm[30mm:30mm:]2mm[grow, :65mm:]2mm" rows="2mm:push[]2mm:push[]2mm:push[]2mm:push[]2mm:push">
+					<MigPane cols="push[]push[]push[]push[]push[]push" MigPane.cc="spanx 2, center, width 100%">
+						<fx:reference source="logoNito" />
+						<Pane />
+						<Label text="Nito">
+							<font>
+								<Font size="40" />
+							</font>
+						</Label>
+						<Pane />
+						<fx:reference source="logoBilkent" />
+					</MigPane>
+
+					<Label text="Name:">
+						<font>
+							<Font size="20" />
+						</font>
+					</Label>
+					<TextField MigPane.cc="span, growx" fx:id="name" />
+
+					<Label text="Admin IP address:">
+						<font>
+							<Font size="20" />
+						</font>
+					</Label>
+					<TextField MigPane.cc="span, growx" fx:id="ip" />
+				</MigPane>
+			</content>
+		</DialogPane>
+	</dialogPane>
 </Dialog>

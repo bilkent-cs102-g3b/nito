@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import common.Resources;
 import examinee.model.KeyListener;
 import examinee.model.Model;
 import javafx.application.Application;
@@ -17,7 +18,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.SplitPane;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -26,21 +26,15 @@ import me.coley.simplejna.hook.key.KeyHookManager;
 
 public class Runner extends Application
 {
-
 	@Override
 	public void start( Stage stage) throws IOException
 	{
-		// Creating the Nito logo
-		Image logo = new Image( getClass().getResourceAsStream( "/logo_nito.png"));
-
-		/********************************
-		 * LOGIN DIALOG
-		 ****************************************/
+		/*********** LOGIN DIALOG *************/
 		boolean success = false;
 		while ( !success)
 		{
 			Dialog<Pair<String, String>> loginDialog = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/Login.fxml"));
-			((Stage) loginDialog.getDialogPane().getScene().getWindow()).getIcons().add( logo);
+			((Stage) loginDialog.getDialogPane().getScene().getWindow()).getIcons().add( Resources.logo);
 			Optional<Pair<String, String>> result = loginDialog.showAndWait();
 			if ( result.isPresent())
 			{
@@ -64,7 +58,7 @@ public class Runner extends Application
 			SplitPane mainScreen = FXMLLoader.load( getClass().getResource( "/examinee/view/fxml/MainScreen.fxml"));
 			Scene scene = new Scene( mainScreen);
 			stage.setScene( scene);
-			stage.setFullScreenExitHint("");
+			stage.setFullScreenExitHint( "");
 			stage.setFullScreenExitKeyCombination( KeyCombination.NO_MATCH);
 			stage.setFullScreen( true);
 			stage.setTitle( "Nito - Examinee");
@@ -78,12 +72,12 @@ public class Runner extends Application
 					stage.setMaximized( true);
 					stage.setTitle( "Nito - Exam Ended");
 				});
-				
+
 				stage.setOnCloseRequest( new EventHandler<WindowEvent>() {
 					@Override
 					public void handle( WindowEvent event)
 					{
-						System.exit(0);
+						System.exit( 0);
 					}
 				});
 			}

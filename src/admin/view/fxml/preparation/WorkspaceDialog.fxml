@@ -9,33 +9,34 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
 <?import javafx.scene.image.ImageView?>
+<?import common.*?>
 
 <Dialog resizable="true" headerText="Select a workspace.&#10;&#9;Nito autosaves your work to the workspace every 5 seconds.&#10;&#9;If you already have created a workspace, selecting that will restore all your work." title="Workspace selector" fx:controller="admin.view.preparation.WorkspaceDialogController" fx:id="root" xmlns:fx="http://javafx.com/fxml/1">
 	<!-- Loading icon -->
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_folder.PNG"/>
+				<Resources fx:constant="folder" />
 			</image>
 		</ImageView>
 	</fx:define>
-	
+
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
-		    <content>
-			    <MigPane cols="2mm[15mm:15mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm[:20mm:]2mm" rows="10:push[]10:push[]10:push">
-					<Label text="Workspace:" MigPane.cc="left"/>
-					<TextField disable="true" MigPane.cc="spanx 2, grow" fx:id="field"/>
-					<Button text="Browse" MigPane.cc="wrap, grow" onAction="#browse"/>
-				        
-					<CheckBox text="Set it as default and do not ask again"  MigPane.cc="spanx 2" fx:id="checkBox"/>
+			<content>
+				<MigPane cols="2mm[15mm:15mm:]2mm[grow, :55mm:]2mm[15mm:15mm:]2mm[:20mm:]2mm" rows="10:push[]10:push[]10:push">
+					<Label text="Workspace:" MigPane.cc="left" />
+					<TextField disable="true" MigPane.cc="spanx 2, grow" fx:id="field" />
+					<Button text="Browse" MigPane.cc="wrap, grow" onAction="#browse" />
+
+					<CheckBox text="Set it as default and do not ask again" MigPane.cc="spanx 2" fx:id="checkBox" />
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
-				<ButtonType fx:constant="OK"/>
+				<ButtonType fx:constant="OK" />
 			</buttonTypes>
 		</DialogPane>
 	</dialogPane>

@@ -8,13 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 <?import net.miginfocom.layout.AC?>
+<?import common.*?>
 
 <Dialog resizable="true" headerText="Create a new question" title="New Question" fx:controller="admin.view.preparation.NewQuestionDialogController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
 
 	<fx:define>
 		<ImageView fitWidth="60.0" preserveRatio="true" fx:id="icon">
 			<image>
-				<Image url="/icon_plus.PNG"/>
+				<Resources fx:constant="plus" />
 			</image>
 		</ImageView>
 	</fx:define>
@@ -22,20 +23,20 @@
 	<dialogPane>
 		<DialogPane graphic="$icon">
 			<!-- Dialog content -->
-		    <content>
-			    <MigPane layout="wrap" cols="2mm[25mm:25mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
-					
-					<Label text="Exam:" MigPane.cc="left"/>
-					<ComboBox MigPane.cc="grow" fx:id="examsBox"/>
-				        
-					<Label text="Title:" MigPane.cc="left"/>
-					<TextField MigPane.cc="grow" fx:id="titleField"/>
-					
+			<content>
+				<MigPane layout="wrap" cols="2mm[25mm:25mm:]2mm[grow, :65mm:]2mm" rows="10:push[]10:push[]10:push[]10:push">
+
+					<Label text="Exam:" MigPane.cc="left" />
+					<ComboBox MigPane.cc="grow" fx:id="examsBox" />
+
+					<Label text="Title:" MigPane.cc="left" />
+					<TextField MigPane.cc="grow" fx:id="titleField" />
+
 					<Label text="Number of parts:" MigPane.cc="left" />
-					<TextField text="1" MigPane.cc="grow" fx:id="numOfPartsField"/>
+					<TextField text="1" MigPane.cc="grow" fx:id="numOfPartsField" />
 				</MigPane>
 			</content>
-			
+
 			<!-- Dialog buttons -->
 			<buttonTypes>
 				<ButtonType fx:constant="NEXT" />
