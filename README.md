@@ -1,4 +1,4 @@
-# Nito <img align="right" width="100" height="100" src="/Resources/logo_nito.png">
+# Nito <img align="right" width="100" height="100" src="/Resources/nito.png">
 Nito is a project that is still under construction for CS102 course in Bilkent University
 
 Nito aims to provide its users with a modern and elegant solution to
